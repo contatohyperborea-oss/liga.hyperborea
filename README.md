@@ -1,2 +1,0 @@
-# liga.hyperborea
-Liga Hyperborea
