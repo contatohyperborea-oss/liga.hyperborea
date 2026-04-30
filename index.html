@@ -969,6 +969,189 @@
         text-align: center;
       }
     }
+
+    /* =========================================================
+   MODO LEITURA ÂMBAR - HYPERBOREA
+   Deixa áreas de texto claras para descanso visual
+   ========================================================= */
+
+:root{
+  --hy-paper: #ffe4bf;
+  --hy-paper-soft: #fff1dd;
+  --hy-paper-ink: #111827;
+  --hy-paper-text: #263241;
+  --hy-paper-muted: #5b6673;
+  --hy-paper-border: rgba(255, 184, 92, .55);
+  --hy-paper-glow: rgba(255, 184, 92, .18);
+}
+
+/* Mini banners de apresentação */
+.hy-mini-banner{
+  background:
+    radial-gradient(circle at 0 0, rgba(255,255,255,.55), transparent 55%),
+    linear-gradient(135deg, var(--hy-paper-soft), var(--hy-paper)) !important;
+  border-color: var(--hy-paper-border) !important;
+  box-shadow:
+    0 18px 34px rgba(0,0,0,.22),
+    0 0 0 1px rgba(255,255,255,.18),
+    0 0 28px var(--hy-paper-glow) !important;
+}
+
+.hy-mini-banner strong{
+  color: var(--hy-paper-ink) !important;
+}
+
+.hy-mini-banner span{
+  color: var(--hy-paper-muted) !important;
+}
+
+.hy-mini-icon{
+  background:
+    radial-gradient(circle at 0 0, rgba(255,255,255,.28), transparent 55%),
+    linear-gradient(135deg, #ffd7a8, #8bbcff, #7c6dff) !important;
+  color: #101827 !important;
+  border-color: rgba(17,24,39,.12) !important;
+}
+
+/* Cards principais: mantém a imagem escura, mas clareia a área de texto */
+.hy-card{
+  background:
+    radial-gradient(circle at 0 0, rgba(255,255,255,.45), transparent 55%),
+    linear-gradient(180deg, var(--hy-paper-soft), var(--hy-paper)) !important;
+  border-color: var(--hy-paper-border) !important;
+  box-shadow:
+    0 22px 42px rgba(0,0,0,.26),
+    0 0 28px var(--hy-paper-glow) !important;
+}
+
+.hy-card-body{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.28), transparent);
+}
+
+.hy-card h3{
+  color: var(--hy-paper-ink) !important;
+}
+
+.hy-card p{
+  color: var(--hy-paper-text) !important;
+}
+
+.hy-card-link{
+  color: #075985 !important;
+}
+
+.hy-tag{
+  color: var(--hy-paper-ink) !important;
+  background: rgba(255, 241, 221, .92) !important;
+  border-color: rgba(17,24,39,.16) !important;
+  box-shadow: 0 8px 18px rgba(0,0,0,.16);
+}
+
+/* Arquivo Vivo */
+.hy-archive{
+  background:
+    radial-gradient(circle at 0 0, rgba(255,255,255,.50), transparent 55%),
+    linear-gradient(135deg, var(--hy-paper-soft), var(--hy-paper)) !important;
+  border-color: var(--hy-paper-border) !important;
+  box-shadow:
+    0 24px 50px rgba(0,0,0,.28),
+    0 0 30px var(--hy-paper-glow) !important;
+}
+
+.hy-archive .hy-kicker{
+  color: #9a4f00 !important;
+}
+
+.hy-archive-head h2{
+  color: var(--hy-paper-ink) !important;
+}
+
+.hy-see-all{
+  color: #075985 !important;
+}
+
+/* Entradas do arquivo */
+.hy-entry{
+  background: rgba(255,255,255,.46) !important;
+  border-color: rgba(17,24,39,.10) !important;
+}
+
+.hy-entry h3{
+  color: var(--hy-paper-ink) !important;
+}
+
+.hy-entry p{
+  color: var(--hy-paper-muted) !important;
+}
+
+.hy-date{
+  background: rgba(255, 248, 238, .75) !important;
+  border-color: rgba(17,24,39,.10) !important;
+}
+
+.hy-date strong{
+  color: var(--hy-paper-ink) !important;
+}
+
+.hy-date span{
+  color: #8a4b0f !important;
+}
+
+/* Pílulas de categoria mais legíveis */
+.hy-pill{
+  color: #075985 !important;
+  border-color: rgba(7,89,133,.24) !important;
+  background: rgba(224,242,254,.78) !important;
+}
+
+.hy-pill.purple{
+  color: #4c1d95 !important;
+  border-color: rgba(76,29,149,.22) !important;
+  background: rgba(237,233,254,.82) !important;
+}
+
+.hy-pill.blue{
+  color: #1d4ed8 !important;
+  border-color: rgba(29,78,216,.22) !important;
+  background: rgba(219,234,254,.84) !important;
+}
+
+.hy-pill.green{
+  color: #166534 !important;
+  border-color: rgba(22,101,52,.22) !important;
+  background: rgba(220,252,231,.84) !important;
+}
+
+/* Comunidade lateral */
+.hy-community{
+  background:
+    radial-gradient(circle at 0 0, rgba(255,255,255,.42), transparent 55%),
+    linear-gradient(180deg, #fff6e8, #ffe7c4) !important;
+  border-color: rgba(17,24,39,.10) !important;
+}
+
+.hy-community h3{
+  color: var(--hy-paper-ink) !important;
+}
+
+.hy-community-item strong{
+  color: #075985 !important;
+}
+
+.hy-community-item span{
+  color: var(--hy-paper-muted) !important;
+}
+
+.hy-community-avatar{
+  background: rgba(255,255,255,.55) !important;
+  border-color: rgba(17,24,39,.10) !important;
+}
+
+/* Aviso legal */
+.hy-disclaimer{
+  color: #ffd8a8 !important;
+}
   </style>
 </head>
 
