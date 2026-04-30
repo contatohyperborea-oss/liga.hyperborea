@@ -35,9 +35,7 @@
 
     *{ box-sizing: border-box; }
 
-    html{
-      scroll-behavior: smooth;
-    }
+    html{ scroll-behavior: smooth; }
 
     body{
       margin: 0;
@@ -51,10 +49,7 @@
         linear-gradient(135deg, #030711 0%, #061426 48%, #071b3a 100%);
     }
 
-    a{
-      color: inherit;
-      text-decoration: none;
-    }
+    a{ color: inherit; text-decoration: none; }
 
     img{
       display: block;
@@ -251,9 +246,7 @@
       transform: rotate(45deg);
     }
 
-    .hy-menu-toggle.is-open .hy-menu-bars span:nth-child(2){
-      opacity: 0;
-    }
+    .hy-menu-toggle.is-open .hy-menu-bars span:nth-child(2){ opacity: 0; }
 
     .hy-menu-toggle.is-open .hy-menu-bars span:nth-child(3){
       bottom: 5.5px;
@@ -265,9 +258,7 @@
       padding: 0 14px 14px;
     }
 
-    .hy-mobile-nav.is-open{
-      display: block;
-    }
+    .hy-mobile-nav.is-open{ display: block; }
 
     .hy-mobile-nav a{
       display: block;
@@ -301,9 +292,7 @@
       font-weight: 900;
     }
 
-    .hy-accent{
-      color: var(--hy-cyan);
-    }
+    .hy-accent{ color: var(--hy-cyan); }
 
     /* HERO */
 
@@ -431,78 +420,113 @@
       box-shadow: 0 0 16px rgba(34,211,238,.80);
     }
 
-    /* MINI BANNERS */
+    /* BANNER ROTATIVO */
 
-    .hy-banner-row{
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
+    .hy-banner-carousel{
+      position: relative;
       margin: 16px 0 14px;
-    }
-
-    .hy-mini-banner{
-      display: grid;
-      grid-template-columns: 66px minmax(0, 1fr);
-      gap: 14px;
-      align-items: center;
-      min-height: 112px;
-      border-radius: 18px;
-      padding: 14px;
+      border-radius: 24px;
       border: 1px solid var(--hy-border);
       background:
-        radial-gradient(circle at 0 0, rgba(34,211,238,.12), transparent 55%),
-        rgba(7,18,34,.72);
-      box-shadow: 0 18px 34px rgba(0,0,0,.22);
+        radial-gradient(circle at 0 0, rgba(34,211,238,.11), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(109,93,252,.14), transparent 55%),
+        rgba(5,11,20,.74);
+      box-shadow: 0 22px 46px rgba(0,0,0,.30);
       overflow: hidden;
     }
 
-    .hy-mini-banner:nth-child(2){
-      background:
-        radial-gradient(circle at 0 0, rgba(109,93,252,.18), transparent 55%),
-        rgba(16,13,42,.72);
+    .hy-banner-viewport{
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
     }
 
-    .hy-mini-banner:nth-child(3){
-      background:
-        radial-gradient(circle at 0 0, rgba(37,208,166,.16), transparent 55%),
-        rgba(4,28,34,.72);
+    .hy-banner-track{
+      display: flex;
+      transition: transform .5s ease;
+      will-change: transform;
     }
 
-    .hy-mini-icon{
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.10);
-      background:
-        radial-gradient(circle at 0 0, rgba(255,255,255,.18), transparent 55%),
-        linear-gradient(135deg, rgba(34,211,238,.28), rgba(109,93,252,.36));
-      display: inline-flex;
+    .hy-banner-slide{
+      flex: 0 0 100%;
+      display: block;
+      position: relative;
+      background: rgba(5,11,20,.72);
+    }
+
+    .hy-banner-slide img{
+      width: 100%;
+      aspect-ratio: 1600 / 520;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hy-banner-fallback{
+      min-height: 220px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
-      box-shadow: 0 12px 24px rgba(0,0,0,.28);
-    }
-
-    .hy-mini-banner strong{
-      display: block;
-      font-size: 14px;
-      line-height: 1.25;
+      padding: 24px;
+      text-align: center;
       color: var(--hy-white);
-      word-break: break-word;
+      background:
+        radial-gradient(circle at 0 0, rgba(34,211,238,.18), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(109,93,252,.20), transparent 55%),
+        rgba(5,11,20,.82);
     }
 
-    .hy-mini-banner span{
+    .hy-banner-fallback strong{
       display: block;
-      margin-top: 5px;
+      font-size: clamp(22px, 4vw, 34px);
+      line-height: 1.1;
+      font-weight: 950;
+    }
+
+    .hy-banner-fallback span{
+      display: block;
+      margin-top: 8px;
       color: var(--hy-soft);
-      font-size: 12px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .hy-banner-controls{
+      position: absolute;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 9px;
+      border-radius: 999px;
+      background: rgba(3,8,18,.58);
+      border: 1px solid rgba(34,211,238,.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .hy-banner-dot{
+      width: 8px;
+      height: 8px;
+      border: 0;
+      border-radius: 999px;
+      padding: 0;
+      background: rgba(255,255,255,.34);
+      cursor: pointer;
+      transition: width .2s ease, background .2s ease;
+    }
+
+    .hy-banner-dot.is-active{
+      width: 22px;
+      background: var(--hy-cyan);
+      box-shadow: 0 0 14px rgba(34,211,238,.76);
     }
 
     /* SECTIONS */
 
-    .hy-section{
-      padding: 18px 0;
-    }
+    .hy-section{ padding: 18px 0; }
 
     .hy-card-grid{
       display: grid;
@@ -547,9 +571,7 @@
       background: linear-gradient(180deg, transparent 42%, rgba(5,11,20,.86));
     }
 
-    .hy-card-body{
-      padding: 16px;
-    }
+    .hy-card-body{ padding: 16px; }
 
     .hy-tag{
       position: absolute;
@@ -870,6 +892,111 @@
       line-height: 1.65;
     }
 
+    /* MODO LEITURA ÂMBAR */
+
+    :root{
+      --hy-paper: #ffe4bf;
+      --hy-paper-soft: #fff1dd;
+      --hy-paper-ink: #111827;
+      --hy-paper-text: #263241;
+      --hy-paper-muted: #5b6673;
+      --hy-paper-border: rgba(255, 184, 92, .55);
+      --hy-paper-glow: rgba(255, 184, 92, .18);
+    }
+
+    .hy-card{
+      background:
+        radial-gradient(circle at 0 0, rgba(255,255,255,.45), transparent 55%),
+        linear-gradient(180deg, var(--hy-paper-soft), var(--hy-paper)) !important;
+      border-color: var(--hy-paper-border) !important;
+      box-shadow:
+        0 22px 42px rgba(0,0,0,.26),
+        0 0 28px var(--hy-paper-glow) !important;
+    }
+
+    .hy-card h3{ color: var(--hy-paper-ink) !important; }
+    .hy-card p{ color: var(--hy-paper-text) !important; }
+    .hy-card-link{ color: #075985 !important; }
+
+    .hy-tag{
+      color: var(--hy-paper-ink) !important;
+      background: rgba(255, 241, 221, .92) !important;
+      border-color: rgba(17,24,39,.16) !important;
+      box-shadow: 0 8px 18px rgba(0,0,0,.16);
+    }
+
+    .hy-archive{
+      background:
+        radial-gradient(circle at 0 0, rgba(255,255,255,.50), transparent 55%),
+        linear-gradient(135deg, var(--hy-paper-soft), var(--hy-paper)) !important;
+      border-color: var(--hy-paper-border) !important;
+      box-shadow:
+        0 24px 50px rgba(0,0,0,.28),
+        0 0 30px var(--hy-paper-glow) !important;
+    }
+
+    .hy-archive .hy-kicker{ color: #9a4f00 !important; }
+    .hy-archive-head h2{ color: var(--hy-paper-ink) !important; }
+    .hy-see-all{ color: #075985 !important; }
+
+    .hy-entry{
+      background: rgba(255,255,255,.46) !important;
+      border-color: rgba(17,24,39,.10) !important;
+    }
+
+    .hy-entry h3{ color: var(--hy-paper-ink) !important; }
+    .hy-entry p{ color: var(--hy-paper-muted) !important; }
+
+    .hy-date{
+      background: rgba(255, 248, 238, .75) !important;
+      border-color: rgba(17,24,39,.10) !important;
+    }
+
+    .hy-date strong{ color: var(--hy-paper-ink) !important; }
+    .hy-date span{ color: #8a4b0f !important; }
+
+    .hy-pill{
+      color: #075985 !important;
+      border-color: rgba(7,89,133,.24) !important;
+      background: rgba(224,242,254,.78) !important;
+    }
+
+    .hy-pill.purple{
+      color: #4c1d95 !important;
+      border-color: rgba(76,29,149,.22) !important;
+      background: rgba(237,233,254,.82) !important;
+    }
+
+    .hy-pill.blue{
+      color: #1d4ed8 !important;
+      border-color: rgba(29,78,216,.22) !important;
+      background: rgba(219,234,254,.84) !important;
+    }
+
+    .hy-pill.green{
+      color: #166534 !important;
+      border-color: rgba(22,101,52,.22) !important;
+      background: rgba(220,252,231,.84) !important;
+    }
+
+    .hy-community{
+      background:
+        radial-gradient(circle at 0 0, rgba(255,255,255,.42), transparent 55%),
+        linear-gradient(180deg, #fff6e8, #ffe7c4) !important;
+      border-color: rgba(17,24,39,.10) !important;
+    }
+
+    .hy-community h3{ color: var(--hy-paper-ink) !important; }
+    .hy-community-item strong{ color: #075985 !important; }
+    .hy-community-item span{ color: var(--hy-paper-muted) !important; }
+
+    .hy-community-avatar{
+      background: rgba(255,255,255,.55) !important;
+      border-color: rgba(17,24,39,.10) !important;
+    }
+
+    .hy-disclaimer{ color: #ffd8a8 !important; }
+
     /* RESPONSIVO */
 
     @media (max-width: 980px){
@@ -878,9 +1005,7 @@
         display: none;
       }
 
-      .hy-menu-toggle{
-        display: inline-flex;
-      }
+      .hy-menu-toggle{ display: inline-flex; }
 
       .hy-card-grid{
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -938,8 +1063,20 @@
         width: 100%;
       }
 
-      .hy-banner-row{
-        grid-template-columns: 1fr;
+      .hy-banner-carousel{
+        border-radius: 20px;
+      }
+
+      .hy-banner-viewport{
+        border-radius: 20px;
+      }
+
+      .hy-banner-slide img{
+        aspect-ratio: 16 / 7;
+      }
+
+      .hy-banner-fallback{
+        min-height: 150px;
       }
 
       .hy-card-grid{
@@ -969,189 +1106,6 @@
         text-align: center;
       }
     }
-
-    /* =========================================================
-   MODO LEITURA ÂMBAR - HYPERBOREA
-   Deixa áreas de texto claras para descanso visual
-   ========================================================= */
-
-:root{
-  --hy-paper: #ffe4bf;
-  --hy-paper-soft: #fff1dd;
-  --hy-paper-ink: #111827;
-  --hy-paper-text: #263241;
-  --hy-paper-muted: #5b6673;
-  --hy-paper-border: rgba(255, 184, 92, .55);
-  --hy-paper-glow: rgba(255, 184, 92, .18);
-}
-
-/* Mini banners de apresentação */
-.hy-mini-banner{
-  background:
-    radial-gradient(circle at 0 0, rgba(255,255,255,.55), transparent 55%),
-    linear-gradient(135deg, var(--hy-paper-soft), var(--hy-paper)) !important;
-  border-color: var(--hy-paper-border) !important;
-  box-shadow:
-    0 18px 34px rgba(0,0,0,.22),
-    0 0 0 1px rgba(255,255,255,.18),
-    0 0 28px var(--hy-paper-glow) !important;
-}
-
-.hy-mini-banner strong{
-  color: var(--hy-paper-ink) !important;
-}
-
-.hy-mini-banner span{
-  color: var(--hy-paper-muted) !important;
-}
-
-.hy-mini-icon{
-  background:
-    radial-gradient(circle at 0 0, rgba(255,255,255,.28), transparent 55%),
-    linear-gradient(135deg, #ffd7a8, #8bbcff, #7c6dff) !important;
-  color: #101827 !important;
-  border-color: rgba(17,24,39,.12) !important;
-}
-
-/* Cards principais: mantém a imagem escura, mas clareia a área de texto */
-.hy-card{
-  background:
-    radial-gradient(circle at 0 0, rgba(255,255,255,.45), transparent 55%),
-    linear-gradient(180deg, var(--hy-paper-soft), var(--hy-paper)) !important;
-  border-color: var(--hy-paper-border) !important;
-  box-shadow:
-    0 22px 42px rgba(0,0,0,.26),
-    0 0 28px var(--hy-paper-glow) !important;
-}
-
-.hy-card-body{
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.28), transparent);
-}
-
-.hy-card h3{
-  color: var(--hy-paper-ink) !important;
-}
-
-.hy-card p{
-  color: var(--hy-paper-text) !important;
-}
-
-.hy-card-link{
-  color: #075985 !important;
-}
-
-.hy-tag{
-  color: var(--hy-paper-ink) !important;
-  background: rgba(255, 241, 221, .92) !important;
-  border-color: rgba(17,24,39,.16) !important;
-  box-shadow: 0 8px 18px rgba(0,0,0,.16);
-}
-
-/* Arquivo Vivo */
-.hy-archive{
-  background:
-    radial-gradient(circle at 0 0, rgba(255,255,255,.50), transparent 55%),
-    linear-gradient(135deg, var(--hy-paper-soft), var(--hy-paper)) !important;
-  border-color: var(--hy-paper-border) !important;
-  box-shadow:
-    0 24px 50px rgba(0,0,0,.28),
-    0 0 30px var(--hy-paper-glow) !important;
-}
-
-.hy-archive .hy-kicker{
-  color: #9a4f00 !important;
-}
-
-.hy-archive-head h2{
-  color: var(--hy-paper-ink) !important;
-}
-
-.hy-see-all{
-  color: #075985 !important;
-}
-
-/* Entradas do arquivo */
-.hy-entry{
-  background: rgba(255,255,255,.46) !important;
-  border-color: rgba(17,24,39,.10) !important;
-}
-
-.hy-entry h3{
-  color: var(--hy-paper-ink) !important;
-}
-
-.hy-entry p{
-  color: var(--hy-paper-muted) !important;
-}
-
-.hy-date{
-  background: rgba(255, 248, 238, .75) !important;
-  border-color: rgba(17,24,39,.10) !important;
-}
-
-.hy-date strong{
-  color: var(--hy-paper-ink) !important;
-}
-
-.hy-date span{
-  color: #8a4b0f !important;
-}
-
-/* Pílulas de categoria mais legíveis */
-.hy-pill{
-  color: #075985 !important;
-  border-color: rgba(7,89,133,.24) !important;
-  background: rgba(224,242,254,.78) !important;
-}
-
-.hy-pill.purple{
-  color: #4c1d95 !important;
-  border-color: rgba(76,29,149,.22) !important;
-  background: rgba(237,233,254,.82) !important;
-}
-
-.hy-pill.blue{
-  color: #1d4ed8 !important;
-  border-color: rgba(29,78,216,.22) !important;
-  background: rgba(219,234,254,.84) !important;
-}
-
-.hy-pill.green{
-  color: #166534 !important;
-  border-color: rgba(22,101,52,.22) !important;
-  background: rgba(220,252,231,.84) !important;
-}
-
-/* Comunidade lateral */
-.hy-community{
-  background:
-    radial-gradient(circle at 0 0, rgba(255,255,255,.42), transparent 55%),
-    linear-gradient(180deg, #fff6e8, #ffe7c4) !important;
-  border-color: rgba(17,24,39,.10) !important;
-}
-
-.hy-community h3{
-  color: var(--hy-paper-ink) !important;
-}
-
-.hy-community-item strong{
-  color: #075985 !important;
-}
-
-.hy-community-item span{
-  color: var(--hy-paper-muted) !important;
-}
-
-.hy-community-avatar{
-  background: rgba(255,255,255,.55) !important;
-  border-color: rgba(17,24,39,.10) !important;
-}
-
-/* Aviso legal */
-.hy-disclaimer{
-  color: #ffd8a8 !important;
-}
   </style>
 </head>
 
@@ -1231,30 +1185,31 @@
       </div>
     </section>
 
-    <section class="hy-banner-row" id="apresentacao" aria-label="Banners de destaque">
-      <a href="#apresentacao" class="hy-mini-banner">
-        <div class="hy-mini-icon">▧</div>
-        <div>
-          <strong>banner-apresentacao-hyperborea.png</strong>
-          <span>728 × 200</span>
-        </div>
-      </a>
+    <!-- BANNER ROTATIVO ÚNICO -->
+    <section class="hy-banner-carousel" id="apresentacao" aria-label="Banners de destaque da Hyperborea">
+      <div class="hy-banner-viewport" id="hy-banner-viewport">
+        <div class="hy-banner-track" id="hy-banner-track">
 
-      <a href="#instagram" class="hy-mini-banner">
-        <div class="hy-mini-icon">◎</div>
-        <div>
-          <strong>banner-instagram-hyperborea.png</strong>
-          <span>728 × 200</span>
-        </div>
-      </a>
+          <a href="#cronicas" class="hy-banner-slide" aria-label="Conheça a Hyperborea">
+            <img src="/assets/banner-apresentacao-hyperborea.png" alt="Conheça a Hyperborea" onerror="this.parentElement.innerHTML='<div class=&quot;hy-banner-fallback&quot;><div><strong>Conheça a Hyperborea</strong><span>Arquivo vivo, jornada, crônicas e comunidade.</span></div></div>'">
+          </a>
 
-      <a href="#whatsapp" class="hy-mini-banner">
-        <div class="hy-mini-icon">☏</div>
-        <div>
-          <strong>banner-whatsapp-hyperborea.png</strong>
-          <span>728 × 200</span>
+          <a href="#instagram" class="hy-banner-slide" aria-label="Acompanhe a Hyperborea no Instagram">
+            <img src="/assets/banner-instagram-hyperborea.png" alt="Acompanhe a Hyperborea no Instagram" onerror="this.parentElement.innerHTML='<div class=&quot;hy-banner-fallback&quot;><div><strong>Instagram Hyperborea</strong><span>Prints, crônicas curtas e bastidores do projeto.</span></div></div>'">
+          </a>
+
+          <a href="#whatsapp" class="hy-banner-slide" aria-label="Entre no futuro grupo da Hyperborea">
+            <img src="/assets/banner-whatsapp-hyperborea.png" alt="Grupo WhatsApp Hyperborea" onerror="this.parentElement.innerHTML='<div class=&quot;hy-banner-fallback&quot;><div><strong>Comunidade Hyperborea</strong><span>Futuro grupo para jornada, liga e comunidade.</span></div></div>'">
+          </a>
+
         </div>
-      </a>
+
+        <div class="hy-banner-controls" id="hy-banner-controls" aria-label="Controle dos banners">
+          <button class="hy-banner-dot is-active" type="button" data-index="0" aria-label="Banner 1"></button>
+          <button class="hy-banner-dot" type="button" data-index="1" aria-label="Banner 2"></button>
+          <button class="hy-banner-dot" type="button" data-index="2" aria-label="Banner 3"></button>
+        </div>
+      </div>
     </section>
 
     <section class="hy-section">
@@ -1492,6 +1447,81 @@
         }
       });
     }
+
+    const bannerTrack = document.getElementById('hy-banner-track');
+    const bannerViewport = document.getElementById('hy-banner-viewport');
+    const bannerDots = Array.from(document.querySelectorAll('.hy-banner-dot'));
+    const bannerSlides = bannerTrack ? Array.from(bannerTrack.querySelectorAll('.hy-banner-slide')) : [];
+
+    let bannerIndex = 0;
+    let bannerTimer = null;
+    let bannerStartX = 0;
+    let bannerIsSwiping = false;
+
+    function goToBanner(index){
+      if(!bannerTrack || bannerSlides.length === 0) return;
+
+      bannerIndex = (index + bannerSlides.length) % bannerSlides.length;
+      bannerTrack.style.transform = `translateX(-${bannerIndex * 100}%)`;
+
+      bannerDots.forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === bannerIndex);
+      });
+    }
+
+    function startBannerLoop(){
+      stopBannerLoop();
+      bannerTimer = setInterval(() => {
+        goToBanner(bannerIndex + 1);
+      }, 7000);
+    }
+
+    function stopBannerLoop(){
+      if(bannerTimer){
+        clearInterval(bannerTimer);
+        bannerTimer = null;
+      }
+    }
+
+    bannerDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = Number(dot.getAttribute('data-index') || 0);
+        goToBanner(index);
+        startBannerLoop();
+      });
+    });
+
+    if(bannerViewport){
+      bannerViewport.addEventListener('touchstart', (event) => {
+        if(event.touches.length !== 1) return;
+        bannerStartX = event.touches[0].clientX;
+        bannerIsSwiping = true;
+        stopBannerLoop();
+      }, { passive: true });
+
+      bannerViewport.addEventListener('touchend', (event) => {
+        if(!bannerIsSwiping) return;
+
+        const endX = event.changedTouches[0].clientX;
+        const deltaX = endX - bannerStartX;
+        const threshold = 42;
+
+        if(deltaX > threshold){
+          goToBanner(bannerIndex - 1);
+        } else if(deltaX < -threshold){
+          goToBanner(bannerIndex + 1);
+        }
+
+        bannerIsSwiping = false;
+        startBannerLoop();
+      }, { passive: true });
+
+      bannerViewport.addEventListener('mouseenter', stopBannerLoop);
+      bannerViewport.addEventListener('mouseleave', startBannerLoop);
+    }
+
+    goToBanner(0);
+    startBannerLoop();
   </script>
 
 </body>
