@@ -4,327 +4,1547 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Hyperborea | Jornadas Colecionáveis</title>
-
-  <meta name="description" content="Hyperborea é um portal independente sobre colecionismo com propósito, memória, preservação de jornadas, guias, eventos e histórias colecionáveis." />
+  <title>La Maggiê | Artesanato com carinho</title>
+  <meta name="description" content="Artesanatos, toalhas e presentes feitos com carinho pela La Maggiê. Encomendas pelo WhatsApp, Mercado Livre e Shopee." />
 
   <style>
-    :root {
-      --bg: #0b1020;
-      --card: #151b2e;
-      --card-soft: #1d263d;
-      --text: #f5f0e8;
-      --muted: #c9bfae;
-      --gold: #d6a84f;
-      --blue: #6aa7ff;
-      --border: rgba(255,255,255,0.12);
-      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+    /* =========================================================
+       LA MAGGIÊ - HTML INLINE COMPLETO
+       Versão sem bloco inicial de botões
+       Pronto para GitHub + Vercel
+       Troque apenas:
+       - CAMINHO-LOGO-CABECALHO.png
+       - CAMINHO-BANNER-BODY.jpg
+       - CAMINHO-MINI-BANNER-1.jpg / 2 / 3
+       - links de Mercado Livre, Shopee e WhatsApp
+       ========================================================= */
+
+    :root{
+      --lm-creme:#FFF9F0;
+      --lm-creme-claro:#FFFDF8;
+      --lm-rosa:#E7A0A3;
+      --lm-coral:#D96F6F;
+      --lm-vinho:#B23033;
+      --lm-vinho-escuro:#8E252A;
+      --lm-marrom:#4A2E2A;
+      --lm-texto-suave:#7A5B55;
+      --lm-borda:rgba(178,48,51,.16);
+      --lm-sombra:0 18px 45px rgba(178,48,51,.12);
+      --lm-sombra-forte:0 24px 70px rgba(142,37,42,.18);
+      --lm-radius:28px;
+      --lm-container:1180px;
+      --lm-font:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      min-height:100vh;
       background:
-        radial-gradient(circle at top, rgba(106,167,255,0.20), transparent 35%),
-        linear-gradient(180deg, #0b1020 0%, #11182b 55%, #090d18 100%);
-      color: var(--text);
-      line-height: 1.6;
+        radial-gradient(circle at top left, rgba(231,160,163,.22), transparent 34rem),
+        radial-gradient(circle at 88% 16%, rgba(217,111,111,.12), transparent 28rem),
+        linear-gradient(180deg, var(--lm-creme-claro) 0%, var(--lm-creme) 48%, #fff3ea 100%);
+      color:var(--lm-marrom);
+      font-family:var(--lm-font);
+      overflow-x:hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
-    .page {
-      width: min(1120px, 100%);
-      margin: 0 auto;
-      padding: 22px;
+    img{
+      display:block;
+      max-width:100%;
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0 34px;
+    button,
+    input{
+      font:inherit;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    ::selection{
+      background:rgba(217,111,111,.24);
+      color:var(--lm-vinho-escuro);
     }
 
-    .brand strong {
-      font-size: 1.15rem;
-      letter-spacing: 0.08em;
-      color: var(--gold);
-      text-transform: uppercase;
+    .lm-page{
+      position:relative;
+      isolation:isolate;
     }
 
-    .brand span {
-      font-size: 0.85rem;
-      color: var(--muted);
+    .lm-page::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      pointer-events:none;
+      background-image:
+        linear-gradient(rgba(178,48,51,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(178,48,51,.035) 1px, transparent 1px);
+      background-size:44px 44px;
+      mask-image:linear-gradient(to bottom, rgba(0,0,0,.38), transparent 70%);
     }
 
-    .pill {
-      border: 1px solid var(--border);
-      padding: 8px 12px;
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.82rem;
-      background: rgba(255,255,255,0.04);
+    .lm-container{
+      width:min(100% - 32px, var(--lm-container));
+      margin:0 auto;
     }
 
-    .hero {
-      padding: 34px 0 38px;
+    .lm-pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:34px;
+      padding:7px 13px;
+      border:1px solid rgba(178,48,51,.15);
+      border-radius:999px;
+      background:rgba(255,253,248,.76);
+      color:var(--lm-vinho-escuro);
+      font-size:13px;
+      font-weight:800;
+      box-shadow:0 8px 20px rgba(178,48,51,.06);
+      backdrop-filter:blur(10px);
     }
 
-    .hero-card {
-      background: linear-gradient(145deg, rgba(21,27,46,0.96), rgba(29,38,61,0.88));
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      border-radius: 28px;
-      padding: 30px 24px;
-      overflow: hidden;
-      position: relative;
+    .lm-pill span{
+      display:inline-flex;
+      width:9px;
+      height:9px;
+      border-radius:50%;
+      background:var(--lm-coral);
+      box-shadow:0 0 0 6px rgba(217,111,111,.13);
     }
 
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: -80px -80px auto auto;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: rgba(214,168,79,0.18);
-      filter: blur(8px);
+    /* =========================================================
+       CABEÇALHO
+       ========================================================= */
+
+    .lm-header{
+      position:sticky;
+      top:0;
+      z-index:100;
+      background:rgba(255,253,248,.86);
+      border-bottom:1px solid rgba(178,48,51,.13);
+      box-shadow:0 10px 32px rgba(178,48,51,.07);
+      backdrop-filter:blur(18px);
     }
 
-    .kicker {
-      color: var(--blue);
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      margin-bottom: 14px;
-      position: relative;
+    .lm-header__bar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      min-height:82px;
+      padding:12px 0;
     }
 
-    h1 {
-      font-size: clamp(2rem, 9vw, 4.6rem);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-      margin-bottom: 18px;
-      position: relative;
+    .lm-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
     }
 
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 780px;
-      position: relative;
+    .lm-brand__logo{
+      width:auto;
+      max-width:220px;
+      max-height:60px;
+      object-fit:contain;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-      position: relative;
+    .lm-brand__fallback{
+      display:none;
+      line-height:1;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: 0.92rem;
+    .lm-brand__name{
+      display:block;
+      color:var(--lm-vinho-escuro);
+      font-size:28px;
+      font-weight:950;
+      letter-spacing:-.8px;
     }
 
-    .btn-primary {
-      background: var(--gold);
-      color: #17110a;
+    .lm-brand__tagline{
+      display:block;
+      margin-top:5px;
+      color:var(--lm-texto-suave);
+      font-size:13px;
+      font-weight:750;
     }
 
-    .btn-secondary {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: rgba(255,255,255,0.05);
+    .lm-nav{
+      display:flex;
+      align-items:center;
+      gap:6px;
     }
 
-    section {
-      padding: 22px 0;
+    .lm-nav a{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 14px;
+      border-radius:999px;
+      color:var(--lm-vinho-escuro);
+      font-size:14px;
+      font-weight:850;
+      transition:background .2s ease, color .2s ease, transform .2s ease;
     }
 
-    .section-title {
-      font-size: 1.45rem;
-      margin-bottom: 14px;
-      color: var(--gold);
+    .lm-nav a:hover{
+      background:#FFF0EC;
+      color:var(--lm-vinho);
+      transform:translateY(-1px);
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
+    .lm-header__actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
     }
 
-    .card {
-      background: rgba(21,27,46,0.78);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 20px;
+    .lm-menu-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border:0;
+      border-radius:16px;
+      background:linear-gradient(180deg,var(--lm-coral),var(--lm-vinho));
+      color:#fff;
+      cursor:pointer;
+      box-shadow:0 12px 28px rgba(178,48,51,.2);
     }
 
-    .card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 8px;
+    .lm-menu-toggle span{
+      display:block;
+      font-size:24px;
+      line-height:1;
+      transform:translateY(-1px);
     }
 
-    .card p {
-      color: var(--muted);
-      font-size: 0.95rem;
+    /* =========================================================
+       BOTÕES COM JS / EFEITOS
+       ========================================================= */
+
+    .lm-btn{
+      --btn-x:50%;
+      --btn-y:50%;
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      min-height:48px;
+      padding:0 18px;
+      overflow:hidden;
+      border:0;
+      border-radius:999px;
+      background:linear-gradient(180deg,var(--lm-coral),var(--lm-vinho));
+      color:#fff;
+      font-weight:900;
+      font-size:14px;
+      letter-spacing:.1px;
+      cursor:pointer;
+      box-shadow:0 12px 26px rgba(178,48,51,.2);
+      transform:translateZ(0);
+      transition:transform .22s ease, box-shadow .22s ease, filter .22s ease;
     }
 
-    .manifesto {
-      background: rgba(255,255,255,0.04);
-      border-left: 4px solid var(--gold);
-      padding: 20px;
-      border-radius: 18px;
-      color: var(--text);
+    .lm-btn::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:radial-gradient(circle at var(--btn-x) var(--btn-y), rgba(255,255,255,.38), transparent 28%);
+      opacity:0;
+      transition:opacity .22s ease;
     }
 
-    .manifesto p + p {
-      margin-top: 14px;
+    .lm-btn::after{
+      content:"";
+      position:absolute;
+      width:18px;
+      height:18px;
+      border-radius:50%;
+      left:var(--btn-x);
+      top:var(--btn-y);
+      background:rgba(255,255,255,.34);
+      transform:translate(-50%,-50%) scale(0);
+      opacity:0;
+      pointer-events:none;
     }
 
-    footer {
-      padding: 34px 0 20px;
-      color: var(--muted);
-      font-size: 0.85rem;
-      text-align: center;
+    .lm-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 34px rgba(178,48,51,.26);
+      filter:saturate(1.04);
     }
 
-    @media (min-width: 760px) {
-      .grid {
-        grid-template-columns: repeat(3, 1fr);
+    .lm-btn:hover::before{
+      opacity:1;
+    }
+
+    .lm-btn:active{
+      transform:translateY(0) scale(.98);
+    }
+
+    .lm-btn.is-rippling::after{
+      animation:lmRipple .52s ease-out;
+    }
+
+    .lm-btn--light{
+      background:#FFFDF8;
+      color:var(--lm-vinho-escuro);
+      border:1px solid rgba(178,48,51,.18);
+      box-shadow:0 10px 24px rgba(178,48,51,.09);
+    }
+
+    .lm-btn--outline{
+      background:rgba(255,253,248,.7);
+      color:var(--lm-vinho-escuro);
+      border:1px solid rgba(178,48,51,.2);
+      box-shadow:0 10px 24px rgba(178,48,51,.08);
+      backdrop-filter:blur(10px);
+    }
+
+    .lm-btn--ml{
+      background:linear-gradient(180deg,#FFE56A,#F7C948);
+      color:#5F4700;
+    }
+
+    .lm-btn--shopee{
+      background:linear-gradient(180deg,#FF7B4A,#EE4D2D);
+      color:#fff;
+    }
+
+    .lm-btn--whatsapp{
+      background:linear-gradient(180deg,#35D878,#159C51);
+      color:#fff;
+    }
+
+    .lm-btn__icon{
+      position:relative;
+      z-index:1;
+      display:inline-grid;
+      place-items:center;
+      width:22px;
+      height:22px;
+      border-radius:999px;
+      background:rgba(255,255,255,.2);
+      font-size:13px;
+      line-height:1;
+    }
+
+    .lm-btn__text{
+      position:relative;
+      z-index:1;
+      white-space:nowrap;
+    }
+
+    @keyframes lmRipple{
+      0%{transform:translate(-50%,-50%) scale(0); opacity:.65;}
+      100%{transform:translate(-50%,-50%) scale(18); opacity:0;}
+    }
+
+    /* =========================================================
+       BANNER PRINCIPAL - INÍCIO LIMPO
+       ========================================================= */
+
+    .lm-top-banner{
+      padding:28px 0 8px;
+    }
+
+    .lm-top-banner__box{
+      position:relative;
+      min-height:420px;
+      border-radius:32px;
+      overflow:hidden;
+      border:1px solid rgba(178,48,51,.14);
+      background:
+        linear-gradient(180deg, rgba(255,253,248,.03), rgba(74,46,42,.34)),
+        url("CAMINHO-BANNER-BODY.jpg");
+      background-size:cover;
+      background-position:center;
+      box-shadow:var(--lm-sombra-forte);
+    }
+
+    .lm-top-banner__box::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(74,46,42,.34), transparent 48%),
+        radial-gradient(circle at 72% 18%, rgba(255,255,255,.16), transparent 18rem);
+      pointer-events:none;
+    }
+
+    .lm-top-banner__label{
+      position:absolute;
+      left:24px;
+      bottom:24px;
+      max-width:440px;
+      padding:18px 20px;
+      border-radius:24px;
+      border:1px solid rgba(255,255,255,.24);
+      background:rgba(255,253,248,.88);
+      box-shadow:0 18px 40px rgba(74,46,42,.16);
+      backdrop-filter:blur(18px);
+    }
+
+    .lm-top-banner__label span{
+      display:block;
+      color:var(--lm-coral);
+      font-size:12px;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.9px;
+    }
+
+    .lm-top-banner__label strong{
+      display:block;
+      margin-top:6px;
+      color:var(--lm-vinho-escuro);
+      font-size:clamp(22px,3vw,34px);
+      line-height:1.05;
+      font-weight:1000;
+      letter-spacing:-.8px;
+    }
+
+    .lm-top-banner__label small{
+      display:block;
+      margin-top:8px;
+      color:var(--lm-texto-suave);
+      font-size:14px;
+      line-height:1.45;
+      font-weight:700;
+    }
+
+    /* =========================================================
+       AVISO
+       ========================================================= */
+
+    .lm-alert{
+      margin:8px auto 26px;
+      padding:14px 18px;
+      border-left:5px solid var(--lm-vinho);
+      border-radius:18px;
+      background:rgba(255,253,248,.9);
+      color:var(--lm-marrom);
+      text-align:center;
+      font-size:15px;
+      font-weight:850;
+      line-height:1.5;
+      box-shadow:0 12px 28px rgba(178,48,51,.08);
+    }
+
+    .lm-alert strong{
+      color:var(--lm-vinho);
+      font-weight:950;
+    }
+
+    /* =========================================================
+       MINI BANNERS / CARDS
+       ========================================================= */
+
+    .lm-mini{
+      padding:16px 0 22px;
+    }
+
+    .lm-mini__grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    .lm-mini-card{
+      position:relative;
+      min-height:260px;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(178,48,51,.14);
+      background:
+        linear-gradient(180deg, rgba(255,253,248,.08), rgba(74,46,42,.42)),
+        var(--mini-bg);
+      background-size:cover;
+      background-position:center;
+      box-shadow:0 14px 34px rgba(178,48,51,.1);
+      transform-style:preserve-3d;
+      transition:transform .22s ease, box-shadow .22s ease;
+    }
+
+    .lm-mini-card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(255,253,248,.12), rgba(74,46,42,.56));
+      pointer-events:none;
+    }
+
+    .lm-mini-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 48px rgba(178,48,51,.16);
+    }
+
+    .lm-mini-card__content{
+      position:absolute;
+      inset:auto 16px 16px 16px;
+      padding:16px;
+      border-radius:20px;
+      background:rgba(255,253,248,.88);
+      backdrop-filter:blur(14px);
+      box-shadow:0 14px 30px rgba(74,46,42,.12);
+    }
+
+    .lm-mini-card__content span{
+      display:block;
+      color:var(--lm-coral);
+      font-size:12px;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.9px;
+    }
+
+    .lm-mini-card__content strong{
+      display:block;
+      margin-top:5px;
+      color:var(--lm-vinho-escuro);
+      font-size:19px;
+      line-height:1.12;
+      font-weight:1000;
+    }
+
+    /* =========================================================
+       SEÇÕES GERAIS
+       ========================================================= */
+
+    .lm-section{
+      padding:54px 0;
+    }
+
+    .lm-section__head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:22px;
+      margin-bottom:24px;
+    }
+
+    .lm-section__title{
+      max-width:740px;
+    }
+
+    .lm-section__title h2{
+      color:var(--lm-vinho-escuro);
+      font-size:clamp(30px, 4vw, 48px);
+      line-height:1;
+      letter-spacing:-1.4px;
+      font-weight:1000;
+    }
+
+    .lm-section__title p{
+      margin-top:12px;
+      color:var(--lm-texto-suave);
+      font-size:17px;
+      line-height:1.65;
+      font-weight:620;
+    }
+
+    .lm-products{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .lm-product{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      min-height:360px;
+      padding:12px;
+      border:1px solid rgba(178,48,51,.14);
+      border-radius:24px;
+      background:linear-gradient(180deg,#fff,#FFFDF8);
+      box-shadow:0 12px 30px rgba(178,48,51,.08);
+      overflow:hidden;
+      transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .lm-product:hover{
+      transform:translateY(-4px);
+      border-color:rgba(217,111,111,.42);
+      box-shadow:0 20px 48px rgba(178,48,51,.14);
+    }
+
+    .lm-product__image{
+      display:grid;
+      place-items:center;
+      height:178px;
+      border-radius:18px;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(231,160,163,.25), transparent 42%),
+        linear-gradient(180deg,#fff,#FFF7EF);
+      color:rgba(142,37,42,.62);
+      text-align:center;
+      padding:18px;
+      font-size:14px;
+      font-weight:900;
+      line-height:1.35;
+      border:1px solid rgba(217,111,111,.12);
+    }
+
+    .lm-product__body{
+      display:flex;
+      flex-direction:column;
+      flex:1;
+      padding:14px 4px 2px;
+    }
+
+    .lm-product__tag{
+      width:max-content;
+      margin-bottom:9px;
+      padding:5px 9px;
+      border-radius:999px;
+      background:#FFF0EC;
+      color:var(--lm-vinho);
+      font-size:11px;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.5px;
+    }
+
+    .lm-product h3{
+      color:var(--lm-marrom);
+      font-size:17px;
+      line-height:1.25;
+      font-weight:950;
+    }
+
+    .lm-product p{
+      margin-top:8px;
+      color:var(--lm-texto-suave);
+      font-size:14px;
+      line-height:1.48;
+      font-weight:600;
+    }
+
+    .lm-product__bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:auto;
+      padding-top:14px;
+    }
+
+    .lm-product__price{
+      color:var(--lm-vinho);
+      font-size:18px;
+      font-weight:1000;
+    }
+
+    .lm-small-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:42px;
+      height:42px;
+      border-radius:15px;
+      background:linear-gradient(180deg,var(--lm-coral),var(--lm-vinho));
+      color:#fff;
+      font-weight:1000;
+      box-shadow:0 10px 22px rgba(178,48,51,.18);
+      transition:transform .2s ease;
+    }
+
+    .lm-small-btn:hover{
+      transform:translateY(-2px) rotate(-2deg);
+    }
+
+    /* =========================================================
+       MARKETPLACES
+       ========================================================= */
+
+    .lm-market{
+      position:relative;
+      overflow:hidden;
+      border-radius:32px;
+      border:1px solid rgba(178,48,51,.14);
+      background:
+        radial-gradient(circle at 12% 20%, rgba(231,160,163,.28), transparent 26rem),
+        linear-gradient(135deg,#FFFDF8,#FFF0EC);
+      box-shadow:var(--lm-sombra);
+      padding:34px;
+    }
+
+    .lm-market::after{
+      content:"";
+      position:absolute;
+      width:280px;
+      height:280px;
+      right:-120px;
+      top:-130px;
+      border-radius:50%;
+      background:rgba(217,111,111,.12);
+      pointer-events:none;
+    }
+
+    .lm-market__grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:.95fr 1.05fr;
+      gap:22px;
+      align-items:center;
+    }
+
+    .lm-market__text h2{
+      color:var(--lm-vinho-escuro);
+      font-size:clamp(30px,4vw,48px);
+      line-height:1.02;
+      letter-spacing:-1.2px;
+      font-weight:1000;
+    }
+
+    .lm-market__text p{
+      margin-top:12px;
+      color:var(--lm-texto-suave);
+      font-size:17px;
+      line-height:1.65;
+      font-weight:620;
+    }
+
+    .lm-market__buttons{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    .lm-market__buttons .lm-btn{
+      width:100%;
+      min-height:58px;
+      justify-content:flex-start;
+      padding-inline:20px;
+      font-size:15px;
+    }
+
+    /* =========================================================
+       SOBRE / MOMENTOS
+       ========================================================= */
+
+    .lm-about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .lm-about__card{
+      min-height:330px;
+      padding:30px;
+      border-radius:28px;
+      border:1px solid rgba(178,48,51,.14);
+      background:rgba(255,253,248,.88);
+      box-shadow:0 14px 34px rgba(178,48,51,.08);
+      overflow:hidden;
+    }
+
+    .lm-about__card--dark{
+      background:
+        radial-gradient(circle at 12% 10%, rgba(255,255,255,.17), transparent 18rem),
+        linear-gradient(135deg,var(--lm-vinho),var(--lm-vinho-escuro));
+      color:#fff;
+    }
+
+    .lm-about__card h2,
+    .lm-about__card h3{
+      font-size:clamp(26px,3vw,38px);
+      line-height:1.04;
+      letter-spacing:-.9px;
+      font-weight:1000;
+    }
+
+    .lm-about__card p{
+      margin-top:14px;
+      font-size:16px;
+      line-height:1.72;
+      font-weight:620;
+      color:var(--lm-texto-suave);
+    }
+
+    .lm-about__card--dark p{
+      color:#FFE7DF;
+    }
+
+    .lm-moments{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .lm-moment{
+      min-height:150px;
+      border-radius:22px;
+      background:
+        linear-gradient(180deg, rgba(255,253,248,.25), rgba(74,46,42,.16)),
+        radial-gradient(circle at 40% 20%, rgba(231,160,163,.32), transparent 50%),
+        #FFF0EC;
+      border:1px solid rgba(178,48,51,.12);
+      display:grid;
+      place-items:center;
+      color:rgba(142,37,42,.64);
+      text-align:center;
+      padding:18px;
+      font-size:13px;
+      font-weight:900;
+      line-height:1.35;
+    }
+
+    /* =========================================================
+       RODAPÉ
+       ========================================================= */
+
+    .lm-footer{
+      margin-top:34px;
+      background:
+        radial-gradient(circle at 16% 0%, rgba(255,231,223,.13), transparent 22rem),
+        linear-gradient(180deg,var(--lm-vinho-escuro),#6F1D22);
+      color:#FFFDF8;
+    }
+
+    .lm-footer__grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      gap:24px;
+      padding:34px 0;
+    }
+
+    .lm-footer h2,
+    .lm-footer h3{
+      font-size:20px;
+      font-weight:1000;
+      letter-spacing:-.3px;
+    }
+
+    .lm-footer p,
+    .lm-footer a{
+      color:#FFE7DF;
+      font-size:14px;
+      line-height:1.6;
+      font-weight:620;
+    }
+
+    .lm-footer p{
+      margin-top:10px;
+      max-width:500px;
+    }
+
+    .lm-footer ul{
+      margin-top:12px;
+      list-style:none;
+      display:grid;
+      gap:8px;
+    }
+
+    .lm-footer a:hover{
+      color:#fff;
+      text-decoration:underline;
+      text-underline-offset:4px;
+    }
+
+    .lm-footer__bottom{
+      border-top:1px solid rgba(255,255,255,.16);
+      padding:14px 0;
+      color:#FFE7DF;
+      font-size:12px;
+      line-height:1.5;
+      font-weight:650;
+      text-align:center;
+    }
+
+    /* =========================================================
+       WHATSAPP FLUTUANTE
+       ========================================================= */
+
+    .lm-whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:120;
+      display:grid;
+      place-items:center;
+      width:64px;
+      height:64px;
+      border-radius:999px;
+      background:linear-gradient(180deg,#35D878,#159C51);
+      color:#fff;
+      border:3px solid #FFFDF8;
+      box-shadow:0 16px 34px rgba(21,156,81,.28);
+      font-size:27px;
+      font-weight:1000;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .lm-whatsapp-float:hover{
+      transform:translateY(-3px) scale(1.04);
+      box-shadow:0 22px 46px rgba(21,156,81,.34);
+    }
+
+    .lm-whatsapp-float::before{
+      content:"☘";
+      transform:rotate(-8deg);
+    }
+
+    .lm-scroll-top{
+      position:fixed;
+      right:18px;
+      bottom:92px;
+      z-index:119;
+      display:grid;
+      place-items:center;
+      width:46px;
+      height:46px;
+      border:0;
+      border-radius:999px;
+      background:#FFFDF8;
+      color:var(--lm-vinho-escuro);
+      box-shadow:0 12px 28px rgba(178,48,51,.14);
+      cursor:pointer;
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(8px);
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .lm-scroll-top.is-visible{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0);
+    }
+
+    /* =========================================================
+       ANIMAÇÕES DE ENTRADA
+       ========================================================= */
+
+    .lm-reveal{
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .lm-reveal.is-visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* =========================================================
+       MOBILE / TABLET
+       ========================================================= */
+
+    @media (max-width:980px){
+      .lm-header__bar{
+        min-height:72px;
       }
 
-      .hero-card {
-        padding: 48px;
+      .lm-nav{
+        position:fixed;
+        inset:72px 14px auto 14px;
+        display:grid;
+        gap:8px;
+        padding:14px;
+        border:1px solid rgba(178,48,51,.16);
+        border-radius:24px;
+        background:rgba(255,253,248,.96);
+        box-shadow:0 24px 70px rgba(74,46,42,.16);
+        backdrop-filter:blur(18px);
+        transform:translateY(-14px);
+        opacity:0;
+        pointer-events:none;
+        transition:opacity .2s ease, transform .2s ease;
+      }
+
+      .lm-nav.is-open{
+        transform:translateY(0);
+        opacity:1;
+        pointer-events:auto;
+      }
+
+      .lm-nav a{
+        justify-content:flex-start;
+        width:100%;
+        min-height:48px;
+        padding:0 16px;
+        background:#FFF9F0;
+      }
+
+      .lm-header__actions .lm-btn--light{
+        display:none;
+      }
+
+      .lm-menu-toggle{
+        display:grid;
+        place-items:center;
+      }
+
+      .lm-market__grid,
+      .lm-about{
+        grid-template-columns:1fr;
+      }
+
+      .lm-products{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .lm-footer__grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width:720px){
+      .lm-container{
+        width:min(100% - 24px, var(--lm-container));
+      }
+
+      .lm-header__bar{
+        gap:10px;
+      }
+
+      .lm-brand__logo{
+        max-width:168px;
+        max-height:52px;
+      }
+
+      .lm-brand__name{
+        font-size:22px;
+      }
+
+      .lm-brand__tagline{
+        display:none;
+      }
+
+      .lm-alert{
+        margin-top:6px;
+        font-size:13px;
+        border-radius:16px;
+      }
+
+
+      .lm-top-banner{
+        padding:20px 0 6px;
+      }
+
+      .lm-top-banner__box{
+        min-height:300px;
+        border-radius:24px;
+      }
+
+      .lm-top-banner__label{
+        left:14px;
+        right:14px;
+        bottom:14px;
+        padding:15px 16px;
+        border-radius:20px;
+      }
+
+      .lm-top-banner__label small{
+        font-size:13px;
+      }
+
+      .lm-mini{
+        padding:14px 0 18px;
+      }
+
+      .lm-mini__grid{
+        grid-template-columns:1fr;
+      }
+
+      .lm-mini-card{
+        min-height:230px;
+      }
+
+      .lm-section{
+        padding:38px 0;
+      }
+
+      .lm-section__head{
+        display:grid;
+        gap:14px;
+      }
+
+      .lm-products{
+        grid-template-columns:1fr;
+      }
+
+      .lm-product{
+        min-height:auto;
+      }
+
+      .lm-market{
+        padding:24px 16px;
+        border-radius:24px;
+      }
+
+      .lm-about__card{
+        padding:24px 18px;
+        border-radius:24px;
+      }
+
+      .lm-moments{
+        grid-template-columns:1fr;
+      }
+
+      .lm-footer__grid{
+        padding:28px 0;
+      }
+
+      .lm-whatsapp-float{
+        right:14px;
+        bottom:14px;
+        width:58px;
+        height:58px;
+        font-size:24px;
+      }
+
+      .lm-scroll-top{
+        right:14px;
+        bottom:84px;
+      }
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      *,
+      *::before,
+      *::after{
+        scroll-behavior:auto !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <header>
-      <div class="brand">
-        <strong>Hyperborea</strong>
-        <span>Jornadas colecionáveis</span>
-      </div>
+  <div class="lm-page">
 
-      <div class="pill">Portal independente</div>
+    <!-- =====================================================
+         CABEÇALHO
+         Troque o src abaixo pelo caminho do logo do cabeçalho.
+         Exemplo: ./assets/logo-cabecalho.png
+         ===================================================== -->
+    <header class="lm-header">
+      <div class="lm-container">
+        <div class="lm-header__bar">
+          <a class="lm-brand" href="#inicio" aria-label="Ir para o início da La Maggiê">
+            <img
+              class="lm-brand__logo"
+              src="CAMINHO-LOGO-CABECALHO.png"
+              alt="La Maggiê"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+            />
+            <span class="lm-brand__fallback">
+              <span class="lm-brand__name">La Maggiê</span>
+              <span class="lm-brand__tagline">Artesanato com carinho</span>
+            </span>
+          </a>
+
+          <nav class="lm-nav" id="lmNav" aria-label="Menu principal">
+            <a href="#artesanato">Artesanato</a>
+            <a href="#toalhas">Toalhas</a>
+            <a href="#presentes">Presentes</a>
+            <a href="#marketplaces">Comprar</a>
+            <a href="#contato">Contato</a>
+          </nav>
+
+          <div class="lm-header__actions">
+            <a class="lm-btn lm-btn--light" href="https://wa.me/55SEUDDDSEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20La%20Maggi%C3%AA%20e%20gostaria%20de%20fazer%20uma%20encomenda." target="_blank" rel="noopener">
+              <span class="lm-btn__icon">♥</span>
+              <span class="lm-btn__text">Encomendar</span>
+            </a>
+
+            <button class="lm-menu-toggle" id="lmMenuToggle" type="button" aria-label="Abrir menu" aria-controls="lmNav" aria-expanded="false">
+              <span>☰</span>
+            </button>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-card">
-          <div class="kicker">Colecionar com propósito</div>
+    <main id="inicio">
 
-          <h1>Guardar hoje o que amanhã alguém vai querer conhecer.</h1>
-
-          <p>
-            A Hyperborea nasce para lembrar que coleções não são apenas objetos.
-            São memórias, rituais, vínculos, conquistas e pequenos portais para
-            histórias que merecem atravessar o tempo.
-          </p>
-
-          <div class="actions">
-            <a class="btn btn-primary" href="#manifesto">Ler manifesto</a>
-            <a class="btn btn-secondary" href="#caminhos">Explorar caminhos</a>
+      <!-- =====================================================
+           BANNER PRINCIPAL
+           Troque CAMINHO-BANNER-BODY.jpg pelo caminho do banner.
+           Exemplo: ./assets/banner-principal.jpg
+           ===================================================== -->
+      <section class="lm-top-banner" aria-label="Banner principal da La Maggiê">
+        <div class="lm-container">
+          <div class="lm-top-banner__box lm-reveal">
+            <div class="lm-top-banner__label">
+              <span>La Maggiê</span>
+              <strong>Artesanato com carinho</strong>
+              <small>CAMINHO-BANNER-BODY.jpg — coloque aqui o banner principal da home.</small>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="manifesto">
-        <h2 class="section-title">Manifesto</h2>
+      <!-- =====================================================
+           MINI BANNERS
+           Troque as imagens no CSS inline abaixo.
+           ===================================================== -->
+      <section class="lm-mini" aria-label="Categorias em destaque">
+        <div class="lm-container">
+          <div class="lm-mini__grid">
 
-        <div class="manifesto">
-          <p>
-            Todo colecionador tem uma origem. Às vezes começa com uma figurinha
-            tirada do bolso por alguém amado. Às vezes com um álbum colado no chão
-            da sala, um card trocado no recreio, um time de botão, uma miniatura,
-            uma vitrine improvisada ou um objeto que ninguém entende completamente —
-            exceto quem viveu aquela história.
-          </p>
+            <a class="lm-mini-card lm-reveal" href="#artesanato" style="--mini-bg:url('CAMINHO-MINI-BANNER-1.jpg');">
+              <div class="lm-mini-card__content">
+                <span>Categoria</span>
+                <strong>Artesanato afetivo</strong>
+              </div>
+            </a>
 
-          <p>
-            Às vezes a coleção se perde. Mas a jornada permanece.
-          </p>
+            <a class="lm-mini-card lm-reveal" href="#toalhas" style="--mini-bg:url('CAMINHO-MINI-BANNER-2.jpg');">
+              <div class="lm-mini-card__content">
+                <span>Peças especiais</span>
+                <strong>Toalhas e detalhes</strong>
+              </div>
+            </a>
 
-          <p>
-            A Hyperborea existe para ajudar colecionadores a registrar, proteger,
-            organizar e compartilhar suas jornadas com propósito, para que a próxima
-            geração não encontre apenas caixas esquecidas, mas histórias vivas.
-          </p>
+            <a class="lm-mini-card lm-reveal" href="#presentes" style="--mini-bg:url('CAMINHO-MINI-BANNER-3.jpg');">
+              <div class="lm-mini-card__content">
+                <span>Presentes</span>
+                <strong>Embalagens com carinho</strong>
+              </div>
+            </a>
+
+          </div>
         </div>
       </section>
 
-      <section id="caminhos">
-        <h2 class="section-title">Caminhos do portal</h2>
 
-        <div class="grid">
-          <article class="card">
-            <h3>Arquivo do Colecionador</h3>
-            <p>
-              Guias para registrar coleções, preservar memórias, organizar álbuns,
-              cards, miniaturas, jogos de botão e relíquias afetivas.
-            </p>
-          </article>
 
-          <article class="card">
-            <h3>Proteção e Exposição</h3>
-            <p>
-              Ideias para vitrines, acrílicos, quadros, sleeves, fichários, caixas,
-              suportes e formas de proteger cada jornada.
-            </p>
-          </article>
+      <div class="lm-container">
+        <div class="lm-alert lm-reveal" role="note">
+          <strong>Pedido mínimo:</strong> R$ 40,00 + frete a pagar
+        </div>
+      </div>
 
-          <article class="card">
-            <h3>Novidades PiraBloco®</h3>
-            <p>
-              Uma ponte para peças, acessórios e minifiguras que ajudam colecionadores
-              a completar pequenas cenas, personagens e histórias.
-            </p>
-          </article>
+      <!-- =====================================================
+           VITRINE
+           Aqui são cards estáticos para landing page.
+           Depois você pode trocar por produtos reais.
+           ===================================================== -->
+      <section class="lm-section" id="artesanato">
+        <div class="lm-container">
+          <div class="lm-section__head lm-reveal">
+            <div class="lm-section__title">
+              <h2>Uma vitrine delicada para encantar logo de cara.</h2>
+              <p>Cards responsivos com visual artesanal, sombra suave e botão de ação. Dá para usar como home, catálogo simples ou página de apoio para marketplaces.</p>
+            </div>
+            <a class="lm-btn lm-btn--outline" href="#marketplaces">
+              <span class="lm-btn__icon">↓</span>
+              <span class="lm-btn__text">Ver onde comprar</span>
+            </a>
+          </div>
+
+          <div class="lm-products">
+            <article class="lm-product lm-reveal">
+              <div class="lm-product__image">CAMINHO-IMAGEM-PRODUTO-1.jpg</div>
+              <div class="lm-product__body">
+                <span class="lm-product__tag">Artesanato</span>
+                <h3>Peça artesanal decorativa</h3>
+                <p>Ideal para deixar a casa mais acolhedora ou presentear alguém especial.</p>
+                <div class="lm-product__bottom">
+                  <span class="lm-product__price">Sob encomenda</span>
+                  <a class="lm-small-btn" href="https://wa.me/55SEUDDDSEUNUMERO?text=Ol%C3%A1%2C%20gostei%20de%20uma%20pe%C3%A7a%20artesanal%20da%20La%20Maggi%C3%AA." target="_blank" rel="noopener" aria-label="Pedir pelo WhatsApp">›</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="lm-product lm-reveal" id="toalhas">
+              <div class="lm-product__image">CAMINHO-IMAGEM-PRODUTO-2.jpg</div>
+              <div class="lm-product__body">
+                <span class="lm-product__tag">Toalhas</span>
+                <h3>Toalha bordada personalizada</h3>
+                <p>Uma opção bonita para lembranças, kits e presentes de cuidado.</p>
+                <div class="lm-product__bottom">
+                  <span class="lm-product__price">Consultar</span>
+                  <a class="lm-small-btn" href="https://wa.me/55SEUDDDSEUNUMERO?text=Ol%C3%A1%2C%20gostaria%20de%20consultar%20toalhas%20da%20La%20Maggi%C3%AA." target="_blank" rel="noopener" aria-label="Consultar pelo WhatsApp">›</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="lm-product lm-reveal" id="presentes">
+              <div class="lm-product__image">CAMINHO-IMAGEM-PRODUTO-3.jpg</div>
+              <div class="lm-product__body">
+                <span class="lm-product__tag">Presentes</span>
+                <h3>Kit presente artesanal</h3>
+                <p>Combinação delicada para datas especiais, lembrancinhas e carinho em forma de presente.</p>
+                <div class="lm-product__bottom">
+                  <span class="lm-product__price">Consultar</span>
+                  <a class="lm-small-btn" href="https://wa.me/55SEUDDDSEUNUMERO?text=Ol%C3%A1%2C%20gostaria%20de%20montar%20um%20kit%20presente%20da%20La%20Maggi%C3%AA." target="_blank" rel="noopener" aria-label="Montar kit pelo WhatsApp">›</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="lm-product lm-reveal">
+              <div class="lm-product__image">CAMINHO-IMAGEM-PRODUTO-4.jpg</div>
+              <div class="lm-product__body">
+                <span class="lm-product__tag">Embalagens</span>
+                <h3>Embalagem afetiva</h3>
+                <p>Detalhes que valorizam o presente antes mesmo da pessoa abrir.</p>
+                <div class="lm-product__bottom">
+                  <span class="lm-product__price">Consultar</span>
+                  <a class="lm-small-btn" href="https://wa.me/55SEUDDDSEUNUMERO?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20sobre%20embalagens%20da%20La%20Maggi%C3%AA." target="_blank" rel="noopener" aria-label="Consultar embalagens pelo WhatsApp">›</a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section>
-        <h2 class="section-title">Primeira mensagem</h2>
+      <!-- =====================================================
+           MARKETPLACES
+           Botões principais ficam somente aqui, sem repetir no topo.
+           ===================================================== -->
+      <section class="lm-section" id="marketplaces">
+        <div class="lm-container">
+          <div class="lm-market lm-reveal">
+            <div class="lm-market__grid">
+              <div class="lm-market__text">
+                <span class="lm-pill"><span></span> Sem login no site</span>
+                <h2>Escolha onde quer comprar.</h2>
+                <p>
+                  Esta página não precisa de login ou autenticação. Os botões levam direto para WhatsApp,
+                  Mercado Livre e Shopee, deixando tudo simples, seguro e fácil de manter.
+                </p>
+              </div>
 
-        <div class="card">
-          <p>
-            Colecionar não é apenas acumular. É lembrar de onde viemos,
-            reconhecer quem caminhou conosco e deixar pistas bonitas para quem
-            ainda vai descobrir nossa história.
-          </p>
+              <div class="lm-market__buttons">
+                <a class="lm-btn lm-btn--whatsapp" href="https://wa.me/55SEUDDDSEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20La%20Maggi%C3%AA%20e%20gostaria%20de%20comprar." target="_blank" rel="noopener">
+                  <span class="lm-btn__icon">☎</span>
+                  <span class="lm-btn__text">Comprar pelo WhatsApp</span>
+                </a>
+
+                <a class="lm-btn lm-btn--ml" href="LINK-MERCADO-LIVRE-AQUI" target="_blank" rel="noopener">
+                  <span class="lm-btn__icon">ML</span>
+                  <span class="lm-btn__text">Ver produtos no Mercado Livre</span>
+                </a>
+
+                <a class="lm-btn lm-btn--shopee" href="LINK-SHOPEE-AQUI" target="_blank" rel="noopener">
+                  <span class="lm-btn__icon">S</span>
+                  <span class="lm-btn__text">Ver produtos na Shopee</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      <!-- =====================================================
+           SOBRE / MOMENTOS
+           ===================================================== -->
+      <section class="lm-section" id="contato">
+        <div class="lm-container">
+          <div class="lm-about">
+            <article class="lm-about__card lm-reveal">
+              <span class="lm-pill"><span></span> Nosso Cantinho</span>
+              <h2>Um espaço para carinho, memória e criação.</h2>
+              <p>
+                A La Maggiê pode ser mais do que uma vitrine: pode ser um cantinho de convivência criativa,
+                troca de saberes, café, conversa e artesanato feito com calma.
+              </p>
+              <p>
+                Use este bloco para contar a história da marca, apresentar a artesã e reforçar o valor humano das peças.
+              </p>
+            </article>
+
+            <article class="lm-about__card lm-about__card--dark lm-reveal">
+              <h3>Momentos inesquecíveis</h3>
+              <p>
+                Espaço reservado para fotos autorizadas de encontros, oficinas afetivas e bastidores do artesanato.
+              </p>
+
+              <div class="lm-moments">
+                <div class="lm-moment">CAMINHO-FOTO-MOMENTO-1.jpg</div>
+                <div class="lm-moment">CAMINHO-FOTO-MOMENTO-2.jpg</div>
+                <div class="lm-moment">CAMINHO-FOTO-MOMENTO-3.jpg</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <footer>
-      Hyperborea é um projeto independente sobre colecionismo, memória e preservação de jornadas.
+    <footer class="lm-footer">
+      <div class="lm-container">
+        <div class="lm-footer__grid">
+          <div>
+            <h2>La Maggiê</h2>
+            <p>Artesanato, toalhas, embalagens e presentes feitos com carinho. Página pronta para GitHub e Vercel, sem login e com botões diretos para venda.</p>
+          </div>
+
+          <div>
+            <h3>Comprar</h3>
+            <ul>
+              <li><a href="https://wa.me/55SEUDDDSEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20La%20Maggi%C3%AA." target="_blank" rel="noopener">WhatsApp</a></li>
+              <li><a href="LINK-MERCADO-LIVRE-AQUI" target="_blank" rel="noopener">Mercado Livre</a></li>
+              <li><a href="LINK-SHOPEE-AQUI" target="_blank" rel="noopener">Shopee</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Trocar depois</h3>
+            <ul>
+              <li><a href="#inicio">Logo do cabeçalho</a></li>
+              <li><a href="#inicio">Banner do body</a></li>
+              <li><a href="#artesanato">Imagens dos produtos</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lm-footer__bottom">
+          © <span id="lmYear"></span> La Maggiê. Feito com carinho.
+        </div>
+      </div>
     </footer>
+
+    <button class="lm-scroll-top" id="lmScrollTop" type="button" aria-label="Voltar ao topo">↑</button>
+
+    <a
+      class="lm-whatsapp-float"
+      href="https://wa.me/55SEUDDDSEUNUMERO?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20La%20Maggi%C3%AA%20e%20gostaria%20de%20fazer%20uma%20encomenda."
+      target="_blank"
+      rel="noopener"
+      aria-label="Chamar La Maggiê no WhatsApp">
+    </a>
+
   </div>
+
+  <script>
+    /* =========================================================
+       LA MAGGIÊ - JS INLINE
+       - menu mobile
+       - efeito ripple/spotlight nos botões
+       - animação ao rolar
+       - botão voltar ao topo
+       ========================================================= */
+
+    (function(){
+      var nav = document.getElementById('lmNav');
+      var menuToggle = document.getElementById('lmMenuToggle');
+      var scrollTop = document.getElementById('lmScrollTop');
+      var year = document.getElementById('lmYear');
+
+      if(year){
+        year.textContent = new Date().getFullYear();
+      }
+
+      function closeMenu(){
+        if(!nav || !menuToggle) return;
+        nav.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+
+      if(menuToggle && nav){
+        menuToggle.addEventListener('click', function(){
+          var isOpen = nav.classList.toggle('is-open');
+          menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        nav.addEventListener('click', function(event){
+          var link = event.target.closest ? event.target.closest('a') : null;
+          if(link) closeMenu();
+        });
+
+        document.addEventListener('keydown', function(event){
+          if(event.key === 'Escape') closeMenu();
+        });
+
+        document.addEventListener('click', function(event){
+          if(!nav.classList.contains('is-open')) return;
+          if(nav.contains(event.target) || menuToggle.contains(event.target)) return;
+          closeMenu();
+        });
+      }
+
+      document.querySelectorAll('.lm-btn').forEach(function(btn){
+        btn.addEventListener('pointermove', function(event){
+          var rect = btn.getBoundingClientRect();
+          var x = ((event.clientX - rect.left) / rect.width) * 100;
+          var y = ((event.clientY - rect.top) / rect.height) * 100;
+          btn.style.setProperty('--btn-x', x + '%');
+          btn.style.setProperty('--btn-y', y + '%');
+        });
+
+        btn.addEventListener('click', function(event){
+          var rect = btn.getBoundingClientRect();
+          var x = ((event.clientX - rect.left) / rect.width) * 100;
+          var y = ((event.clientY - rect.top) / rect.height) * 100;
+
+          btn.style.setProperty('--btn-x', x + '%');
+          btn.style.setProperty('--btn-y', y + '%');
+          btn.classList.remove('is-rippling');
+
+          window.requestAnimationFrame(function(){
+            btn.classList.add('is-rippling');
+          });
+
+          window.setTimeout(function(){
+            btn.classList.remove('is-rippling');
+          }, 560);
+        });
+      });
+
+      if('IntersectionObserver' in window){
+        var observer = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold:.14 });
+
+        document.querySelectorAll('.lm-reveal').forEach(function(el){
+          observer.observe(el);
+        });
+      }else{
+        document.querySelectorAll('.lm-reveal').forEach(function(el){
+          el.classList.add('is-visible');
+        });
+      }
+
+      function onScroll(){
+        if(!scrollTop) return;
+        if(window.scrollY > 520){
+          scrollTop.classList.add('is-visible');
+        }else{
+          scrollTop.classList.remove('is-visible');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive:true });
+      onScroll();
+
+      if(scrollTop){
+        scrollTop.addEventListener('click', function(){
+          window.scrollTo({ top:0, behavior:'smooth' });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
