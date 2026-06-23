@@ -141,6 +141,34 @@
         </div>
 
         <div
+  class="book-search-panel hidden"
+  id="bookSearchPanel"
+  aria-label="Pesquisa no livro"
+>
+  <div class="book-search-box">
+    <input
+      id="bookSearchInput"
+      type="search"
+      placeholder="Pesquisar na Jornada OT I08S28..."
+      autocomplete="off"
+    />
+
+    <button
+      class="button"
+      id="bookSearchClose"
+      type="button"
+      aria-label="Fechar pesquisa"
+    >
+      Fechar
+    </button>
+  </div>
+
+  <div
+    class="book-search-results"
+    id="bookSearchResults"
+  ></div>
+</div>
+        <div
           class="page-flip-shell"
           aria-label="Códice interativo"
         >
@@ -169,3 +197,4 @@
 ></script>
   </body>
 </html>
+
