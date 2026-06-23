@@ -1,0 +1,29 @@
+[
+  {
+    "id": "cavaleiros-album",
+    "titulo": "Álbum Digitalizado — Cavaleiros",
+    "tipo": "album-digitalizado",
+    "descricao": "Registro visual de um álbum de coleção preservado como artefato. Use imagens selecionadas publicamente e deixe scans completos em nuvem privada.",
+    "capa": "",
+    "galeria": "./data/galerias/cavaleiros-album.json",
+    "acesso": "publico-controlado"
+  },
+  {
+    "id": "pokemon-home",
+    "titulo": "Coleção Pokémon HOME — I08S28",
+    "tipo": "colecao-digital",
+    "descricao": "Arquivo visual da coleção Pokémon HOME organizada por região, espécie, shiny, origem e marcos da jornada.",
+    "capa": "",
+    "galeria": "./data/galerias/pokemon-home.json",
+    "acesso": "publico-simbolico"
+  },
+  {
+    "id": "jornada-pokemon",
+    "titulo": "Prints da Jornada Pokémon",
+    "tipo": "prints-de-jornada",
+    "descricao": "Capturas de aventuras, times, boxes, encontros e registros simbólicos da travessia Pokémon.",
+    "capa": "",
+    "galeria": "./data/galerias/jornada-pokemon.json",
+    "acesso": "publico-simbolico"
+  }
+]

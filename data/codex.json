@@ -1,0 +1,51 @@
+[
+  {
+    "termo": "I08S28",
+    "descricao": "Código/OT simbólico da jornada, usado como narrador protegido sem expor nome real.",
+    "tags": [
+      "identidade",
+      "ot",
+      "jornada"
+    ]
+  },
+  {
+    "termo": "Hyperborea",
+    "descricao": "Arquivo público simbólico da travessia; não é rede social, loja ou diário íntimo exposto.",
+    "tags": [
+      "arquivo",
+      "travessia"
+    ]
+  },
+  {
+    "termo": "Valor Antes do Preço",
+    "descricao": "Princípio de colecionismo: reconhecer arte, memória, estado, história e destino antes de reduzir tudo ao valor financeiro.",
+    "tags": [
+      "colecionismo",
+      "método"
+    ]
+  },
+  {
+    "termo": "Artefato",
+    "descricao": "Objeto, imagem, carta, print, álbum ou registro que carrega significado dentro da jornada.",
+    "tags": [
+      "acervo",
+      "registro"
+    ]
+  },
+  {
+    "termo": "Sala Privada",
+    "descricao": "Camada fora do GitHub: Google Drive, e-mails, backup local ou arquivos protegidos para materiais sensíveis.",
+    "tags": [
+      "privacidade",
+      "segurança"
+    ]
+  },
+  {
+    "termo": "Códice Público",
+    "descricao": "Texto simbólico e publicável que fala da jornada sem entregar dados pessoais, nomes reais ou arquivos privados.",
+    "tags": [
+      "livro",
+      "publico"
+    ]
+  }
+]

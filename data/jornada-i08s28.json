@@ -1,0 +1,86 @@
+[
+  {
+    "id": "capa",
+    "numero": "000",
+    "titulo": "Jornada OT I08S28",
+    "tipo": "capa",
+    "texto": "Este livro não revela nomes reais. Ele guarda rastros, símbolos e artefatos de uma travessia codificada.",
+    "frase": "O que é privado permanece protegido fora da web.",
+    "links": [
+      {
+        "label": "Abrir Acervos",
+        "href": "./acervo.html",
+        "external": false
+      }
+    ]
+  },
+  {
+    "id": "prologo",
+    "numero": "001",
+    "titulo": "Prólogo do Arquivo",
+    "tipo": "travessia",
+    "texto": "I08S28 abriu o primeiro registro ao perceber que nem tudo que é verdadeiro precisa ser dito com nomes reais. Alguns acontecimentos pedem forma, não exposição.",
+    "frase": "A jornada existe, mesmo quando ainda não encontrou mapa.",
+    "links": [
+      {
+        "label": "Consultar Codex",
+        "href": "./codex.html",
+        "external": false
+      }
+    ]
+  },
+  {
+    "id": "valor-antes-do-preco",
+    "numero": "002",
+    "titulo": "Valor Antes do Preço",
+    "tipo": "colecionismo",
+    "texto": "Uma carta simples revelou que colecionar não é apenas medir dinheiro. É reconhecer arte, estado, memória, história, contexto e destino.",
+    "frase": "Colecionar é reconhecer valor antes do preço.",
+    "links": [
+      {
+        "label": "Abrir Acervo Pokémon HOME",
+        "href": "./galeria.html?id=pokemon-home",
+        "external": false
+      }
+    ]
+  },
+  {
+    "id": "album-digitalizado",
+    "numero": "003",
+    "titulo": "O Álbum Preservado",
+    "tipo": "acervo",
+    "texto": "Alguns álbuns não devem virar distribuição pública completa. Eles podem aparecer como registro de acervo, com capa, descrição, páginas selecionadas e memória de conservação.",
+    "frase": "O livro conta a jornada. O acervo mostra os artefatos. A nuvem guarda o que não deve ficar exposto.",
+    "links": [
+      {
+        "label": "Abrir Álbum Digitalizado",
+        "href": "./galeria.html?id=cavaleiros-album",
+        "external": false
+      }
+    ]
+  },
+  {
+    "id": "prints-da-jornada",
+    "numero": "004",
+    "titulo": "Prints da Jornada",
+    "tipo": "registro",
+    "texto": "Capturas de jogos, boxes, equipes, conquistas e momentos preservam uma camada de vida que não cabe apenas em texto.",
+    "frase": "Um print pode ser um artefato quando carrega uma travessia.",
+    "links": [
+      {
+        "label": "Abrir Prints da Jornada Pokémon",
+        "href": "./galeria.html?id=jornada-pokemon",
+        "external": false
+      }
+    ]
+  },
+  {
+    "id": "privacidade",
+    "numero": "005",
+    "titulo": "A Sala Privada",
+    "tipo": "segurança",
+    "texto": "O GitHub público guarda a constelação. Documentos, prints íntimos, links sensíveis e arquivos completos ficam em nuvem privada, e-mail, backup local ou pastas protegidas.",
+    "frase": "Nem tudo que é verdadeiro precisa ficar visível para todos.",
+    "links": []
+  }
+]
