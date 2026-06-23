@@ -12,7 +12,7 @@
 
     <meta
       name="description"
-      content="Livro antigo da Jornada OT I08S28."
+      content="Livro antigo com efeito de página virando da Jornada OT I08S28."
     />
 
     <link
@@ -53,7 +53,7 @@
         </a>
 
         <a
-          href="./busca.html"
+          href="./terminal.html"
           aria-label="Buscar em Hyperborea"
         >
           Buscar
@@ -95,8 +95,7 @@
         </button>
 
         <p class="hint">
-          Clique para abrir o códice. Use anterior/próxima ou gesto de toque
-          quando o modo flip estiver ativo.
+          Toque, arraste ou use os botões para virar as páginas do códice.
         </p>
       </section>
 
@@ -134,44 +133,33 @@
         </div>
 
         <div
-          class="ancient-book"
-          id="ancientBook"
+          class="page-flip-shell"
+          aria-label="Códice interativo"
         >
-          <article
-            class="book-page left-page"
-            id="leftPage"
-            aria-label="Página esquerda"
-          ></article>
-
-          <article
-            class="book-page right-page"
-            id="rightPage"
-            aria-label="Página direita"
-          ></article>
-
           <div
-            class="turning-page"
-            id="turningPage"
-            aria-hidden="true"
+            class="page-flip-book"
+            id="pageFlipBook"
           ></div>
         </div>
       </section>
     </main>
 
-    <!--
-      Lógica futura:
-      Desktop:
-      leftPage = página atual
-      rightPage = próxima página
+    <noscript>
+      <p>
+        Para abrir o livro interativo da Hyperborea, ative o JavaScript no navegador.
+      </p>
+    </noscript>
 
-      Mobile:
-      rightPage = página atual
-      leftPage = escondida
-      botão próxima = avança 1 página
-    -->
-<script
-  src="./assets/js/livro-antigo.js?v=2"
-  defer
-></script>
+    <!-- Biblioteca do efeito real de página virando -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"
+      defer
+    ></script>
+
+    <!-- Nosso motor do livro Hyperborea -->
+    <script
+      src="./assets/js/livro-flip.js?v=1"
+      defer
+    ></script>
   </body>
 </html>
