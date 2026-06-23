@@ -1,61 +1,30 @@
-# La Maggiê — Página temporária de manutenção
+# Hyperborea — Arquitetura de Jornada
 
-Este pacote é uma página estática simples para publicar hoje no Vercel enquanto o site definitivo da La Maggiê fica em construção.
+Esqueleto estático para GitHub Pages, Vercel ou Cloudflare Pages.
 
-## Arquivos
+## Páginas
 
-- `index.html` — página de manutenção
-- `styles.css` — visual da página
-- `sw.js` — service worker temporário de manutenção
-- `manifest.webmanifest` — manifesto PWA simples
-- `favicon.svg` — ícone simples
-- `vercel.json` — força todas as rotas para a manutenção e adiciona noindex
-- `robots.txt` — evita indexação enquanto estiver em manutenção
+- `index.html`: portal.
+- `livro.html`: livro antigo com animação simples de página e som via Web Audio API.
+- `acervo.html`: lista de acervos.
+- `galeria.html?id=pokemon-home`: galeria por ID.
+- `codex.html`: glossário simbólico.
+- `terminal.html`: treino de comandos em JavaScript.
 
-## Antes de publicar
+## Dados
 
-No arquivo `index.html`, troque:
+- `data/jornada-i08s28.json`: páginas do livro.
+- `data/acervos.json`: lista de acervos.
+- `data/galerias/*.json`: itens de cada galeria.
+- `data/codex.json`: termos simbólicos.
 
-```html
-https://wa.me/55SEUNUMEROAQUI
-```
+## Publicar no GitHub Pages
 
-pelo WhatsApp oficial da La Maggiê no formato:
+1. Crie um repositório.
+2. Suba todos os arquivos na raiz.
+3. Vá em Settings > Pages.
+4. Deploy from a branch > main > root.
 
-```text
-55 + DDD + número
-```
+## Regra
 
-Exemplo fictício:
-
-```text
-https://wa.me/5519999999999
-```
-
-## GitHub + Vercel
-
-1. Crie um repositório no GitHub.
-2. Envie estes arquivos na raiz do repositório.
-3. No Vercel, clique em `Add New...` > `Project`.
-4. Importe o repositório do GitHub.
-5. Framework: `Other`.
-6. Build Command: deixe vazio.
-7. Output Directory: deixe vazio.
-8. Clique em `Deploy`.
-
-## Domínio
-
-No projeto do Vercel, vá em:
-
-`Settings` > `Domains`
-
-Adicione:
-
-- `lamaggie.com.br`
-- `www.lamaggie.com.br`
-
-Depois siga os registros DNS que o próprio Vercel mostrar.
-
-## Importante sobre o service worker
-
-Este service worker é temporário. Quando o site definitivo entrar no ar, remova o registro do service worker em `index.html` ou substitua o `sw.js` por uma versão nova que limpe o cache antigo.
+O site mostra a constelação. A nuvem privada guarda as estrelas com nome real.
