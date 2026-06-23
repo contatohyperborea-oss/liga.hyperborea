@@ -22,7 +22,7 @@
 
     <link
       rel="stylesheet"
-      href="./assets/css/livro-antigo.css"
+      href="./assets/css/livro-antigo.css?v=3"
     />
   </head>
 
@@ -53,7 +53,7 @@
         </a>
 
         <a
-          href="./terminal.html"
+          href="./busca.html"
           aria-label="Buscar em Hyperborea"
         >
           Buscar
@@ -102,18 +102,9 @@
       <section
         class="book-stage hidden"
         id="bookStage"
-        aria-live="polite"
         aria-label="Livro da Jornada OT I08S28"
       >
         <div class="book-toolbar">
-            <button
-  class="button book-search-button"
-  id="bookSearchToggle"
-  type="button"
-  aria-label="Pesquisar no livro"
->
-  🔎
-</button>
           <button
             class="button"
             id="prevPage"
@@ -138,36 +129,46 @@
           >
             Próxima →
           </button>
+
+          <button
+            class="button book-search-button"
+            id="bookSearchToggle"
+            type="button"
+            aria-label="Pesquisar no livro"
+          >
+            🔎
+          </button>
         </div>
 
         <div
-  class="book-search-panel hidden"
-  id="bookSearchPanel"
-  aria-label="Pesquisa no livro"
->
-  <div class="book-search-box">
-    <input
-      id="bookSearchInput"
-      type="search"
-      placeholder="Pesquisar na Jornada OT I08S28..."
-      autocomplete="off"
-    />
+          class="book-search-panel hidden"
+          id="bookSearchPanel"
+          aria-label="Pesquisa no livro"
+        >
+          <div class="book-search-box">
+            <input
+              id="bookSearchInput"
+              type="search"
+              placeholder="Pesquisar na Jornada OT I08S28..."
+              autocomplete="off"
+            />
 
-    <button
-      class="button"
-      id="bookSearchClose"
-      type="button"
-      aria-label="Fechar pesquisa"
-    >
-      Fechar
-    </button>
-  </div>
+            <button
+              class="button"
+              id="bookSearchClose"
+              type="button"
+              aria-label="Fechar pesquisa"
+            >
+              Fechar
+            </button>
+          </div>
 
-  <div
-    class="book-search-results"
-    id="bookSearchResults"
-  ></div>
-</div>
+          <div
+            class="book-search-results"
+            id="bookSearchResults"
+          ></div>
+        </div>
+
         <div
           class="page-flip-shell"
           aria-label="Códice interativo"
@@ -186,15 +187,14 @@
       </p>
     </noscript>
 
-    <!-- Biblioteca do efeito real de página virando -->
     <script
       src="https://cdn.jsdelivr.net/npm/page-flip/dist/js/page-flip.browser.min.js"
       defer
     ></script>
-<script
-  src="./assets/js/livro-flip.js?v=2"
-  defer
-></script>
+
+    <script
+      src="./assets/js/livro-flip.js?v=4"
+      defer
+    ></script>
   </body>
 </html>
-
