@@ -1,1 +1,167 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Jornada OT I08S28 | Hyperborea</title><meta name="description" content="Livro antigo da Jornada OT I08S28."><link rel="stylesheet" href="./assets/css/style.css"><link rel="stylesheet" href="./assets/css/livro-antigo.css"></head><body class="book-body"><header class="site-header book-header"><a class="brand" href="./index.html">Hyperborea</a><nav class="nav"><a href="./index.html">Portal</a><a href="./acervo.html">Acervos</a><a href="./codex.html">Codex</a></nav></header><main class="book-main"><section class="book-intro" id="bookIntro"><div class="closed-book" aria-hidden="true"><div class="book-cover"><span class="cover-kicker">HYPERBOREA</span><h1>Jornada OT I08S28</h1><p>Arquivo de Travessia</p></div></div><button class="button primary" id="openBookButton" type="button">Abrir Livro</button><p class="hint">Clique para abrir o códice. Use anterior/próxima para virar páginas.</p></section><section class="book-stage hidden" id="bookStage" aria-live="polite"><div class="book-toolbar"><button class="button" id="prevPage" type="button">← Anterior</button><span id="pageCounter">Página 1</span><button class="button" id="nextPage" type="button">Próxima →</button></div><div class="ancient-book" id="ancientBook"><article class="book-page left-page" id="leftPage"></article><article class="book-page right-page" id="rightPage"></article><div class="turning-page" id="turningPage" aria-hidden="true"></div></div></section></main><script src="./assets/js/livro-antigo.js"></script></body></html>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>Jornada OT I08S28 | Hyperborea</title>
+
+    <meta
+      name="description"
+      content="Livro antigo da Jornada OT I08S28."
+    />
+
+    <link
+      rel="stylesheet"
+      href="./assets/css/style.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="./assets/css/livro-antigo.css"
+    />
+  </head>
+
+  <body class="book-body">
+    <header class="site-header book-header">
+      <a
+        class="brand"
+        href="./index.html"
+        aria-label="Voltar para o portal Hyperborea"
+      >
+        Hyperborea
+      </a>
+
+      <nav
+        class="nav"
+        aria-label="Navegação principal"
+      >
+        <a href="./index.html">
+          Portal
+        </a>
+
+        <a href="./acervo.html">
+          Acervos
+        </a>
+
+        <a href="./codex.html">
+          Codex
+        </a>
+
+        <!-- Futuro: pode virar busca global com lupa -->
+        <a
+          href="./busca.html"
+          aria-label="Buscar em Hyperborea"
+        >
+          Buscar
+        </a>
+      </nav>
+    </header>
+
+    <main class="book-main">
+      <section
+        class="book-intro"
+        id="bookIntro"
+        aria-labelledby="bookTitle"
+      >
+        <div
+          class="closed-book"
+          aria-hidden="true"
+        >
+          <div class="book-cover">
+            <span class="cover-kicker">
+              HYPERBOREA
+            </span>
+
+            <h1 id="bookTitle">
+              Jornada OT I08S28
+            </h1>
+
+            <p>
+              Arquivo de Travessia
+            </p>
+          </div>
+        </div>
+
+        <button
+          class="button primary"
+          id="openBookButton"
+          type="button"
+        >
+          Abrir Livro
+        </button>
+
+        <p class="hint">
+          Clique para abrir o códice. Use anterior/próxima ou gesto de toque
+          quando o modo flip estiver ativo.
+        </p>
+      </section>
+
+      <section
+        class="book-stage hidden"
+        id="bookStage"
+        aria-live="polite"
+        aria-label="Livro da Jornada OT I08S28"
+      >
+        <div class="book-toolbar">
+          <button
+            class="button"
+            id="prevPage"
+            type="button"
+            aria-label="Voltar página"
+          >
+            ← Anterior
+          </button>
+
+          <span
+            id="pageCounter"
+            aria-live="polite"
+          >
+            Página 1
+          </span>
+
+          <button
+            class="button"
+            id="nextPage"
+            type="button"
+            aria-label="Avançar página"
+          >
+            Próxima →
+          </button>
+        </div>
+
+        <div
+          class="ancient-book"
+          id="ancientBook"
+        >
+          <article
+            class="book-page left-page"
+            id="leftPage"
+            aria-label="Página esquerda"
+          ></article>
+
+          <article
+            class="book-page right-page"
+            id="rightPage"
+            aria-label="Página direita"
+          ></article>
+
+          <div
+            class="turning-page"
+            id="turningPage"
+            aria-hidden="true"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="./assets/js/livro-antigo.js"
+      defer
+    ></script>
+  </body>
+</html>
