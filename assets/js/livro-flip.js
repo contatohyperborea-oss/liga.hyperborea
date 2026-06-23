@@ -6,9 +6,16 @@ const nextButton = document.getElementById("nextPage");
 const pageCounter = document.getElementById("pageCounter");
 const bookElement = document.getElementById("pageFlipBook");
 
+const searchToggle = document.getElementById("bookSearchToggle");
+const searchPanel = document.getElementById("bookSearchPanel");
+const searchInput = document.getElementById("bookSearchInput");
+const searchResults = document.getElementById("bookSearchResults");
+const searchClose = document.getElementById("bookSearchClose");
+
 let pages = [];
 let pageFlip = null;
 let audioContext = null;
+let lastKnownPageIndex = 0;
 
 const mobileQuery = window.matchMedia("(max-width: 760px)");
 
@@ -23,6 +30,13 @@ function escapeHTML(value = "") {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function normalizeSearchText(value = "") {
+  return String(value)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 }
 
 function createPageHTML(page) {
@@ -83,7 +97,6 @@ function createBookPages() {
     }
 
     pageDiv.dataset.pageId = page.id || "";
-
     pageDiv.innerHTML = createPageHTML(page);
 
     bookElement.appendChild(pageDiv);
@@ -141,11 +154,15 @@ function getCurrentPageIndex() {
     return pageFlip.getCurrentPageIndex();
   }
 
-  return 0;
+  return lastKnownPageIndex;
 }
 
 function updateCounter() {
-  const currentPage = getCurrentPageIndex() + 1;
+  const currentPageIndex = getCurrentPageIndex();
+
+  lastKnownPageIndex = currentPageIndex;
+
+  const currentPage = currentPageIndex + 1;
   const totalPages = pages.length;
 
   pageCounter.textContent = `Página ${currentPage} de ${totalPages}`;
@@ -201,12 +218,17 @@ function destroyOldBook() {
   pageFlip = null;
 }
 
-function initializePageFlip() {
+function initializePageFlip(startPageIndex = null) {
   if (!window.St || !window.St.PageFlip) {
     pageCounter.textContent =
       "Biblioteca page-flip não carregou. Verifique a internet/CDN.";
     return;
   }
+
+  const pageToOpen =
+    startPageIndex !== null
+      ? startPageIndex
+      : lastKnownPageIndex;
 
   destroyOldBook();
   createBookPages();
@@ -241,11 +263,10 @@ function initializePageFlip() {
     updateCounter();
   });
 
-  const initialPage = getInitialPageIndexFromURL();
-
-  if (initialPage > 0 && typeof pageFlip.turnToPage === "function") {
+  if (pageToOpen > 0 && typeof pageFlip.turnToPage === "function") {
     window.setTimeout(() => {
-      pageFlip.turnToPage(initialPage);
+      pageFlip.turnToPage(pageToOpen);
+      lastKnownPageIndex = pageToOpen;
       updateCounter();
     }, 120);
   }
@@ -264,7 +285,9 @@ async function openBook() {
 
   await loadPages();
 
-  initializePageFlip();
+  lastKnownPageIndex = getInitialPageIndexFromURL();
+
+  initializePageFlip(lastKnownPageIndex);
   playPageSound();
 }
 
@@ -298,6 +321,188 @@ function goPrev() {
   }
 }
 
+/* Busca interna do livro */
+
+function getPageSearchText(page) {
+  return normalizeSearchText([
+    page.id,
+    page.numero,
+    page.titulo,
+    page.tipo,
+    page.texto,
+    page.frase,
+    ...(page.artefatos || []),
+    ...(page.tags || []),
+    ...(page.links || []).map((link) => link.label)
+  ].join(" "));
+}
+
+function getPageResultDescription(page) {
+  const text = page.frase || page.texto || "";
+
+  return text.length > 120
+    ? `${text.slice(0, 120)}...`
+    : text;
+}
+
+function renderBookSearchResults(query) {
+  if (!searchResults) {
+    return;
+  }
+
+  const normalizedQuery = normalizeSearchText(query.trim());
+
+  if (!normalizedQuery) {
+    searchResults.innerHTML = `
+      <p class="book-search-empty">
+        Digite uma palavra para buscar na jornada.
+      </p>
+    `;
+    return;
+  }
+
+  const terms = normalizedQuery
+    .split(/\s+/)
+    .filter(Boolean);
+
+  const results = pages
+    .map((page, index) => {
+      const searchableText = getPageSearchText(page);
+
+      const score = terms.reduce((total, term) => {
+        if (normalizeSearchText(page.titulo).includes(term)) {
+          total += 5;
+        }
+
+        if (normalizeSearchText(page.id).includes(term)) {
+          total += 4;
+        }
+
+        if (normalizeSearchText(page.frase).includes(term)) {
+          total += 3;
+        }
+
+        if (normalizeSearchText(page.tipo).includes(term)) {
+          total += 2;
+        }
+
+        if (searchableText.includes(term)) {
+          total += 1;
+        }
+
+        return total;
+      }, 0);
+
+      return {
+        page,
+        index,
+        score
+      };
+    })
+    .filter((result) => result.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 8);
+
+  if (!results.length) {
+    searchResults.innerHTML = `
+      <p class="book-search-empty">
+        Nada encontrado para “${escapeHTML(query)}”.
+      </p>
+    `;
+    return;
+  }
+
+  searchResults.innerHTML = results
+    .map((result) => {
+      const page = result.page;
+
+      return `
+        <button
+          class="book-search-result"
+          type="button"
+          data-page-index="${result.index}"
+        >
+          <strong>
+            ${escapeHTML(page.numero || "")} · ${escapeHTML(page.titulo || "Página sem título")}
+          </strong>
+
+          <span>
+            ${escapeHTML(getPageResultDescription(page))}
+          </span>
+        </button>
+      `;
+    })
+    .join("");
+
+  searchResults
+    .querySelectorAll("[data-page-index]")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        const pageIndex = Number(button.dataset.pageIndex);
+
+        goToBookPage(pageIndex);
+      });
+    });
+}
+
+function goToBookPage(pageIndex) {
+  if (!pageFlip || Number.isNaN(pageIndex)) {
+    return;
+  }
+
+  lastKnownPageIndex = pageIndex;
+
+  if (typeof pageFlip.turnToPage === "function") {
+    pageFlip.turnToPage(pageIndex);
+  }
+
+  if (searchPanel) {
+    searchPanel.classList.add("hidden");
+  }
+
+  if (searchInput) {
+    searchInput.value = "";
+  }
+
+  if (searchResults) {
+    searchResults.innerHTML = "";
+  }
+
+  window.setTimeout(() => {
+    updateCounter();
+  }, 160);
+}
+
+function openBookSearch() {
+  if (!searchPanel || !searchInput) {
+    return;
+  }
+
+  searchPanel.classList.remove("hidden");
+
+  window.setTimeout(() => {
+    searchInput.focus();
+  }, 80);
+
+  renderBookSearchResults(searchInput.value);
+}
+
+function closeBookSearch() {
+  if (searchPanel) {
+    searchPanel.classList.add("hidden");
+  }
+
+  if (searchInput) {
+    searchInput.value = "";
+  }
+
+  if (searchResults) {
+    searchResults.innerHTML = "";
+  }
+}
+
+/* Eventos principais */
+
 openButton.addEventListener("click", openBook);
 
 nextButton.addEventListener("click", goNext);
@@ -305,19 +510,58 @@ prevButton.addEventListener("click", goPrev);
 
 mobileQuery.addEventListener("change", () => {
   if (!stage.classList.contains("hidden") && pages.length) {
-    initializePageFlip();
+    initializePageFlip(lastKnownPageIndex);
   }
 });
 
-window.addEventListener("resize", () => {
-  if (!stage.classList.contains("hidden") && pages.length) {
-    window.clearTimeout(window.__hyperboreaResizeTimer);
+/*
+  Importante:
+  Não reinicializamos automaticamente no resize comum,
+  porque no mobile a barra do navegador dispara resize e pode fazer
+  o page-flip sumir/recriar em momento ruim.
+*/
 
-    window.__hyperboreaResizeTimer = window.setTimeout(() => {
-      initializePageFlip();
-    }, 220);
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && pageFlip) {
+    window.setTimeout(() => {
+      updateCounter();
+    }, 120);
   }
 });
+
+/* Eventos da busca */
+
+if (searchToggle) {
+  searchToggle.addEventListener("click", () => {
+    if (!searchPanel) {
+      return;
+    }
+
+    if (searchPanel.classList.contains("hidden")) {
+      openBookSearch();
+    } else {
+      closeBookSearch();
+    }
+  });
+}
+
+if (searchClose) {
+  searchClose.addEventListener("click", closeBookSearch);
+}
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    renderBookSearchResults(searchInput.value);
+  });
+
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeBookSearch();
+    }
+  });
+}
+
+/* Evita que links internos virem página sem querer */
 
 document.addEventListener("pointerdown", (event) => {
   const link = event.target.closest("a");
