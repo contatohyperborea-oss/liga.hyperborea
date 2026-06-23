@@ -1,0 +1,36 @@
+[
+  {
+    "id": "home-001",
+    "titulo": "Box Kanto — Primeiros Registros",
+    "imagem": "",
+    "tags": [
+      "pokemon-home",
+      "kanto",
+      "box",
+      "i08s28"
+    ],
+    "descricao": "Placeholder para print da organização inicial da coleção em Pokémon HOME."
+  },
+  {
+    "id": "home-002",
+    "titulo": "Shinies Preservados",
+    "imagem": "",
+    "tags": [
+      "pokemon-home",
+      "shiny",
+      "colecao"
+    ],
+    "descricao": "Placeholder para registro dos Pokémon shiny preservados no arquivo."
+  },
+  {
+    "id": "home-003",
+    "titulo": "Região Johto",
+    "imagem": "",
+    "tags": [
+      "pokemon-home",
+      "johto",
+      "regiao"
+    ],
+    "descricao": "Placeholder para página ou print da região Johto no acervo."
+  }
+]

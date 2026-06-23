@@ -1,1 +1,35 @@
-
+[
+  {
+    "id": "cav-001",
+    "titulo": "Capa do Álbum",
+    "imagem": "",
+    "tags": [
+      "album",
+      "capa",
+      "colecionismo"
+    ],
+    "descricao": "Placeholder para capa do álbum digitalizado. Evite publicar scans completos se houver material protegido."
+  },
+  {
+    "id": "cav-002",
+    "titulo": "Página Selecionada",
+    "imagem": "",
+    "tags": [
+      "album",
+      "pagina",
+      "registro"
+    ],
+    "descricao": "Placeholder para uma página selecionada como registro de acervo."
+  },
+  {
+    "id": "cav-003",
+    "titulo": "Estado e Conservação",
+    "imagem": "",
+    "tags": [
+      "conservacao",
+      "album",
+      "acervo"
+    ],
+    "descricao": "Placeholder para registrar estado, capa, lombada e detalhes físicos."
+  }
+]

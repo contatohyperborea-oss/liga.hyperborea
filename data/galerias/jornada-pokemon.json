@@ -1,0 +1,35 @@
+[
+  {
+    "id": "jp-001",
+    "titulo": "Equipe de Travessia",
+    "imagem": "",
+    "tags": [
+      "print",
+      "time",
+      "jornada"
+    ],
+    "descricao": "Placeholder para print de equipe usada em uma aventura Pokémon."
+  },
+  {
+    "id": "jp-002",
+    "titulo": "Marco de Jornada",
+    "imagem": "",
+    "tags": [
+      "print",
+      "marco",
+      "jornada"
+    ],
+    "descricao": "Placeholder para um encontro, conquista ou momento marcante."
+  },
+  {
+    "id": "jp-003",
+    "titulo": "Registro OT",
+    "imagem": "",
+    "tags": [
+      "ot",
+      "i08s28",
+      "registro"
+    ],
+    "descricao": "Placeholder para registro simbólico ligado ao OT I08S28."
+  }
+]
