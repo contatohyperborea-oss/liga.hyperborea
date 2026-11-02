@@ -1,30 +1,66 @@
-# Hyperborea — Arquitetura de Jornada
+# HYPERBOREA — Agência Criativa
 
-Esqueleto estático para GitHub Pages, Vercel ou Cloudflare Pages.
+Site institucional em desenvolvimento da HYPERBOREA, com identidade visual em vermelho-vinho e dourado.
 
-## Páginas
+**Site:** https://liga-hyperborea.vercel.app/
 
-- `index.html`: portal.
-- `livro.html`: livro antigo com animação simples de página e som via Web Audio API.
-- `acervo.html`: lista de acervos.
-- `galeria.html?id=pokemon-home`: galeria por ID.
-- `codex.html`: glossário simbólico.
-- `terminal.html`: treino de comandos em JavaScript.
+## Página inicial
 
-## Dados
+A nova `index.html` apresenta:
 
-- `data/jornada-i08s28.json`: páginas do livro.
-- `data/acervos.json`: lista de acervos.
-- `data/galerias/*.json`: itens de cada galeria.
-- `data/codex.json`: termos simbólicos.
+- Boas-vindas e conceito visual da sede fictícia
+- Vídeo de apresentação
+- Vídeos comerciais
+- Design e identidade visual
+- Branding e gestão de marcas
+- Sites e web design
+- Apresentação da identidade da HYPERBOREA e contato
 
-## Publicar no GitHub Pages
+A página é responsiva e utiliza HTML, CSS e JavaScript diretamente no mesmo arquivo, sem React ou Vite.
 
-1. Crie um repositório.
-2. Suba todos os arquivos na raiz.
-3. Vá em Settings > Pages.
-4. Deploy from a branch > main > root.
+## Estrutura dos arquivos da nova página
 
-## Regra
+```text
+index.html
+README.md
+assets/
+  img/
+    monograma-h.png
+    fachada.webp
+    videos-comerciais.webp
+    design-identidade.webp
+    branding.webp
+    sites-webdesign.webp
+    design-estudio.webp
+  video/
+    boas-vindas.mp4
+```
 
-O site mostra a constelação. A nuvem privada guarda as estrelas com nome real.
+Os caminhos são relativos e funcionam na raiz do site. Coloque os arquivos nas pastas indicadas para que as imagens e o vídeo carreguem.
+
+## Identidade
+
+- Grafia: **HYPERBOREA**, sem acento
+- Cores predominantes: vermelho-vinho e dourado
+- Símbolo principal: monograma **H**, sem estrela
+- Montanhas, neve, auroras e ornamentos são elementos gráficos auxiliares
+
+## Conteúdo anterior
+
+O repositório já continha `livro.html`, `acervo.html`, `galeria.html`, `codex.html`, `terminal.html` e dados associados. Esses arquivos **não precisam ser apagados** para a nova página inicial funcionar. Apenas deixam de aparecer na navegação inicial.
+
+## Publicação
+
+1. Envie a nova `index.html` para a raiz do repositório.
+2. Envie as imagens e o vídeo para os caminhos acima.
+3. Atualize o `README.md`, se desejar documentar a nova versão.
+4. Aguarde a publicação automática na Vercel, se a integração com a branch `main` estiver ativa.
+5. Abra o site no desktop e no celular para revisar a publicação.
+
+## Privacidade e conteúdo
+
+Não inclua informações pessoais, dados privados ou imagens de clientes sem autorização. Os conceitos visuais da sede são ilustrações de um estabelecimento fictício, não fotografias de uma unidade física existente.
+
+---
+
+HYPERBOREA — Projeto em desenvolvimento.
