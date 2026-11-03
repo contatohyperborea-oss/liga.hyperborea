@@ -41,8 +41,15 @@
     .assinatura{display:flex;gap:12px;align-items:center;min-width:0}
     .assinatura img{height:56px;width:48px;object-fit:contain}
     .assinatura small{font-size:.69rem;line-height:1.3;color:#ffe5ad;letter-spacing:.2em;text-transform:uppercase}
-    .nome-central{width:clamp(165px,18vw,255px);display:block}
-    .nome-central img{width:100%;max-height:65px;object-fit:contain}
+    /* DESKTOP: nome em tipografia champanhe, sem depender de SVG. */
+    .nome-central{
+      display:block;justify-self:center;align-self:center;
+      color:var(--champanhe);
+      font:700 clamp(1.38rem,2vw,2rem)/1.1 Georgia,'Times New Roman',serif;
+      letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;
+      text-shadow:0 2px 18px rgba(15,2,8,.62);transition:color .2s ease;
+    }
+    .nome-central:hover{color:#fffdf6}
     .nome-fallback{display:none;font:700 1.25rem Georgia,serif;color:var(--ouro-claro);letter-spacing:.12em}
     .links-desktop{display:flex;gap:clamp(9px,1.25vw,20px);justify-content:flex-end;align-items:center}
     .links-desktop a{white-space:nowrap;font-size:.85rem;font-weight:650;color:#fff6e9}
@@ -101,9 +108,11 @@
     .rodape .container{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
 
     @media(max-width:1150px) and (min-width:801px){
-      .nav-desktop{grid-template-columns:auto 1fr;gap:16px}
-      .nome-central{display:none}
-      .links-desktop{gap:12px}
+      .nav-desktop{grid-template-columns:48px minmax(155px,1fr) auto;gap:12px}
+      .assinatura small{display:none}
+      .nome-central{font-size:clamp(1.1rem,1.7vw,1.52rem);letter-spacing:.075em}
+      .links-desktop{gap:clamp(5px,.8vw,11px)}
+      .links-desktop a{font-size:.76rem}
       .hero-desktop{min-height:610px}
       .cena-editorial .painel{right:7%}
     }
@@ -164,10 +173,7 @@
         <img src="/assets/img/monograma-h.svg" alt="" data-fallback="h">
         <small>HYPERBOREA<br>Agência Criativa</small>
       </a>
-      <a href="#inicio" class="nome-central" aria-label="HYPERBOREA — início">
-        <img src="/assets/img/hyperborea-nome.svg" alt="HYPERBOREA" data-fallback="nome">
-        <span class="nome-fallback">HYPERBOREA</span>
-      </a>
+      <a href="#inicio" class="nome-central" aria-label="HYPERBOREA — início">HYPERBOREA</a>
       <nav class="links-desktop" aria-label="Navegação desktop">
         <a href="#inicio">Início</a><a href="#apresentacao">A Agência</a>
         <a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
