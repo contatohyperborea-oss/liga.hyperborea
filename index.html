@@ -53,7 +53,10 @@
     .nome-fallback{display:none;font:700 1.25rem Georgia,serif;color:var(--ouro-claro);letter-spacing:.12em}
     .links-desktop{display:flex;gap:clamp(9px,1.25vw,20px);justify-content:flex-end;align-items:center}
     .links-desktop a{white-space:nowrap;font-size:.85rem;font-weight:650;color:#fff6e9}
-    .links-desktop a:hover{color:var(--ouro-claro)}
+    .links-desktop a:hover{color:var(--ouro-claro);background:#2b0618aa}
+    /* Filete dourado discreto; botões retangulares, sem cantos arredondados. */
+    .links-desktop a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 10px;border:1px solid rgba(230,181,93,.48);border-radius:0;transition:background .2s,border-color .2s}
+    .links-desktop a:hover,.links-desktop a:focus-visible{border-color:var(--ouro-claro)}
     .topo-mobile{display:none}
 
     .hero-desktop{position:relative;min-height:660px;height:min(790px,84svh);isolation:isolate;overflow:hidden;background:#2a0615}
@@ -90,7 +93,7 @@
     .servicos{background:linear-gradient(180deg,#1c0510,#3a0a1a 60%,#1b0510)}
     .servicos-intro{text-align:center;max-width:780px;margin:0 auto 35px}
     .grade-desktop{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
-    .banner-servico{border:1px solid var(--borda);background:#290914;border-radius:9px;overflow:hidden;box-shadow:0 18px 40px #0005;transition:transform .25s,border-color .25s}
+    .banner-servico{border:1px solid var(--borda);background:#290914;border-radius:0;overflow:visible;box-shadow:0 18px 40px #0005;transition:transform .25s,border-color .25s}
     .banner-servico:hover{transform:translateY(-5px);border-color:#f1c67e}
     .banner-servico img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
     .banner-servico .rodape-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 18px;color:var(--ouro-claro);font-size:.94rem;font-weight:700}
@@ -129,12 +132,18 @@
       .nome-mobile .nome-fallback{color:var(--vinho);font-size:clamp(1rem,4vw,1.25rem)}
       .hamburguer{width:46px;height:44px;display:grid;place-items:center;border:1px solid #89344a;background:#fff9eb8a;border-radius:7px;color:#650d20}
       .hamburguer svg{width:23px;height:23px}
-      .menu-mobile{display:none;position:absolute;left:0;right:0;top:100%;background:#ffedc9;border-bottom:2px solid #b67e34;box-shadow:0 16px 24px #0006;padding:12px 16px 18px}
-      .menu-mobile.aberto{display:flex;flex-direction:column;gap:4px}
-      .menu-mobile a{display:block;padding:11px;text-align:center;font-weight:700;color:#650d20;border-radius:4px}
-      .menu-mobile a:hover{background:#8c1b3615}
+      /* Menu ancorado à direita: o maior rótulo define a largura de TODOS os botões. */
+      .menu-mobile{display:none;position:absolute;top:calc(100% + 2px);right:14px;left:auto;
+        width:max-content;max-width:calc(100vw - 28px);padding:9px;
+        background:#fff0d2;border:1px solid #bb8d4a;box-shadow:0 16px 28px #0009}
+      .menu-mobile.aberto{display:flex;flex-direction:column;align-items:stretch;gap:6px}
+      .menu-mobile a{display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;
+        padding:8px 18px;text-align:center;font-size:.91rem;line-height:1.3;font-weight:700;
+        white-space:nowrap;color:#650d20;border:1px solid #c18d40;border-radius:0;
+        background:linear-gradient(135deg,#fff8e8,#ffedcb);transition:background .2s,border-color .2s}
+      .menu-mobile a:hover,.menu-mobile a:focus-visible{background:#f9dfaa;border-color:#9d6628}
       .abertura-mobile{display:block;padding:20px 0 38px}
-      .banner-video{position:relative;isolation:isolate;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--borda);border-radius:8px;background:#2a0612}
+      .banner-video{position:relative;isolation:isolate;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--borda);border-radius:0;background:#2a0612}
       .banner-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:4px;padding:12px;background:linear-gradient(125deg,#25051175,#620a2490),url('/assets/img/boas-vindas-poster.webp?v=20261102c') center/contain no-repeat,linear-gradient(120deg,#4b0e22,#18040b)}
       .banner-fallback strong{font:700 clamp(1.2rem,5vw,2.4rem) Georgia,serif;color:#ffe7b4;letter-spacing:.09em}
       .banner-fallback span{font-size:.86rem;color:#f9ebdf}
@@ -151,18 +160,48 @@
       .seta-card{width:48px;height:48px;border:1px solid var(--ouro);border-radius:50%;background:#380c1b;display:grid;place-items:center;color:#ffe8b9}
       .seta-card svg{width:24px;height:24px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
       .contador-card{font-size:.85rem;min-width:67px;text-align:center;color:#efcca0;font-weight:700}
-      .trilho{--w:min(75vw,330px);display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding:9px max(0px,calc((100% - var(--w))/2)) 20px}
+      .trilho{--w:min(92vw,440px);display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding:9px max(0px,calc((100% - var(--w))/2)) 20px}
       .trilho::-webkit-scrollbar{display:none}
-      .card-mobile{flex:0 0 var(--w);aspect-ratio:4/5;position:relative;scroll-snap-align:center;scroll-snap-stop:always;overflow:hidden;border:1px solid var(--borda);border-radius:12px;background:radial-gradient(ellipse at top,#6d223a,#240612);box-shadow:0 16px 30px #0006}
-      .card-mobile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+      /* Arte inteira, preservando os quatro cantos do filete ornamental. */
+      .card-mobile{flex:0 0 var(--w);aspect-ratio:812/1024;position:relative;scroll-snap-align:center;scroll-snap-stop:always;overflow:visible;border:0;border-radius:0;background:#240612;box-shadow:0 16px 30px #0006}
+      .card-mobile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:0;display:block}
+      .card-mobile img[hidden]{display:none}
       .card-reserva{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:13px;text-align:center;padding:25px;color:var(--ouro-claro)}
       .card-reserva b{font:700 1.5rem/1.18 Georgia,serif}
       .card-reserva small{color:var(--suave);font-size:.8rem}
       .dica{text-align:center;color:var(--suave);font-size:.8rem;margin-top:12px}
       .contato-painel{padding:40px 18px}
     }
-    @media(max-width:390px){.acoes{flex-direction:column}.acoes .botao{width:100%}.trilho{--w:78vw}.nome-mobile img{width:43vw}}
+    @media(max-width:390px){.acoes{flex-direction:column}.acoes .botao{width:100%}.trilho{--w:92vw}.nome-mobile img{width:43vw}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+    /* Conteúdo complementar da apresentação. */
+    .apresentacao .sobre-complemento{max-width:690px;margin:16px auto 0;color:var(--suave)}
+
+    /* REALIZAÇÕES: molduras quadradas prontas para quatro logotipos. */
+    .realizacoes{position:relative;background:linear-gradient(180deg,#1b050d 0%,#320919 58%,#19050b 100%)}
+    .realizacoes-intro{text-align:center;max-width:760px;margin:0 auto 36px}
+    .realizacoes-intro .descricao{max-width:660px;margin:0 auto}
+    .grade-realizacoes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+    .realizacao-item{min-width:0;padding:13px;background:linear-gradient(145deg,#400e1f,#220610);border:1px solid rgba(230,181,93,.45);text-align:center}
+    .realizacao-logo{position:relative;width:100%;aspect-ratio:1;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 28%,#7d244430,transparent 67%),#180509;border:1px solid rgba(230,181,93,.36)}
+    .realizacao-logo::before,.realizacao-logo::after{content:"";position:absolute;z-index:2;width:15px;height:15px;border-color:var(--ouro)}
+    .realizacao-logo::before{top:6px;left:6px;border-top:1px solid;border-left:1px solid}
+    .realizacao-logo::after{bottom:6px;right:6px;border-bottom:1px solid;border-right:1px solid}
+    .realizacao-logo img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;padding:14px}
+    .realizacao-logo img[hidden]{display:none}
+    .realizacao-reserva{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px;color:var(--ouro-claro);font:700 .64rem/1.3 Georgia,serif;letter-spacing:.09em;overflow-wrap:anywhere}
+    .realizacao-reserva .sigla{font:normal clamp(2.5rem,4vw,4rem)/1 Georgia,serif;color:#efc57a}
+    .realizacao-item h3{font-size:clamp(.95rem,1.5vw,1.15rem);margin:13px 0 3px;color:#ffe4b6;overflow-wrap:anywhere}
+    @media(max-width:800px){
+      .grade-realizacoes{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+      .realizacao-item{padding:9px}
+      .realizacao-logo img{padding:11px}
+      .realizacao-reserva{font-size:.56rem;letter-spacing:.04em;gap:6px}
+      .realizacao-reserva .sigla{font-size:2.6rem}
+      .realizacoes-intro{margin-bottom:23px}
+    }
+    @media(max-width:360px){.realizacao-reserva .sigla{font-size:2.1rem}.realizacao-item h3{font-size:.93rem}}
   </style>
 </head>
 <body>
@@ -175,8 +214,8 @@
       </a>
       <a href="#inicio" class="nome-central" aria-label="HYPERBOREA — início">HYPERBOREA</a>
       <nav class="links-desktop" aria-label="Navegação desktop">
-        <a href="#inicio">Início</a><a href="#apresentacao">A Agência</a>
-        <a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+        <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a>
+        <a href="#realizacoes">Realizações</a><a href="#contato">Contatos</a>
       </nav>
     </div>
   </header>
@@ -196,8 +235,8 @@
       </button>
     </div>
     <nav class="menu-mobile" id="menuMobile" aria-label="Navegação mobile">
-      <a href="#inicio">Início</a><a href="#apresentacao">A HYPERBOREA</a>
-      <a href="#servicos">Serviços</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+      <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a>
+      <a href="#realizacoes">Realizações</a><a href="#contato">Contatos</a>
     </nav>
   </header>
 
@@ -235,11 +274,12 @@
       </div>
     </section>
 
-    <section class="secao" id="apresentacao">
+    <section class="secao" id="sobre" aria-labelledby="tituloSobre">
       <div class="container apresentacao">
-        <p class="rotulo">Bem-vindo à HYPERBOREA</p>
-        <h2>Ideias que ganham <span class="ouro">identidade.</span></h2>
+        <p class="rotulo">Sobre a HYPERBOREA</p>
+        <h2 id="tituloSobre">Ideias que ganham <span class="ouro">identidade.</span></h2>
         <p>Vídeos comerciais, identidade visual, gestão de marcas e experiências digitais em uma proposta criativa inspirada pelo universo boreal.</p>
+        <p class="sobre-complemento">Elegância clássica e visão de futuro: uma identidade em vermelho-vinho e dourado, dedicada a transformar ideias em apresentações visuais e experiências digitais.</p>
         <div class="acoes"><a class="botao botao-ouro" href="#servicos">Conheça nossos serviços</a><a class="botao botao-vinho" href="#contato">Entre em contato</a></div>
       </div>
     </section>
@@ -277,8 +317,48 @@
       </div>
     </section>
 
-    <section class="secao" id="sobre"><div class="container sobre"><p class="rotulo">Nossa essência</p><h2 class="secao-titulo">Elegância clássica. <span class="ouro">Visão de futuro.</span></h2><p>A HYPERBOREA reúne referências boreais, vermelho-vinho e dourado em uma identidade dedicada à criatividade e à comunicação.</p><p>Um projeto em desenvolvimento, pensado para transformar ideias em apresentações visuais e experiências digitais.</p></div></section>
-    <section class="secao contato" id="contato"><div class="container"><div class="contato-painel"><p class="rotulo">Vamos conversar?</p><h2>Sua próxima ideia pode começar <span class="ouro">aqui.</span></h2><p>Converse com a HYPERBOREA sobre vídeos comerciais, identidade visual, marcas e projetos digitais.</p><a class="botao botao-ouro" href="mailto:contato.hyperborea@gmail.com?subject=Contato%20HYPERBOREA">Enviar e-mail</a></div></div></section>
+    <!-- REALIZAÇÕES: quatro espaços preparados para os logotipos reais.
+         Envie as imagens para /assets/img/realizacoes/ com os nomes indicados. -->
+    <section class="secao realizacoes" id="realizacoes" aria-labelledby="tituloRealizacoes">
+      <div class="container">
+        <div class="realizacoes-intro">
+          <p class="rotulo">Nosso portfólio</p>
+          <h2 class="secao-titulo" id="tituloRealizacoes">Nossas <span class="ouro">Realizações.</span></h2>
+          <p class="descricao">Cada identidade tem uma história. Conheça alguns dos projetos que compõem nosso universo criativo.</p>
+        </div>
+        <div class="grade-realizacoes" aria-label="Projetos de identidade visual">
+          <article class="realizacao-item">
+            <div class="realizacao-logo">
+              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">M</span><span>MARAJOARA</span></span>
+              <img src="/assets/img/realizacoes/marajoara.webp" alt="Logotipo do Marajoara" loading="lazy" decoding="async">
+            </div>
+            <h3>Marajoara</h3>
+          </article>
+          <article class="realizacao-item">
+            <div class="realizacao-logo">
+              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">P</span><span>POKEDAIMON</span></span>
+              <img src="/assets/img/realizacoes/pokedaimon.webp" alt="Logotipo do PokeDaimon" loading="lazy" decoding="async">
+            </div>
+            <h3>PokeDaimon</h3>
+          </article>
+          <article class="realizacao-item">
+            <div class="realizacao-logo">
+              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">PV</span><span>PERCIVAL VIKING</span></span>
+              <img src="/assets/img/realizacoes/percival-viking.webp" alt="Logotipo do Percival Viking" loading="lazy" decoding="async">
+            </div>
+            <h3>Percival Viking</h3>
+          </article>
+          <article class="realizacao-item">
+            <div class="realizacao-logo">
+              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">L</span><span>LAMAGGIÊ</span></span>
+              <img src="/assets/img/realizacoes/lamaggie.webp" alt="Logotipo da LaMaggiê" loading="lazy" decoding="async">
+            </div>
+            <h3>LaMaggiê</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="secao contato" id="contato"><div class="container"><div class="contato-painel"><p class="rotulo">Contatos • Vamos conversar?</p><h2>Sua próxima ideia pode começar <span class="ouro">aqui.</span></h2><p>Converse com a HYPERBOREA sobre vídeos comerciais, identidade visual, marcas e projetos digitais.</p><a class="botao botao-ouro" href="mailto:contato.hyperborea@gmail.com?subject=Contato%20HYPERBOREA">Enviar e-mail</a></div></div></section>
   </main>
   <footer class="rodape"><div class="container"><span>© <span id="ano">2026</span> HYPERBOREA — Projeto em desenvolvimento.</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
 
@@ -337,6 +417,12 @@
     // Caso os cards novos ainda não estejam disponíveis, mostrar o nome do serviço.
     trilho.querySelectorAll('img').forEach(img=>{const falhou=()=>{img.hidden=true};img.addEventListener('error',falhou);if(img.complete&&!img.naturalWidth)falhou()});
     selecionar(0);
+    // Realizações: exibir reserva elegante até que cada PNG/WebP verdadeiro seja enviado.
+    document.querySelectorAll('.realizacao-logo img').forEach(img=>{
+      const falhou=()=>{img.hidden=true};
+      img.addEventListener('error',falhou);
+      if(img.complete&&!img.naturalWidth)falhou();
+    });
     document.getElementById('ano').textContent=new Date().getFullYear();
   </script>
 </body>
