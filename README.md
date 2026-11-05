@@ -6,7 +6,7 @@ Site institucional em desenvolvimento da HYPERBOREA, com identidade visual em ve
 
 ## Página inicial
 
-A nova `index.html` apresenta:
+A nova index.html apresenta:
 
 - Boas-vindas e conceito visual da sede fictícia
 - Vídeo de apresentação
