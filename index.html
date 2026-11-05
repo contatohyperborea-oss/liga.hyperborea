@@ -1,429 +1,613 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#230610">
-  <meta name="description" content="HYPERBOREA — vídeos comerciais, design e identidade visual, branding e sites criativos.">
-  <title>HYPERBOREA | Agência Criativa</title>
-  <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="Hyperboria — criação de sites, vídeos comerciais e identidade visual. Design e tecnologia para marcas que querem se destacar.">
+  <title>Hyperboria | Agência Criativa Digital</title>
   <style>
+    /*
+      HYPERBORIA — INDEX RESPONSIVA, ARQUIVO ÚNICO
+      --------------------------------------------
+      Sem bibliotecas, fontes remotas, imagens externas ou requisições fetch.
+      Os painéis visuais são ilustrações originais em HTML/CSS para não depender de arquivos.
+      Quando os banners reais estiverem prontos, use imagens 1920×1080 no desktop
+      e recortes próximos de 19:16 no mobile, via <picture> ou CSS background-image.
+      Projetos em elaboração estão identificados como tal — não são entregas publicadas.
+      Ajuste os canais de contato quando tiver o e-mail/WhatsApp oficial da agência.
+    */
     :root {
-      --vinho:#710c22; --vinho-profundo:#19050b; --vinho-medio:#48101f;
-      --champanhe:#fff5df; --ouro:#e6b55d; --ouro-claro:#ffe5ad;
-      --texto:#fff5ed; --suave:#ddc7bd; --borda:rgba(230,181,93,.28);
+      --ink: #090f19;
+      --bg: #0b1220;
+      --bg-soft: #101b2b;
+      --panel: #142239;
+      --line: rgba(184,216,239,.15);
+      --line-strong: rgba(184,216,239,.27);
+      --text: #f4f8fb;
+      --muted: #a5b4c6;
+      --muted-dark: #8194ab;
+      --teal: #72e4d5;
+      --teal-deep: #168d92;
+      --gold: #f1c58e;
+      --indigo: #829ef3;
+      --radius: 22px;
+      --container: 1220px;
+      --shadow: 0 26px 72px rgba(0,0,0,.25);
     }
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:90px}
-    body{margin:0;min-width:320px;background:var(--vinho-profundo);color:var(--texto);font:16px/1.6 system-ui,-apple-system,'Segoe UI',sans-serif;overflow-x:hidden}
-    img,video{display:block;max-width:100%}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit;cursor:pointer}
-    button:disabled{cursor:default;opacity:.35}
-    a:focus-visible,button:focus-visible,.trilho:focus-visible{outline:3px solid var(--ouro-claro);outline-offset:4px}
-    h1,h2,h3,p{margin:0}
-    h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.1}
-    .container{width:min(1200px,calc(100% - 40px));margin-inline:auto}
-    .sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
-    .rotulo{color:var(--ouro);font-size:.76rem;font-weight:800;letter-spacing:.19em;text-transform:uppercase}
-    .ouro{color:var(--ouro-claro)}
-    .botao{display:inline-flex;justify-content:center;align-items:center;min-height:46px;padding:11px 21px;border:1px solid var(--ouro);border-radius:5px;font-weight:700;transition:transform .2s,background .2s}
-    .botao:hover{transform:translateY(-2px)}
-    .botao-ouro{background:linear-gradient(125deg,#ffe7b4,#dcaa51);color:#370918}
-    .botao-vinho{background:rgba(65,10,28,.62);color:var(--ouro-claro)}
-    .secao{padding:78px 0}
-    .secao-titulo{font-size:clamp(2rem,4vw,3.4rem);margin:10px 0 14px}
-    .descricao{color:var(--suave)}
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 94px; }
+    body { margin: 0; font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor:pointer; }
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
+    ::selection { background:var(--teal); color:var(--ink); }
+    .skip-link { position:absolute; top:-120px; left:20px; z-index:999; padding:12px 16px; background:var(--teal);color:var(--ink);border-radius:8px; }
+    .skip-link:focus { top:12px; }
+    .container { width:min(calc(100% - 64px), var(--container)); margin-inline:auto; }
+    .section { padding:96px 0; position:relative; }
+    .eyebrow { color:var(--teal); font-size:.72rem; font-weight:800; letter-spacing:.20em; text-transform:uppercase; display:inline-flex; gap:10px; align-items:center; }
+    .eyebrow::before { content:""; width:20px; height:1px; background:currentColor; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { letter-spacing:-.045em; }
+    h1 { font-size:clamp(3.2rem, 5.4vw, 5.75rem); line-height:1.05; margin-bottom:26px; font-weight:780; }
+    h2 { font-size:clamp(2.4rem, 3.8vw, 4rem); line-height:1.1; margin-bottom:18px; font-weight:750; }
+    h3 { font-size:1.34rem; margin-bottom:10px; font-weight:740; }
+    p { color:var(--muted); line-height:1.75; }
+    .highlight { background:linear-gradient(105deg, var(--teal) 12%, #a5eadf 52%, var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:48px; margin-bottom:34px; }
+    .section-head h2 { max-width:720px; margin:12px 0 0; }
+    .section-head>p { max-width:325px; margin:0 0 6px; font-size:.95rem; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:50px; padding:0 21px; border-radius:12px; font-weight:730; font-size:.91rem; border:1px solid transparent; transition:transform .2s, background .2s, border-color .2s, box-shadow .2s; white-space:nowrap; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { background:var(--teal); color:#071522; box-shadow:0 8px 24px rgba(50,191,181,.13); }
+    .btn-primary:hover { background:#a0f2e9; box-shadow:0 12px 28px rgba(50,191,181,.2); }
+    .btn-outline { background:rgba(255,255,255,.035); color:var(--text); border-color:var(--line-strong); }
+    .btn-outline:hover { border-color:var(--teal); background:rgba(114,228,213,.08); }
+    .btn svg { width:17px; height:17px; flex:0 0 auto; }
 
-    /* DESKTOP: navegação sobre uma abertura editorial cinematográfica. */
-    .topo-desktop{position:absolute;top:0;left:0;width:100%;z-index:10;background:linear-gradient(180deg,rgba(15,2,8,.64),transparent)}
-    .nav-desktop{min-height:100px;display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center}
-    .assinatura{display:flex;gap:12px;align-items:center;min-width:0}
-    .assinatura img{height:56px;width:48px;object-fit:contain}
-    .assinatura small{font-size:.69rem;line-height:1.3;color:#ffe5ad;letter-spacing:.2em;text-transform:uppercase}
-    /* DESKTOP: nome em tipografia champanhe, sem depender de SVG. */
-    .nome-central{
-      display:block;justify-self:center;align-self:center;
-      color:var(--champanhe);
-      font:700 clamp(1.38rem,2vw,2rem)/1.1 Georgia,'Times New Roman',serif;
-      letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;
-      text-shadow:0 2px 18px rgba(15,2,8,.62);transition:color .2s ease;
+    /* Cabeçalho */
+    .site-header { position:sticky; top:0; z-index:100; border-bottom:1px solid rgba(255,255,255,.08); background:rgba(10,18,31,.87); -webkit-backdrop-filter:blur(22px); backdrop-filter:blur(22px); }
+    .header-inner { height:82px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:inline-flex; align-items:center; gap:11px; flex:0 0 auto; }
+    .brand__mark { width:38px; height:38px; display:block; }
+    .brand__name { display:block; font-size:1.08rem; font-weight:850; letter-spacing:.22em; line-height:1; }
+    .brand__sub { display:block; margin-top:7px; color:var(--muted-dark); font-size:.56rem; font-weight:800; letter-spacing:.23em; }
+    .nav-links { display:flex; align-items:center; gap:30px; margin-left:auto; }
+    .nav-links a { color:#bbc8d5; font-size:.87rem; font-weight:650; transition:color .2s; }
+    .nav-links a:hover { color:var(--teal); }
+    .header-cta { margin-left:12px; min-height:43px; padding:0 17px; font-size:.82rem; }
+    .menu-button { display:none; height:43px; width:43px; border:1px solid var(--line); background:var(--bg-soft); color:var(--text); border-radius:11px; place-items:center; padding:0; }
+    .menu-button svg { width:23px; height:23px; }
+    .mobile-menu { display:none; }
+
+    /* Hero / banner principal */
+    .hero { position:relative; isolation:isolate; overflow:hidden; padding:86px 0 70px; }
+    .hero:before { content:""; position:absolute; top:-250px; right:-270px; width:850px; height:850px; pointer-events:none; border-radius:50%; background:radial-gradient(circle, rgba(32,117,138,.16), transparent 67%); z-index:-1; }
+    .hero::after { content:""; position:absolute; top:140px; left:-280px; width:620px; height:620px; background:radial-gradient(circle,rgba(64,75,132,.12),transparent 72%); z-index:-1; pointer-events:none; }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,.97fr) minmax(0,1.03fr); align-items:center; gap:48px; }
+    .hero-copy { padding:15px 0; max-width:640px; }
+    .hero-copy h1 { margin-top:25px; }
+    .hero-copy>p { max-width:530px; font-size:1.065rem; line-height:1.75; margin-bottom:28px; }
+    .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+    .hero-note { color:#8aa1b6; display:flex; gap:8px; align-items:center; margin-top:31px; font-size:.79rem; }
+    .hero-note .live-dot { width:7px; height:7px; border-radius:100%; background:var(--teal); box-shadow:0 0 12px rgba(114,228,213,.55); }
+    .hero-art { position:relative; aspect-ratio:16 / 9; min-height:330px; border-radius:26px; overflow:hidden; background:radial-gradient(circle at 77% 14%,rgba(109,222,206,.32),transparent 35%), radial-gradient(circle at 16% 83%,rgba(87,101,180,.36),transparent 46%), linear-gradient(134deg,#1d3a4b,#102539 53%,#0c172a); border:1px solid rgba(173,234,233,.17); box-shadow:var(--shadow); }
+    .hero-art:before, .hero-art:after { content:""; position:absolute; width:65%; aspect-ratio:1; border-radius:50%; border:1px solid rgba(177,231,240,.12); transform:rotate(-17deg); pointer-events:none; }
+    .hero-art:before { right:-25%; top:-42%; }
+    .hero-art:after { left:-33%; bottom:-66%; width:90%; }
+    .art-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(219,248,249,.047) 1px, transparent 1px), linear-gradient(90deg,rgba(219,248,249,.047) 1px, transparent 1px); background-size:31px 31px; mask-image:linear-gradient(110deg, transparent, black 52%,transparent); }
+    .art-topline { position:absolute; top:7.5%; left:7%; right:7%; display:flex; justify-content:space-between; align-items:center; font-size:.59rem; font-weight:850; letter-spacing:.19em; color:#d2f5f1; }
+    .art-topline .tiny-label { color:#7ec7c5; }
+    .art-browser { position:absolute; width:65%; height:62%; left:12%; top:20%; background:#0d192b; border:1px solid rgba(218,245,243,.35); border-radius:13px; box-shadow:0 17px 45px rgba(0,0,0,.38); transform:perspective(800px) rotateY(-10deg) rotateX(5deg) rotateZ(-2deg); overflow:hidden; }
+    .browser-bar { height:12%; min-height:25px; display:flex; align-items:center; justify-content:space-between; padding:0 14px; background:#1b2e43; border-bottom:1px solid rgba(255,255,255,.12); }
+    .browser-dots { display:flex; gap:5px; }
+    .browser-dots i { display:block; height:5px; width:5px; border-radius:50%; background:#8d9eaa; }
+    .browser-dots i:first-child { background:#f7be94; } .browser-dots i:nth-child(2) { background:#f3d59d; } .browser-dots i:last-child { background:#89d9ca; }
+    .browser-url { width:39%; height:6px; border-radius:10px; background:rgba(157,200,219,.20); }
+    .browser-site { height:88%; display:grid; grid-template-columns:1.1fr .85fr; align-items:center; gap:6%; padding:8%; background:linear-gradient(142deg,#14283b,#142b39 55%,#214d57); }
+    .browser-copy { align-self:center; }
+    .ui-mini { width:48%; height:5px; background:var(--gold); border-radius:8px; margin-bottom:13px; }
+    .ui-title { height:11px; margin-bottom:7px; border-radius:4px; background:#e7f6f5; }
+    .ui-title.small { width:77%; }
+    .ui-text { height:4px; margin:12px 0 0; width:88%; background:#6c91a1; border-radius:8px; }
+    .ui-text.short { width:63%; margin-top:6px; }
+    .ui-btn { margin-top:20px; border-radius:6px; background:var(--teal); height:18px; width:74px; }
+    .browser-figure { height:90%; border:1px solid rgba(246,253,255,.17); border-radius:9px; overflow:hidden; background:linear-gradient(160deg,rgba(246,202,153,.85),rgba(80,175,180,.17)),linear-gradient(38deg,#295877 20%,#92dad0 60%,#22445b 61%); position:relative; }
+    .browser-figure:before { content:""; position:absolute; width:68%; height:85%; bottom:-18%; left:12%; background:#123951; transform:rotate(-20deg); box-shadow:40px 4px 0 rgba(255,255,255,.16); border-radius:7px; }
+    .browser-figure:after { content:""; position:absolute; width:44%; height:34%; top:20%; right:-8%; border-radius:12px; background:#e4d4b6; transform:rotate(25deg); }
+    .float-card { position:absolute; z-index:3; background:rgba(16,30,48,.91); border:1px solid rgba(197,239,239,.34); box-shadow:0 15px 40px rgba(0,0,0,.3); -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px); }
+    .float-video { width:35%; height:40%; right:5%; bottom:7%; border-radius:14px; padding:7px; transform:rotate(6deg); }
+    .video-surface { width:100%; height:100%; border-radius:9px; display:grid; place-items:center; background:radial-gradient(circle at 53% 36%,#e3ac86 0,#a4799d 28%,#374c72 67%,#1b3354); position:relative; overflow:hidden; }
+    .video-surface::after { content:""; position:absolute; height:2px; bottom:16%; left:12%; right:12%; background:rgba(255,255,255,.38); }
+    .play-glyph { height:40px; width:40px; background:rgba(12,21,34,.52); border:1px solid rgba(255,255,255,.62); border-radius:50%; display:grid; place-items:center; z-index:1; }
+    .play-glyph svg { width:17px; height:17px; fill:white; }
+    .float-palette { width:34%; height:20%; left:3%; bottom:5%; border-radius:11px; display:flex; flex-direction:column; justify-content:center; gap:9px; padding:13px 15px; transform:rotate(-5deg); }
+    .palette-lines { display:flex; align-items:center; gap:7px; }
+    .palette-lines span { display:block; border-radius:7px; width:19px; height:19px; }
+    .palette-lines span:nth-child(1){background:#f1c58e}.palette-lines span:nth-child(2){background:#70ded0}.palette-lines span:nth-child(3){background:#829ef3}.palette-lines span:nth-child(4){background:#d9f2eb}
+    .palette-caption { font-size:.56rem; letter-spacing:.11em; color:#c8e4e5; }
+    .hero-foot { margin-top:72px; display:grid; grid-template-columns:repeat(3,1fr); gap:30px; padding:24px 28px; border:1px solid var(--line); border-radius:16px; background:rgba(255,255,255,.018); }
+    .hero-foot-item { display:flex; gap:13px; align-items:center; color:#dbe9f0; font-size:.85rem; font-weight:640; }
+    .hero-foot-item svg { flex:0 0 21px; width:21px; height:21px; color:var(--teal); }
+
+    /* Serviços */
+    .services { background:linear-gradient(180deg,#0d1725,#101b2b); border-block:1px solid rgba(255,255,255,.04); }
+    .service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+    .service-card { min-width:0; background:#15243a; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column; transition:transform .25s, border-color .25s, box-shadow .25s; }
+    .service-card:hover { transform:translateY(-6px); border-color:rgba(114,228,213,.41); box-shadow:0 20px 50px rgba(0,0,0,.19); }
+    .service-art { aspect-ratio:16/9; position:relative; isolation:isolate; overflow:hidden; display:grid; place-items:center; background:#183044; }
+    .service-art:after { content:""; position:absolute; inset:0; border-bottom:1px solid rgba(255,255,255,.07); pointer-events:none; }
+    .service-art.web { background:radial-gradient(circle at 82% 14%,rgba(93,224,203,.38),transparent 40%),linear-gradient(132deg,#203f62,#10273e); }
+    .service-art.video { background:radial-gradient(circle at 50% 65%,rgba(226,176,131,.54),transparent 50%),linear-gradient(135deg,#392946,#101c35 70%); }
+    .service-art.design { background:radial-gradient(circle at 76% 13%,rgba(112,208,193,.25),transparent 42%),linear-gradient(135deg,#24404c,#1b293c); }
+    .tiny-webpage { position:absolute; width:69%; height:70%; left:16%; top:19%; border:1px solid rgba(223,251,248,.65); border-radius:8px; background:#dfe8e5; box-shadow:11px 11px 0 rgba(5,15,26,.28); transform:rotate(-5deg); overflow:hidden; }
+    .tiny-top { height:15%; background:#20394b; display:flex; align-items:center; gap:4px; padding-left:12px; }
+    .tiny-top i { width:4px; height:4px; border-radius:50%; background:#b6dcdd; }
+    .tiny-content { display:flex; align-items:center; gap:8%; height:85%; padding:7%; }
+    .tiny-words { flex:1; }
+    .tiny-words b,.tiny-words i,.tiny-words em { display:block; height:7px; background:#234d60; border-radius:3px; margin-bottom:9px; }
+    .tiny-words i { height:4px; background:#acc3c5; width:90%; }
+    .tiny-words em { background:#36a99d; width:45%; height:14px; margin-top:14px; }
+    .tiny-picture { width:43%; height:86%; border-radius:7px; background:linear-gradient(150deg,#c8dbbf,#7eb0b1 40%,#386582 41%,#2a425c); }
+    .service-art.web .tag-code { position:absolute; right:7%; top:10%; border-radius:9px; background:#102638; border:1px solid #477d85; color:var(--teal); font:700 1.2rem ui-monospace, monospace; padding:10px 13px; box-shadow:0 8px 20px #0004; }
+    .video-frame { position:absolute; inset:17% 13%; border-radius:12px; border:3px solid rgba(239,229,215,.66); box-shadow:0 12px 30px #0005; background:linear-gradient(150deg,transparent 50%,rgba(7,12,33,.55) 60%),radial-gradient(circle at 50% 30%,#f6d3aa,#a57677 39%,#33456b 90%); display:grid; place-items:center; }
+    .video-frame::before { content:""; position:absolute; inset:11% 10%; border:1px solid rgba(255,255,255,.45); border-radius:2px; }
+    .video-frame .play-glyph { width:49px; height:49px; }
+    .frame-corners::before,.frame-corners::after { content:""; position:absolute; top:7%; width:26px; height:2px; background:var(--gold); }
+    .frame-corners::before { left:8%; } .frame-corners::after { right:8%; }
+    .design-sheet { position:absolute; width:50%; height:69%; top:15%; left:21%; border-radius:9px; transform:rotate(-8deg); background:#f3e8d6; box-shadow:10px 12px 0 rgba(8,19,33,.4); padding:9%; }
+    .design-logo { width:57%; aspect-ratio:1; border:5px solid #205f64; border-right-color:transparent; border-radius:50%; margin:auto; }
+    .design-title { background:#224955; height:9px; width:80%; margin:17px auto 7px; border-radius:4px; }
+    .design-txt { background:#b7b2a4; height:4px; width:58%; margin:auto; border-radius:4px; }
+    .design-swatch { position:absolute; right:11%; bottom:13%; width:29%; height:33%; border-radius:9px; transform:rotate(8deg); background:#253c4b; display:grid; align-content:center; justify-content:center; grid-template-columns:repeat(2,27px); gap:5px; box-shadow:0 9px 20px #0004; }
+    .design-swatch i { display:block; width:27px; height:27px; border-radius:4px; background:#e9c491; }
+    .design-swatch i:nth-child(2){background:#84d7c3}.design-swatch i:nth-child(3){background:#7698bf}.design-swatch i:nth-child(4){background:#f4ebe1}
+    .service-body { flex:1; padding:23px 25px 25px; display:flex; flex-direction:column; }
+    .service-number { color:var(--gold); text-transform:uppercase; font-weight:800; letter-spacing:.16em; font-size:.65rem; margin-bottom:13px; }
+    .service-body p { font-size:.88rem; line-height:1.66; margin-bottom:20px; }
+    .text-link { margin-top:auto; display:flex; align-items:center; gap:9px; color:var(--teal); font-size:.85rem; font-weight:730; }
+    .text-link svg { width:16px; height:16px; }
+    .scroll-hint { display:none; }
+
+    /* Projetos / portfólio responsável */
+    .projects { background:var(--bg); }
+    .filter-bar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:25px; }
+    .filter-btn { background:transparent; border:1px solid var(--line); color:#b6c5d3; font-size:.84rem; font-weight:650; border-radius:100px; padding:10px 17px; }
+    .filter-btn:hover,.filter-btn[aria-pressed="true"] { background:rgba(114,228,213,.12); border-color:rgba(114,228,213,.45); color:var(--teal); }
+    .project-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+    .project-card { border:1px solid var(--line); border-radius:20px; overflow:hidden; background:rgba(255,255,255,.021); }
+    .project-card[hidden] { display:none !important; }
+    .project-cover { aspect-ratio:16/9; position:relative; overflow:hidden; display:grid; place-items:center; }
+    .project-cover--marajoara { background:radial-gradient(circle at 72% 10%,#cfa96c55,transparent 40%),linear-gradient(135deg,#274a50,#1b3442); }
+    .project-cover--hyper { background:radial-gradient(circle at 38% 20%,#56c7bc44,transparent 55%),linear-gradient(135deg,#27314f,#0e2235); }
+    .project-cover--video { background:radial-gradient(circle at 52% 29%,#d9a77a66,transparent 55%),linear-gradient(135deg,#362740,#182944); }
+    .marajoara-building { width:44%; height:78%; position:absolute; bottom:-13%; background:repeating-linear-gradient(90deg,transparent 0 19%,rgba(251,238,212,.24) 20% 21%),repeating-linear-gradient(0deg,transparent 0 21%,rgba(246,242,225,.37) 22% 24%),linear-gradient(#97b2b2,#456b73); transform:perspective(420px) rotateY(-15deg); border:8px solid rgba(215,228,217,.58); border-bottom:0; box-shadow:20px 20px 0 rgba(4,15,23,.15); }
+    .marajoara-building:before { content:"";position:absolute; top:-14%; left:-9%; width:120%; height:10%; background:#c1a681; }
+    .project-watermark { position:absolute; bottom:10%; left:8%; letter-spacing:.16em; font-weight:800; font-size:.72rem; color:white; text-shadow:0 2px 12px #0008; }
+    .hyper-emblem { height:100px; width:100px; border:1px solid rgba(241,197,142,.56); border-radius:22px; background:linear-gradient(140deg,#26364c,#0f2338); display:grid; place-items:center; box-shadow:0 10px 30px #0005; transform:rotate(-7deg); }
+    .hyper-emblem svg { height:68px;width:68px; }
+    .video-project-lines { position:absolute; inset:17%; border:2px solid rgba(247,230,213,.55); border-radius:11px; display:grid; place-items:center; }
+    .video-project-lines:before { content:""; position:absolute; left:12%; bottom:17%; height:2px; width:76%; background:#e8c99b; }
+    .project-copy { padding:22px 24px 24px; }
+    .project-tag { color:var(--gold); text-transform:uppercase; letter-spacing:.11em; font-size:.63rem; font-weight:820; }
+    .project-copy h3 { margin:9px 0 8px; font-size:1.2rem; }
+    .project-copy p { margin:0; font-size:.82rem; line-height:1.65; }
+    .project-note { margin-top:22px; padding:16px 19px; border-left:2px solid var(--gold); background:rgba(241,197,142,.055); color:#b7c6d6; line-height:1.65; font-size:.83rem; }
+
+    /* Método */
+    .process { background:linear-gradient(180deg,#101b2b,#0d1624); border-block:1px solid rgba(255,255,255,.055); }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+    .step { border-top:1px solid var(--line-strong); padding:26px 12px 0 0; }
+    .step-number { font-weight:800; color:var(--teal); font-size:.76rem; letter-spacing:.14em; display:block; margin-bottom:29px; }
+    .step h3 { margin-bottom:11px; }
+    .step p { max-width:300px; font-size:.89rem; margin:0; }
+
+    /* Contato */
+    .contact-wrap { display:grid; grid-template-columns:.85fr 1.15fr; gap:58px; align-items:start; border:1px solid var(--line); border-radius:28px; padding:60px; background:radial-gradient(circle at 0 0,rgba(58,141,151,.19),transparent 55%),#132237; }
+    .contact-copy h2 { margin-top:16px; }
+    .contact-copy>p { font-size:.95rem; max-width:360px; }
+    .contact-point { margin-top:35px; display:flex; gap:10px; align-items:start; color:#cad8e4; font-size:.84rem; line-height:1.6; }
+    .contact-point svg { flex:0 0 19px; width:19px; height:19px; color:var(--teal); }
+    .brief-form { display:grid; gap:14px; }
+    .form-group { display:grid; gap:7px; }
+    .form-group label { font-size:.81rem; font-weight:700; color:#d6e4ee; }
+    .form-group input,.form-group select,.form-group textarea { display:block; width:100%; padding:14px 15px; background:#0d1a2b; color:#eef6f8; border:1px solid #31465c; border-radius:10px; outline:none; min-height:50px; transition:border-color .2s; }
+    .form-group textarea { min-height:112px; resize:vertical; }
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:var(--teal); }
+    .form-group input::placeholder,.form-group textarea::placeholder { color:#7f94a9; }
+    .form-group select { color:#f4f8fb; }
+    .form-disclaimer { font-size:.72rem; color:#92a6ba; line-height:1.6; margin:0; }
+    .form-submit { justify-self:start; }
+    .copy-status { font-size:.83rem; color:var(--teal); min-height:20px; margin:0; }
+    .site-footer { border-top:1px solid var(--line); padding:32px 0; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .footer-inner .brand__mark { height:31px; width:31px; }
+    .footer-inner .brand__name { font-size:.89rem; }
+    .footer-inner .brand__sub { font-size:.5rem; }
+    .footer-right { color:#8899ad; font-size:.78rem; line-height:1.6; text-align:right; }
+
+    .mobile-copy { display:none; }
+    .desktop-copy { display:inline; }
+
+    /* Tablet */
+    @media (max-width:1050px) {
+      .container { width:min(calc(100% - 48px),var(--container)); }
+      .nav-links { gap:17px; }
+      .hero-grid { gap:20px; }
+      .hero-copy h1 { font-size:clamp(2.9rem,5.2vw,4.5rem); }
+      .hero-art { min-height:280px; }
+      .contact-wrap { padding:44px; gap:35px; }
     }
-    .nome-central:hover{color:#fffdf6}
-    .nome-fallback{display:none;font:700 1.25rem Georgia,serif;color:var(--ouro-claro);letter-spacing:.12em}
-    .links-desktop{display:flex;gap:clamp(9px,1.25vw,20px);justify-content:flex-end;align-items:center}
-    .links-desktop a{white-space:nowrap;font-size:.85rem;font-weight:650;color:#fff6e9}
-    .links-desktop a:hover{color:var(--ouro-claro);background:#2b0618aa}
-    /* Filete dourado discreto; botões retangulares, sem cantos arredondados. */
-    .links-desktop a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 10px;border:1px solid rgba(230,181,93,.48);border-radius:0;transition:background .2s,border-color .2s}
-    .links-desktop a:hover,.links-desktop a:focus-visible{border-color:var(--ouro-claro)}
-    .topo-mobile{display:none}
-
-    .hero-desktop{position:relative;min-height:660px;height:min(790px,84svh);isolation:isolate;overflow:hidden;background:#2a0615}
-    .hero-desktop::before{content:"";position:absolute;inset:0;z-index:-3;background:
-      radial-gradient(ellipse at 86% 30%,rgba(245,171,93,.27),transparent 31%),
-      radial-gradient(ellipse at 49% 85%,rgba(143,18,61,.79),transparent 60%),
-      linear-gradient(120deg,#18040b 2%,#4a0e28 57%,#270814 100%)}
-    .hero-desktop::after{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,rgba(20,3,10,.97) 0%,rgba(26,3,12,.92) 33%,rgba(28,4,14,.27) 77%,rgba(28,4,14,.1) 100%)}
-    .cena-editorial{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
-    .cena-editorial .luz{position:absolute;width:52vw;height:52vw;min-width:660px;min-height:660px;right:-7%;top:-20%;border:1px solid #eec58155;border-radius:50%;box-shadow:0 0 160px 75px #be5b382b,inset 0 0 100px #ecc0771f}
-    .cena-editorial .traco{position:absolute;right:8%;top:-12%;width:27%;height:125%;border-left:1px solid #ffe6bb70;border-right:1px solid #fbe2ab55;transform:skewX(-22deg) rotate(6deg);background:linear-gradient(115deg,rgba(255,231,190,.1),rgba(255,255,255,.025) 40%,rgba(255,198,100,.16));backdrop-filter:blur(5px)}
-    .cena-editorial .painel{position:absolute;right:13%;top:18%;width:min(27vw,390px);aspect-ratio:3/4;transform:rotate(12deg) skewY(-5deg);border:1px solid #ffdea17e;box-shadow:0 0 65px #ffd18e33,0 40px 80px #16020d99;background:linear-gradient(150deg,#f8db9d38,#47092355),url('/assets/img/videos-comerciais.webp') center/cover no-repeat;opacity:.83}
-    .cena-editorial .painel::after{content:"";position:absolute;inset:0;background:linear-gradient(140deg,#efba563b,transparent 42%,#370615a3)}
-    .cena-editorial .painel-dois{right:-4%;top:36%;width:min(23vw,300px);aspect-ratio:3/4;transform:rotate(-16deg) skewY(4deg);background:linear-gradient(150deg,#d08e7433,#35061444),url('/assets/img/design-identidade.webp') center/cover no-repeat;opacity:.72}
-    .cena-editorial .selo{position:absolute;right:34%;bottom:6%;width:125px;height:125px;border:1px solid #f8d68ba0;transform:rotate(45deg);background:#fff5df0e;backdrop-filter:blur(10px)}
-    .cena-editorial .selo::after{content:'H';position:absolute;inset:0;display:grid;place-items:center;transform:rotate(-45deg);font:700 5.5rem Georgia,serif;color:#ffdfab;opacity:.6}
-    .hero-conteudo{height:100%;display:flex;align-items:center;position:relative;z-index:2;padding-top:105px;padding-bottom:70px}
-    .hero-texto{max-width:620px}
-    .hero-texto h1{font-size:clamp(3.1rem,5.6vw,6rem);font-weight:600;letter-spacing:-.035em;margin:18px 0 24px;text-wrap:balance}
-    .hero-texto .apoio{max-width:485px;color:#f0dcd4;font-size:clamp(1rem,1.35vw,1.14rem)}
-    .hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
-    .faixa-hero{position:absolute;left:0;right:0;bottom:0;padding:14px 0;border-top:1px solid #ebc18a60;background:#21050e91;backdrop-filter:blur(9px)}
-    .faixa-hero .container{display:flex;gap:28px;justify-content:space-between;flex-wrap:wrap;color:#e8cfae;font-size:.78rem;font-weight:650;letter-spacing:.12em;text-transform:uppercase}
-
-    /* MOBILE: champanhe, menu hambúrguer e vídeo 16:9. */
-    .abertura-mobile{display:none}
-    .apresentacao{text-align:center;max-width:780px;margin-inline:auto}
-    .apresentacao h2{font-size:clamp(2.1rem,4vw,3.55rem);margin:12px 0 18px}
-    .apresentacao p:not(.rotulo){color:var(--suave)}
-    .acoes{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
-    .divisor{height:1px;border:0;background:linear-gradient(90deg,transparent,#c79556,transparent)}
-
-    /* DESKTOP: grade com os banners originais 16:9, sem cortes. */
-    .servicos{background:linear-gradient(180deg,#1c0510,#3a0a1a 60%,#1b0510)}
-    .servicos-intro{text-align:center;max-width:780px;margin:0 auto 35px}
-    .grade-desktop{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
-    .banner-servico{border:1px solid var(--borda);background:#290914;border-radius:0;overflow:visible;box-shadow:0 18px 40px #0005;transition:transform .25s,border-color .25s}
-    .banner-servico:hover{transform:translateY(-5px);border-color:#f1c67e}
-    .banner-servico img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
-    .banner-servico .rodape-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 18px;color:var(--ouro-claro);font-size:.94rem;font-weight:700}
-    .rodape-banner span:last-child{opacity:.65;font-size:.75rem;letter-spacing:.1em}
-    .servicos-mobile{display:none}
-
-    .sobre{text-align:center;max-width:820px;margin-inline:auto}
-    .sobre p:not(.rotulo){color:var(--suave);margin:12px auto 0}
-    .contato{padding-top:18px}
-    .contato-painel{padding:56px 24px;border:1px solid var(--ouro);border-radius:12px;background:radial-gradient(ellipse at 50% 0,#811b3588,transparent 80%),#290710;text-align:center}
-    .contato-painel h2{font-size:clamp(2rem,4vw,3.2rem);margin:13px auto;max-width:700px}
-    .contato-painel p:not(.rotulo){color:var(--suave);max-width:660px;margin:auto}
-    .contato-painel .botao{margin-top:25px}
-    .rodape{padding:28px 0;border-top:1px solid var(--borda);color:var(--suave);font-size:.85rem}
-    .rodape .container{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
-
-    @media(max-width:1150px) and (min-width:801px){
-      .nav-desktop{grid-template-columns:48px minmax(155px,1fr) auto;gap:12px}
-      .assinatura small{display:none}
-      .nome-central{font-size:clamp(1.1rem,1.7vw,1.52rem);letter-spacing:.075em}
-      .links-desktop{gap:clamp(5px,.8vw,11px)}
-      .links-desktop a{font-size:.76rem}
-      .hero-desktop{min-height:610px}
-      .cena-editorial .painel{right:7%}
+    /* Ambiente mobile: layout próprio e BANNERS com proporção 19:16 */
+    @media (max-width:760px) {
+      html { scroll-padding-top:77px; }
+      .container { width:calc(100% - 36px); }
+      .section { padding:70px 0; }
+      h2 { font-size:clamp(2.05rem,8vw,2.85rem); }
+      .section-head { display:block; margin-bottom:25px; }
+      .section-head>p { margin:15px 0 0; max-width:490px; font-size:.9rem; }
+      .header-inner { height:67px; }
+      .brand__mark { width:34px; height:34px; }
+      .brand__name { font-size:.93rem; letter-spacing:.17em; }
+      .brand__sub { font-size:.49rem; letter-spacing:.17em; }
+      .nav-links,.header-cta { display:none; }
+      .menu-button { display:grid; }
+      .mobile-menu { display:none; border-top:1px solid var(--line); padding:11px 18px 18px; background:#101b2b; }
+      .mobile-menu.is-open { display:grid; }
+      .mobile-menu a { padding:13px 7px; border-bottom:1px solid var(--line); color:#edf3f9; font-size:.93rem; font-weight:660; }
+      .mobile-menu a:last-child { color:var(--teal); border-bottom:0; }
+      .hero { padding:48px 0 52px; }
+      .hero-grid { display:flex; flex-direction:column; align-items:stretch; gap:29px; }
+      .hero-copy { padding:0; }
+      .hero-copy h1 { font-size:clamp(2.45rem,9.4vw,3.75rem); margin:20px 0 19px; line-height:1.06; max-width:520px; }
+      .hero-copy>p { font-size:.94rem; line-height:1.7; margin-bottom:22px; max-width:510px; }
+      .eyebrow { font-size:.64rem; letter-spacing:.16em; }
+      .hero-actions { gap:9px; }
+      .hero-actions .btn { min-height:46px; padding:0 15px; font-size:.83rem; }
+      .hero-note { margin-top:21px; font-size:.73rem; }
+      .hero-art { aspect-ratio:19 / 16; min-height:0; max-height:450px; width:100%; border-radius:18px; }
+      .art-topline { top:9%; }
+      .art-browser { width:76%; height:59%; left:9%; top:21%; }
+      .float-video { width:40%; height:33%; right:4%; bottom:7%; }
+      .float-palette { left:4%; width:38%; height:18%; bottom:5%; }
+      .palette-lines span { width:15px; height:15px; }
+      .hero-foot { margin-top:29px; grid-template-columns:1fr; gap:15px; padding:21px; }
+      .hero-foot-item { font-size:.78rem; gap:12px; }
+      .hero-foot-item svg { height:19px; width:19px; }
+      .service-grid { display:grid; grid-auto-flow:column; grid-auto-columns:min(83%,340px); grid-template-columns:none; overflow-x:auto; gap:13px; padding:3px 18px 20px; margin-inline:-18px; scroll-snap-type:x mandatory; scrollbar-width:thin; scrollbar-color:rgba(114,228,213,.32) transparent; overscroll-behavior-inline:contain; }
+      .service-card { scroll-snap-align:start; border-radius:16px; }
+      .service-art { aspect-ratio:19 / 16; }
+      .service-body { padding:19px 20px 22px; }
+      .service-body p { margin-bottom:15px; }
+      .scroll-hint { display:flex; gap:7px; align-items:center; font-size:.72rem; color:#94aab9; margin:10px 0 0; }
+      .scroll-hint svg { width:17px; height:17px; }
+      .project-grid { grid-template-columns:1fr; gap:16px; }
+      .project-cover { aspect-ratio:19 / 16; max-height:330px; }
+      .project-copy { padding:20px; }
+      .filter-bar { flex-wrap:nowrap; overflow-x:auto; margin-inline:-18px; padding:0 18px 12px; scrollbar-width:none; }
+      .filter-bar::-webkit-scrollbar { display:none; }
+      .filter-btn { flex:0 0 auto; font-size:.78rem; padding:9px 13px; }
+      .steps { grid-template-columns:1fr; gap:22px; }
+      .step { padding:17px 0 0; }
+      .step-number { margin-bottom:13px; }
+      .step p { max-width:530px; }
+      .contact-wrap { grid-template-columns:minmax(0,1fr); gap:21px; padding:24px 19px; border-radius:20px; }
+      .contact-copy,.brief-form { min-width:0; }
+      .contact-copy h2 { margin-top:13px; }
+      .contact-point { margin-top:18px; }
+      .form-submit { width:100%; white-space:normal; min-width:0; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+      .footer-right { text-align:left; }
     }
-    @media(max-width:800px){
-      html{scroll-padding-top:78px}
-      .container{width:calc(100% - 28px)}
-      .topo-desktop,.hero-desktop{display:none}
-      .topo-mobile{display:block;position:sticky;top:0;z-index:100;background:linear-gradient(115deg,#fff5df,#ffe6b1 66%,#f6d18d);border-bottom:2px solid #b67e34;box-shadow:0 4px 18px #0005}
-      .nav-mobile{height:70px;display:grid;grid-template-columns:52px 1fr 48px;align-items:center;gap:9px}
-      .marca-mobile{width:48px;height:56px;display:flex;align-items:center;justify-content:center}
-      .marca-mobile img{height:52px;width:44px;object-fit:contain}
-      .nome-mobile{display:flex;align-items:center;justify-content:center;min-width:0}
-      .nome-mobile img{width:min(45vw,235px);max-height:50px;object-fit:contain}
-      .nome-mobile .nome-fallback{color:var(--vinho);font-size:clamp(1rem,4vw,1.25rem)}
-      .hamburguer{width:46px;height:44px;display:grid;place-items:center;border:1px solid #89344a;background:#fff9eb8a;border-radius:7px;color:#650d20}
-      .hamburguer svg{width:23px;height:23px}
-      /* Menu ancorado à direita: o maior rótulo define a largura de TODOS os botões. */
-      .menu-mobile{display:none;position:absolute;top:calc(100% + 2px);right:14px;left:auto;
-        width:max-content;max-width:calc(100vw - 28px);padding:9px;
-        background:#fff0d2;border:1px solid #bb8d4a;box-shadow:0 16px 28px #0009}
-      .menu-mobile.aberto{display:flex;flex-direction:column;align-items:stretch;gap:6px}
-      .menu-mobile a{display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;
-        padding:8px 18px;text-align:center;font-size:.91rem;line-height:1.3;font-weight:700;
-        white-space:nowrap;color:#650d20;border:1px solid #c18d40;border-radius:0;
-        background:linear-gradient(135deg,#fff8e8,#ffedcb);transition:background .2s,border-color .2s}
-      .menu-mobile a:hover,.menu-mobile a:focus-visible{background:#f9dfaa;border-color:#9d6628}
-      .abertura-mobile{display:block;padding:20px 0 38px}
-      .banner-video{position:relative;isolation:isolate;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--borda);border-radius:0;background:#2a0612}
-      .banner-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:4px;padding:12px;background:linear-gradient(125deg,#25051175,#620a2490),url('/assets/img/boas-vindas-poster.webp?v=20261102c') center/contain no-repeat,linear-gradient(120deg,#4b0e22,#18040b)}
-      .banner-fallback strong{font:700 clamp(1.2rem,5vw,2.4rem) Georgia,serif;color:#ffe7b4;letter-spacing:.09em}
-      .banner-fallback span{font-size:.86rem;color:#f9ebdf}
-      .banner-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;background:#240510}
-      .banner-video.pronto video{opacity:1}
-      .abertura-mobile .legenda{text-align:center;margin:11px 0 0;color:var(--suave);font-size:.84rem}
-      .secao{padding:52px 0}
-      .apresentacao h2{font-size:clamp(2rem,8.1vw,3rem)}
-      .grade-desktop{display:none}
-      .servicos-mobile{display:block}
-      .servicos-intro{margin-bottom:20px}
-      .servicos-intro .descricao{font-size:.92rem}
-      .controles-cards{display:flex;gap:12px;justify-content:center;align-items:center;margin:18px 0 0}
-      .seta-card{width:48px;height:48px;border:1px solid var(--ouro);border-radius:50%;background:#380c1b;display:grid;place-items:center;color:#ffe8b9}
-      .seta-card svg{width:24px;height:24px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-      .contador-card{font-size:.85rem;min-width:67px;text-align:center;color:#efcca0;font-weight:700}
-      .trilho{--w:min(92vw,440px);display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding:9px max(0px,calc((100% - var(--w))/2)) 20px}
-      .trilho::-webkit-scrollbar{display:none}
-      /* Arte inteira, preservando os quatro cantos do filete ornamental. */
-      .card-mobile{flex:0 0 var(--w);aspect-ratio:812/1024;position:relative;scroll-snap-align:center;scroll-snap-stop:always;overflow:visible;border:0;border-radius:0;background:#240612;box-shadow:0 16px 30px #0006}
-      .card-mobile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:0;display:block}
-      .card-mobile img[hidden]{display:none}
-      .card-reserva{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:13px;text-align:center;padding:25px;color:var(--ouro-claro)}
-      .card-reserva b{font:700 1.5rem/1.18 Georgia,serif}
-      .card-reserva small{color:var(--suave);font-size:.8rem}
-      .dica{text-align:center;color:var(--suave);font-size:.8rem;margin-top:12px}
-      .contato-painel{padding:40px 18px}
+    @media (max-width:370px) {
+      .container { width:calc(100% - 28px); }
+      .service-grid { margin-inline:-14px; padding-inline:14px; }
+      .filter-bar { margin-inline:-14px; padding-inline:14px; }
+      .brand { gap:7px; }
+      .brand__name { font-size:.85rem; }
+      .hero-copy h1 { font-size:2.38rem; }
+      .hero-actions .btn { width:100%; }
+      .hero-art .art-topline { font-size:.49rem; }
     }
-    @media(max-width:390px){.acoes{flex-direction:column}.acoes .botao{width:100%}.trilho{--w:92vw}.nome-mobile img{width:43vw}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
-    /* Conteúdo complementar da apresentação. */
-    .apresentacao .sobre-complemento{max-width:690px;margin:16px auto 0;color:var(--suave)}
-
-    /* REALIZAÇÕES: molduras quadradas prontas para quatro logotipos. */
-    .realizacoes{position:relative;background:linear-gradient(180deg,#1b050d 0%,#320919 58%,#19050b 100%)}
-    .realizacoes-intro{text-align:center;max-width:760px;margin:0 auto 36px}
-    .realizacoes-intro .descricao{max-width:660px;margin:0 auto}
-    .grade-realizacoes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
-    .realizacao-item{min-width:0;padding:13px;background:linear-gradient(145deg,#400e1f,#220610);border:1px solid rgba(230,181,93,.45);text-align:center}
-    .realizacao-logo{position:relative;width:100%;aspect-ratio:1;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 28%,#7d244430,transparent 67%),#180509;border:1px solid rgba(230,181,93,.36)}
-    .realizacao-logo::before,.realizacao-logo::after{content:"";position:absolute;z-index:2;width:15px;height:15px;border-color:var(--ouro)}
-    .realizacao-logo::before{top:6px;left:6px;border-top:1px solid;border-left:1px solid}
-    .realizacao-logo::after{bottom:6px;right:6px;border-bottom:1px solid;border-right:1px solid}
-    .realizacao-logo img{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain;padding:14px}
-    .realizacao-logo img[hidden]{display:none}
-    .realizacao-reserva{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:12px;color:var(--ouro-claro);font:700 .64rem/1.3 Georgia,serif;letter-spacing:.09em;overflow-wrap:anywhere}
-    .realizacao-reserva .sigla{font:normal clamp(2.5rem,4vw,4rem)/1 Georgia,serif;color:#efc57a}
-    .realizacao-item h3{font-size:clamp(.95rem,1.5vw,1.15rem);margin:13px 0 3px;color:#ffe4b6;overflow-wrap:anywhere}
-    @media(max-width:800px){
-      .grade-realizacoes{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-      .realizacao-item{padding:9px}
-      .realizacao-logo img{padding:11px}
-      .realizacao-reserva{font-size:.56rem;letter-spacing:.04em;gap:6px}
-      .realizacao-reserva .sigla{font-size:2.6rem}
-      .realizacoes-intro{margin-bottom:23px}
+    /* Mobile compacto — cada seção ocupa menos altura, sem mudar o desktop */
+    @media (max-width:760px) {
+      .desktop-copy { display:none !important; }
+      .mobile-copy { display:inline !important; }
+      html { scroll-padding-top:72px; }
+      .container { width:calc(100% - 32px); }
+      .section { padding:36px 0; }
+      h2 { font-size:clamp(1.55rem,6.3vw,2rem); line-height:1.14; margin-bottom:10px; }
+      h3 { font-size:1.04rem; line-height:1.25; }
+      p { line-height:1.48; }
+      .section-head { margin-bottom:15px; }
+      .section-head h2 { margin-top:6px; }
+      .section-head>p { display:none; }
+      .eyebrow { font-size:.58rem; letter-spacing:.11em; }
+      .eyebrow::before { width:12px; }
+      .hero { padding:23px 0 23px; }
+      .hero-grid { gap:17px; }
+      .hero-copy h1 { font-size:clamp(2rem,8.7vw,2.6rem); margin:11px 0 10px; line-height:1.09; }
+      .hero-copy>p { font-size:.85rem; line-height:1.48; margin-bottom:13px; }
+      .hero-actions { gap:8px; }
+      .hero-actions .btn { min-height:42px; padding:0 13px; font-size:.77rem; }
+      .hero-note,.hero-foot { display:none; }
+      .hero-art { aspect-ratio:19/16; min-height:0; max-height:none; border-radius:14px; }
+      .service-grid { grid-auto-columns:min(70%,280px); gap:11px; margin-inline:-16px; padding-inline:16px; padding-bottom:10px; }
+      .service-art { aspect-ratio:19/16; }
+      .service-body { padding:12px 13px 13px; }
+      .service-number { margin-bottom:5px; font-size:.55rem; letter-spacing:.08em; }
+      .service-body h3 { margin-bottom:5px; }
+      .service-body p { font-size:.76rem; line-height:1.4; margin-bottom:10px; }
+      .text-link { font-size:.75rem; gap:5px; }
+      .text-link svg { height:14px; width:14px; }
+      .scroll-hint { margin-top:5px; font-size:.69rem; }
+      .project-grid { gap:11px; }
+      .project-card { display:grid; grid-template-columns:42% minmax(0,1fr); border-radius:14px; align-items:stretch; }
+      .project-cover { width:100%; aspect-ratio:19/16; max-height:none; min-height:0; }
+      .project-copy { min-width:0; padding:11px 12px; align-self:center; }
+      .project-tag { font-size:.53rem; line-height:1.3; letter-spacing:.04em; }
+      .project-copy h3 { font-size:.97rem; margin:6px 0 4px; }
+      .project-copy p { font-size:.73rem; line-height:1.38; }
+      .project-watermark { font-size:.44rem; left:5%; bottom:6%; }
+      .hyper-emblem { width:64px; height:64px; border-radius:14px; }
+      .hyper-emblem svg { width:43px; height:43px; }
+      .filter-bar { margin-inline:-16px; padding:0 16px 6px; margin-bottom:13px; gap:6px; }
+      .filter-btn { padding:7px 12px; font-size:.75rem; }
+      .project-note { margin-top:12px; padding:9px 12px; font-size:.7rem; line-height:1.42; }
+      .steps { gap:11px; }
+      .step { display:grid; grid-template-columns:47px minmax(0,1fr); column-gap:9px; padding:11px 0 0; }
+      .step-number { grid-row:1/3; margin:3px 0 0; font-size:.57rem; letter-spacing:0; }
+      .step h3 { margin:0 0 3px; font-size:.94rem; }
+      .step p { font-size:.74rem; line-height:1.4; }
+      .contact-wrap { padding:18px 15px; gap:11px; border-radius:16px; }
+      .contact-copy h2 { margin:7px 0 7px; }
+      .contact-copy>p { margin:0; font-size:.81rem; }
+      .contact-point { display:none; }
+      .brief-form { gap:9px; }
+      .form-group { gap:4px; }
+      .form-group label { font-size:.75rem; }
+      .form-group input,.form-group select,.form-group textarea { min-height:43px; padding:10px 12px; font-size:.84rem; }
+      .form-group textarea { min-height:76px; }
+      .form-submit { min-height:44px; font-size:.8rem; }
+      .form-disclaimer { font-size:.65rem; line-height:1.4; }
+      .copy-status { min-height:0; }
+      .site-footer { padding:20px 0; }
+      .footer-inner { gap:10px; }
     }
-    @media(max-width:360px){.realizacao-reserva .sigla{font-size:2.1rem}.realizacao-item h3{font-size:.93rem}}
+    @media (max-width:370px) {
+      .hero-copy h1 { font-size:2rem; }
+      .service-grid { grid-auto-columns:76%; margin-inline:-14px; padding-inline:14px; }
+      .filter-bar { margin-inline:-14px; padding-inline:14px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*:before,*:after { animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
   </style>
 </head>
 <body>
-  <!-- Cabeçalho desktop: integrado ao hero, sem faixa champanhe. -->
-  <header class="topo-desktop">
-    <div class="container nav-desktop">
-      <a class="assinatura" href="#inicio" aria-label="HYPERBOREA — início">
-        <img src="/assets/img/monograma-h.svg" alt="" data-fallback="h">
-        <small>HYPERBOREA<br>Agência Criativa</small>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Hyperboria, voltar ao início">
+        <!-- Marca geométrica própria: H + elemento de interface, sem runas. -->
+        <svg class="brand__mark" viewBox="0 0 64 64" role="img" aria-label="Marca Hyperboria" xmlns="http://www.w3.org/2000/svg">
+          <rect width="64" height="64" rx="15" fill="#16334a" stroke="#6ad9d0" stroke-opacity=".55"/>
+          <path d="M19 16v32M45 16v32" stroke="#7de8dc" stroke-width="7" stroke-linecap="round"/>
+          <path d="M21 32h22" stroke="#f1c58e" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="45" cy="16" r="4" fill="#f1c58e"/>
+        </svg>
+        <span><span class="brand__name">HYPERBORIA</span><span class="brand__sub">AGÊNCIA CRIATIVA DIGITAL</span></span>
       </a>
-      <a href="#inicio" class="nome-central" aria-label="HYPERBOREA — início">HYPERBOREA</a>
-      <nav class="links-desktop" aria-label="Navegação desktop">
-        <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a>
-        <a href="#realizacoes">Realizações</a><a href="#contato">Contatos</a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#processo">Como trabalhamos</a>
       </nav>
-    </div>
-  </header>
-
-  <!-- Cabeçalho mobile: champanhe, H e nome SVG, hambúrguer. -->
-  <header class="topo-mobile">
-    <div class="container nav-mobile">
-      <a class="marca-mobile" href="#inicio" aria-label="HYPERBOREA — início">
-        <img src="/assets/img/monograma-h.svg" alt="" data-fallback="h">
-      </a>
-      <a class="nome-mobile" href="#inicio" aria-label="HYPERBOREA — início">
-        <img src="/assets/img/hyperborea-nome.svg" alt="HYPERBOREA" data-fallback="nome">
-        <span class="nome-fallback">HYPERBOREA</span>
-      </a>
-      <button id="abrirMenu" class="hamburguer" type="button" aria-label="Abrir menu" aria-controls="menuMobile" aria-expanded="false">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <a class="btn btn-primary header-cta" href="#contato">Fale com a agência <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      <button class="menu-button" id="menuButton" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
-    <nav class="menu-mobile" id="menuMobile" aria-label="Navegação mobile">
-      <a href="#inicio">Início</a><a href="#sobre">Sobre</a><a href="#servicos">Serviços</a>
-      <a href="#realizacoes">Realizações</a><a href="#contato">Contatos</a>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Navegação para celular">
+      <a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#processo">Como trabalhamos</a><a href="#contato">Solicitar orçamento</a>
     </nav>
   </header>
 
-  <main id="inicio">
-    <!-- Desktop: composição estática dramática, sem vídeo. -->
-    <section class="hero-desktop" aria-labelledby="tituloDesktop">
-      <div class="cena-editorial" aria-hidden="true">
-        <div class="luz"></div><div class="traco"></div>
-        <div class="painel"></div><div class="painel painel-dois"></div><div class="selo"></div>
-      </div>
-      <div class="container hero-conteudo">
-        <div class="hero-texto">
-          <p class="rotulo">Identidade • Criatividade • Futuro</p>
-          <h1 id="tituloDesktop">Ideias que<br><span class="ouro">atravessam</span><br>horizontes.</h1>
-          <p class="apoio">Do primeiro conceito à presença digital, criamos experiências visuais com personalidade, profundidade e propósito.</p>
-          <div class="hero-cta">
-            <a class="botao botao-ouro" href="#servicos">Explore nossos serviços</a>
-            <a class="botao botao-vinho" href="#contato">Fale com a HYPERBOREA</a>
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Design + Front-end + Audiovisual</span>
+            <h1 id="hero-title"><span class="desktop-copy">O digital tem infinitas possibilidades. <span class="highlight">Dê forma à sua.</span></span><span class="mobile-copy">Sua marca, <span class="highlight">novas possibilidades.</span></span></h1>
+            <p><span class="desktop-copy">Sites que encantam, vídeos que prendem a atenção e identidades visuais que fazem sua marca ser lembrada. Bem-vindo à Hyperboria.</span><span class="mobile-copy">Sites, vídeos comerciais e identidade visual para sua marca.</span></p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#servicos"><span class="desktop-copy">Conheça nossos serviços</span><span class="mobile-copy">Ver serviços</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+              <a class="btn btn-outline" href="#projetos">Ver projetos</a>
+            </div>
+            <div class="hero-note"><span class="live-dot" aria-hidden="true"></span> Criação autoral com tecnologia e atenção aos detalhes.</div>
+          </div>
+          <!-- ARTE HERO: substituir futuramente pelo banner real 16:9 desktop / 19:16 mobile. -->
+          <div class="hero-art" role="img" aria-label="Ilustração de um site moderno, produção de vídeo e paleta de identidade visual">
+            <div class="art-grid"></div>
+            <div class="art-topline"><span>HYPERBORIA / DIGITAL STUDIO</span><span class="tiny-label">IMAGINE · CREATE</span></div>
+            <div class="art-browser" aria-hidden="true">
+              <div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url"></span></div>
+              <div class="browser-site"><div class="browser-copy"><div class="ui-mini"></div><div class="ui-title"></div><div class="ui-title small"></div><div class="ui-text"></div><div class="ui-text short"></div><div class="ui-btn"></div></div><div class="browser-figure"></div></div>
+            </div>
+            <div class="float-card float-video" aria-hidden="true"><div class="video-surface"><span class="play-glyph"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div></div>
+            <div class="float-card float-palette" aria-hidden="true"><span class="palette-caption">IDENTIDADE VISUAL</span><div class="palette-lines"><span></span><span></span><span></span><span></span></div></div>
           </div>
         </div>
+        <div class="hero-foot" aria-label="Diferenciais da agência">
+          <div class="hero-foot-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 20v-6h8"/></svg> Visual que se adapta a cada tela</div>
+          <div class="hero-foot-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.8 5.8L21 12l-6.2 3.2L12 21l-2.8-5.8L3 12l6.2-3.2z"/></svg> Criatividade com propósito</div>
+          <div class="hero-foot-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12l4 4L19 6"/><circle cx="12" cy="12" r="10"/></svg> Do conceito à apresentação final</div>
+        </div>
       </div>
-      <div class="faixa-hero"><div class="container"><span>Vídeos Comerciais</span><span>Identidade Visual</span><span>Branding</span><span>Web Design</span></div></div>
     </section>
 
-    <!-- Mobile: vídeo com imagem fixa se não houver reprodução. -->
-    <section class="abertura-mobile" aria-label="Boas-vindas à HYPERBOREA">
+    <section class="section services" id="servicos" aria-labelledby="servicos-title">
       <div class="container">
-        <div class="banner-video" id="bannerBoasVindas">
-          <div class="banner-fallback" role="img" aria-label="Arte de boas-vindas à HYPERBOREA"><strong>HYPERBOREA</strong><span>Sejam bem-vindos!</span></div>
-          <video id="videoBoasVindas" autoplay muted loop playsinline preload="metadata" disablepictureinpicture poster="/assets/img/boas-vindas-poster.webp?v=20261102c" aria-label="Vídeo de boas-vindas">
-            <source src="/assets/video/boa-vindas.mp4?v=20261102c" type="video/mp4">
-          </video>
+        <div class="section-head"><div><span class="eyebrow">O que fazemos</span><h2 id="servicos-title"><span class="desktop-copy">Três formas de tirar boas ideias <span class="highlight">do papel.</span></span><span class="mobile-copy">Nossos <span class="highlight">serviços.</span></span></h2></div><p>Escolha uma área para conhecer nossos serviços e ver os projetos relacionados.</p></div>
+        <div class="service-grid" aria-label="Categorias de serviços; arraste horizontalmente no celular">
+          <a class="service-card" href="#projetos" data-go-filter="sites" aria-label="Conhecer criação de sites e ver projetos de sites">
+            <div class="service-art web" aria-hidden="true"><div class="tiny-webpage"><div class="tiny-top"><i></i><i></i><i></i></div><div class="tiny-content"><div class="tiny-words"><b></b><b style="width:78%"></b><i></i><i style="width:76%"></i><em></em></div><div class="tiny-picture"></div></div></div><div class="tag-code">&lt;/&gt;</div></div>
+            <div class="service-body"><span class="service-number">01 / Presença digital</span><h3>Criação de Sites</h3><p><span class="desktop-copy">Sites institucionais, páginas de apresentação e interfaces responsivas feitas com cuidado do primeiro ao último pixel.</span><span class="mobile-copy">Sites modernos e responsivos.</span></p><span class="text-link">Explorar sites <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="service-card" href="#projetos" data-go-filter="videos" aria-label="Conhecer vídeos comerciais e ver estudos audiovisuais">
+            <div class="service-art video" aria-hidden="true"><div class="video-frame"><div class="frame-corners"></div><span class="play-glyph"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div></div>
+            <div class="service-body"><span class="service-number">02 / Movimento e história</span><h3>Vídeos Comerciais</h3><p><span class="desktop-copy">Comerciais de produtos, apresentações imobiliárias e peças audiovisuais para destacar marcas e serviços.</span><span class="mobile-copy">Vídeos para produtos e negócios.</span></p><span class="text-link">Explorar audiovisual <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+          </a>
+          <a class="service-card" href="#projetos" data-go-filter="design" aria-label="Conhecer design gráfico e ver projetos de identidade visual">
+            <div class="service-art design" aria-hidden="true"><div class="design-sheet"><div class="design-logo"></div><div class="design-title"></div><div class="design-txt"></div></div><div class="design-swatch"><i></i><i></i><i></i><i></i></div></div>
+            <div class="service-body"><span class="service-number">03 / Marcas que ficam</span><h3>Design &amp; Identidade</h3><p><span class="desktop-copy">Logotipos, identidade visual, banners, materiais gráficos e comunicação com unidade e personalidade.</span><span class="mobile-copy">Logos, banners e marcas.</span></p><span class="text-link">Explorar design <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></span></div>
+          </a>
         </div>
-        <p class="legenda">Sejam bem-vindos ao universo criativo de HYPERBOREA.</p>
+        <p class="scroll-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18m-5-5 5 5-5 5M8 7l-5 5 5 5"/></svg> Arraste para ver os outros serviços.</p>
       </div>
     </section>
 
-    <section class="secao" id="sobre" aria-labelledby="tituloSobre">
-      <div class="container apresentacao">
-        <p class="rotulo">Sobre a HYPERBOREA</p>
-        <h2 id="tituloSobre">Ideias que ganham <span class="ouro">identidade.</span></h2>
-        <p>Agência Criativa de vídeos comerciais, identidade visual, gestão de marcas e experiências digitais em uma proposta criativa inspirada pelo universo boreal.</p>
-        <p class="sobre-complemento">Elegância clássica e visão de futuro: uma identidade em vermelho-vinho e dourado, dedicada a transformar ideias em apresentações visuais e experiências digitais.</p>
-        <div class="acoes"><a class="botao botao-ouro" href="#servicos">Conheça nossos serviços</a><a class="botao botao-vinho" href="#contato">Entre em contato</a></div>
-      </div>
-    </section>
-    <hr class="divisor">
-
-    <section class="secao servicos" id="servicos" aria-labelledby="tituloServicos">
+    <section class="section projects" id="projetos" aria-labelledby="projetos-title">
       <div class="container">
-        <div class="servicos-intro">
-          <p class="rotulo">Nossas áreas de criação</p>
-          <h2 class="secao-titulo" id="tituloServicos">Serviços <span class="ouro">criativos</span></h2>
-          <p class="descricao">Uma identidade para cada ideia. Uma experiência para cada projeto.</p>
+        <div class="section-head"><div><span class="eyebrow">Portfólio em construção</span><h2 id="projetos-title"><span class="desktop-copy">Projetos, ideias e <span class="highlight">experimentos.</span></span><span class="mobile-copy">Nossos <span class="highlight">projetos.</span></span></h2></div><p>Um espaço para apresentar nossos trabalhos reais e estudos criativos, sempre identificando o estágio de cada projeto.</p></div>
+        <div class="filter-bar" role="group" aria-label="Filtrar projetos">
+          <button class="filter-btn" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="filter-btn" type="button" data-filter="sites" aria-pressed="false">Sites</button>
+          <button class="filter-btn" type="button" data-filter="videos" aria-pressed="false">Vídeos</button>
+          <button class="filter-btn" type="button" data-filter="design" aria-pressed="false">Design</button>
         </div>
-        <!-- Desktop: banners originais em 16:9. -->
-        <div class="grade-desktop">
-          <article class="banner-servico"><img src="/assets/img/videos-comerciais.webp" alt="Banner de vídeos comerciais" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Vídeos Comerciais</span><span>01 / 04</span></div></article>
-          <article class="banner-servico"><img src="/assets/img/design-identidade.webp" alt="Banner de design e identidade visual" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Design e Identidade Visual</span><span>02 / 04</span></div></article>
-          <article class="banner-servico"><img src="/assets/img/branding.webp" alt="Banner de branding e gestão de marcas" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Branding e Gestão de Marcas</span><span>03 / 04</span></div></article>
-          <article class="banner-servico"><img src="/assets/img/sites-webdesign.webp" alt="Banner de sites e web design" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Sites e Web Design</span><span>04 / 04</span></div></article>
+        <div class="project-grid" id="projectGrid">
+          <article class="project-card" data-category="sites">
+            <div class="project-cover project-cover--marajoara" role="img" aria-label="Ilustração conceitual de edifício representando o projeto Marajoara"><div class="marajoara-building"></div><span class="project-watermark">EDIFÍCIO MARAJOARA</span></div>
+            <div class="project-copy"><span class="project-tag">Site · Em desenvolvimento</span><h3>Edifício Marajoara</h3><p><span class="desktop-copy">Projeto de comunicação digital e apresentação institucional de um condomínio. Ilustração provisória.</span><span class="mobile-copy">Site institucional em desenvolvimento.</span></p></div>
+          </article>
+          <article class="project-card" data-category="videos">
+            <div class="project-cover project-cover--video" role="img" aria-label="Ilustração conceitual de tela de vídeo cinematográfico"><div class="video-project-lines"><span class="play-glyph"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div></div>
+            <div class="project-copy"><span class="project-tag">Audiovisual · Em preparação</span><h3>Laboratório de Comerciais</h3><p><span class="desktop-copy">Estudos de linguagem cinematográfica para apresentar produtos, espaços e serviços. Área em preparação.</span><span class="mobile-copy">Vídeos comerciais em preparação.</span></p></div>
+          </article>
+          <article class="project-card" data-category="design">
+            <div class="project-cover project-cover--hyper" role="img" aria-label="Ilustração do símbolo provisório da agência Hyperboria"><div class="hyper-emblem"><svg viewBox="0 0 64 64" fill="none"><path d="M17 13v38M47 13v38" stroke="#8ae9df" stroke-width="7" stroke-linecap="round"/><path d="M20 32h24" stroke="#eec38d" stroke-width="6" stroke-linecap="round"/><circle cx="47" cy="13" r="4" fill="#eec38d"/></svg></div></div>
+            <div class="project-copy"><span class="project-tag">Branding · Estudo interno</span><h3>Identidade Hyperboria</h3><p><span class="desktop-copy">Exploração da identidade da própria agência, combinando tecnologia, clareza e composição gráfica.</span><span class="mobile-copy">Identidade visual da agência.</span></p></div>
+          </article>
         </div>
-        <!-- Mobile: cards verticais inteiros, arraste/peek. -->
-        <div class="servicos-mobile">
-          <div class="trilho" id="carrosselMobile" tabindex="0" aria-label="Carrossel de serviços; deslize para os lados">
-            <article class="card-mobile" data-titulo="Vídeos Comerciais"><div class="card-reserva"><b>Vídeos<br>Comerciais</b><small>HYPERBOREA</small></div><img src="/assets/img/card-videos-comerciais.webp" alt="Card vertical de vídeos comerciais" loading="lazy"></article>
-            <article class="card-mobile" data-titulo="Design e Identidade Visual"><div class="card-reserva"><b>Design e<br>Identidade Visual</b><small>HYPERBOREA</small></div><img src="/assets/img/card-design-identidade.webp" alt="Card vertical de design e identidade visual" loading="lazy"></article>
-            <article class="card-mobile" data-titulo="Branding e Gestão de Marcas"><div class="card-reserva"><b>Branding e<br>Gestão de Marcas</b><small>HYPERBOREA</small></div><img src="/assets/img/card-branding.webp" alt="Card vertical de branding e gestão de marcas" loading="lazy"></article>
-            <article class="card-mobile" data-titulo="Sites e Web Design"><div class="card-reserva"><b>Sites e<br>Web Design</b><small>HYPERBOREA</small></div><img src="/assets/img/card-sites-webdesign.webp" alt="Card vertical de sites e web design" loading="lazy"></article>
+        <div class="project-note"><span class="desktop-copy"><strong>Transparência criativa:</strong> ilustrações desta seção são demonstrativas. Novos sites, imagens e vídeos poderão substituir os estudos à medida que forem concluídos e autorizados para divulgação.</span><span class="mobile-copy">Imagens demonstrativas. O portfólio será atualizado conforme os projetos forem concluídos.</span></div>
+      </div>
+    </section>
+
+    <section class="section process" id="processo" aria-labelledby="processo-title">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Nossa abordagem</span><h2 id="processo-title"><span class="desktop-copy">Da ideia ao <span class="highlight">resultado visual.</span></span><span class="mobile-copy">Como <span class="highlight">trabalhamos.</span></span></h2></div><p>Um processo simples, colaborativo e ajustado à realidade de cada projeto.</p></div>
+        <div class="steps">
+          <article class="step"><span class="step-number">01 / CONVERSA</span><h3>Entendemos sua ideia</h3><p><span class="desktop-copy">Conhecemos a marca, o público, os materiais disponíveis e o que o projeto precisa comunicar.</span><span class="mobile-copy">Ouvimos sua necessidade.</span></p></article>
+          <article class="step"><span class="step-number">02 / CRIAÇÃO</span><h3>Desenhamos a solução</h3><p><span class="desktop-copy">Construímos propostas visuais, ajustamos detalhes e validamos a direção criativa.</span><span class="mobile-copy">Criamos e ajustamos juntos.</span></p></article>
+          <article class="step"><span class="step-number">03 / ENTREGA</span><h3>Preparamos para usar</h3><p><span class="desktop-copy">Organizamos os arquivos e as versões adequadas aos canais e formatos definidos.</span><span class="mobile-copy">Entregamos os arquivos finais.</span></p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="contact-copy">
+            <span class="eyebrow">Comece seu projeto</span>
+            <h2 id="contato-title"><span class="desktop-copy">Sua próxima ideia merece <span class="highlight">ganhar vida.</span></span><span class="mobile-copy">Vamos <span class="highlight">conversar?</span></span></h2>
+            <p><span class="desktop-copy">Conte o que você precisa. Prepare uma mensagem com as informações principais para facilitar nosso primeiro contato.</span><span class="mobile-copy">Conte sua ideia para começarmos.</span></p>
+            <div class="contact-point"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 10h8M8 14h5M5 20l-2 1 1-5a9 9 0 1 1 4 4z"/></svg><span>Sem promessas prontas: cada projeto é pensado conforme sua necessidade.</span></div>
           </div>
-          <div class="controles-cards">
-            <button id="cardAnterior" class="seta-card" type="button" aria-label="Card anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-            <span id="contadorCard" class="contador-card" aria-live="polite">01 / 04</span>
-            <button id="cardProximo" class="seta-card" type="button" aria-label="Próximo card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-          </div>
-          <p class="dica">Deslize os cards ou use as setas.</p>
+          <!-- Sem backend e sem contato inventado. Copia o briefing de verdade. -->
+          <form class="brief-form" id="briefForm">
+            <div class="form-group"><label for="clientName">Seu nome</label><input id="clientName" name="clientName" type="text" placeholder="Como podemos chamar você?" autocomplete="name" maxlength="100" required></div>
+            <div class="form-group"><label for="projectType">O que você procura?</label><select id="projectType" name="projectType" required><option value="" disabled selected>Selecione um serviço</option><option>Criação de site</option><option>Vídeo comercial</option><option>Design e identidade visual</option><option>Outro projeto</option></select></div>
+            <div class="form-group"><label for="projectMessage">Conte um pouco sobre a ideia</label><textarea id="projectMessage" name="projectMessage" placeholder="Ex.: preciso de um site para apresentar minha empresa..." maxlength="2000" required></textarea></div>
+            <button class="btn btn-primary form-submit" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg> Copiar mensagem de orçamento</button>
+            <p class="form-disclaimer"><span class="desktop-copy">Este formulário não envia informações automaticamente. Ele copia uma mensagem pronta para você encaminhar ao contato oficial da agência quando estiver disponível.</span><span class="mobile-copy">A mensagem é copiada, não enviada automaticamente.</span></p>
+            <p id="copyStatus" class="copy-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>
-
-    <!-- REALIZAÇÕES: quatro espaços preparados para os logotipos reais.
-         Envie as imagens para /assets/img/realizacoes/ com os nomes indicados. -->
-    <section class="secao realizacoes" id="realizacoes" aria-labelledby="tituloRealizacoes">
-      <div class="container">
-        <div class="realizacoes-intro">
-          <p class="rotulo">Nosso portfólio</p>
-          <h2 class="secao-titulo" id="tituloRealizacoes">Nossas <span class="ouro">Realizações.</span></h2>
-          <p class="descricao">Cada identidade tem uma história. Conheça alguns dos projetos que compõem nosso universo criativo.</p>
-        </div>
-        <div class="grade-realizacoes" aria-label="Projetos de identidade visual">
-          <article class="realizacao-item">
-            <div class="realizacao-logo">
-              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">M</span><span>MARAJOARA</span></span>
-              <img src="/assets/img/realizacoes/marajoara.webp" alt="Logotipo do Marajoara" loading="lazy" decoding="async">
-            </div>
-            <h3>Marajoara</h3>
-          </article>
-          <article class="realizacao-item">
-            <div class="realizacao-logo">
-              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">P</span><span>POKEDAIMON</span></span>
-              <img src="/assets/img/realizacoes/pokedaimon.webp" alt="Logotipo do PokeDaimon" loading="lazy" decoding="async">
-            </div>
-            <h3>PokeDaimon</h3>
-          </article>
-          <article class="realizacao-item">
-            <div class="realizacao-logo">
-              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">PV</span><span>PERCIVAL VIKING</span></span>
-              <img src="/assets/img/realizacoes/percival-viking.webp" alt="Logotipo do Percival Viking" loading="lazy" decoding="async">
-            </div>
-            <h3>Percival Viking</h3>
-          </article>
-          <article class="realizacao-item">
-            <div class="realizacao-logo">
-              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">L</span><span>LAMAGGIÊ</span></span>
-              <img src="/assets/img/realizacoes/xicorita.webp" alt="Logotipo da LaMaggiê" loading="lazy" decoding="async">
-            </div>
-          <h3>Xicorita</h3>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="secao contato" id="contato"><div class="container"><div class="contato-painel"><p class="rotulo">Contatos • Vamos conversar?</p><h2>Sua próxima ideia pode começar <span class="ouro">aqui.</span></h2><p>Converse com a HYPERBOREA sobre vídeos comerciais, identidade visual, marcas e projetos digitais.</p><a class="botao botao-ouro" href="mailto:contato.hyperborea@gmail.com?subject=Contato%20HYPERBOREA">Enviar e-mail</a></div></div></section>
   </main>
-  <footer class="rodape"><div class="container"><span>© <span id="ano">2026</span> HYPERBOREA — Projeto em desenvolvimento.</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#inicio" aria-label="Hyperboria, voltar ao início">
+        <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#16334a" stroke="#6ad9d0" stroke-opacity=".55"/><path d="M19 16v32M45 16v32" stroke="#7de8dc" stroke-width="7" stroke-linecap="round"/><path d="M21 32h22" stroke="#f1c58e" stroke-width="6" stroke-linecap="round"/><circle cx="45" cy="16" r="4" fill="#f1c58e"/></svg>
+        <span><span class="brand__name">HYPERBORIA</span><span class="brand__sub">AGÊNCIA CRIATIVA DIGITAL</span></span>
+      </a>
+      <div class="footer-right">© <span id="year">2026</span> Hyperboria. Feito com atenção a cada detalhe.<br>Sites · Vídeos · Identidade Visual</div>
+    </div>
+  </footer>
 
   <script>
-    // Menu mobile.
-    const botaoMenu=document.getElementById('abrirMenu');
-    const menu=document.getElementById('menuMobile');
-    function fecharMenu(){menu.classList.remove('aberto');botaoMenu.setAttribute('aria-expanded','false');botaoMenu.setAttribute('aria-label','Abrir menu')}
-    botaoMenu.addEventListener('click',()=>{const aberto=menu.classList.toggle('aberto');botaoMenu.setAttribute('aria-expanded',String(aberto));botaoMenu.setAttribute('aria-label',aberto?'Fechar menu':'Abrir menu')});
-    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',fecharMenu));
-    document.addEventListener('keydown',e=>{if(e.key==='Escape')fecharMenu()});
-    document.addEventListener('click',e=>{if(!menu.contains(e.target)&&!botaoMenu.contains(e.target))fecharMenu()});
-    window.addEventListener('resize',()=>{if(window.innerWidth>800)fecharMenu()});
+    (() => {
+      'use strict';
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const filterButtons = [...document.querySelectorAll('[data-filter]')];
+      const projectCards = [...document.querySelectorAll('[data-category]')];
+      document.getElementById('year').textContent = String(new Date().getFullYear());
 
-    // Caso algum SVG ainda não tenha sido enviado ao GitHub, exibir nome textual.
-    document.querySelectorAll('img[data-fallback="nome"]').forEach(img=>{
-      const falhou=()=>{img.hidden=true;const span=img.nextElementSibling;if(span)span.style.display='block'};
-      img.addEventListener('error',falhou);
-      if(img.complete&&!img.naturalWidth)falhou();
-    });
-    document.querySelectorAll('img[data-fallback="h"]').forEach(img=>img.addEventListener('error',()=>{img.style.visibility='hidden'}));
+      const closeMenu = () => {
+        mobileMenu.classList.remove('is-open');
+        menuButton.setAttribute('aria-expanded','false');
+        menuButton.setAttribute('aria-label','Abrir menu');
+      };
+      menuButton.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('is-open');
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click',closeMenu));
+      document.addEventListener('keydown', ev => { if(ev.key === 'Escape') closeMenu(); });
+      window.matchMedia('(min-width: 761px)').addEventListener('change',ev=> {if(ev.matches)closeMenu();});
 
-    // Vídeo somente no mobile, com fallback sempre visível se não reproduzir.
-    const video=document.getElementById('videoBoasVindas');
-    const banner=document.getElementById('bannerBoasVindas');
-    const prefereMenosMovimento=matchMedia('(prefers-reduced-motion: reduce)');
-    const ehMobile=matchMedia('(max-width: 800px)');
-    const mostrarArte=()=>banner.classList.remove('pronto');
-    video.addEventListener('playing',()=>banner.classList.add('pronto'));
-    video.addEventListener('error',mostrarArte);
-    video.querySelectorAll('source').forEach(s=>s.addEventListener('error',mostrarArte));
-    function atualizarVideo(){
-      if(!ehMobile.matches||prefereMenosMovimento.matches||document.hidden){video.pause();if(!ehMobile.matches||prefereMenosMovimento.matches)mostrarArte();return}
-      if(video.error){mostrarArte();return}
-      const p=video.play();if(p&&p.catch)p.catch(mostrarArte);
-    }
-    window.addEventListener('load',atualizarVideo);
-    document.addEventListener('visibilitychange',atualizarVideo);
-    ehMobile.addEventListener?.('change',atualizarVideo);
-    prefereMenosMovimento.addEventListener?.('change',atualizarVideo);
+      function filterProjects(category) {
+        filterButtons.forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.filter === category)));
+        projectCards.forEach(card => { card.hidden = category !== 'todos' && card.dataset.category !== category; });
+      }
+      filterButtons.forEach(btn => btn.addEventListener('click', () => filterProjects(btn.dataset.filter)));
+      document.querySelectorAll('[data-go-filter]').forEach(link => {
+        link.addEventListener('click', () => filterProjects(link.dataset.goFilter));
+      });
 
-    // Cards mobile. Setas idênticas em SVG, posicionadas pelo centro do card.
-    const trilho=document.getElementById('carrosselMobile');
-    const cards=[...trilho.querySelectorAll('.card-mobile')];
-    const anterior=document.getElementById('cardAnterior');
-    const proximo=document.getElementById('cardProximo');
-    const contador=document.getElementById('contadorCard');
-    let atual=0,quadroPendente=false;
-    function selecionar(i){atual=Math.max(0,Math.min(cards.length-1,i));anterior.disabled=atual===0;proximo.disabled=atual===cards.length-1;contador.textContent=String(atual+1).padStart(2,'0')+' / '+String(cards.length).padStart(2,'0')}
-    function irPara(i){const alvo=Math.max(0,Math.min(cards.length-1,i));const c=cards[alvo];const a=c.getBoundingClientRect(),b=trilho.getBoundingClientRect();const desloc=trilho.scrollLeft+(a.left+a.width/2)-(b.left+b.width/2);trilho.scrollTo({left:desloc,behavior:prefereMenosMovimento.matches?'instant':'smooth'});selecionar(alvo)}
-    function identificar(){const r=trilho.getBoundingClientRect(),centro=r.left+r.width/2;let menor=Infinity,idx=0;cards.forEach((c,i)=>{const a=c.getBoundingClientRect(),dist=Math.abs(a.left+a.width/2-centro);if(dist<menor){menor=dist;idx=i}});selecionar(idx);quadroPendente=false}
-    trilho.addEventListener('scroll',()=>{if(!quadroPendente){quadroPendente=true;requestAnimationFrame(identificar)}},{passive:true});
-    anterior.addEventListener('click',()=>irPara(atual-1));proximo.addEventListener('click',()=>irPara(atual+1));
-    trilho.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();irPara(atual+1)}if(e.key==='ArrowLeft'){e.preventDefault();irPara(atual-1)}});
-    window.addEventListener('resize',()=>{if(ehMobile.matches)irPara(atual)});
-    // Caso os cards novos ainda não estejam disponíveis, mostrar o nome do serviço.
-    trilho.querySelectorAll('img').forEach(img=>{const falhou=()=>{img.hidden=true};img.addEventListener('error',falhou);if(img.complete&&!img.naturalWidth)falhou()});
-    selecionar(0);
-    // Realizações: exibir reserva elegante até que cada PNG/WebP verdadeiro seja enviado.
-    document.querySelectorAll('.realizacao-logo img').forEach(img=>{
-      const falhou=()=>{img.hidden=true};
-      img.addEventListener('error',falhou);
-      if(img.complete&&!img.naturalWidth)falhou();
-    });
-    document.getElementById('ano').textContent=new Date().getFullYear();
+      const briefForm = document.getElementById('briefForm');
+      const copyStatus = document.getElementById('copyStatus');
+      async function copyToClipboard(text) {
+        if(navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+        const tmp = document.createElement('textarea');
+        tmp.value = text;
+        tmp.setAttribute('readonly','');
+        tmp.style.position = 'fixed'; tmp.style.opacity = '0';
+        document.body.appendChild(tmp); tmp.select();
+        let done = false;
+        try { done = document.execCommand('copy'); } catch(_) { done = false; }
+        tmp.remove();
+        return done;
+      }
+      briefForm.addEventListener('submit', async (ev) => {
+        ev.preventDefault();
+        if(!briefForm.reportValidity()) return;
+        const name = document.getElementById('clientName').value.trim();
+        const type = document.getElementById('projectType').value;
+        const message = document.getElementById('projectMessage').value.trim();
+        if(!name || !message) { copyStatus.textContent = 'Preencha o nome e a descrição do projeto.'; return; }
+        const text = `Olá, Hyperboria! Gostaria de conversar sobre um projeto.\n\nNome: ${name}\nServiço: ${type}\nDescrição: ${message}`;
+        try {
+          const done = await copyToClipboard(text);
+          if(done) { copyStatus.textContent = 'Mensagem copiada! Agora envie pelo canal de atendimento da Hyperboria.'; }
+          else { window.prompt('Copie sua mensagem aqui:', text); copyStatus.textContent = 'Selecione e copie a mensagem exibida.'; }
+        } catch(_) {
+          window.prompt('Copie sua mensagem aqui:', text);
+          copyStatus.textContent = 'Copie a mensagem exibida para enviar pelo seu aplicativo preferido.';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
