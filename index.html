@@ -204,25 +204,32 @@
     }
     @media(max-width:360px){.realizacao-reserva .sigla{font-size:2.1rem}.realizacao-item h3{font-size:.93rem}}
   
-    /* Atendimento: botão flutuante discreto, acessível e compatível com mobile. */
+    /* WhatsApp Business: botão flutuante maior e de fácil toque no celular. */
     .whatsapp-flutuante{
       position:fixed;
-      right:calc(18px + env(safe-area-inset-right, 0px));
-      bottom:calc(18px + env(safe-area-inset-bottom, 0px));
+      right:calc(20px + env(safe-area-inset-right, 0px));
+      bottom:calc(22px + env(safe-area-inset-bottom, 0px));
       z-index:1100;
       display:flex;align-items:center;justify-content:center;
-      width:62px;height:62px;
-      padding:12px;
-      border:2px solid #e6b55d;border-radius:50%;
+      width:74px;height:74px;
+      padding:7px;
+      border:3px solid #e6b55d;border-radius:50%;
       background:linear-gradient(145deg,#48101f,#230610);
-      box-shadow:0 5px 22px rgba(0,0,0,.44),0 0 0 3px rgba(230,181,93,.09);
+      box-shadow:0 7px 24px rgba(0,0,0,.44),0 0 0 3px rgba(230,181,93,.09);
       transition:transform .2s ease,box-shadow .2s ease;
       line-height:1;
     }
     .whatsapp-flutuante img{display:block;width:100%;height:100%;object-fit:contain}
-    .whatsapp-flutuante:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.52),0 0 0 3px rgba(230,181,93,.18)}
+    .whatsapp-flutuante:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 10px 28px rgba(0,0,0,.52),0 0 0 3px rgba(230,181,93,.18)}
     .whatsapp-flutuante:focus-visible{outline:3px solid #ffe5ad;outline-offset:4px}
-    @media(max-width:800px){.whatsapp-flutuante{width:58px;height:58px;right:calc(14px + env(safe-area-inset-right, 0px));bottom:calc(14px + env(safe-area-inset-bottom, 0px));padding:11px}}
+    @media(max-width:800px){
+      .whatsapp-flutuante{
+        width:70px;height:70px;
+        right:calc(18px + env(safe-area-inset-right, 0px));
+        bottom:calc(20px + env(safe-area-inset-bottom, 0px));
+        padding:6px;
+      }
+    }
     @media(prefers-reduced-motion:reduce){.whatsapp-flutuante{transition:none}}
   </style>
 </head>
