@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#230610">
   <meta name="description" content="HYPERBOREA — vídeos comerciais, design e identidade visual, branding e sites criativos.">
   <title>HYPERBOREA | Agência Criativa</title>
-  <!-- Revisão compacta da homepage; origem: cópia da index guardada em 02/11. Antes de publicar, confira diferenças com o arquivo atualmente no GitHub. -->
+  <!-- HYPERBOREA: homepage com serviços, portfólio e canais oficiais de contato. -->
   <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
   <style>
     :root {
@@ -98,7 +98,10 @@
     .banner-servico:hover,.banner-servico:focus-visible{transform:translateY(-5px);border-color:#f1c67e}
     .banner-servico img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
     .banner-servico .rodape-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 18px;color:var(--ouro-claro);font-size:.94rem;font-weight:700}
-    .rodape-banner span:last-child{opacity:.65;font-size:.75rem;letter-spacing:.1em}
+    .rodape-banner .indice{opacity:.65;font-size:.75rem;letter-spacing:.1em}
+    .rodape-banner .acao-desktop{display:inline-flex;align-items:center;gap:5px;padding:6px 11px;border:1px solid var(--ouro);border-radius:4px;color:var(--ouro-claro);background:#480e20;font-size:.81rem;font-weight:700;white-space:nowrap}
+    .banner-servico:hover .acao-desktop,.banner-servico:focus-visible .acao-desktop{background:#632035}
+    .rodape-banner .comandos{display:flex;align-items:center;gap:14px}
     .servicos-mobile{display:none}
 
     .sobre{text-align:center;max-width:820px;margin-inline:auto}
@@ -115,7 +118,6 @@
     .canal-icone img{width:37px;height:37px;object-fit:contain}
     a.canal-contato:hover .canal-icone,a.canal-contato:focus-visible .canal-icone{transform:translateY(-3px);border-color:#fff0c5;box-shadow:0 8px 22px #0006}
     .canal-contato small{font-size:.7rem;font-weight:500;color:var(--suave);margin-top:-5px}
-    .canal-contato.pendente{opacity:.72;cursor:default}
     @media(max-width:800px){
       .canais-contato{gap:clamp(7px,3vw,18px);margin-top:19px}
       .canal-contato{width:86px;min-height:96px;font-size:.83rem;gap:7px}
@@ -173,23 +175,29 @@
       .servicos-mobile{display:block}
       .servicos-intro{margin-bottom:13px}
       .servicos-intro .descricao{font-size:.92rem}
-      .controles-cards{display:flex;gap:12px;justify-content:center;align-items:center;margin:9px 0 0}
+      .controles-cards{display:flex;gap:12px;justify-content:center;align-items:center;margin:5px 0 0}
       .seta-card{width:48px;height:48px;border:1px solid var(--ouro);border-radius:50%;background:#380c1b;display:grid;place-items:center;color:#ffe8b9}
       .seta-card svg{width:24px;height:24px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
       .contador-card{font-size:.85rem;min-width:67px;text-align:center;color:#efcca0;font-weight:700}
-      .trilho{--w:min(92vw,440px);display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding:5px max(0px,calc((100% - var(--w))/2)) 9px}
+      /* 15% menor: arte completa, proporcional, com CTA fora da imagem. */
+      .trilho{--w:min(78vw,374px);display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding:5px max(0px,calc((100% - var(--w))/2)) 7px}
       .trilho::-webkit-scrollbar{display:none}
       /* Arte inteira, preservando os quatro cantos do filete ornamental. */
-      .card-mobile{display:block;flex:0 0 var(--w);aspect-ratio:812/1024;position:relative;scroll-snap-align:center;scroll-snap-stop:always;overflow:visible;border:0;border-radius:0;background:#240612;box-shadow:0 16px 30px #0006}
-      .card-mobile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:0;display:block}
-      .card-mobile img[hidden]{display:none}
+      .card-mobile{display:flex;flex-direction:column;align-items:center;flex:0 0 var(--w);scroll-snap-align:center;scroll-snap-stop:always;min-width:0;border:0;background:transparent}
+      .card-arte{display:block;position:relative;width:100%;aspect-ratio:812/1024;overflow:hidden;background:#240612;box-shadow:0 12px 24px #0006}
+      .card-arte img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:0;display:block}
+      .card-arte img[hidden]{display:none}
+      /* Não é um botão dentro do link: o card inteiro continua clicável. */
+      .card-acao{display:inline-flex;justify-content:center;align-items:center;gap:9px;min-height:41px;min-width:164px;padding:7px 19px;margin:9px 0 2px;border:1px solid var(--ouro);border-radius:5px;background:linear-gradient(125deg,#48101f,#2b0915);color:var(--ouro-claro);font-size:.85rem;font-weight:750;box-shadow:0 5px 13px #0004;transition:background .2s,border-color .2s,transform .2s}
+      .card-acao svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+      .card-mobile:hover .card-acao,.card-mobile:focus-visible .card-acao{background:#672037;border-color:#ffe5ad;transform:translateY(-1px)}
       .card-reserva{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:13px;text-align:center;padding:25px;color:var(--ouro-claro)}
       .card-reserva b{font:700 1.5rem/1.18 Georgia,serif}
       .card-reserva small{color:var(--suave);font-size:.8rem}
       .dica{text-align:center;color:var(--suave);font-size:.8rem;margin-top:12px}
       .contato-painel{padding:24px 18px}
     }
-    @media(max-width:390px){.acoes{flex-direction:column}.acoes .botao{width:100%}.trilho{--w:92vw}.nome-mobile img{width:43vw}}
+    @media(max-width:390px){.acoes{flex-direction:column}.acoes .botao{width:100%}.trilho{--w:78vw}.nome-mobile img{width:43vw}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
     /* Conteúdo complementar da apresentação. */
@@ -324,18 +332,18 @@
         </div>
         <!-- Desktop: banners originais em 16:9. -->
         <div class="grade-desktop">
-          <a class="banner-servico" href="/servicos/videos-comerciais.html" aria-label="Conhecer Vídeos Comerciais"><img src="/assets/img/videos-comerciais.webp" alt="Banner de vídeos comerciais" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Vídeos Comerciais</span><span>01 / 04</span></div></a>
-          <a class="banner-servico" href="/servicos/design-identidade.html" aria-label="Conhecer Design e Identidade Visual"><img src="/assets/img/design-identidade.webp" alt="Banner de design e identidade visual" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Design e Identidade Visual</span><span>02 / 04</span></div></a>
-          <a class="banner-servico" href="/servicos/branding.html" aria-label="Conhecer Branding e Gestão de Marcas"><img src="/assets/img/branding.webp" alt="Banner de branding e gestão de marcas" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Branding e Gestão de Marcas</span><span>03 / 04</span></div></a>
-          <a class="banner-servico" href="/servicos/sites-webdesign.html" aria-label="Conhecer Sites e Web Design"><img src="/assets/img/sites-webdesign.webp" alt="Banner de sites e web design" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Sites e Web Design</span><span>04 / 04</span></div></a>
+          <a class="banner-servico" href="/videos.html" aria-label="Conhecer Vídeos Comerciais"><img src="/assets/img/videos-comerciais.webp" alt="Banner de vídeos comerciais" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Vídeos Comerciais</span><span class="comandos"><span class="indice">01 / 04</span><span class="acao-desktop">Ver detalhes ↗</span></span></div></a>
+          <a class="banner-servico" href="/design.html" aria-label="Conhecer Design e Identidade Visual"><img src="/assets/img/design-identidade.webp" alt="Banner de design e identidade visual" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Design e Identidade Visual</span><span class="comandos"><span class="indice">02 / 04</span><span class="acao-desktop">Ver detalhes ↗</span></span></div></a>
+          <a class="banner-servico" href="/branding.html" aria-label="Conhecer Branding e Gestão de Marcas"><img src="/assets/img/branding.webp" alt="Banner de branding e gestão de marcas" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Branding e Gestão de Marcas</span><span class="comandos"><span class="indice">03 / 04</span><span class="acao-desktop">Ver detalhes ↗</span></span></div></a>
+          <a class="banner-servico" href="/sites.html" aria-label="Conhecer Sites e Web Design"><img src="/assets/img/sites-webdesign.webp" alt="Banner de sites e web design" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Sites e Web Design</span><span class="comandos"><span class="indice">04 / 04</span><span class="acao-desktop">Ver detalhes ↗</span></span></div></a>
         </div>
         <!-- Mobile: cards verticais inteiros, arraste/peek. -->
         <div class="servicos-mobile">
           <div class="trilho" id="carrosselMobile" tabindex="0" aria-label="Carrossel de serviços; deslize para os lados">
-            <a class="card-mobile" data-titulo="Vídeos Comerciais" href="/servicos/videos-comerciais.html" aria-label="Conhecer Vídeos Comerciais"><div class="card-reserva"><b>Vídeos<br>Comerciais</b><small>HYPERBOREA</small></div><img src="/assets/img/card-videos-comerciais.webp" alt="Card vertical de vídeos comerciais" loading="lazy"></a>
-            <a class="card-mobile" data-titulo="Design e Identidade Visual" href="/servicos/design-identidade.html" aria-label="Conhecer Design e Identidade Visual"><div class="card-reserva"><b>Design e<br>Identidade Visual</b><small>HYPERBOREA</small></div><img src="/assets/img/card-design-identidade.webp" alt="Card vertical de design e identidade visual" loading="lazy"></a>
-            <a class="card-mobile" data-titulo="Branding e Gestão de Marcas" href="/servicos/branding.html" aria-label="Conhecer Branding e Gestão de Marcas"><div class="card-reserva"><b>Branding e<br>Gestão de Marcas</b><small>HYPERBOREA</small></div><img src="/assets/img/card-branding.webp" alt="Card vertical de branding e gestão de marcas" loading="lazy"></a>
-            <a class="card-mobile" data-titulo="Sites e Web Design" href="/servicos/sites-webdesign.html" aria-label="Conhecer Sites e Web Design"><div class="card-reserva"><b>Sites e<br>Web Design</b><small>HYPERBOREA</small></div><img src="/assets/img/card-sites-webdesign.webp" alt="Card vertical de sites e web design" loading="lazy"></a>
+            <a class="card-mobile" data-titulo="Vídeos Comerciais" href="/videos.html" aria-label="Conhecer Vídeos Comerciais"><span class="card-arte"><div class="card-reserva"><b>Vídeos<br>Comerciais</b><small>HYPERBOREA</small></div><img src="/assets/img/card-videos-comerciais.webp" alt="Card vertical de vídeos comerciais" loading="lazy"></span><span class="card-acao">Ver detalhes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+            <a class="card-mobile" data-titulo="Design e Identidade Visual" href="/design.html" aria-label="Conhecer Design e Identidade Visual"><span class="card-arte"><div class="card-reserva"><b>Design e<br>Identidade Visual</b><small>HYPERBOREA</small></div><img src="/assets/img/card-design-identidade.webp" alt="Card vertical de design e identidade visual" loading="lazy"></span><span class="card-acao">Ver detalhes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+            <a class="card-mobile" data-titulo="Branding e Gestão de Marcas" href="/branding.html" aria-label="Conhecer Branding e Gestão de Marcas"><span class="card-arte"><div class="card-reserva"><b>Branding e<br>Gestão de Marcas</b><small>HYPERBOREA</small></div><img src="/assets/img/card-branding.webp" alt="Card vertical de branding e gestão de marcas" loading="lazy"></span><span class="card-acao">Ver detalhes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+            <a class="card-mobile" data-titulo="Sites e Web Design" href="/sites.html" aria-label="Conhecer Sites e Web Design"><span class="card-arte"><div class="card-reserva"><b>Sites e<br>Web Design</b><small>HYPERBOREA</small></div><img src="/assets/img/card-sites-webdesign.webp" alt="Card vertical de sites e web design" loading="lazy"></span><span class="card-acao">Ver detalhes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
           </div>
           <div class="controles-cards">
             <button id="cardAnterior" class="seta-card" type="button" aria-label="Card anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
@@ -393,21 +401,17 @@
           <h2 id="tituloContato">Sua próxima ideia pode começar <span class="ouro">aqui.</span></h2>
           <p>Escolha como deseja conversar com a HYPERBOREA.</p>
           <div class="canais-contato" aria-label="Canais de contato da HYPERBOREA">
-            <!-- TODO: assim que houver o perfil oficial, trocar este elemento por
-                 <a class="canal-contato" href="https://www.instagram.com/SEU_PERFIL/" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial da HYPERBOREA"> ... </a>
-                 Não utilizar um perfil de terceiros. -->
-            <div class="canal-contato pendente" aria-label="Instagram da HYPERBOREA: link em breve">
+            <a class="canal-contato" href="https://www.instagram.com/agencia.hyperborea/" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial da HYPERBOREA">
               <span class="canal-icone" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.65" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
               </span>
               <span>Instagram</span>
-              <small>Em breve</small>
-            </div>
+            </a>
             <a class="canal-contato" href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp Business da HYPERBOREA">
               <span class="canal-icone" aria-hidden="true"><img src="/assets/img/whats-icon.svg" width="35" height="35" alt="" loading="lazy"></span>
               <span>WhatsApp</span>
             </a>
-            <a class="canal-contato" href="mailto:contato.hyperborea@gmail.com?subject=Contato%20HYPERBOREA" aria-label="Enviar e-mail para a HYPERBOREA">
+            <a class="canal-contato" href="mailto:contato@hyperborea.com.br?subject=Contato%20HYPERBOREA" aria-label="Enviar e-mail para a HYPERBOREA">
               <span class="canal-icone" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.6 6.2 8.4 7 8.4-7"/></svg>
               </span>
