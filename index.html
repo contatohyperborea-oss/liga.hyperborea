@@ -107,7 +107,23 @@
     .contato-painel{padding:36px 24px;border:1px solid var(--ouro);border-radius:12px;background:radial-gradient(ellipse at 50% 0,#811b3588,transparent 80%),#290710;text-align:center}
     .contato-painel h2{font-size:clamp(2rem,4vw,3.2rem);margin:13px auto;max-width:700px}
     .contato-painel p:not(.rotulo){color:var(--suave);max-width:660px;margin:auto}
-    .contato-painel .botao{margin-top:25px}
+    /* Contatos: três canais visualmente uniformes, sem botão de e-mail redundante. */
+    .canais-contato{display:flex;justify-content:center;align-items:flex-start;flex-wrap:wrap;gap:clamp(14px,3.2vw,34px);margin:23px auto 0}
+    .canal-contato{width:100px;min-height:108px;display:inline-flex;flex-direction:column;align-items:center;gap:8px;color:var(--ouro-claro);font-size:.88rem;font-weight:700;text-align:center}
+    .canal-icone{width:66px;height:66px;border:1px solid var(--ouro);border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,#48101f,#230610);box-shadow:0 5px 16px #0004;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .canal-icone svg{width:33px;height:33px;color:#f2c56e}
+    .canal-icone img{width:37px;height:37px;object-fit:contain}
+    a.canal-contato:hover .canal-icone,a.canal-contato:focus-visible .canal-icone{transform:translateY(-3px);border-color:#fff0c5;box-shadow:0 8px 22px #0006}
+    .canal-contato small{font-size:.7rem;font-weight:500;color:var(--suave);margin-top:-5px}
+    .canal-contato.pendente{opacity:.72;cursor:default}
+    @media(max-width:800px){
+      .canais-contato{gap:clamp(7px,3vw,18px);margin-top:19px}
+      .canal-contato{width:86px;min-height:96px;font-size:.83rem;gap:7px}
+      .canal-icone{width:59px;height:59px}
+      .canal-icone svg{width:30px;height:30px}
+      .canal-icone img{width:34px;height:34px}
+      .contato-painel{padding:24px 12px}
+    }
     .rodape{padding:28px 0;border-top:1px solid var(--borda);color:var(--suave);font-size:.85rem}
     .rodape .container{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
 
@@ -370,7 +386,37 @@
         </div>
       </div>
     </section>
-    <section class="secao contato" id="contato"><div class="container"><div class="contato-painel"><p class="rotulo">Contatos • Vamos conversar?</p><h2>Sua próxima ideia pode começar <span class="ouro">aqui.</span></h2><p>Converse com a HYPERBOREA sobre vídeos comerciais, identidade visual, marcas e projetos digitais.</p><a class="botao botao-ouro" href="mailto:contato.hyperborea@gmail.com?subject=Contato%20HYPERBOREA">Enviar e-mail</a></div></div></section>
+    <section class="secao contato" id="contato" aria-labelledby="tituloContato">
+      <div class="container">
+        <div class="contato-painel">
+          <p class="rotulo">Contatos • Vamos conversar?</p>
+          <h2 id="tituloContato">Sua próxima ideia pode começar <span class="ouro">aqui.</span></h2>
+          <p>Escolha como deseja conversar com a HYPERBOREA.</p>
+          <div class="canais-contato" aria-label="Canais de contato da HYPERBOREA">
+            <!-- TODO: assim que houver o perfil oficial, trocar este elemento por
+                 <a class="canal-contato" href="https://www.instagram.com/SEU_PERFIL/" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial da HYPERBOREA"> ... </a>
+                 Não utilizar um perfil de terceiros. -->
+            <div class="canal-contato pendente" aria-label="Instagram da HYPERBOREA: link em breve">
+              <span class="canal-icone" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.65" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              </span>
+              <span>Instagram</span>
+              <small>Em breve</small>
+            </div>
+            <a class="canal-contato" href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp Business da HYPERBOREA">
+              <span class="canal-icone" aria-hidden="true"><img src="/assets/img/whats-icon.svg" width="35" height="35" alt="" loading="lazy"></span>
+              <span>WhatsApp</span>
+            </a>
+            <a class="canal-contato" href="mailto:contato.hyperborea@gmail.com?subject=Contato%20HYPERBOREA" aria-label="Enviar e-mail para a HYPERBOREA">
+              <span class="canal-icone" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.6 6.2 8.4 7 8.4-7"/></svg>
+              </span>
+              <span>E-mail</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="rodape"><div class="container"><span>© <span id="ano">2026</span> HYPERBOREA — Projeto em desenvolvimento.</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
 
