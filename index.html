@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,18 +6,13 @@
   <meta name="theme-color" content="#230610">
   <meta name="description" content="HYPERBOREA — vídeos comerciais, design e identidade visual, branding e sites criativos.">
   <title>HYPERBOREA | Agência Criativa</title>
+  <!-- Revisão compacta da homepage; origem: cópia da index guardada em 02/11. Antes de publicar, confira diferenças com o arquivo atualmente no GitHub. -->
   <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
   <style>
     :root {
-      --vinho:#710c22;
-      --vinho-profundo:#19050b;
-      --vinho-medio:#48101f;
-      --champanhe:#fff5df;
-      --ouro:#e6b55d;
-      --ouro-claro:#ffe5ad;
-      --texto:#fff5ed;
-      --suave:#ddc7bd;
-      --borda:rgba(230,181,93,.28);
+      --vinho:#710c22; --vinho-profundo:#19050b; --vinho-medio:#48101f;
+      --champanhe:#fff5df; --ouro:#e6b55d; --ouro-claro:#ffe5ad;
+      --texto:#fff5ed; --suave:#ddc7bd; --borda:rgba(230,181,93,.28);
     }
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth;scroll-padding-top:90px}
@@ -42,12 +36,13 @@
     .secao-titulo{font-size:clamp(2rem,4vw,3.4rem);margin:10px 0 14px}
     .descricao{color:var(--suave)}
 
-    /* DESKTOP */
+    /* DESKTOP: navegação sobre uma abertura editorial cinematográfica. */
     .topo-desktop{position:absolute;top:0;left:0;width:100%;z-index:10;background:linear-gradient(180deg,rgba(15,2,8,.64),transparent)}
     .nav-desktop{min-height:100px;display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:center}
     .assinatura{display:flex;gap:12px;align-items:center;min-width:0}
     .assinatura img{height:56px;width:48px;object-fit:contain}
     .assinatura small{font-size:.69rem;line-height:1.3;color:#ffe5ad;letter-spacing:.2em;text-transform:uppercase}
+    /* DESKTOP: nome em tipografia champanhe, sem depender de SVG. */
     .nome-central{
       display:block;justify-self:center;align-self:center;
       color:var(--champanhe);
@@ -60,6 +55,7 @@
     .links-desktop{display:flex;gap:clamp(9px,1.25vw,20px);justify-content:flex-end;align-items:center}
     .links-desktop a{white-space:nowrap;font-size:.85rem;font-weight:650;color:#fff6e9}
     .links-desktop a:hover{color:var(--ouro-claro);background:#2b0618aa}
+    /* Filete dourado discreto; botões retangulares, sem cantos arredondados. */
     .links-desktop a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 10px;border:1px solid rgba(230,181,93,.48);border-radius:0;transition:background .2s,border-color .2s}
     .links-desktop a:hover,.links-desktop a:focus-visible{border-color:var(--ouro-claro)}
     .topo-mobile{display:none}
@@ -86,7 +82,7 @@
     .faixa-hero{position:absolute;left:0;right:0;bottom:0;padding:14px 0;border-top:1px solid #ebc18a60;background:#21050e91;backdrop-filter:blur(9px)}
     .faixa-hero .container{display:flex;gap:28px;justify-content:space-between;flex-wrap:wrap;color:#e8cfae;font-size:.78rem;font-weight:650;letter-spacing:.12em;text-transform:uppercase}
 
-    /* MOBILE */
+    /* MOBILE: champanhe, menu hambúrguer e vídeo 16:9. */
     .abertura-mobile{display:none}
     .apresentacao{text-align:center;max-width:780px;margin-inline:auto}
     .apresentacao h2{font-size:clamp(2.1rem,4vw,3.55rem);margin:12px 0 18px}
@@ -94,7 +90,7 @@
     .acoes{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
     .divisor{height:1px;border:0;background:linear-gradient(90deg,transparent,#c79556,transparent)}
 
-    /* SERVIÇOS */
+    /* DESKTOP: grade com os banners originais 16:9, sem cortes. */
     .servicos{background:linear-gradient(180deg,#1c0510,#3a0a1a 60%,#1b0510)}
     .servicos-intro{text-align:center;max-width:780px;margin:0 auto 20px}
     .grade-desktop{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px}
@@ -111,8 +107,7 @@
     .contato-painel{padding:36px 24px;border:1px solid var(--ouro);border-radius:12px;background:radial-gradient(ellipse at 50% 0,#811b3588,transparent 80%),#290710;text-align:center}
     .contato-painel h2{font-size:clamp(2rem,4vw,3.2rem);margin:13px auto;max-width:700px}
     .contato-painel p:not(.rotulo){color:var(--suave);max-width:660px;margin:auto}
-
-    /* CANAIS DE CONTATO */
+    /* Contatos: três canais visualmente uniformes, sem botão de e-mail redundante. */
     .canais-contato{display:flex;justify-content:center;align-items:flex-start;flex-wrap:wrap;gap:clamp(14px,3.2vw,34px);margin:23px auto 0}
     .canal-contato{width:100px;min-height:108px;display:inline-flex;flex-direction:column;align-items:center;gap:8px;color:var(--ouro-claro);font-size:.88rem;font-weight:700;text-align:center}
     .canal-icone{width:66px;height:66px;border:1px solid var(--ouro);border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,#48101f,#230610);box-shadow:0 5px 16px #0004;transition:transform .2s,border-color .2s,box-shadow .2s}
@@ -120,6 +115,7 @@
     .canal-icone img{width:37px;height:37px;object-fit:contain}
     a.canal-contato:hover .canal-icone,a.canal-contato:focus-visible .canal-icone{transform:translateY(-3px);border-color:#fff0c5;box-shadow:0 8px 22px #0006}
     .canal-contato small{font-size:.7rem;font-weight:500;color:var(--suave);margin-top:-5px}
+    .canal-contato.pendente{opacity:.72;cursor:default}
     @media(max-width:800px){
       .canais-contato{gap:clamp(7px,3vw,18px);margin-top:19px}
       .canal-contato{width:86px;min-height:96px;font-size:.83rem;gap:7px}
@@ -153,9 +149,15 @@
       .nome-mobile .nome-fallback{color:var(--vinho);font-size:clamp(1rem,4vw,1.25rem)}
       .hamburguer{width:46px;height:44px;display:grid;place-items:center;border:1px solid #89344a;background:#fff9eb8a;border-radius:7px;color:#650d20}
       .hamburguer svg{width:23px;height:23px}
-      .menu-mobile{display:none;position:absolute;top:calc(100% + 2px);right:14px;left:auto;width:max-content;max-width:calc(100vw - 28px);padding:9px;background:#fff0d2;border:1px solid #bb8d4a;box-shadow:0 16px 28px #0009}
+      /* Menu ancorado à direita: o maior rótulo define a largura de TODOS os botões. */
+      .menu-mobile{display:none;position:absolute;top:calc(100% + 2px);right:14px;left:auto;
+        width:max-content;max-width:calc(100vw - 28px);padding:9px;
+        background:#fff0d2;border:1px solid #bb8d4a;box-shadow:0 16px 28px #0009}
       .menu-mobile.aberto{display:flex;flex-direction:column;align-items:stretch;gap:6px}
-      .menu-mobile a{display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;padding:8px 18px;text-align:center;font-size:.91rem;line-height:1.3;font-weight:700;white-space:nowrap;color:#650d20;border:1px solid #c18d40;border-radius:0;background:linear-gradient(135deg,#fff8e8,#ffedcb);transition:background .2s,border-color .2s}
+      .menu-mobile a{display:flex;align-items:center;justify-content:center;width:100%;min-height:42px;
+        padding:8px 18px;text-align:center;font-size:.91rem;line-height:1.3;font-weight:700;
+        white-space:nowrap;color:#650d20;border:1px solid #c18d40;border-radius:0;
+        background:linear-gradient(135deg,#fff8e8,#ffedcb);transition:background .2s,border-color .2s}
       .menu-mobile a:hover,.menu-mobile a:focus-visible{background:#f9dfaa;border-color:#9d6628}
       .abertura-mobile{display:block;padding:12px 0 10px}
       .banner-video{position:relative;isolation:isolate;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--borda);border-radius:0;background:#2a0612}
@@ -177,6 +179,7 @@
       .contador-card{font-size:.85rem;min-width:67px;text-align:center;color:#efcca0;font-weight:700}
       .trilho{--w:min(92vw,440px);display:flex;gap:13px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding:5px max(0px,calc((100% - var(--w))/2)) 9px}
       .trilho::-webkit-scrollbar{display:none}
+      /* Arte inteira, preservando os quatro cantos do filete ornamental. */
       .card-mobile{display:block;flex:0 0 var(--w);aspect-ratio:812/1024;position:relative;scroll-snap-align:center;scroll-snap-stop:always;overflow:visible;border:0;border-radius:0;background:#240612;box-shadow:0 16px 30px #0006}
       .card-mobile img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:0;display:block}
       .card-mobile img[hidden]{display:none}
@@ -189,7 +192,10 @@
     @media(max-width:390px){.acoes{flex-direction:column}.acoes .botao{width:100%}.trilho{--w:92vw}.nome-mobile img{width:43vw}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
-    /* REALIZAÇÕES */
+    /* Conteúdo complementar da apresentação. */
+    .apresentacao .sobre-complemento{max-width:690px;margin:16px auto 0;color:var(--suave)}
+
+    /* REALIZAÇÕES: molduras quadradas prontas para quatro logotipos. */
     .realizacoes{position:relative;background:linear-gradient(180deg,#1b050d 0%,#320919 58%,#19050b 100%)}
     .realizacoes-intro{text-align:center;max-width:760px;margin:0 auto 22px}
     .realizacoes-intro .descricao{max-width:660px;margin:0 auto}
@@ -213,8 +219,8 @@
       .realizacoes-intro{margin-bottom:14px}
     }
     @media(max-width:360px){.realizacao-reserva .sigla{font-size:2.1rem}.realizacao-item h3{font-size:.93rem}}
-
-    /* WHATSAPP FLUTUANTE */
+  
+    /* WhatsApp Business: botão flutuante maior e de fácil toque no celular. */
     .whatsapp-flutuante{
       position:fixed;
       right:calc(20px + env(safe-area-inset-right, 0px));
@@ -244,6 +250,7 @@
   </style>
 </head>
 <body>
+  <!-- Cabeçalho desktop: integrado ao hero, sem faixa champanhe. -->
   <header class="topo-desktop">
     <div class="container nav-desktop">
       <a class="assinatura" href="#inicio" aria-label="HYPERBOREA — início">
@@ -252,15 +259,13 @@
       </a>
       <a href="#inicio" class="nome-central" aria-label="HYPERBOREA — início">HYPERBOREA</a>
       <nav class="links-desktop" aria-label="Navegação desktop">
-        <a href="#inicio">Início</a>
-        <a href="/sobre.html">Sobre</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#realizacoes">Realizações</a>
-        <a href="#contato">Contatos</a>
+        <a href="#inicio">Início</a><a href="/sobre.html">Sobre</a><a href="#servicos">Serviços</a>
+        <a href="#realizacoes">Realizações</a><a href="#contato">Contatos</a>
       </nav>
     </div>
   </header>
 
+  <!-- Cabeçalho mobile: champanhe, H e nome SVG, hambúrguer. -->
   <header class="topo-mobile">
     <div class="container nav-mobile">
       <a class="marca-mobile" href="#inicio" aria-label="HYPERBOREA — início">
@@ -275,47 +280,34 @@
       </button>
     </div>
     <nav class="menu-mobile" id="menuMobile" aria-label="Navegação mobile">
-      <a href="#inicio">Início</a>
-      <a href="/sobre.html">Sobre</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#realizacoes">Realizações</a>
-      <a href="#contato">Contatos</a>
+      <a href="#inicio">Início</a><a href="/sobre.html">Sobre</a><a href="#servicos">Serviços</a>
+      <a href="#realizacoes">Realizações</a><a href="#contato">Contatos</a>
     </nav>
   </header>
 
   <main id="inicio">
+    <!-- Desktop: composição estática dramática, sem vídeo. -->
     <section class="hero-desktop" aria-labelledby="tituloDesktop">
       <div class="cena-editorial" aria-hidden="true">
-        <div class="luz"></div>
-        <div class="traco"></div>
-        <div class="painel"></div>
-        <div class="painel painel-dois"></div>
-        <div class="selo"></div>
+        <div class="luz"></div><div class="traco"></div>
+        <div class="painel"></div><div class="painel painel-dois"></div><div class="selo"></div>
       </div>
       <div class="container hero-conteudo">
         <div class="hero-texto">
           <p class="rotulo">Identidade • Criatividade • Futuro</p>
           <h1 id="tituloDesktop">Ideias que<br><span class="ouro">atravessam</span><br>horizontes.</h1>
           <p class="apoio">Do primeiro conceito à presença digital, criamos experiências visuais com personalidade, profundidade e propósito.</p>
+
         </div>
       </div>
-      <div class="faixa-hero">
-        <div class="container">
-          <span>Vídeos Comerciais</span>
-          <span>Identidade Visual</span>
-          <span>Branding</span>
-          <span>Web Design</span>
-        </div>
-      </div>
+      <div class="faixa-hero"><div class="container"><span>Vídeos Comerciais</span><span>Identidade Visual</span><span>Branding</span><span>Web Design</span></div></div>
     </section>
 
+    <!-- Mobile: vídeo com imagem fixa se não houver reprodução. -->
     <section class="abertura-mobile" aria-label="Boas-vindas à HYPERBOREA">
       <div class="container">
         <div class="banner-video" id="bannerBoasVindas">
-          <div class="banner-fallback" role="img" aria-label="Arte de boas-vindas à HYPERBOREA">
-            <strong>HYPERBOREA</strong>
-            <span>Sejam bem-vindos!</span>
-          </div>
+          <div class="banner-fallback" role="img" aria-label="Arte de boas-vindas à HYPERBOREA"><strong>HYPERBOREA</strong><span>Sejam bem-vindos!</span></div>
           <video id="videoBoasVindas" autoplay muted loop playsinline preload="metadata" disablepictureinpicture poster="/assets/img/boas-vindas-poster.webp?v=20261102c" aria-label="Vídeo de boas-vindas">
             <source src="/assets/video/boa-vindas.mp4?v=20261102c" type="video/mp4">
           </video>
@@ -324,69 +316,43 @@
       </div>
     </section>
 
+
     <section class="secao servicos" id="servicos" aria-labelledby="tituloServicos">
       <div class="container">
         <div class="servicos-intro">
           <h2 class="secao-titulo" id="tituloServicos">Nossos <span class="ouro">serviços</span></h2>
         </div>
-
-        <!-- Banners desktop -->
+        <!-- Desktop: banners originais em 16:9. -->
         <div class="grade-desktop">
-          <a class="banner-servico" href="/videos.html" aria-label="Conhecer Vídeos Comerciais">
-            <img src="/assets/img/videos-comerciais.webp" alt="Banner de vídeos comerciais" loading="lazy" width="1024" height="576">
-            <div class="rodape-banner"><span>Vídeos Comerciais</span><span>01 / 04</span></div>
-          </a>
-          <a class="banner-servico" href="/design.html" aria-label="Conhecer Design e Identidade Visual">
-            <img src="/assets/img/design-identidade.webp" alt="Banner de design e identidade visual" loading="lazy" width="1024" height="576">
-            <div class="rodape-banner"><span>Design e Identidade Visual</span><span>02 / 04</span></div>
-          </a>
-          <a class="banner-servico" href="/branding.html" aria-label="Conhecer Branding e Gestão de Marcas">
-            <img src="/assets/img/branding.webp" alt="Banner de branding e gestão de marcas" loading="lazy" width="1024" height="576">
-            <div class="rodape-banner"><span>Branding e Gestão de Marcas</span><span>03 / 04</span></div>
-          </a>
-          <a class="banner-servico" href="/sites.html" aria-label="Conhecer Sites e Web Design">
-            <img src="/assets/img/sites-webdesign.webp" alt="Banner de sites e web design" loading="lazy" width="1024" height="576">
-            <div class="rodape-banner"><span>Sites e Web Design</span><span>04 / 04</span></div>
-          </a>
+          <a class="banner-servico" href="/servicos/videos-comerciais.html" aria-label="Conhecer Vídeos Comerciais"><img src="/assets/img/videos-comerciais.webp" alt="Banner de vídeos comerciais" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Vídeos Comerciais</span><span>01 / 04</span></div></a>
+          <a class="banner-servico" href="/servicos/design-identidade.html" aria-label="Conhecer Design e Identidade Visual"><img src="/assets/img/design-identidade.webp" alt="Banner de design e identidade visual" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Design e Identidade Visual</span><span>02 / 04</span></div></a>
+          <a class="banner-servico" href="/servicos/branding.html" aria-label="Conhecer Branding e Gestão de Marcas"><img src="/assets/img/branding.webp" alt="Banner de branding e gestão de marcas" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Branding e Gestão de Marcas</span><span>03 / 04</span></div></a>
+          <a class="banner-servico" href="/servicos/sites-webdesign.html" aria-label="Conhecer Sites e Web Design"><img src="/assets/img/sites-webdesign.webp" alt="Banner de sites e web design" loading="lazy" width="1024" height="576"><div class="rodape-banner"><span>Sites e Web Design</span><span>04 / 04</span></div></a>
         </div>
-
-        <!-- Carrossel mobile -->
+        <!-- Mobile: cards verticais inteiros, arraste/peek. -->
         <div class="servicos-mobile">
           <div class="trilho" id="carrosselMobile" tabindex="0" aria-label="Carrossel de serviços; deslize para os lados">
-            <a class="card-mobile" data-titulo="Vídeos Comerciais" href="/videos.html" aria-label="Conhecer Vídeos Comerciais">
-              <div class="card-reserva"><b>Vídeos<br>Comerciais</b><small>HYPERBOREA</small></div>
-              <img src="/assets/img/card-videos-comerciais.webp" alt="Card vertical de vídeos comerciais" loading="lazy">
-            </a>
-            <a class="card-mobile" data-titulo="Design e Identidade Visual" href="/design.html" aria-label="Conhecer Design e Identidade Visual">
-              <div class="card-reserva"><b>Design e<br>Identidade Visual</b><small>HYPERBOREA</small></div>
-              <img src="/assets/img/card-design-identidade.webp" alt="Card vertical de design e identidade visual" loading="lazy">
-            </a>
-            <a class="card-mobile" data-titulo="Branding e Gestão de Marcas" href="/branding.html" aria-label="Conhecer Branding e Gestão de Marcas">
-              <div class="card-reserva"><b>Branding e<br>Gestão de Marcas</b><small>HYPERBOREA</small></div>
-              <img src="/assets/img/card-branding.webp" alt="Card vertical de branding e gestão de marcas" loading="lazy">
-            </a>
-            <a class="card-mobile" data-titulo="Sites e Web Design" href="/sites.html" aria-label="Conhecer Sites e Web Design">
-              <div class="card-reserva"><b>Sites e<br>Web Design</b><small>HYPERBOREA</small></div>
-              <img src="/assets/img/card-sites-webdesign.webp" alt="Card vertical de sites e web design" loading="lazy">
-            </a>
+            <a class="card-mobile" data-titulo="Vídeos Comerciais" href="/servicos/videos-comerciais.html" aria-label="Conhecer Vídeos Comerciais"><div class="card-reserva"><b>Vídeos<br>Comerciais</b><small>HYPERBOREA</small></div><img src="/assets/img/card-videos-comerciais.webp" alt="Card vertical de vídeos comerciais" loading="lazy"></a>
+            <a class="card-mobile" data-titulo="Design e Identidade Visual" href="/servicos/design-identidade.html" aria-label="Conhecer Design e Identidade Visual"><div class="card-reserva"><b>Design e<br>Identidade Visual</b><small>HYPERBOREA</small></div><img src="/assets/img/card-design-identidade.webp" alt="Card vertical de design e identidade visual" loading="lazy"></a>
+            <a class="card-mobile" data-titulo="Branding e Gestão de Marcas" href="/servicos/branding.html" aria-label="Conhecer Branding e Gestão de Marcas"><div class="card-reserva"><b>Branding e<br>Gestão de Marcas</b><small>HYPERBOREA</small></div><img src="/assets/img/card-branding.webp" alt="Card vertical de branding e gestão de marcas" loading="lazy"></a>
+            <a class="card-mobile" data-titulo="Sites e Web Design" href="/servicos/sites-webdesign.html" aria-label="Conhecer Sites e Web Design"><div class="card-reserva"><b>Sites e<br>Web Design</b><small>HYPERBOREA</small></div><img src="/assets/img/card-sites-webdesign.webp" alt="Card vertical de sites e web design" loading="lazy"></a>
           </div>
           <div class="controles-cards">
-            <button id="cardAnterior" class="seta-card" type="button" aria-label="Card anterior">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-            </button>
+            <button id="cardAnterior" class="seta-card" type="button" aria-label="Card anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
             <span id="contadorCard" class="contador-card" aria-live="polite">01 / 04</span>
-            <button id="cardProximo" class="seta-card" type="button" aria-label="Próximo card">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-            </button>
+            <button id="cardProximo" class="seta-card" type="button" aria-label="Próximo card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- REALIZAÇÕES: quatro espaços preparados para os logotipos reais.
+         Envie as imagens para /assets/img/realizacoes/ com os nomes indicados. -->
     <section class="secao realizacoes" id="realizacoes" aria-labelledby="tituloRealizacoes">
       <div class="container">
         <div class="realizacoes-intro">
           <h2 class="secao-titulo" id="tituloRealizacoes">Nossas <span class="ouro">realizações</span></h2>
+
         </div>
         <div class="grade-realizacoes" aria-label="Projetos de identidade visual">
           <article class="realizacao-item">
@@ -420,39 +386,30 @@
         </div>
       </div>
     </section>
-
     <section class="secao contato" id="contato" aria-labelledby="tituloContato">
       <div class="container">
         <div class="contato-painel">
           <p class="rotulo">Contatos • Vamos conversar?</p>
           <h2 id="tituloContato">Sua próxima ideia pode começar <span class="ouro">aqui.</span></h2>
           <p>Escolha como deseja conversar com a HYPERBOREA.</p>
-
           <div class="canais-contato" aria-label="Canais de contato da HYPERBOREA">
-            <a class="canal-contato" href="https://www.instagram.com/agencia.hyperborea/" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial da HYPERBOREA">
+            <!-- TODO: assim que houver o perfil oficial, trocar este elemento por
+                 <a class="canal-contato" href="https://www.instagram.com/SEU_PERFIL/" target="_blank" rel="noopener noreferrer" aria-label="Instagram oficial da HYPERBOREA"> ... </a>
+                 Não utilizar um perfil de terceiros. -->
+            <div class="canal-contato pendente" aria-label="Instagram da HYPERBOREA: link em breve">
               <span class="canal-icone" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
-                  <circle cx="12" cy="12" r="4.1"/>
-                  <circle cx="17.65" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.65" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
               </span>
               <span>Instagram</span>
-            </a>
-
+              <small>Em breve</small>
+            </div>
             <a class="canal-contato" href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp Business da HYPERBOREA">
-              <span class="canal-icone" aria-hidden="true">
-                <img src="/assets/img/whats-icon.svg" width="35" height="35" alt="" loading="lazy">
-              </span>
+              <span class="canal-icone" aria-hidden="true"><img src="/assets/img/whats-icon.svg" width="35" height="35" alt="" loading="lazy"></span>
               <span>WhatsApp</span>
             </a>
-
-            <a class="canal-contato" href="mailto:contato@hyperborea.com.br?subject=Contato%20HYPERBOREA" aria-label="Enviar e-mail para a HYPERBOREA">
+            <a class="canal-contato" href="mailto:contato.hyperborea@gmail.com?subject=Contato%20HYPERBOREA" aria-label="Enviar e-mail para a HYPERBOREA">
               <span class="canal-icone" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2.5" y="5" width="19" height="14" rx="2"/>
-                  <path d="m3.6 6.2 8.4 7 8.4-7"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.6 6.2 8.4 7 8.4-7"/></svg>
               </span>
               <span>E-mail</span>
             </a>
@@ -461,164 +418,75 @@
       </div>
     </section>
   </main>
-
-  <footer class="rodape">
-    <div class="container">
-      <span>© <span id="ano">2026</span> HYPERBOREA — Projeto em desenvolvimento.</span>
-      <a href="#inicio">Voltar ao topo ↑</a>
-    </div>
-  </footer>
+  <footer class="rodape"><div class="container"><span>© <span id="ano">2026</span> HYPERBOREA — Projeto em desenvolvimento.</span><a href="#inicio">Voltar ao topo ↑</a></div></footer>
 
   <script>
+    // Menu mobile.
     const botaoMenu=document.getElementById('abrirMenu');
     const menu=document.getElementById('menuMobile');
-
-    function fecharMenu(){
-      menu.classList.remove('aberto');
-      botaoMenu.setAttribute('aria-expanded','false');
-      botaoMenu.setAttribute('aria-label','Abrir menu');
-    }
-
-    botaoMenu.addEventListener('click',()=>{
-      const aberto=menu.classList.toggle('aberto');
-      botaoMenu.setAttribute('aria-expanded',String(aberto));
-      botaoMenu.setAttribute('aria-label',aberto?'Fechar menu':'Abrir menu');
-    });
-
+    function fecharMenu(){menu.classList.remove('aberto');botaoMenu.setAttribute('aria-expanded','false');botaoMenu.setAttribute('aria-label','Abrir menu')}
+    botaoMenu.addEventListener('click',()=>{const aberto=menu.classList.toggle('aberto');botaoMenu.setAttribute('aria-expanded',String(aberto));botaoMenu.setAttribute('aria-label',aberto?'Fechar menu':'Abrir menu')});
     menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',fecharMenu));
     document.addEventListener('keydown',e=>{if(e.key==='Escape')fecharMenu()});
-    document.addEventListener('click',e=>{
-      if(!menu.contains(e.target)&&!botaoMenu.contains(e.target))fecharMenu();
-    });
+    document.addEventListener('click',e=>{if(!menu.contains(e.target)&&!botaoMenu.contains(e.target))fecharMenu()});
     window.addEventListener('resize',()=>{if(window.innerWidth>800)fecharMenu()});
 
+    // Caso algum SVG ainda não tenha sido enviado ao GitHub, exibir nome textual.
     document.querySelectorAll('img[data-fallback="nome"]').forEach(img=>{
-      const falhou=()=>{
-        img.hidden=true;
-        const span=img.nextElementSibling;
-        if(span)span.style.display='block';
-      };
+      const falhou=()=>{img.hidden=true;const span=img.nextElementSibling;if(span)span.style.display='block'};
       img.addEventListener('error',falhou);
       if(img.complete&&!img.naturalWidth)falhou();
     });
+    document.querySelectorAll('img[data-fallback="h"]').forEach(img=>img.addEventListener('error',()=>{img.style.visibility='hidden'}));
 
-    document.querySelectorAll('img[data-fallback="h"]').forEach(img=>
-      img.addEventListener('error',()=>{img.style.visibility='hidden'})
-    );
-
+    // Vídeo somente no mobile, com fallback sempre visível se não reproduzir.
     const video=document.getElementById('videoBoasVindas');
     const banner=document.getElementById('bannerBoasVindas');
     const prefereMenosMovimento=matchMedia('(prefers-reduced-motion: reduce)');
     const ehMobile=matchMedia('(max-width: 800px)');
     const mostrarArte=()=>banner.classList.remove('pronto');
-
     video.addEventListener('playing',()=>banner.classList.add('pronto'));
     video.addEventListener('error',mostrarArte);
     video.querySelectorAll('source').forEach(s=>s.addEventListener('error',mostrarArte));
-
     function atualizarVideo(){
-      if(!ehMobile.matches||prefereMenosMovimento.matches||document.hidden){
-        video.pause();
-        if(!ehMobile.matches||prefereMenosMovimento.matches)mostrarArte();
-        return;
-      }
+      if(!ehMobile.matches||prefereMenosMovimento.matches||document.hidden){video.pause();if(!ehMobile.matches||prefereMenosMovimento.matches)mostrarArte();return}
       if(video.error){mostrarArte();return}
-      const p=video.play();
-      if(p&&p.catch)p.catch(mostrarArte);
+      const p=video.play();if(p&&p.catch)p.catch(mostrarArte);
     }
-
     window.addEventListener('load',atualizarVideo);
     document.addEventListener('visibilitychange',atualizarVideo);
     ehMobile.addEventListener?.('change',atualizarVideo);
     prefereMenosMovimento.addEventListener?.('change',atualizarVideo);
 
+    // Cards mobile. Setas idênticas em SVG, posicionadas pelo centro do card.
     const trilho=document.getElementById('carrosselMobile');
     const cards=[...trilho.querySelectorAll('.card-mobile')];
     const anterior=document.getElementById('cardAnterior');
     const proximo=document.getElementById('cardProximo');
     const contador=document.getElementById('contadorCard');
-
     let atual=0,quadroPendente=false;
-
-    function selecionar(i){
-      atual=Math.max(0,Math.min(cards.length-1,i));
-      anterior.disabled=atual===0;
-      proximo.disabled=atual===cards.length-1;
-      contador.textContent=String(atual+1).padStart(2,'0')+' / '+String(cards.length).padStart(2,'0');
-    }
-
-    function irPara(i){
-      const alvo=Math.max(0,Math.min(cards.length-1,i));
-      const c=cards[alvo];
-      const a=c.getBoundingClientRect(),b=trilho.getBoundingClientRect();
-      const desloc=trilho.scrollLeft+(a.left+a.width/2)-(b.left+b.width/2);
-      trilho.scrollTo({
-        left:desloc,
-        behavior:prefereMenosMovimento.matches?'instant':'smooth'
-      });
-      selecionar(alvo);
-    }
-
-    function identificar(){
-      const r=trilho.getBoundingClientRect(),centro=r.left+r.width/2;
-      let menor=Infinity,idx=0;
-      cards.forEach((c,i)=>{
-        const a=c.getBoundingClientRect();
-        const dist=Math.abs(a.left+a.width/2-centro);
-        if(dist<menor){menor=dist;idx=i}
-      });
-      selecionar(idx);
-      quadroPendente=false;
-    }
-
-    trilho.addEventListener('scroll',()=>{
-      if(!quadroPendente){
-        quadroPendente=true;
-        requestAnimationFrame(identificar);
-      }
-    },{passive:true});
-
-    anterior.addEventListener('click',()=>irPara(atual-1));
-    proximo.addEventListener('click',()=>irPara(atual+1));
-
-    trilho.addEventListener('keydown',e=>{
-      if(e.key==='ArrowRight'){e.preventDefault();irPara(atual+1)}
-      if(e.key==='ArrowLeft'){e.preventDefault();irPara(atual-1)}
-    });
-
-    window.addEventListener('resize',()=>{
-      if(ehMobile.matches)irPara(atual);
-    });
-
-    trilho.querySelectorAll('img').forEach(img=>{
-      const falhou=()=>{img.hidden=true};
-      img.addEventListener('error',falhou);
-      if(img.complete&&!img.naturalWidth)falhou();
-    });
-
+    function selecionar(i){atual=Math.max(0,Math.min(cards.length-1,i));anterior.disabled=atual===0;proximo.disabled=atual===cards.length-1;contador.textContent=String(atual+1).padStart(2,'0')+' / '+String(cards.length).padStart(2,'0')}
+    function irPara(i){const alvo=Math.max(0,Math.min(cards.length-1,i));const c=cards[alvo];const a=c.getBoundingClientRect(),b=trilho.getBoundingClientRect();const desloc=trilho.scrollLeft+(a.left+a.width/2)-(b.left+b.width/2);trilho.scrollTo({left:desloc,behavior:prefereMenosMovimento.matches?'instant':'smooth'});selecionar(alvo)}
+    function identificar(){const r=trilho.getBoundingClientRect(),centro=r.left+r.width/2;let menor=Infinity,idx=0;cards.forEach((c,i)=>{const a=c.getBoundingClientRect(),dist=Math.abs(a.left+a.width/2-centro);if(dist<menor){menor=dist;idx=i}});selecionar(idx);quadroPendente=false}
+    trilho.addEventListener('scroll',()=>{if(!quadroPendente){quadroPendente=true;requestAnimationFrame(identificar)}},{passive:true});
+    anterior.addEventListener('click',()=>irPara(atual-1));proximo.addEventListener('click',()=>irPara(atual+1));
+    trilho.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();irPara(atual+1)}if(e.key==='ArrowLeft'){e.preventDefault();irPara(atual-1)}});
+    window.addEventListener('resize',()=>{if(ehMobile.matches)irPara(atual)});
+    // Caso os cards novos ainda não estejam disponíveis, mostrar o nome do serviço.
+    trilho.querySelectorAll('img').forEach(img=>{const falhou=()=>{img.hidden=true};img.addEventListener('error',falhou);if(img.complete&&!img.naturalWidth)falhou()});
     selecionar(0);
-
+    // Realizações: exibir reserva elegante até que cada PNG/WebP verdadeiro seja enviado.
     document.querySelectorAll('.realizacao-logo img').forEach(img=>{
       const falhou=()=>{img.hidden=true};
       img.addEventListener('error',falhou);
       if(img.complete&&!img.naturalWidth)falhou();
     });
-
     document.getElementById('ano').textContent=new Date().getFullYear();
   </script>
 
-  <a class="whatsapp-flutuante"
-     href="https://wa.me/message/FHWOVDSQ3AKCO1"
-     target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Falar com a HYPERBOREA pelo WhatsApp Business"
-     title="Fale conosco pelo WhatsApp">
-    <img src="/assets/img/whats-icon.svg"
-         alt=""
-         width="38"
-         height="38"
-         loading="eager"
-         decoding="async">
+  <!-- WhatsApp Business: ícone SVG em /assets/img/whats-icon.svg -->
+  <a class="whatsapp-flutuante" href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer" aria-label="Falar com a HYPERBOREA pelo WhatsApp Business" title="Fale conosco pelo WhatsApp">
+    <img src="/assets/img/whats-icon.svg" alt="" width="38" height="38" loading="eager" decoding="async">
   </a>
 </body>
 </html>
