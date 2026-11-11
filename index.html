@@ -66,21 +66,20 @@
     .hero-down{position:absolute;bottom:25px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:10px;color:#dac09c;font-size:.69rem;letter-spacing:.18em;text-transform:uppercase}
     .hero-down .arr{font-size:1.4rem;line-height:1}
 
-    /* O ponto principal da nova index: os quatro cards entram pelas laterais. */
+    /* V2: dois cards por linha no desktop, com entrada lateral no scroll. */
     .services-heading{text-align:center;padding:65px 0 7px;border-top:1px solid var(--linha)}
     .services-heading h2,.projects h2,.contact h2{font-size:clamp(2.5rem,5.2vw,5.2rem);line-height:1.05;letter-spacing:-.02em;margin:13px auto 17px}
     .services-heading p:last-child{margin:0 auto;max-width:650px;line-height:1.8;color:var(--suave)}
-    .service-panel{position:relative;display:flex;align-items:center;min-height:85svh;padding:66px 0;border-bottom:1px solid rgba(199,152,96,.17)}
-    .service-panel::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;pointer-events:none;background:linear-gradient(transparent,#cea56a0a,transparent)}
-    .service-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:clamp(30px,5vw,90px);width:min(1070px,100%);margin:0 auto}
-    .service-panel[data-side="right"] .card-stage{order:2}
-    .service-panel[data-side="right"] .service-copy{order:1}
-    .card-stage{width:min(100%,410px);justify-self:center;min-width:0;perspective:1100px;transform-style:preserve-3d;will-change:auto}
-    .service-panel[data-side="left"] .card-stage{justify-self:end}
-    .service-panel[data-side="right"] .card-stage{justify-self:start}
+    .services-grid{width:min(1150px,calc(100% - 40px));margin:62px auto 46px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:clamp(20px,3vw,38px)}
+    .service-panel{display:block;min-width:0;min-height:0;padding:0;background:linear-gradient(145deg,rgba(98,29,51,.40),rgba(33,5,16,.80) 72%);border:1px solid rgba(207,166,106,.38);box-shadow:0 16px 44px #11020a3e}
+    .service-panel>.container{width:100%;height:100%;padding:clamp(20px,2.6vw,31px)}
+    .service-layout{display:flex;flex-direction:column;align-items:center;gap:25px;height:100%;width:100%}
+    .card-stage{width:min(100%,310px);min-width:0;margin-inline:auto;perspective:1100px;transform-style:preserve-3d}
+    .service-panel[data-side="left"] .card-stage,.service-panel[data-side="right"] .card-stage{order:0;justify-self:auto}
+    .service-panel[data-side="left"] .service-copy,.service-panel[data-side="right"] .service-copy{order:0}
     .motion-card{position:relative;width:100%;transform-origin:center;backface-visibility:hidden;transform-style:preserve-3d}
     .motion-card::before{content:"";position:absolute;z-index:-1;inset:15px -16px -14px 16px;border:1px solid #d0a56b58;background:#17030a88}
-    .card-frame{position:relative;aspect-ratio:812 / 1024;overflow:hidden;border:1px solid #d8ac6f;background:radial-gradient(ellipse at 30% 20%,#76294455,transparent 69%),#260711;box-shadow:0 34px 60px #09020988,0 0 30px #bd784b12}
+    .card-frame{position:relative;aspect-ratio:812 / 1024;overflow:hidden;border:1px solid #d8ac6f;background:radial-gradient(ellipse at 30% 20%,#76294455,transparent 69%),#260711;box-shadow:0 22px 42px #09020988,0 0 25px #bd784b12;transform:translateZ(0);transition:transform .48s cubic-bezier(.22,1,.36,1),box-shadow .48s ease}
     .card-frame::before,.card-frame::after{content:"";position:absolute;z-index:3;width:23px;height:23px;border-color:#eed1a4;pointer-events:none}
     .card-frame::before{left:7px;top:7px;border-top:1px solid;border-left:1px solid}
     .card-frame::after{right:7px;bottom:7px;border-right:1px solid;border-bottom:1px solid}
@@ -89,16 +88,24 @@
     .card-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:25px;color:var(--ouro-claro)}
     .card-fallback .monogram{font:400 5rem Georgia,serif;color:#e5c58f;opacity:.7}
     .card-fallback span:last-child{font:400 1.25rem/1.25 Georgia,serif;letter-spacing:.04em}
-    .card-indicator{font-size:.7rem;color:#e7cda5;letter-spacing:.24em;margin-bottom:20px}
-    .service-copy{max-width:480px}
-    .service-copy h3{font-size:clamp(2.5rem,5vw,5.1rem);letter-spacing:-.028em;line-height:1.07;margin:12px 0 21px}
-    .service-copy p{color:#e2ceca;font-size:clamp(.99rem,1.25vw,1.09rem);line-height:1.87;max-width:430px}
-    .small-rule{width:77px;height:1px;background:linear-gradient(90deg,#f4d9a7,transparent);margin:24px 0}
-    .service-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
-    .service-tags span{border:1px solid #d3a86a55;color:#e8cba0;padding:7px 10px;font-size:.73rem;letter-spacing:.025em}
-    .service-link{display:inline-flex;align-items:center;gap:10px;border:1px solid #c59b61;color:#f6d7a4;padding:12px 19px;font-weight:700;font-size:.89rem;transition:background .2s,transform .2s}
-    .service-link:hover{background:#6e2036;transform:translateY(-2px)}
+    .card-indicator{font-size:.69rem;color:#e7cda5;letter-spacing:.20em;margin-bottom:14px}
+    .service-copy{display:flex;flex:1;flex-direction:column;align-items:center;max-width:460px;text-align:center;width:100%}
+    .service-copy h3{font-size:clamp(1.8rem,2.8vw,2.65rem);letter-spacing:-.025em;line-height:1.09;margin:10px 0 17px}
+    .service-copy p{color:#e2ceca;font-size:.95rem;line-height:1.74;max-width:430px}
+    .small-rule{width:77px;height:1px;background:linear-gradient(90deg,#f4d9a7,transparent);margin:19px auto}
+    .service-tags{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+    .service-tags span{border:1px solid #d3a86a55;color:#e8cba0;padding:6px 9px;font-size:.72rem;letter-spacing:.025em}
+    .service-link{display:inline-flex;align-items:center;justify-content:center;gap:10px;margin-top:auto;border:1px solid #c59b61;color:#f6d7a4;padding:12px 19px;font-weight:700;font-size:.89rem;background:#53142933;transition:background .24s,box-shadow .24s,transform .24s;animation:pulsarServico 5.8s ease-in-out infinite;animation-delay:var(--pulse-delay,0s)}
     .service-link .arrow{font-size:1.3rem;font-weight:400}
+    .service-panel:nth-child(2) .service-link{--pulse-delay:1.4s}
+    .service-panel:nth-child(3) .service-link{--pulse-delay:2.8s}
+    .service-panel:nth-child(4) .service-link{--pulse-delay:4.2s}
+    @keyframes pulsarServico{0%,71%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(224,176,106,0)}78%{transform:scale(1.055);box-shadow:0 0 0 5px rgba(224,176,106,.13)}83%{transform:scale(.99);box-shadow:0 0 0 2px rgba(224,176,106,.06)}89%{transform:scale(1.02)}94%{transform:scale(1)}}
+    @media(hover:hover) and (pointer:fine){
+      .card-stage:hover .card-frame{transform:scale(1.065);box-shadow:0 29px 60px #090209aa,0 0 28px #bd784b35}
+      .service-link:hover{animation:none;transform:translateY(-2px) scale(1.03);background:#75263d;box-shadow:0 7px 22px #0005}
+    }
+    .service-link:focus-visible{animation:none;transform:scale(1.025);background:#75263d}
     .copy-reveal{transition:opacity .75s ease,transform .75s ease}
     .motion-enabled .copy-reveal:not(.shown){opacity:.12;transform:translateY(28px)}
 
@@ -130,16 +137,15 @@
       .nav-links{display:none}.mobile-menu{display:block}
       .hero{min-height:66svh;padding:65px 0 83px}.hero::after{right:-50%;top:12%;width:110vw;opacity:.55}
       .hero h1{font-size:clamp(2.95rem,10vw,5.1rem)}
-      .service-panel{min-height:0;padding:66px 0 84px}
-      .service-layout{grid-template-columns:minmax(0,1fr);gap:32px}
-      .service-panel[data-side="right"] .card-stage,.service-panel[data-side="right"] .service-copy{order:unset}
-      .service-panel[data-side="left"] .card-stage,.service-panel[data-side="right"] .card-stage{justify-self:center}
+      .services-grid{display:block;width:100%;margin:42px auto 25px}
+      .service-panel{padding:66px 0 84px;background:transparent;border:0;border-bottom:1px solid rgba(199,152,96,.24);box-shadow:none}
+      .service-panel>.container{width:calc(100% - 40px);padding:0;margin-inline:auto}
+      .service-layout{gap:32px}
       .card-stage{width:min(78vw,325px)}
-      .service-copy{text-align:center;justify-self:center}
+      .service-copy{max-width:480px;justify-self:center}
       .service-copy h3{font-size:clamp(2.15rem,8vw,3.45rem);margin-bottom:14px}
       .service-copy p{font-size:.96rem;line-height:1.7}
       .small-rule{margin:20px auto}
-      .service-tags{justify-content:center}
       .project-art{height:180px}
     }
     @media(max-width:570px){
@@ -147,6 +153,7 @@
       .site-header,.nav-row{min-height:66px}.brand-mark{width:35px;height:42px}.brand-text{font-size:1.02rem;letter-spacing:.13em}.brand-text small{font-size:.5rem}
       .services-heading{padding-top:55px}.services-heading h2{font-size:2.7rem}
       .service-panel{padding:53px 0 75px}
+      .service-panel>.container{width:calc(100% - 34px)}
       .project-grid{grid-template-columns:1fr;gap:17px;max-width:370px;margin-inline:auto}
       .project-art{height:190px}
       .projects{padding:79px 0}.contact{padding:70px 0 82px}
@@ -155,6 +162,8 @@
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
       .motion-enabled .copy-reveal:not(.shown){opacity:1;transform:none}
+      .service-link{animation:none!important}
+      .card-frame{transition:none}
     }
   </style>
 </head>
@@ -189,10 +198,11 @@
     <section id="servicos" aria-labelledby="tituloServicos">
       <div class="container services-heading">
         <p class="eyebrow">O universo HYPERBOREA</p><h2 id="tituloServicos">Nossos <span class="gold">serviços</span></h2>
-        <p>Desça a página. Cada criação aparece em movimento, revelando uma nova possibilidade para sua marca.</p>
+        <p>Explore nossos serviços. Os cards chegam pelas laterais conforme você desce a página.</p>
       </div>
 
       <!-- As quatro artes abaixo são as já existentes no repositório da HYPERBOREA. -->
+      <div class="services-grid" aria-label="Quatro serviços da HYPERBOREA">
       <section class="service-panel" data-side="left" aria-labelledby="servicoVideos">
         <div class="container"><div class="service-layout">
           <div class="card-stage"><div class="motion-card" data-scroll-card data-direction="left">
@@ -228,6 +238,7 @@
           <div class="service-copy copy-reveal"><p class="card-indicator">04 / 04 · DESENVOLVIMENTO WEB</p><h3 id="servicoSites">Sites e <span class="gold">Web Design</span></h3><p>Sites institucionais e páginas de apresentação responsivas, desenvolvidas para comunicar, organizar informações e facilitar o contato.</p><div class="small-rule"></div><div class="service-tags"><span>Sites</span><span>Landing pages</span><span>Responsividade</span></div><a class="service-link" href="/sites.html">Conhecer o serviço <span class="arrow" aria-hidden="true">↗</span></a></div>
         </div></div>
       </section>
+      </div><!-- fim da grade de serviços -->
     </section>
 
     <section class="projects" id="realizacoes" aria-labelledby="tituloRealizacoes"><div class="container">
