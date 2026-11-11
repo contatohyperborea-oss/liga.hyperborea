@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#210713">
+<title>HYPERBOREA — Demonstração de animações leves</title>
+<style>
+:root{color-scheme:dark;--vinho:#220712;--vinho2:#500e24;--ouro:#d8b46d;--claro:#fff1d1;--texto:#f4e5d8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--vinho);font:16px/1.6 system-ui,Arial,sans-serif;color:var(--texto)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(circle at 60% 20%,#8a2b4250,transparent 50%),linear-gradient(150deg,#300914,#17050c);pointer-events:none}
+header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px clamp(18px,5vw,60px);background:#230713ec;border-bottom:1px solid #d8b46d66;backdrop-filter:blur(10px)}
+.brand{font:700 clamp(1.1rem,3vw,1.55rem) Georgia,serif;letter-spacing:.08em;color:var(--claro)}
+header a{color:var(--ouro);text-decoration:none;border:1px solid #d8b46d77;padding:7px 12px;border-radius:4px;font-size:.9rem}
+.hero{min-height:82svh;display:grid;align-content:center;justify-items:center;text-align:center;padding:60px 20px 90px;position:relative}
+.kicker{text-transform:uppercase;color:var(--ouro);letter-spacing:.22em;font-size:.78rem;font-weight:700}
+h1{font:normal clamp(2.3rem,7vw,5rem)/1.12 Georgia,serif;max-width:850px;margin:15px auto;color:var(--claro)}
+h1 em{color:var(--ouro);font-style:normal}.lede{max-width:640px;font-size:clamp(1rem,2.2vw,1.18rem);color:#e2c6bd;margin:12px auto 22px}
+.butterfly{width:min(310px,65vw);height:auto;display:block;overflow:visible;filter:drop-shadow(0 0 16px #f4b36350);animation:float 4.5s ease-in-out infinite}
+.wingL,.wingR{transform-box:view-box;transform-origin:120px 95px;will-change:transform}
+.wingL{animation:flapL 1.9s ease-in-out infinite}.wingR{animation:flapR 1.9s ease-in-out infinite}
+@keyframes flapL{0%,100%{transform:scaleX(1)}42%{transform:scaleX(.27)}68%{transform:scaleX(.84)}}
+@keyframes flapR{0%,100%{transform:scaleX(1)}42%{transform:scaleX(.27)}68%{transform:scaleX(.84)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+.scrollcue{display:inline-flex;gap:7px;align-items:center;margin-top:18px;color:var(--ouro);text-decoration:none;border-bottom:1px solid #d8b46d99;padding-bottom:5px}
+section.block{padding:100px max(20px,calc((100vw - 1040px)/2));min-height:75vh}
+section.block:nth-of-type(even){background:linear-gradient(170deg,#3d0a1cc5,#1d0510)}
+section.block h2{font:normal clamp(1.75rem,5vw,3rem) Georgia,serif;color:var(--claro);margin:10px 0 28px;line-height:1.2}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:linear-gradient(155deg,#5b132c,#260710);border:1px solid #caa66187;padding:26px 20px;min-height:208px;box-shadow:0 15px 30px #08010640}
+.card svg{width:38px;height:38px;stroke:var(--ouro);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font:normal 1.4rem Georgia,serif;color:var(--ouro);margin:14px 0 8px}.card p{margin:0;color:#e8d2c7;font-size:.94rem}
+.details{max-width:720px;padding:24px 26px;border-left:2px solid var(--ouro);background:#310c1c}.details p{margin:0;color:#f0d7cf}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .7s ease,transform .7s cubic-bezier(.18,.75,.3,1)}.reveal.visible{opacity:1;transform:translateY(0)}
+footer{padding:30px 20px;text-align:center;border-top:1px solid #d8b46d44;color:#c8aeb2;font-size:.9rem}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.hero{min-height:76svh}section.block{padding:72px 22px;min-height:unset}.card{min-height:unset}header a{font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.butterfly,.wingL,.wingR{animation:none;filter:none}.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+<header><span class="brand">HYPERBOREA</span><a href="#servicos">Explorar a página</a></header>
+<main>
+<div class="hero">
+  <div class="kicker">Demonstração técnica — HTML + SVG + CSS</div>
+  <svg class="butterfly" viewBox="0 0 240 180" role="img" aria-label="Borboleta dourada com asas animadas">
+    <defs>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffe8ae"/><stop offset=".52" stop-color="#bd7d38"/><stop offset="1" stop-color="#f7d38c"/></linearGradient>
+      <linearGradient id="wine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#862b42"/><stop offset="1" stop-color="#320718"/></linearGradient>
+    </defs>
+    <g class="wingL">
+      <path d="M116 87 C85 24 20 13 15 48 C7 81 44 105 102 108 C53 101 33 122 50 149 C70 171 105 130 116 93Z" fill="url(#wine)" stroke="url(#gold)" stroke-width="3"/>
+      <path d="M109 93 C83 55 48 42 29 55 M103 110 C76 110 61 125 57 139" fill="none" stroke="#d8b46d" stroke-width="2.4"/>
+      <ellipse cx="51" cy="79" rx="11" ry="18" fill="#d49a57" opacity=".75" transform="rotate(-48 51 79)"/>
+      <circle cx="74" cy="130" r="7" fill="#f4cf8f" opacity=".9"/>
+    </g>
+    <g class="wingR">
+      <path d="M124 87 C155 24 220 13 225 48 C233 81 196 105 138 108 C187 101 207 122 190 149 C170 171 135 130 124 93Z" fill="url(#wine)" stroke="url(#gold)" stroke-width="3"/>
+      <path d="M131 93 C157 55 192 42 211 55 M137 110 C164 110 179 125 183 139" fill="none" stroke="#d8b46d" stroke-width="2.4"/>
+      <ellipse cx="189" cy="79" rx="11" ry="18" fill="#d49a57" opacity=".75" transform="rotate(48 189 79)"/>
+      <circle cx="166" cy="130" r="7" fill="#f4cf8f" opacity=".9"/>
+    </g>
+    <path d="M119 85 Q106 61 102 58 M121 85 Q134 61 138 58" fill="none" stroke="#f1d194" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="120" cy="111" rx="6" ry="29" fill="url(#gold)"/><circle cx="120" cy="83" r="8" fill="#e5bd75"/>
+  </svg>
+  <h1>Uma identidade que <em>ganha vida.</em></h1>
+  <p class="lede">Esta borboleta não é um vídeo. Suas asas são vetores SVG animados com CSS. Role a página e veja os cartões aparecerem.</p>
+  <a class="scrollcue" href="#servicos">Descer e descobrir ↓</a>
+</div>
+<section class="block" id="servicos">
+ <div class="reveal"><div class="kicker">Aparece com a rolagem</div><h2>Três soluções em destaque</h2></div>
+ <div class="grid">
+  <article class="card reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="15" rx="1"/><path d="M7 5V2M17 5V2M2 10h20M9 14l3 3 4-5"/></svg><h3>Sites e Web Design</h3><p>Navegação responsiva e conteúdos acessíveis, sem depender de vídeos para carregar a página.</p></article>
+  <article class="card reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 10 10-10 10L2 12Z M12 2v20M2 12h20"/></svg><h3>Identidade Visual</h3><p>Vetores SVG, degradês e elementos gráficos que mantêm a nitidez ao ampliar.</p></article>
+  <article class="card reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16M7 15l5-5 3 2 5-6"/></svg><h3>Branding</h3><p>Comunicação organizada e apresentação clara dos diferenciais de cada projeto.</p></article>
+ </div>
+</section>
+<section class="block"><div class="reveal"><div class="kicker">Movimento sem MP4</div><h2>O conteúdo surge à medida que o visitante explora.</h2></div><div class="details reveal"><p>O efeito é ativado somente quando a seção entra no campo de visão. O JavaScript usa <code>IntersectionObserver</code>; o CSS anima somente <code>opacity</code> e <code>transform</code>, que costumam ser eficientes nos navegadores modernos.</p></div></section>
+<section class="block"><div class="reveal"><div class="kicker">HYPERBOREA</div><h2>Movimento onde ele acrescenta valor.</h2></div><div class="details reveal"><p>A versão final pode usar nossa paleta vinho e dourado, os banners existentes e movimentos discretos — respeitando a preferência de usuários que escolhem reduzir animações.</p></div></section>
+</main>
+<footer>Demonstração independente da HYPERBOREA • Sem bibliotecas externas • Sem vídeos</footer>
+<script>
+const blocks = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+ const observer = new IntersectionObserver((entries, obs) => {
+   for (const e of entries) if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+ }, { threshold:.13, rootMargin:'0px 0px -20px 0px' });
+ blocks.forEach(el=>observer.observe(el));
+} else blocks.forEach(el=>el.classList.add('visible'));
+</script>
+</body>
+</html>
