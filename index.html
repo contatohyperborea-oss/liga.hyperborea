@@ -8,6 +8,7 @@
   <title>HYPERBOREA | Agência Criativa</title>
   <!-- HYPERBOREA: homepage com serviços, portfólio e canais oficiais de contato. -->
   <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
+  <link rel="preload" as="image" media="(max-width:800px)" href="/assets/img/boas-vindas-poster.webp?v=20261111a">
   <style>
     :root {
       --vinho:#710c22; --vinho-profundo:#19050b; --vinho-medio:#48101f;
@@ -163,11 +164,15 @@
       .menu-mobile a:hover,.menu-mobile a:focus-visible{background:#f9dfaa;border-color:#9d6628}
       .abertura-mobile{display:block;padding:12px 0 10px}
       .banner-video{position:relative;isolation:isolate;width:100%;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--borda);border-radius:0;background:#2a0612}
-      .banner-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:4px;padding:12px;background:linear-gradient(125deg,#25051175,#620a2490),url('/assets/img/boas-vindas-poster.webp?v=20261102c') center/contain no-repeat,linear-gradient(120deg,#4b0e22,#18040b)}
+      /* A imagem aparece ANTES de qualquer tentativa de carregar o video. */
+      .banner-fallback{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:4px;padding:12px;background:linear-gradient(120deg,#4b0e22,#18040b)}
+      .banner-fallback .imagem-poster{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:contain}
       .banner-fallback strong{font:700 clamp(1.2rem,5vw,2.4rem) Georgia,serif;color:#ffe7b4;letter-spacing:.09em}
       .banner-fallback span{font-size:.86rem;color:#f9ebdf}
-      .banner-video video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;background:#240510}
+      .banner-video video{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;background:transparent;transition:opacity .25s ease}
       .banner-video.pronto video{opacity:1}
+      .banner-reproduzir{position:absolute;z-index:3;right:9px;bottom:9px;padding:5px 10px;border:1px solid #e6b55d;border-radius:4px;background:#260611e8;color:#ffe5ad;font-size:.73rem;font-weight:700}
+      .banner-reproduzir[hidden],.banner-video.pronto .banner-reproduzir{display:none}
       .abertura-mobile .legenda{text-align:center;margin:6px 0 0;color:var(--suave);font-size:.84rem}
       .secao{padding:26px 0}
       .apresentacao h2{font-size:clamp(2rem,8.1vw,3rem)}
@@ -207,8 +212,11 @@
     .realizacoes{position:relative;background:linear-gradient(180deg,#1b050d 0%,#320919 58%,#19050b 100%)}
     .realizacoes-intro{text-align:center;max-width:760px;margin:0 auto 22px}
     .realizacoes-intro .descricao{max-width:660px;margin:0 auto}
-    .grade-realizacoes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}
+    .grade-realizacoes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
     .realizacao-item{min-width:0;padding:13px;background:linear-gradient(145deg,#400e1f,#220610);border:1px solid rgba(230,181,93,.45);text-align:center}
+    .realizacao-link{display:block;color:inherit;text-decoration:none}
+    .realizacao-link:focus-visible{outline:2px solid #ffe4b6;outline-offset:4px}
+    .realizacao-link:hover .realizacao-logo,.realizacao-link:focus-visible .realizacao-logo{border-color:#ffe4b6}
     .realizacao-logo{position:relative;width:100%;aspect-ratio:1;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 50% 28%,#7d244430,transparent 67%),#180509;border:1px solid rgba(230,181,93,.36)}
     .realizacao-logo::before,.realizacao-logo::after{content:"";position:absolute;z-index:2;width:15px;height:15px;border-color:var(--ouro)}
     .realizacao-logo::before{top:6px;left:6px;border-top:1px solid;border-left:1px solid}
@@ -221,6 +229,7 @@
     @media(max-width:800px){
       .grade-realizacoes{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
       .realizacao-item{padding:9px}
+      .grade-realizacoes>.realizacao-item:last-child:nth-child(odd){grid-column:1/-1;width:calc((100% - 12px)/2);justify-self:center}
       .realizacao-logo img{padding:11px}
       .realizacao-reserva{font-size:.56rem;letter-spacing:.04em;gap:6px}
       .realizacao-reserva .sigla{font-size:2.6rem}
@@ -315,10 +324,13 @@
     <section class="abertura-mobile" aria-label="Boas-vindas à HYPERBOREA">
       <div class="container">
         <div class="banner-video" id="bannerBoasVindas">
-          <div class="banner-fallback" role="img" aria-label="Arte de boas-vindas à HYPERBOREA"><strong>HYPERBOREA</strong><span>Sejam bem-vindos!</span></div>
-          <video id="videoBoasVindas" autoplay muted loop playsinline preload="metadata" disablepictureinpicture poster="/assets/img/boas-vindas-poster.webp?v=20261102c" aria-label="Vídeo de boas-vindas">
-            <source src="/assets/video/boa-vindas.mp4?v=20261102c" type="video/mp4">
+          <div class="banner-fallback" role="img" aria-label="HYPERBOREA. Sejam bem-vindos!">
+            <img class="imagem-poster" src="/assets/img/boas-vindas-poster.webp?v=20261111b" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+          </div>
+          <video id="videoBoasVindas" muted loop playsinline preload="metadata" disablepictureinpicture poster="/assets/img/boas-vindas-poster.webp?v=20261111b" aria-label="Vídeo de boas-vindas">
+            <source src="/assets/video/boa-vindas.mp4?v=20261111b" type="video/mp4">
           </video>
+          <button type="button" id="reproduzirBoasVindas" class="banner-reproduzir" aria-label="Tentar reproduzir o vídeo de boas-vindas">▶ Assistir vídeo</button>
         </div>
         <p class="legenda">Sejam bem-vindos ao universo criativo HYPERBOREA.</p>
       </div>
@@ -362,43 +374,33 @@
           <h2 class="secao-titulo" id="tituloRealizacoes">Nossas <span class="ouro">realizações</span></h2>
 
         </div>
-        
-        <article class="realizacao-item">
-  <a class="realizacao-link"
-    
-     href="https://www.marajoara3.com.br/"
-     target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Visitar o site do Edifício Marajoara III">
-    
-        <div class="grade-realizacoes" aria-label="Projetos de identidade visual">
+        <div class="grade-realizacoes" aria-label="Sites e identidades visuais no portfólio">
           <article class="realizacao-item">
-            <div class="realizacao-logo">
-             <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">M</span><span>MARAJOARA</span></span>
-              <img src="/assets/img/realizacoes/logo-marajoara-oficial-otimizado1.svg" alt="Logotipo do Marajoara" loading="lazy" decoding="async">
-            </div>
-            <h3>Marajoara</h3>
+            <a class="realizacao-link" href="https://www.marajoara.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visitar o site do Marajoara (abre em outra aba)">
+              <div class="realizacao-logo">
+                <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">M</span><span>MARAJOARA</span></span>
+                <img src="/assets/img/realizacoes/logo-marajoara-oficial-otimizado1.svg" alt="Logotipo do Marajoara" loading="lazy" decoding="async">
+              </div>
+              <h3>Marajoara</h3>
+            </a>
           </article>
           <article class="realizacao-item">
-            <div class="realizacao-logo">
-              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">P</span><span>POKEDAIMON</span></span>
-              <img src="/assets/img/realizacoes/pokedaimon.webp" alt="Logotipo do PokeDaimon" loading="lazy" decoding="async">
-            </div>
-            <h3>PokeDaimon</h3>
+            <a class="realizacao-link" href="https://www.percivalviking.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visitar o site Percival Viking (abre em outra aba)">
+              <div class="realizacao-logo">
+                <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">PV</span><span>PERCIVAL VIKING</span></span>
+                <img src="/assets/img/realizacoes/logo-percival.svg" alt="Logotipo Percival Viking" loading="lazy" decoding="async">
+              </div>
+              <h3>Percival Viking</h3>
+            </a>
           </article>
           <article class="realizacao-item">
-            <div class="realizacao-logo">
-              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">PV</span><span>PERCIVAL VIKING</span></span>
-              <img src="/assets/img/realizacoes/percival-viking.webp" alt="Logotipo do Percival Viking" loading="lazy" decoding="async">
-            </div>
-            <h3>Percival Viking</h3>
-          </article>
-          <article class="realizacao-item">
-            <div class="realizacao-logo">
-              <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">X</span><span>XICORITA</span></span>
-              <img src="/assets/img/realizacoes/xicorita.webp" alt="Logotipo da Xicorita" loading="lazy" decoding="async">
-            </div>
-            <h3>Xicorita</h3>
+            <a class="realizacao-link" href="https://www.xicorita.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visitar o site Xicorita — Arte e Decoração (abre em outra aba)">
+              <div class="realizacao-logo">
+                <span class="realizacao-reserva" aria-hidden="true"><span class="sigla">X</span><span>XICORITA</span></span>
+                <img src="/assets/img/realizacoes/xicorita-logo.svg" alt="Logotipo Xicorita — Arte e Decoração" loading="lazy" decoding="async">
+              </div>
+              <h3>Xicorita</h3>
+            </a>
           </article>
         </div>
       </div>
@@ -417,7 +419,7 @@
               <span>Instagram</span>
             </a>
             <a class="canal-contato" href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp Business da HYPERBOREA">
-              <span class="canal-icone" aria-hidden="true"><img src="/assets/img/whats-icon.svg" width="35" height="35" alt="" loading="lazy"></span>
+              <span class="canal-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.5 7.5L3 20.5l1.5-4.8A8.5 8.5 0 1 1 20.5 11.6Z"/><path d="M8.6 8.5c.25-.5.5-.55.8-.55h.6l1.05 2.3-.65.75c.9 1.5 2.1 2.5 3.6 3.1l.65-.7 2.3 1-.1.75c-.25 1.3-1.4 1.6-2.1 1.45-2.8-.6-6.25-3.8-6.8-6.65-.15-.55.05-1.05.65-1.45Z"/></svg></span>
               <span>WhatsApp</span>
             </a>
             <a class="canal-contato" href="mailto:contato@hyperborea.com.br?subject=Contato%20HYPERBOREA" aria-label="Enviar e-mail para a HYPERBOREA">
@@ -452,24 +454,80 @@
     });
     document.querySelectorAll('img[data-fallback="h"]').forEach(img=>img.addEventListener('error',()=>{img.style.visibility='hidden'}));
 
-    // Vídeo somente no mobile, com fallback sempre visível se não reproduzir.
+    // A imagem aparece primeiro; o video nunca bloqueia o site no Opera.
     const video=document.getElementById('videoBoasVindas');
     const banner=document.getElementById('bannerBoasVindas');
+    const botaoVideo=document.getElementById('reproduzirBoasVindas');
     const prefereMenosMovimento=matchMedia('(prefers-reduced-motion: reduce)');
     const ehMobile=matchMedia('(max-width: 800px)');
-    const mostrarArte=()=>banner.classList.remove('pronto');
-    video.addEventListener('playing',()=>banner.classList.add('pronto'));
-    video.addEventListener('error',mostrarArte);
-    video.querySelectorAll('source').forEach(s=>s.addEventListener('error',mostrarArte));
-    function atualizarVideo(){
-      if(!ehMobile.matches||prefereMenosMovimento.matches||document.hidden){video.pause();if(!ehMobile.matches||prefereMenosMovimento.matches)mostrarArte();return}
-      if(video.error){mostrarArte();return}
-      const p=video.play();if(p&&p.catch)p.catch(mostrarArte);
+    let limiteEsperaVideo=null;
+    let observadorProgresso=null;
+    let ultimaPosicao=0;
+    let semAvanco=0;
+
+    function mostrarArte(){
+      banner.classList.remove('pronto');
+      botaoVideo.hidden=false;
+      clearTimeout(limiteEsperaVideo);
+      clearInterval(observadorProgresso);
+      observadorProgresso=null;
     }
-    window.addEventListener('load',atualizarVideo);
-    document.addEventListener('visibilitychange',atualizarVideo);
-    ehMobile.addEventListener?.('change',atualizarVideo);
-    prefereMenosMovimento.addEventListener?.('change',atualizarVideo);
+
+    function iniciarObservacao(){
+      clearInterval(observadorProgresso);
+      ultimaPosicao=video.currentTime;
+      semAvanco=0;
+      observadorProgresso=setInterval(()=>{
+        if(video.paused||document.hidden)return;
+        if(video.currentTime===ultimaPosicao){
+          semAvanco++;
+          if(semAvanco>=3)mostrarArte();
+        }else{
+          ultimaPosicao=video.currentTime;
+          semAvanco=0;
+        }
+      },1000);
+    }
+
+    video.addEventListener('playing',()=>{
+      clearTimeout(limiteEsperaVideo);
+      banner.classList.add('pronto');
+      botaoVideo.hidden=true;
+      iniciarObservacao();
+    });
+    video.addEventListener('waiting',mostrarArte);
+    video.addEventListener('stalled',mostrarArte);
+    video.addEventListener('error',mostrarArte);
+
+    function atualizarVideo(manual=false){
+      if(!ehMobile.matches||document.hidden||(!manual&&prefereMenosMovimento.matches)){
+        video.pause();
+        banner.classList.remove('pronto');
+        clearInterval(observadorProgresso);
+        if(prefereMenosMovimento.matches)botaoVideo.hidden=false;
+        return;
+      }
+      if(video.error){mostrarArte();return;}
+      botaoVideo.hidden=false; // Se o Opera bloquear, a pessoa pode tocar para assistir.
+      clearTimeout(limiteEsperaVideo);
+      limiteEsperaVideo=setTimeout(()=>{
+        if(!banner.classList.contains('pronto'))mostrarArte();
+      },4500);
+      try{
+        const p=video.play();
+        if(p&&p.catch)p.catch(mostrarArte);
+      }catch(e){mostrarArte();}
+    }
+
+    botaoVideo.addEventListener('click',()=>atualizarVideo(true));
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>atualizarVideo(),{once:true});
+    else atualizarVideo();
+    document.addEventListener('visibilitychange',()=>{
+      if(document.hidden){video.pause();clearInterval(observadorProgresso);}
+      else atualizarVideo();
+    });
+    ehMobile.addEventListener?.('change',()=>atualizarVideo());
+    prefereMenosMovimento.addEventListener?.('change',()=>atualizarVideo());
 
     // Cards mobile. Setas idênticas em SVG, posicionadas pelo centro do card.
     const trilho=document.getElementById('carrosselMobile');
@@ -488,7 +546,7 @@
     // Caso os cards novos ainda não estejam disponíveis, mostrar o nome do serviço.
     trilho.querySelectorAll('img').forEach(img=>{const falhou=()=>{img.hidden=true};img.addEventListener('error',falhou);if(img.complete&&!img.naturalWidth)falhou()});
     selecionar(0);
-    // Realizações: exibir reserva elegante até que cada PNG/WebP verdadeiro seja enviado.
+    // Realizações: exibir reserva elegante caso o SVG de algum projeto ainda nao tenha sido enviado.
     document.querySelectorAll('.realizacao-logo img').forEach(img=>{
       const falhou=()=>{img.hidden=true};
       img.addEventListener('error',falhou);
