@@ -2,7 +2,7 @@
 
 Site institucional em desenvolvimento da HYPERBOREA, com identidade visual em vermelho-vinho e dourado.
 
-**Site:** https://liga-hyperborea.vercel.app/
+**Site:** https://www.hyperborea.com.br
 
 ## Página inicial
 
