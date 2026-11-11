@@ -191,6 +191,68 @@
       .project-art{height:180px}
       .project-grid>.project-link{flex-basis:calc((100% - 19px) / 2)}
     }
+    
+    
+    /* HYPERBOREA — ABERTURA CENTRALIZADA V6 */
+/* Somente desktop. Mobile permanece igual. */
+
+@media (min-width: 851px) {
+
+  main {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(20px, 2.8vw, 42px);
+  }
+
+  /* Vídeo na esquerda */
+  main > .welcome-media {
+    grid-column: 1;
+    grid-row: 1;
+    width: min(86%, 540px);
+    justify-self: end;
+    align-self: center;
+    padding: 30px 0;
+  }
+
+  /* Apresentação na direita */
+  main > .hero {
+    grid-column: 2;
+    grid-row: 1;
+    width: min(86%, 500px);
+    justify-self: start;
+    align-self: center;
+    min-height: clamp(460px, 57svh, 620px);
+    padding: 40px 0 85px;
+  }
+
+  /* Conteúdo dentro das colunas */
+  .welcome-media .container,
+  .hero .container {
+    width: 100%;
+  }
+
+  /* Título equilibrado com o vídeo */
+  .hero h1 {
+    font-size: clamp(2.7rem, 3.8vw, 4rem);
+    line-height: 1.04;
+  }
+
+  .hero .lead {
+    max-width: 470px;
+  }
+
+  /* Círculo decorativo menor */
+  .hero::after {
+    width: min(35vw, 440px);
+    right: -6%;
+    top: 13%;
+  }
+
+  .hero-down {
+    left: 0;
+    right: auto;
+  }
+}
+
     @media(max-width:570px){
       .container{width:calc(100% - 34px)}
       .site-header,.nav-row{min-height:66px}.brand-mark{width:35px;height:42px}.brand-text{font-size:1.02rem;letter-spacing:.13em}.brand-text small{font-size:.5rem}
@@ -203,107 +265,6 @@
       .projects{padding:79px 0}.contact{padding:70px 0 82px}
       .whatsapp-float{width:64px;height:64px}
     }
-    
-    /* ============================================
-   HYPERBOREA — ABERTURA DESKTOP V5
-   Mobile permanece exatamente como na V4
-   ============================================ */
-
-@media (min-width: 851px) {
-
-  /* Organiza vídeo e apresentação lado a lado */
-  main {
-    display: grid;
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(0, 1fr);
-    column-gap: clamp(14px, 2.5vw, 48px);
-  }
-
-  /* Apresentação institucional à esquerda */
-  main > .hero {
-    grid-column: 1;
-    grid-row: 1;
-
-    min-height: clamp(510px, 66svh, 720px);
-    padding: 45px 0 90px;
-
-    align-self: center;
-  }
-
-  /* Vídeo à direita */
-  main > .welcome-media {
-    grid-column: 2;
-    grid-row: 1;
-
-    align-self: center;
-    padding: 40px 0;
-    border-bottom: 0;
-  }
-
-  /* Demais seções ocupam toda a largura */
-  main > section:nth-child(n+3) {
-    grid-column: 1 / -1;
-  }
-
-  /* Título menor no desktop */
-  .hero h1 {
-    font-size: clamp(3.1rem, 4.35vw, 5.15rem);
-    line-height: 1.025;
-    letter-spacing: -0.027em;
-    margin: 20px 0;
-  }
-
-  /* Texto institucional mais proporcional */
-  .hero .lead {
-    font-size: clamp(.9rem, 1.2vw, 1.05rem);
-    line-height: 1.68;
-  }
-
-  /* Botões da apresentação */
-  .hero .hero-actions {
-    gap: 17px;
-    margin-top: 26px;
-  }
-
-  /* Círculo decorativo da identidade */
-  .hero::after {
-    width: min(46vw, 570px);
-    right: -18%;
-    top: 10%;
-  }
-
-  /* Indicação de rolagem */
-  .hero-down {
-    left: 20px;
-    right: auto;
-    justify-content: flex-start;
-    bottom: 27px;
-  }
-
-  /* Ajuste do espaço disponível para o vídeo */
-  .welcome-media .container {
-    width: calc(100% - 32px);
-  }
-
-  /* Título acima do vídeo */
-  .welcome-media h2 {
-    font-size: clamp(1.45rem, 2.25vw, 2.15rem);
-  }
-
-  .welcome-media .video-intro {
-    font-size: .88rem;
-    line-height: 1.5;
-    margin-bottom: 14px;
-  }
-
-  /* O vídeo preenche sua coluna */
-  .video-shell {
-    width: 100%;
-  }
-
-}
-
     @media(prefers-reduced-motion:reduce){
       html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
       .motion-enabled .copy-reveal:not(.shown){opacity:1;transform:none}
