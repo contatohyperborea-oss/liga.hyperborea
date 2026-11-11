@@ -79,7 +79,9 @@
     .service-panel[data-side="left"] .service-copy,.service-panel[data-side="right"] .service-copy{order:0}
     .motion-card{position:relative;width:100%;transform-origin:center;backface-visibility:hidden;transform-style:preserve-3d}
     .motion-card::before{content:"";position:absolute;z-index:-1;inset:15px -16px -14px 16px;border:1px solid #d0a56b58;background:#17030a88}
-    .card-frame{position:relative;aspect-ratio:812 / 1024;overflow:hidden;border:1px solid #d8ac6f;background:radial-gradient(ellipse at 30% 20%,#76294455,transparent 69%),#260711;box-shadow:0 22px 42px #09020988,0 0 25px #bd784b12;transform:translateZ(0);transition:transform .48s cubic-bezier(.22,1,.36,1),box-shadow .48s ease}
+    .card-stage{pointer-events:none} /* Evita que o plano 3D capture o clique antes da imagem. */
+    .card-link{display:block;position:relative;pointer-events:auto;cursor:pointer;outline-offset:7px;-webkit-tap-highlight-color:rgba(240,217,174,.13)}
+    .card-frame{position:relative;aspect-ratio:812 / 1024;overflow:hidden;border:1px solid #d8ac6f;background:radial-gradient(ellipse at 30% 20%,#76294455,transparent 69%),#260711;box-shadow:0 22px 42px #09020988,0 0 25px #bd784b12;transform:translateZ(0);transition:transform .55s cubic-bezier(.22,1,.36,1),box-shadow .55s ease,filter .55s ease}
     .card-frame::before,.card-frame::after{content:"";position:absolute;z-index:3;width:23px;height:23px;border-color:#eed1a4;pointer-events:none}
     .card-frame::before{left:7px;top:7px;border-top:1px solid;border-left:1px solid}
     .card-frame::after{right:7px;bottom:7px;border-right:1px solid;border-bottom:1px solid}
@@ -101,9 +103,20 @@
     .service-panel:nth-child(3) .service-link{--pulse-delay:2.8s}
     .service-panel:nth-child(4) .service-link{--pulse-delay:4.2s}
     @keyframes pulsarServico{0%,71%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(224,176,106,0)}78%{transform:scale(1.055);box-shadow:0 0 0 5px rgba(224,176,106,.13)}83%{transform:scale(.99);box-shadow:0 0 0 2px rgba(224,176,106,.06)}89%{transform:scale(1.02)}94%{transform:scale(1)}}
+    /* V3: card inteiro clicável, zoom mais expressivo e halo dourado no desktop. */
     @media(hover:hover) and (pointer:fine){
-      .card-stage:hover .card-frame{transform:scale(1.065);box-shadow:0 29px 60px #090209aa,0 0 28px #bd784b35}
+      .service-panel:hover{position:relative;z-index:2}
+      .card-link:hover .card-frame{
+        transform:translateY(-15px) scale(1.22);
+        border-color:#ffe3ab;
+        filter:saturate(1.10) brightness(1.06);
+        box-shadow:0 35px 75px #090209d9,0 0 0 2px #f2cb8c77,0 0 55px #e9a95899,0 0 105px #d8874340;
+      }
       .service-link:hover{animation:none;transform:translateY(-2px) scale(1.03);background:#75263d;box-shadow:0 7px 22px #0005}
+    }
+    .card-link:focus-visible .card-frame{
+      transform:translateY(-10px) scale(1.10);
+      box-shadow:0 30px 65px #090209bd,0 0 0 2px #f2cb8caa,0 0 48px #e9a95877;
     }
     .service-link:focus-visible{animation:none;transform:scale(1.025);background:#75263d}
     .copy-reveal{transition:opacity .75s ease,transform .75s ease}
@@ -163,7 +176,7 @@
       html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
       .motion-enabled .copy-reveal:not(.shown){opacity:1;transform:none}
       .service-link{animation:none!important}
-      .card-frame{transition:none}
+      .card-frame{transition:none;filter:none}
     }
   </style>
 </head>
@@ -206,7 +219,7 @@
       <section class="service-panel" data-side="left" aria-labelledby="servicoVideos">
         <div class="container"><div class="service-layout">
           <div class="card-stage"><div class="motion-card" data-scroll-card data-direction="left">
-            <div class="card-frame"><div class="card-fallback" aria-hidden="true"><span class="monogram">H</span><span>Vídeos Comerciais</span></div><img src="/assets/img/card-videos-comerciais.webp" alt="Arte HYPERBOREA para Vídeos Comerciais" width="812" height="1024" loading="lazy" decoding="async"></div>
+            <a class="card-link" href="/videos.html" aria-label="Conhecer o serviço de Vídeos Comerciais" title="Conhecer Vídeos Comerciais"><div class="card-frame"><div class="card-fallback" aria-hidden="true"><span class="monogram">H</span><span>Vídeos Comerciais</span></div><img src="/assets/img/card-videos-comerciais.webp" alt="Arte HYPERBOREA para Vídeos Comerciais" width="812" height="1024" loading="lazy" decoding="async"></div></a>
           </div></div>
           <div class="service-copy copy-reveal"><p class="card-indicator">01 / 04 · PRODUÇÃO VISUAL</p><h3 id="servicoVideos">Vídeos <span class="gold">Comerciais</span></h3><p>Conceitos audiovisuais com roteiro, produção visual e edição para apresentar ideias, produtos e serviços de forma marcante.</p><div class="small-rule"></div><div class="service-tags"><span>Roteiro</span><span>Visual com IA</span><span>Edição</span></div><a class="service-link" href="/videos.html">Conhecer o serviço <span class="arrow" aria-hidden="true">↗</span></a></div>
         </div></div>
@@ -215,7 +228,7 @@
       <section class="service-panel" data-side="right" aria-labelledby="servicoDesign">
         <div class="container"><div class="service-layout">
           <div class="card-stage"><div class="motion-card" data-scroll-card data-direction="right">
-            <div class="card-frame"><div class="card-fallback" aria-hidden="true"><span class="monogram">H</span><span>Design e Identidade Visual</span></div><img src="/assets/img/card-design-identidade.webp" alt="Arte HYPERBOREA para Design e Identidade Visual" width="812" height="1024" loading="lazy" decoding="async"></div>
+            <a class="card-link" href="/design.html" aria-label="Conhecer o serviço de Design e Identidade Visual" title="Conhecer Design e Identidade Visual"><div class="card-frame"><div class="card-fallback" aria-hidden="true"><span class="monogram">H</span><span>Design e Identidade Visual</span></div><img src="/assets/img/card-design-identidade.webp" alt="Arte HYPERBOREA para Design e Identidade Visual" width="812" height="1024" loading="lazy" decoding="async"></div></a>
           </div></div>
           <div class="service-copy copy-reveal"><p class="card-indicator">02 / 04 · IDENTIDADE</p><h3 id="servicoDesign">Design e <span class="gold">Identidade Visual</span></h3><p>Logotipos, paletas, materiais gráficos e digitais concebidos para dar personalidade e coerência à comunicação de uma marca.</p><div class="small-rule"></div><div class="service-tags"><span>Logotipos</span><span>Paletas</span><span>Materiais gráficos</span></div><a class="service-link" href="/design.html">Conhecer o serviço <span class="arrow" aria-hidden="true">↗</span></a></div>
         </div></div>
@@ -224,7 +237,7 @@
       <section class="service-panel" data-side="left" aria-labelledby="servicoBranding">
         <div class="container"><div class="service-layout">
           <div class="card-stage"><div class="motion-card" data-scroll-card data-direction="left">
-            <div class="card-frame"><div class="card-fallback" aria-hidden="true"><span class="monogram">H</span><span>Branding e Gestão de Marcas</span></div><img src="/assets/img/card-branding.webp" alt="Arte HYPERBOREA para Branding e Gestão de Marcas" width="812" height="1024" loading="lazy" decoding="async"></div>
+            <a class="card-link" href="/branding.html" aria-label="Conhecer o serviço de Branding e Gestão de Marcas" title="Conhecer Branding e Gestão de Marcas"><div class="card-frame"><div class="card-fallback" aria-hidden="true"><span class="monogram">H</span><span>Branding e Gestão de Marcas</span></div><img src="/assets/img/card-branding.webp" alt="Arte HYPERBOREA para Branding e Gestão de Marcas" width="812" height="1024" loading="lazy" decoding="async"></div></a>
           </div></div>
           <div class="service-copy copy-reveal"><p class="card-indicator">03 / 04 · POSICIONAMENTO</p><h3 id="servicoBranding">Branding e <span class="gold">Marcas</span></h3><p>Identidade estratégica, posicionamento, percepção de valor e orientações para uma comunicação reconhecível e consistente.</p><div class="small-rule"></div><div class="service-tags"><span>Posicionamento</span><span>Percepção de valor</span><span>Comunicação</span></div><a class="service-link" href="/branding.html">Conhecer o serviço <span class="arrow" aria-hidden="true">↗</span></a></div>
         </div></div>
@@ -233,7 +246,7 @@
       <section class="service-panel" data-side="right" aria-labelledby="servicoSites">
         <div class="container"><div class="service-layout">
           <div class="card-stage"><div class="motion-card" data-scroll-card data-direction="right">
-            <div class="card-frame"><div class="card-fallback" aria-hidden="true"><span class="monogram">H</span><span>Sites e Web Design</span></div><img src="/assets/img/card-sites-webdesign.webp" alt="Arte HYPERBOREA para Sites e Web Design" width="812" height="1024" loading="lazy" decoding="async"></div>
+            <a class="card-link" href="/sites.html" aria-label="Conhecer o serviço de Sites e Web Design" title="Conhecer Sites e Web Design"><div class="card-frame"><div class="card-fallback" aria-hidden="true"><span class="monogram">H</span><span>Sites e Web Design</span></div><img src="/assets/img/card-sites-webdesign.webp" alt="Arte HYPERBOREA para Sites e Web Design" width="812" height="1024" loading="lazy" decoding="async"></div></a>
           </div></div>
           <div class="service-copy copy-reveal"><p class="card-indicator">04 / 04 · DESENVOLVIMENTO WEB</p><h3 id="servicoSites">Sites e <span class="gold">Web Design</span></h3><p>Sites institucionais e páginas de apresentação responsivas, desenvolvidas para comunicar, organizar informações e facilitar o contato.</p><div class="small-rule"></div><div class="service-tags"><span>Sites</span><span>Landing pages</span><span>Responsividade</span></div><a class="service-link" href="/sites.html">Conhecer o serviço <span class="arrow" aria-hidden="true">↗</span></a></div>
         </div></div>
