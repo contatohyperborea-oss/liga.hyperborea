@@ -8,23 +8,28 @@
 
 <title>Sites & Landing Pages | HYPERBOREA</title>
 
-<meta name="description" content="Criação de sites e landing pages a partir de R$ 70 por seção. Design responsivo, preço transparente e domínio grátis no primeiro ano para sites com 6 seções ou mais.">
+<meta name="description"
+content="Criação de sites e landing pages por R$ 70 a página. Sites bonitos, responsivos e acessíveis. A partir de seis páginas, o primeiro ano do domínio é grátis.">
 
-<link rel="canonical" href="https://www.hyperborea.com.br/sites.html">
-<link rel="icon" type="image/svg+xml" href="/assets/img/monograma-h.svg">
+<link rel="canonical"
+href="https://www.hyperborea.com.br/sites.html">
+
+<link rel="icon"
+href="/assets/img/monograma-h.svg"
+type="image/svg+xml">
 
 <style>
 
-/* =========================================
+/* ==========================================
    HYPERBOREA
    SITES & LANDING PAGES
-   PORTFÓLIO COMERCIAL V1
-========================================= */
+   PORTFÓLIO COMERCIAL
+========================================== */
 
 :root {
   --vinho: #300817;
-  --vinho-escuro: #19040d;
-  --vinho-medio: #491126;
+  --escuro: #19040d;
+  --vinho-claro: #59152a;
   --ouro: #c6a069;
   --ouro-claro: #f0d9ae;
   --texto: #fbf2e8;
@@ -44,29 +49,43 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  color: var(--texto);
-  background: var(--vinho-escuro);
   overflow-x: clip;
+  color: var(--texto);
+  font-family: system-ui, -apple-system,
+    "Segoe UI", Arial, sans-serif;
+  background: var(--escuro);
 }
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  pointer-events: none;
   z-index: -1;
+  pointer-events: none;
   background:
-    radial-gradient(ellipse at 85% 10%, #84314b66, transparent 55%),
-    radial-gradient(ellipse at 10% 70%, #6d1c3544, transparent 55%),
-    linear-gradient(160deg, #280713, #3a0b1c 55%, #19040d);
+    radial-gradient(
+      ellipse at 90% 10%,
+      #89304745,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 5% 65%,
+      #7e263a35,
+      transparent 60%
+    ),
+    linear-gradient(
+      155deg,
+      #260713,
+      #390b1b 55%,
+      #19040d
+    );
 }
 
-h1,h2,h3,p {
+h1, h2, h3, p {
   margin: 0;
 }
 
-h1,h2,h3 {
+h1, h2, h3 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 500;
 }
@@ -81,14 +100,26 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
 img {
-  display: block;
   max-width: 100%;
+  display: block;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--ouro-claro);
+  outline-offset: 4px;
 }
 
 .container {
   width: min(1160px, calc(100% - 40px));
-  margin: auto;
+  margin-inline: auto;
 }
 
 .gold {
@@ -96,43 +127,36 @@ img {
 }
 
 .eyebrow {
-  font-size: 12px;
+  color: var(--ouro-claro);
+  font-size: 11px;
   font-weight: 750;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--ouro-claro);
 }
 
 .section-title {
-  font-size: clamp(36px, 5vw, 65px);
-  line-height: 1.12;
   margin: 15px 0 20px;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -.025em;
 }
 
 .section-lead {
-  max-width: 660px;
-  font-size: 16px;
-  line-height: 1.85;
+  max-width: 650px;
   color: var(--suave);
+  font-size: 16px;
+  line-height: 1.8;
 }
 
-a:focus-visible,
-button:focus-visible,
-summary:focus-visible,
-input:focus-visible {
-  outline: 2px solid var(--ouro-claro);
-  outline-offset: 4px;
-}
-
-/* =========================================
+/* ==========================================
    CABEÇALHO
-========================================= */
+========================================== */
 
-header {
+.site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(29,5,14,.96);
+  background: rgba(29,5,14,.94);
   border-bottom: 1px solid var(--linha);
   backdrop-filter: blur(12px);
 }
@@ -145,47 +169,47 @@ header {
   gap: 20px;
 }
 
-.logo {
+.brand {
   display: flex;
   align-items: center;
   gap: 12px;
   color: var(--ouro-claro);
 }
 
-.logo img {
-  width: 44px;
+.brand img {
+  width: 43px;
   height: 48px;
   object-fit: contain;
 }
 
-.logo-text {
+.brand-name {
   font-family: Georgia, serif;
-  font-size: clamp(16px, 2vw, 23px);
+  font-size: clamp(16px,2vw,23px);
   letter-spacing: 3px;
+  white-space: nowrap;
 }
 
-.logo-text small {
+.brand-name small {
   display: block;
-  font-family: system-ui, sans-serif;
-  font-size: 9px;
-  letter-spacing: 3px;
-  margin-top: 4px;
+  margin-top: 5px;
   color: #d5b98e;
+  font: 600 9px system-ui, sans-serif;
+  letter-spacing: 3px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 25px;
-  font-size: 14px;
+  gap: 22px;
+  font-size: 13px;
 }
 
 .nav-links a:hover {
   color: var(--ouro-claro);
 }
 
-.nav-contact {
-  padding: 11px 18px;
+.nav-cta {
+  padding: 11px 17px;
   border: 1px solid var(--ouro);
   color: var(--ouro-claro);
 }
@@ -197,9 +221,9 @@ header {
 
 .mobile-menu summary {
   list-style: none;
-  border: 1px solid var(--ouro);
+  padding: 9px 12px;
   color: var(--ouro-claro);
-  padding: 10px 14px;
+  border: 1px solid var(--ouro);
   cursor: pointer;
 }
 
@@ -207,48 +231,48 @@ header {
   display: none;
 }
 
-.mobile-links {
+.mobile-menu nav {
   position: absolute;
-  right: 0;
   top: calc(100% + 12px);
-  width: 225px;
+  right: 0;
+  z-index: 110;
+  display: grid;
+  width: 215px;
   padding: 10px;
-  display: flex;
-  flex-direction: column;
   background: #300817;
   border: 1px solid var(--ouro);
-  box-shadow: 0 20px 40px #0009;
+  box-shadow: 0 18px 40px #0009;
 }
 
-.mobile-links a {
-  padding: 13px 12px;
+.mobile-menu nav a {
+  padding: 12px;
   border-bottom: 1px solid var(--linha);
 }
 
-/* =========================================
+/* ==========================================
    BOTÕES
-========================================= */
+========================================== */
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 15px 24px;
+  gap: 10px;
   min-height: 50px;
+  padding: 14px 22px;
   border: 1px solid var(--ouro);
-  font-weight: 700;
   font-size: 14px;
+  font-weight: 700;
   text-align: center;
-  transition: .2s ease;
+  transition: background .2s, transform .2s;
 }
 
-.btn-gold {
+.btn-primary {
   background: #d6ad70;
   color: #300817;
 }
 
-.btn-gold:hover {
+.btn-primary:hover {
   background: #f0d9ae;
   transform: translateY(-2px);
 }
@@ -259,72 +283,71 @@ header {
 }
 
 .btn-outline:hover {
-  background: #68243d;
+  background: #65213a;
   transform: translateY(-2px);
 }
 
-/* =========================================
+/* ==========================================
    HERO COMERCIAL
-========================================= */
+========================================== */
 
 .hero {
-  padding: 105px 0 105px;
+  padding: 100px 0;
   border-bottom: 1px solid var(--linha);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.05fr .95fr;
+  grid-template-columns: 1.08fr .92fr;
   align-items: center;
-  gap: 70px;
+  gap: 65px;
 }
 
 .hero h1 {
-  font-size: clamp(48px, 6vw, 82px);
+  margin: 23px 0;
+  font-size: clamp(48px,6vw,80px);
+  letter-spacing: -.04em;
   line-height: 1.06;
-  letter-spacing: -2px;
-  margin: 25px 0;
 }
 
 .hero-description {
-  max-width: 570px;
+  max-width: 560px;
   color: var(--suave);
-  line-height: 1.8;
   font-size: 17px;
+  line-height: 1.8;
 }
 
 .hero-price {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 29px;
+  margin-top: 30px;
 }
 
 .hero-price strong {
+  display: block;
   color: var(--ouro-claro);
-  font-family: Georgia, serif;
-  font-size: clamp(44px, 6vw, 69px);
-  font-weight: 400;
+  font: 400 clamp(50px,6vw,74px) Georgia,serif;
 }
 
 .hero-price span {
+  display: block;
   color: var(--suave);
+  margin-top: 5px;
   font-size: 16px;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 29px;
+  gap: 13px;
+  margin-top: 30px;
 }
 
-/* MOCKUP DO SITE */
+/* ==========================================
+   MOCKUP ILUSTRATIVO
+========================================== */
 
 .hero-visual {
   position: relative;
-  min-height: 440px;
+  min-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -335,10 +358,10 @@ header {
   position: absolute;
   width: 85%;
   aspect-ratio: 1;
-  border: 1px solid #d4a66d33;
+  border: 1px solid #d4a66d45;
   border-radius: 50%;
   box-shadow:
-    0 0 0 40px #cba16308,
+    0 0 0 42px #cba16308,
     0 0 0 90px #cba16305;
 }
 
@@ -348,19 +371,20 @@ header {
   max-width: 490px;
   background: #170611;
   border: 1px solid var(--ouro);
-  box-shadow: 0 25px 65px #0009;
+  box-shadow: 0 25px 60px #0009;
 }
 
 .browser-top {
-  height: 36px;
-  border-bottom: 1px solid var(--linha);
-  background: #230914;
-  padding: 12px 15px;
+  height: 34px;
   display: flex;
+  align-items: center;
   gap: 7px;
+  padding: 0 14px;
+  background: #240914;
+  border-bottom: 1px solid var(--linha);
 }
 
-.browser-top span {
+.browser-top i {
   width: 8px;
   height: 8px;
   border: 1px solid var(--ouro);
@@ -368,129 +392,126 @@ header {
 }
 
 .browser-content {
-  padding: 25px;
   min-height: 275px;
-  background: linear-gradient(120deg, #50172f, #200813);
+  padding: 25px;
+  background: linear-gradient(120deg,#50172f,#200813);
 }
 
 .browser-brand {
-  font-size: 12px;
-  letter-spacing: 2px;
   color: var(--ouro-claro);
+  font-size: 11px;
+  letter-spacing: 3px;
 }
 
 .browser-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
   align-items: center;
-  margin-top: 38px;
+  gap: 15px;
+  margin-top: 37px;
 }
 
-.browser-text h3 {
-  font-size: clamp(21px, 3vw, 33px);
-  line-height: 1.2;
+.browser-layout h3 {
+  font-size: clamp(22px,3vw,35px);
+  line-height: 1.14;
 }
 
-.browser-text p {
-  font-size: 11px;
+.browser-layout p {
+  margin-top: 14px;
   color: var(--suave);
-  line-height: 1.65;
-  margin-top: 15px;
+  font-size: 11px;
+  line-height: 1.7;
 }
 
-.browser-button {
-  width: 100px;
-  height: 26px;
+.browser-line {
+  width: 90px;
+  height: 24px;
   margin-top: 20px;
   border: 1px solid var(--ouro);
 }
 
 .browser-art {
-  height: 175px;
+  height: 176px;
   display: grid;
   place-items: center;
-  font-size: 100px;
-  font-family: Georgia, serif;
   color: var(--ouro-claro);
+  font: 100px Georgia,serif;
+  border: 1px solid #d4a66d77;
   background:
-    radial-gradient(circle, #ac6577, #481227 70%);
-  border: 1px solid #d4a66d66;
+    radial-gradient(circle,#ac6577,#481227 75%);
 }
 
-.mobile-preview {
+.phone {
   position: absolute;
-  right: -12px;
-  bottom: 8px;
-  width: 120px;
-  height: 240px;
+  right: -10px;
+  bottom: 0;
+  width: 125px;
+  height: 242px;
   padding: 8px;
   background: #140610;
   border: 2px solid var(--ouro);
-  box-shadow: 0 15px 40px #000a;
+  box-shadow: 0 20px 40px #000a;
 }
 
-.mobile-preview-inner {
+.phone-screen {
   height: 100%;
-  padding: 13px 8px;
-  background: linear-gradient(145deg, #641d36, #220711);
   overflow: hidden;
+  padding: 13px 8px;
+  background: linear-gradient(145deg,#641d36,#220711);
 }
 
-.mobile-preview-inner b {
+.phone-screen b {
   color: var(--ouro-claro);
-  font-size: 9px;
+  font-size: 8px;
   letter-spacing: 1px;
 }
 
-.mobile-preview-image {
-  height: 84px;
-  margin: 14px 0;
-  background: linear-gradient(130deg, #aa6477, #401028);
-  border: 1px solid var(--ouro);
+.phone-art {
+  height: 82px;
   display: grid;
   place-items: center;
+  margin: 15px 0;
+  font-size: 44px;
   color: var(--ouro-claro);
-  font-size: 45px;
+  background: linear-gradient(130deg,#aa6477,#401028);
+  border: 1px solid var(--ouro);
 }
 
-.mobile-preview-inner p {
-  font-family: Georgia, serif;
-  font-size: 15px;
-  line-height: 1.2;
+.phone-screen p {
+  font: 17px/1.2 Georgia,serif;
 }
 
-/* =========================================
+/* ==========================================
    BENEFÍCIOS
-========================================= */
+========================================== */
 
 .benefits {
-  padding: 30px 0;
+  padding: 29px 0;
   border-bottom: 1px solid var(--linha);
 }
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 20px;
 }
 
 .benefit {
   display: flex;
-  gap: 14px;
   align-items: center;
+  gap: 13px;
   font-size: 14px;
+  line-height: 1.5;
 }
 
-.benefit-icon {
+.benefit span:first-child {
   color: var(--ouro-claro);
-  font-family: Georgia, serif;
-  font-size: 29px;
+  font: 29px Georgia,serif;
 }
 
-/* =========================================
+/* ==========================================
    PORTFÓLIO
-========================================= */
+========================================== */
 
 .portfolio {
   padding: 105px 0;
@@ -498,25 +519,24 @@ header {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3,minmax(0,1fr));
   gap: 22px;
-  margin-top: 45px;
+  margin-top: 44px;
 }
 
 .portfolio-card {
   min-width: 0;
-  border: 1px solid var(--linha);
-  background: linear-gradient(145deg, #491529, #230711);
   overflow: hidden;
+  border: 1px solid var(--linha);
+  background: linear-gradient(145deg,#491529,#230711);
 }
 
 .portfolio-art {
-  height: 255px;
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(140deg, #62243b, #240815);
+  min-height: 245px;
+  padding: 22px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(140deg,#62243b,#240815);
 }
 
 .portfolio-card-body {
@@ -524,63 +544,67 @@ header {
 }
 
 .portfolio-card h3 {
-  font-size: 25px;
+  margin-bottom: 11px;
   color: var(--ouro-claro);
-  margin-bottom: 10px;
+  font-size: 25px;
 }
 
 .portfolio-card p {
+  color: var(--suave);
   font-size: 14px;
   line-height: 1.75;
-  color: var(--suave);
 }
 
 .portfolio-card a {
   display: inline-block;
+  margin-top: 20px;
+  padding-bottom: 6px;
   color: var(--ouro-claro);
   border-bottom: 1px solid var(--ouro);
-  margin-top: 22px;
-  padding-bottom: 6px;
   font-size: 14px;
 }
 
-/* PROJETO MARAJOARA */
-
-.marajoara-frame {
-  width: 100%;
-  height: 195px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 24px;
-  border: 1px solid var(--ouro);
-  background: #f4efe5;
+.portfolio-label {
+  margin-top: 14px;
+  color: var(--ouro-claro) !important;
+  font-size: 12px !important;
 }
 
-.marajoara-frame img {
-  max-height: 155px;
+/* MARAJOARA */
+
+.marajoara {
   width: 100%;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f4efe5;
+  border: 1px solid var(--ouro);
+}
+
+.marajoara img {
+  width: 100%;
+  max-height: 145px;
   object-fit: contain;
 }
 
-/* CONCEITOS VISUAIS DEMONSTRATIVOS */
+/* EXEMPLOS DE LAYOUT */
 
-.demo-browser {
+.demo-window {
   width: 100%;
-  max-width: 310px;
+  max-width: 320px;
+  background: #fff8eb;
   border: 1px solid #d8b37e;
-  background: #fcf6eb;
   box-shadow: 0 15px 30px #0005;
 }
 
 .demo-top {
-  height: 25px;
-  background: #eee0c9;
-  border-bottom: 1px solid #d8b37e;
+  height: 26px;
+  padding-left: 10px;
   display: flex;
   align-items: center;
   gap: 5px;
-  padding-left: 10px;
+  background: #eee0c9;
 }
 
 .demo-top i {
@@ -591,41 +615,40 @@ header {
 }
 
 .demo-body {
-  height: 160px;
-  padding: 20px;
+  min-height: 166px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
   align-items: center;
+  gap: 12px;
+  padding: 20px;
 }
 
 .demo-body h4 {
   margin: 0;
-  font: 400 23px/1.1 Georgia,serif;
+  font: 25px/1.1 Georgia,serif;
 }
 
 .demo-body p {
+  margin-top: 12px;
   font-size: 10px;
-  margin-top: 11px;
   line-height: 1.5;
 }
 
-.demo-body .demo-image {
-  height: 115px;
+.demo-image {
+  height: 117px;
   display: grid;
   place-items: center;
-  font-family: Georgia,serif;
-  font-size: 50px;
+  font: 56px Georgia,serif;
 }
 
-.demo-bakery .demo-body {
+.demo-cafe .demo-body {
   color: #594334;
   background: #fff8eb;
 }
 
-.demo-bakery .demo-image {
+.demo-cafe .demo-image {
   color: #f9dbad;
-  background: linear-gradient(140deg, #bb865c, #674332);
+  background: linear-gradient(140deg,#bb865c,#674332);
 }
 
 .demo-studio .demo-body {
@@ -635,192 +658,174 @@ header {
 
 .demo-studio .demo-image {
   color: #e3e8d9;
-  background: linear-gradient(140deg, #89a69a, #34544e);
+  background: linear-gradient(140deg,#89a69a,#34544e);
 }
 
-/* =========================================
+/* ==========================================
    PREÇOS
-========================================= */
+========================================== */
 
 .pricing {
   padding: 105px 0;
-  border-top: 1px solid var(--linha);
-  border-bottom: 1px solid var(--linha);
-  background: rgba(16,3,10,.22);
+  border-block: 1px solid var(--linha);
+  background: rgba(16,3,10,.25);
 }
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 28px;
-  margin-top: 45px;
+  margin-top: 44px;
 }
 
 .price-card {
+  position: relative;
+  overflow: hidden;
+  min-width: 0;
+  padding: 38px;
+  background: linear-gradient(140deg,#55172e,#230711);
   border: 1px solid var(--ouro);
-  padding: 35px;
-  background: linear-gradient(140deg, #55172e, #230711);
 }
 
 .price-label {
   color: var(--ouro-claro);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 750;
   letter-spacing: 2px;
 }
 
 .price-card h3 {
-  font-size: 34px;
-  margin: 22px 0;
+  margin: 21px 0;
+  font-size: clamp(29px,3.5vw,40px);
 }
 
 .price-number {
-  font-family: Georgia,serif;
-  font-size: clamp(48px,5vw,65px);
+  margin: 20px 0 12px;
   color: var(--ouro-claro);
-  margin: 18px 0 8px;
+  font: 400 clamp(48px,5vw,68px) Georgia,serif;
 }
 
 .price-number small {
-  font-family: system-ui,sans-serif;
-  font-size: 14px;
+  font: 14px system-ui,sans-serif;
   color: var(--suave);
 }
 
-.price-description {
+.price-card > p:not(.price-label) {
   color: var(--suave);
   font-size: 15px;
   line-height: 1.75;
-  margin: 18px 0;
 }
 
-.price-features {
-  padding: 0;
+.features {
   list-style: none;
+  padding: 0;
   margin: 26px 0;
 }
 
-.price-features li {
-  padding: 10px 0;
+.features li {
+  padding: 11px 0;
   border-bottom: 1px solid var(--linha);
   font-size: 14px;
   line-height: 1.5;
 }
 
-.price-features li::before {
+.features li::before {
   content: "✓";
-  color: var(--ouro-claro);
   margin-right: 10px;
-}
-
-/* DOMÍNIO GRÁTIS */
-
-.domain-card {
-  position: relative;
-  overflow: hidden;
-}
-
-.domain-card::before {
-  content: "✦";
-  position: absolute;
-  right: -25px;
-  top: 35px;
-  font-family: Georgia,serif;
-  font-size: 220px;
-  color: #d2a56a0e;
-  pointer-events: none;
+  color: var(--ouro-claro);
 }
 
 .domain-badge {
   display: inline-block;
-  color: #260713;
-  background: var(--ouro-claro);
   padding: 9px 13px;
+  color: var(--vinho);
+  background: var(--ouro-claro);
   font-size: 11px;
-  letter-spacing: 1px;
   font-weight: 800;
+  letter-spacing: 1px;
 }
 
-.domain-price {
-  font: 400 clamp(48px,5vw,65px) Georgia,serif;
-  color: var(--ouro-claro);
-  margin-top: 24px;
-}
-
-.domain-info {
-  font-size: 13px;
+.domain-note {
+  margin-top: 22px;
   color: var(--suave);
-  line-height: 1.7;
-  margin-top: 23px;
+  font-size: 12px;
+  line-height: 1.75;
 }
 
-/* =========================================
+/* ==========================================
    SIMULADOR
-========================================= */
+========================================== */
 
 .calculator {
   padding: 110px 0;
 }
 
+.center {
+  text-align: center;
+}
+
+.center-lead {
+  margin-inline: auto;
+  text-align: center;
+}
+
 .calc-box {
-  width: min(790px, 100%);
+  width: min(790px,100%);
   margin: 45px auto 0;
+  padding: clamp(25px,5vw,48px);
+  background: linear-gradient(145deg,#481227,#210711);
   border: 1px solid var(--ouro);
-  background: linear-gradient(145deg, #481227, #210711);
-  padding: clamp(24px,5vw,48px);
   box-shadow: 0 25px 65px #0005;
 }
 
 .calc-heading {
   text-align: center;
+  font: 400 clamp(25px,4vw,36px) Georgia,serif;
   color: var(--ouro-claro);
-  font-family: Georgia,serif;
-  font-size: clamp(25px,4vw,36px);
-  margin-bottom: 12px;
 }
 
-.calc-subtitle {
+.calc-description {
+  margin-top: 12px;
   color: var(--suave);
-  font-size: 14px;
   text-align: center;
   line-height: 1.7;
+  font-size: 14px;
 }
 
 .calc-counter {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 26px;
   margin: 34px 0;
 }
 
 .calc-counter button {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
+  color: var(--ouro-claro);
   background: transparent;
   border: 1px solid var(--ouro);
-  color: var(--ouro-claro);
-  font-size: 24px;
+  font-size: 27px;
 }
 
-.calc-counter button:hover {
-  background: var(--vinho-medio);
+.calc-counter button:not(:disabled):hover {
+  background: var(--vinho-claro);
 }
 
 .calc-counter output {
-  width: 75px;
-  font: 400 60px Georgia,serif;
-  color: var(--ouro-claro);
+  min-width: 80px;
   text-align: center;
+  color: var(--ouro-claro);
+  font: 400 62px Georgia,serif;
 }
 
 .calc-results {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
-  border-top: 1px solid var(--linha);
-  border-bottom: 1px solid var(--linha);
   padding: 27px 0;
+  border-block: 1px solid var(--linha);
 }
 
 .calc-item {
@@ -829,49 +834,124 @@ header {
 
 .calc-item span {
   display: block;
-  font-size: 13px;
-  color: var(--suave);
   margin-bottom: 12px;
+  color: var(--suave);
+  font-size: 13px;
 }
 
 .calc-item strong {
-  font: 400 clamp(27px,4vw,40px) Georgia,serif;
   color: var(--ouro-claro);
+  font: 400 clamp(26px,4vw,39px) Georgia,serif;
 }
 
 .calc-bonus {
+  min-height: 62px;
   margin: 25px 0;
-  padding: 17px;
+  padding: 18px;
   border: 1px solid var(--linha);
   color: var(--ouro-claro);
   text-align: center;
-  font-size: 14px;
   line-height: 1.7;
+  font-size: 14px;
 }
 
 .calc-actions {
   display: flex;
   justify-content: center;
-  gap: 12px;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .calc-note {
   margin-top: 20px;
-  text-align: center;
   color: var(--suave);
+  text-align: center;
   font-size: 12px;
   line-height: 1.7;
 }
 
-/* =========================================
-   ATUALIZAÇÕES
-========================================= */
+/* ==========================================
+   ESCOLHA DO ESTILO
+========================================== */
+
+.styles {
+  padding: 85px 0;
+  border-top: 1px solid var(--linha);
+}
+
+.styles-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.style-card {
+  padding: 20px;
+  border: 1px solid var(--linha);
+  background: #310a1c;
+  min-width: 0;
+}
+
+.style-visual {
+  height: 160px;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 13px;
+  overflow: hidden;
+}
+
+.style-visual b {
+  font: 400 30px Georgia,serif;
+}
+
+.style-visual i {
+  width: 72%;
+  height: 5px;
+  background: currentColor;
+  opacity: .3;
+}
+
+.style-visual i:last-child {
+  width: 45%;
+}
+
+.style-modern {
+  color: #e7e9f5;
+  background: linear-gradient(135deg,#15213b,#46628d);
+}
+
+.style-elegant {
+  color: #e9cba4;
+  background: linear-gradient(135deg,#1e1217,#69444e);
+}
+
+.style-friendly {
+  color: #355749;
+  background: linear-gradient(135deg,#f1e6ce,#d8bd9c);
+}
+
+.style-card h3 {
+  margin: 18px 0 8px;
+  color: var(--ouro-claro);
+  font-size: 23px;
+}
+
+.style-card p {
+  color: var(--suave);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   ATUALIZAÇÕES DE TEXTO
+========================================== */
 
 .updates {
-  padding: 90px 0;
-  border-top: 1px solid var(--linha);
-  border-bottom: 1px solid var(--linha);
+  padding: 95px 0;
+  border-block: 1px solid var(--linha);
 }
 
 .updates-grid {
@@ -881,36 +961,40 @@ header {
   align-items: center;
 }
 
-.update-price {
-  border: 1px solid var(--ouro);
+.updates-info p:last-child {
+  margin-top: 18px;
+}
+
+.update-card {
   padding: 38px;
+  border: 1px solid var(--ouro);
   background: #310b1c;
 }
 
-.update-price strong {
+.update-card strong {
   display: block;
-  font: 400 clamp(48px,6vw,70px) Georgia,serif;
+  margin: 19px 0;
   color: var(--ouro-claro);
-  margin: 18px 0;
+  font: 400 clamp(50px,6vw,70px) Georgia,serif;
 }
 
-.update-price p {
+.update-card p {
   color: var(--suave);
-  font-size: 15px;
   line-height: 1.7;
+  font-size: 15px;
 }
 
-.update-price .deadline {
-  margin-top: 22px;
-  padding-top: 17px;
+.update-deadline {
+  margin: 22px 0 27px;
+  padding-top: 18px;
   border-top: 1px solid var(--linha);
   color: var(--ouro-claro);
   font-weight: 700;
 }
 
-/* =========================================
-   PROCESSO DE CONTRATAÇÃO
-========================================= */
+/* ==========================================
+   PROCESSO
+========================================== */
 
 .process {
   padding: 100px 0;
@@ -918,9 +1002,9 @@ header {
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 25px;
-  margin-top: 50px;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 28px;
+  margin-top: 45px;
 }
 
 .step {
@@ -929,13 +1013,13 @@ header {
 }
 
 .step-number {
-  font: 400 44px Georgia,serif;
   color: var(--ouro);
+  font: 400 45px Georgia,serif;
 }
 
 .step h3 {
-  font-size: 25px;
-  margin: 20px 0 12px;
+  margin: 21px 0 12px;
+  font-size: 26px;
 }
 
 .step p {
@@ -944,99 +1028,94 @@ header {
   line-height: 1.8;
 }
 
-/* =========================================
-   CONDIÇÕES
-========================================= */
+/* ==========================================
+   INFORMAÇÕES ESSENCIAIS
+========================================== */
 
-.conditions {
+.info {
+  padding: 65px 0;
   border-top: 1px solid var(--linha);
-  padding: 75px 0;
 }
 
-.conditions-list {
+.info details {
   max-width: 860px;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--linha);
+}
+
+.info details:first-of-type {
   margin-top: 28px;
 }
 
-.conditions details {
-  border-bottom: 1px solid var(--linha);
-  padding: 17px 0;
-}
-
-.conditions summary {
-  cursor: pointer;
+.info summary {
   color: var(--ouro-claro);
   font-weight: 650;
-  line-height: 1.5;
+  cursor: pointer;
 }
 
-.conditions details p {
-  color: var(--suave);
-  line-height: 1.8;
-  font-size: 14px;
+.info details p {
   margin-top: 13px;
+  color: var(--suave);
+  font-size: 14px;
+  line-height: 1.8;
 }
 
-/* =========================================
+/* ==========================================
    CONTATO
-========================================= */
+========================================== */
 
 .contact {
-  padding: 100px 0;
+  padding: 95px 0;
   border-top: 1px solid var(--linha);
   background: #19040dbb;
 }
 
-.contact h2 {
-  max-width: 750px;
-}
-
 .contact-actions {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 15px;
   margin-top: 35px;
 }
 
-/* =========================================
+/* ==========================================
    RODAPÉ
-========================================= */
+========================================== */
 
-footer {
+.footer {
   border-top: 1px solid var(--linha);
-  padding: 28px 0;
-  font-size: 12px;
+  padding: 29px 0;
   color: var(--suave);
+  font-size: 12px;
 }
 
-.footer-content {
+.footer-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.footer-content a {
+.footer a {
   color: var(--ouro-claro);
 }
 
-/* WHATSAPP FLUTUANTE */
+/* WHATSAPP */
 
 .whatsapp-float {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  width: 65px;
-  height: 65px;
-  border: 2px solid var(--ouro);
-  border-radius: 50%;
-  padding: 6px;
-  background: #300817;
-  box-shadow: 0 8px 30px #0008;
   z-index: 150;
   display: grid;
   place-items: center;
+  width: 66px;
+  height: 66px;
+  padding: 6px;
+  background: var(--vinho);
+  border: 2px solid var(--ouro);
+  border-radius: 50%;
+  box-shadow: 0 8px 30px #0008;
 }
 
 .whatsapp-float img {
@@ -1045,13 +1124,9 @@ footer {
   object-fit: contain;
 }
 
-.whatsapp-float:hover {
-  transform: translateY(-3px);
-}
-
-/* =========================================
-   RESPONSIVIDADE
-========================================= */
+/* ==========================================
+   RESPONSIVIDADE - TABLET
+========================================== */
 
 @media(max-width: 950px) {
 
@@ -1073,8 +1148,9 @@ footer {
     margin: auto;
   }
 
-  .portfolio-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
+  .portfolio-grid,
+  .styles-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
   }
 
   .pricing-grid {
@@ -1088,6 +1164,10 @@ footer {
 
 }
 
+/* ==========================================
+   RESPONSIVIDADE - CELULAR
+========================================== */
+
 @media(max-width: 650px) {
 
   .container {
@@ -1098,23 +1178,23 @@ footer {
     min-height: 66px;
   }
 
-  .logo img {
+  .brand img {
     width: 35px;
     height: 42px;
   }
 
-  .logo-text {
+  .brand-name {
     font-size: 16px;
     letter-spacing: 2px;
   }
 
-  .logo-text small {
+  .brand-name small {
     font-size: 8px;
     letter-spacing: 2px;
   }
 
   .hero {
-    padding: 70px 0;
+    padding: 72px 0;
   }
 
   .hero h1 {
@@ -1130,62 +1210,62 @@ footer {
   }
 
   .hero-visual {
-    min-height: 320px;
+    min-height: 315px;
     padding-right: 15px;
   }
 
   .browser-content {
     min-height: 205px;
-    padding: 15px;
+    padding: 16px;
   }
 
   .browser-layout {
-    margin-top: 20px;
+    margin-top: 23px;
     gap: 10px;
   }
 
-  .browser-text h3 {
-    font-size: 20px;
+  .browser-layout h3 {
+    font-size: 21px;
   }
 
-  .browser-text p {
+  .browser-layout p {
     font-size: 9px;
   }
 
   .browser-art {
     height: 125px;
-    font-size: 65px;
+    font-size: 66px;
   }
 
-  .mobile-preview {
-    width: 85px;
-    height: 177px;
+  .phone {
+    width: 88px;
+    height: 175px;
     right: 0;
     bottom: 0;
     padding: 5px;
   }
 
-  .mobile-preview-inner {
-    padding: 7px 5px;
+  .phone-screen {
+    padding: 8px 5px;
   }
 
-  .mobile-preview-inner b {
-    font-size: 7px;
+  .phone-screen b {
+    font-size: 6px;
   }
 
-  .mobile-preview-image {
-    height: 55px;
-    margin: 11px 0;
-    font-size: 28px;
+  .phone-art {
+    height: 57px;
+    margin: 10px 0;
+    font-size: 30px;
   }
 
-  .mobile-preview-inner p {
-    font-size: 11px;
+  .phone-screen p {
+    font-size: 12px;
   }
 
   .benefits-grid {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 20px;
   }
 
   .portfolio,
@@ -1195,20 +1275,17 @@ footer {
     padding: 75px 0;
   }
 
-  .portfolio-grid {
+  .portfolio-grid,
+  .styles-grid {
     grid-template-columns: 1fr;
   }
 
-  .portfolio-art {
-    height: 240px;
-  }
-
   .price-card {
-    padding: 25px;
+    padding: 27px;
   }
 
   .calc-box {
-    padding: 25px 18px;
+    padding: 26px 18px;
   }
 
   .calc-results {
@@ -1223,12 +1300,16 @@ footer {
     width: 100%;
   }
 
+  .styles {
+    padding: 70px 0;
+  }
+
   .updates {
     padding: 75px 0;
   }
 
-  .update-price {
-    padding: 25px;
+  .update-card {
+    padding: 27px;
   }
 
   .steps {
@@ -1244,8 +1325,8 @@ footer {
   }
 
   .whatsapp-float {
-    width: 59px;
-    height: 59px;
+    width: 60px;
+    height: 60px;
     right: 15px;
     bottom: 15px;
   }
@@ -1253,6 +1334,7 @@ footer {
 }
 
 @media(prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -1261,6 +1343,7 @@ footer {
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
   }
+
 }
 
 </style>
@@ -1268,52 +1351,63 @@ footer {
 
 <body>
 
-<!-- ======================================
+<!-- ==========================================
      CABEÇALHO
-====================================== -->
+========================================== -->
 
-<header>
+<header class="site-header">
+
   <div class="container navbar">
 
-    <a class="logo" href="/index.html" aria-label="HYPERBOREA — início">
-      <img src="/assets/img/monograma-h.svg" alt="">
+    <a class="brand" href="/index.html">
 
-      <span class="logo-text">
+      <img
+        src="/assets/img/monograma-h.svg"
+        alt="">
+
+      <span class="brand-name">
         HYPERBOREA
         <small>AGÊNCIA CRIATIVA</small>
       </span>
+
     </a>
 
-    <nav class="nav-links" aria-label="Navegação principal">
+    <nav class="nav-links" aria-label="Menu principal">
+
       <a href="/index.html">Início</a>
       <a href="#portfolio">Portfólio</a>
       <a href="#precos">Preços</a>
-      <a href="#simulador">Simulador</a>
-      <a href="#atualizacoes">Atualizações</a>
-      <a class="nav-contact" href="#contato">Contato</a>
+      <a href="#simulador">Monte seu site</a>
+      <a class="nav-cta" href="#contato">Contato</a>
+
     </nav>
 
     <details class="mobile-menu">
+
       <summary>☰ Menu</summary>
 
-      <nav class="mobile-links" aria-label="Navegação móvel">
+      <nav aria-label="Menu móvel">
+
         <a href="/index.html">Início</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#precos">Preços</a>
-        <a href="#simulador">Simulador</a>
+        <a href="#simulador">Monte seu site</a>
         <a href="#atualizacoes">Atualizações</a>
         <a href="#contato">Contato</a>
+
       </nav>
+
     </details>
 
   </div>
+
 </header>
 
 <main>
 
-<!-- ======================================
+<!-- ==========================================
      APRESENTAÇÃO
-====================================== -->
+========================================== -->
 
 <section class="hero">
 
@@ -1331,40 +1425,43 @@ footer {
       </h1>
 
       <p class="hero-description">
-        Criamos sites e landing pages para quem
-        quer apresentar seu negócio na internet
-        com beleza, profissionalismo e simplicidade.
+        Seu negócio merece estar na internet.
+        Criamos sites e landing pages bonitos,
+        profissionais e acessíveis.
+        Você escolhe as páginas.
+        Nós deixamos tudo pronto!
       </p>
 
       <div class="hero-price">
+
         <strong>R$ 70</strong>
-        <span>por seção desenvolvida</span>
+
+        <span>por página desenvolvida</span>
+
       </div>
 
       <div class="hero-actions">
 
-        <a class="btn btn-gold" href="#simulador">
+        <a class="btn btn-primary" href="#simulador">
           Monte seu site ↗
         </a>
 
         <a class="btn btn-outline" href="#portfolio">
-          Veja nosso portfólio ↗
+          Conheça nosso trabalho ↗
         </a>
 
       </div>
 
     </div>
 
-    <!-- ILUSTRAÇÃO DE SITE RESPONSIVO -->
+    <!-- ILUSTRAÇÃO DE COMPUTADOR E CELULAR -->
 
     <div class="hero-visual">
 
       <div class="browser">
 
         <div class="browser-top">
-          <span></span>
-          <span></span>
-          <span></span>
+          <i></i><i></i><i></i>
         </div>
 
         <div class="browser-content">
@@ -1375,18 +1472,20 @@ footer {
 
           <div class="browser-layout">
 
-            <div class="browser-text">
+            <div>
+
               <h3>
-                Uma presença
-                <span class="gold">especial.</span>
+                Sua marca em
+                <span class="gold">destaque.</span>
               </h3>
 
               <p>
-                Seu negócio merece
-                um lugar bonito na internet.
+                Um espaço bonito para
+                apresentar sua empresa.
               </p>
 
-              <div class="browser-button"></div>
+              <div class="browser-line"></div>
+
             </div>
 
             <div class="browser-art">
@@ -1396,66 +1495,71 @@ footer {
           </div>
 
         </div>
+
       </div>
 
-      <div class="mobile-preview">
+      <div class="phone">
 
-        <div class="mobile-preview-inner">
+        <div class="phone-screen">
 
           <b>SEU NEGÓCIO</b>
 
-          <div class="mobile-preview-image">
+          <div class="phone-art">
             ✦
           </div>
 
           <p>
-            Sua marca em
-            destaque.
+            Sua presença
+            na internet.
           </p>
 
         </div>
+
       </div>
 
     </div>
 
   </div>
+
 </section>
 
-<!-- ======================================
+<!-- ==========================================
      BENEFÍCIOS
-====================================== -->
+========================================== -->
 
 <section class="benefits">
+
   <div class="container benefits-grid">
 
     <div class="benefit">
-      <span class="benefit-icon">✦</span>
+      <span>✦</span>
       <span>Design bonito e responsivo</span>
     </div>
 
     <div class="benefit">
-      <span class="benefit-icon">◷</span>
-      <span>Até 3 dias úteis por seção</span>
+      <span>◷</span>
+      <span>Até 3 dias úteis por página</span>
     </div>
 
     <div class="benefit">
-      <span class="benefit-icon">✓</span>
+      <span>✓</span>
       <span>Sem mensalidade obrigatória</span>
     </div>
 
   </div>
+
 </section>
 
-<!-- ======================================
+<!-- ==========================================
      PORTFÓLIO
-====================================== -->
+========================================== -->
 
 <section class="portfolio" id="portfolio">
 
   <div class="container">
 
     <p class="eyebrow">
-      CONHEÇA NOSSO TRABALHO
+      NOSSO PORTFÓLIO
     </p>
 
     <h2 class="section-title">
@@ -1464,9 +1568,9 @@ footer {
     </h2>
 
     <p class="section-lead">
-      Veja um projeto do nosso portfólio e
-      explore exemplos de estilos que podemos
-      desenvolver para diferentes negócios.
+      Conheça nosso trabalho e descubra
+      diferentes possibilidades para seu negócio.
+      Cada projeto pode ter seu próprio estilo.
     </p>
 
     <div class="portfolio-grid">
@@ -1477,13 +1581,12 @@ footer {
 
         <div class="portfolio-art">
 
-          <div class="marajoara-frame">
+          <div class="marajoara">
 
             <img
               src="/assets/img/realizacoes/logo-marajoara-oficial-otimizado1.svg"
-              alt="Logotipo do Edifício Marajoara"
-              loading="lazy"
-              decoding="async">
+              alt="Edifício Marajoara"
+              loading="lazy">
 
           </div>
 
@@ -1494,13 +1597,13 @@ footer {
           <h3>Edifício Marajoara</h3>
 
           <p>
-            Projeto de comunicação digital
-            com informações institucionais,
-            conteúdos e navegação organizada.
+            Projeto digital institucional
+            com apresentação de informações,
+            conteúdos e comunicação.
           </p>
 
           <a
-            href="https://www.marajoara.com.br/"
+            href="https://www.marajoara3.com.br/"
             target="_blank"
             rel="noopener noreferrer">
             Visitar projeto ↗
@@ -1510,13 +1613,13 @@ footer {
 
       </article>
 
-      <!-- MODELO CONCEITUAL -->
+      <!-- CONCEITO PARA CAFETERIA -->
 
       <article class="portfolio-card">
 
         <div class="portfolio-art">
 
-          <div class="demo-browser demo-bakery">
+          <div class="demo-window demo-cafe">
 
             <div class="demo-top">
               <i></i><i></i><i></i>
@@ -1525,14 +1628,17 @@ footer {
             <div class="demo-body">
 
               <div>
+
                 <h4>
-                  Sabor & Arte
+                  Sabor
+                  & Arte
                 </h4>
 
                 <p>
                   Feito com carinho,
                   todos os dias.
                 </p>
+
               </div>
 
               <div class="demo-image">
@@ -1550,26 +1656,26 @@ footer {
           <h3>Negócios locais</h3>
 
           <p>
-            Exemplo de apresentação visual
-            para cafeterias, lojas, ateliês
-            e pequenos estabelecimentos.
+            Um estilo acolhedor para
+            cafeterias, pequenos comércios,
+            lojas e ateliês.
           </p>
 
-          <p style="margin-top:15px;color:var(--ouro-claro);font-size:12px">
-            Conceito demonstrativo
+          <p class="portfolio-label">
+            Conceito visual demonstrativo
           </p>
 
         </div>
 
       </article>
 
-      <!-- MODELO CONCEITUAL -->
+      <!-- CONCEITO PROFISSIONAL -->
 
       <article class="portfolio-card">
 
         <div class="portfolio-art">
 
-          <div class="demo-browser demo-studio">
+          <div class="demo-window demo-studio">
 
             <div class="demo-top">
               <i></i><i></i><i></i>
@@ -1578,15 +1684,17 @@ footer {
             <div class="demo-body">
 
               <div>
+
                 <h4>
                   Estúdio
                   Aurora
                 </h4>
 
                 <p>
-                  Design para
+                  Novas ideias,
                   novos caminhos.
                 </p>
+
               </div>
 
               <div class="demo-image">
@@ -1601,16 +1709,16 @@ footer {
 
         <div class="portfolio-card-body">
 
-          <h3>Profissionais e serviços</h3>
+          <h3>Serviços profissionais</h3>
 
           <p>
-            Exemplo de landing page elegante
-            para apresentar serviços,
-            informações e contatos.
+            Uma apresentação moderna
+            para profissionais autônomos
+            e prestadores de serviços.
           </p>
 
-          <p style="margin-top:15px;color:var(--ouro-claro);font-size:12px">
-            Conceito demonstrativo
+          <p class="portfolio-label">
+            Conceito visual demonstrativo
           </p>
 
         </div>
@@ -1620,113 +1728,117 @@ footer {
     </div>
 
   </div>
+
 </section>
 
-<!-- ======================================
-     TABELA COMERCIAL
-====================================== -->
+<!-- ==========================================
+     PREÇOS
+========================================== -->
 
 <section class="pricing" id="precos">
 
   <div class="container">
 
     <p class="eyebrow">
-      PREÇOS TRANSPARENTES
+      PREÇOS ACESSÍVEIS
     </p>
 
     <h2 class="section-title">
-      Seu site.
-      <span class="gold">Seu investimento.</span>
+      Seu site cresce
+      <span class="gold">com seu negócio.</span>
     </h2>
 
     <p class="section-lead">
-      Comece com poucas seções e amplie
-      conforme seu negócio crescer.
-      Você escolhe quanto precisa investir.
+      Comece com o que precisa.
+      Adicione novas páginas quando quiser.
+      Você sabe quanto vai investir.
     </p>
 
     <div class="pricing-grid">
 
-      <!-- PREÇO POR SEÇÃO -->
+      <!-- PREÇO POR PÁGINA -->
 
       <div class="price-card">
 
         <p class="price-label">
-          CRIAÇÃO DE SITES & LANDING PAGES
+          CRIAÇÃO DE SITES
         </p>
 
         <h3>
-          Crescimento modular
+          Seu site, do seu jeito.
         </h3>
 
         <div class="price-number">
           R$ 70
-          <small>/ seção</small>
+          <small>/ página</small>
         </div>
 
-        <p class="price-description">
-          Cada seção é uma parte do seu site,
-          como apresentação, serviços,
-          galeria, localização ou contato.
+        <p>
+          Escolha as páginas do seu site.
+          Por exemplo: Início, Sobre,
+          Serviços, Galeria ou Contato.
         </p>
 
-        <ul class="price-features">
-          <li>Layout responsivo</li>
-          <li>Visual alinhado à marca</li>
+        <ul class="features">
+
+          <li>Design responsivo</li>
+          <li>Modelos visuais à sua escolha</li>
           <li>Integração com WhatsApp</li>
-          <li>Até 3 dias úteis por seção</li>
-          <li>Ampliação por novas seções</li>
-          <li>Uma rodada de revisão simples na entrega</li>
+          <li>Até 3 dias úteis por página</li>
+          <li>Possibilidade de ampliar o site</li>
+          <li>Uma rodada de ajustes simples</li>
+
         </ul>
 
         <a class="btn btn-outline" href="#simulador">
-          Calcular meu projeto ↗
+          Calcular meu site ↗
         </a>
 
       </div>
 
-      <!-- DOMÍNIO GRÁTIS -->
+      <!-- PROMOÇÃO DOMÍNIO -->
 
-      <div class="price-card domain-card">
+      <div class="price-card">
 
         <span class="domain-badge">
           PRESENTE HYPERBOREA
         </span>
 
         <h3>
-          Seu site completo
-          com domínio no primeiro ano
+          Seu site com seis páginas
         </h3>
 
-        <div class="domain-price">
+        <div class="price-number">
           R$ 420
         </div>
 
-        <p class="price-description">
-          Site com seis seções desenvolvidas
-          e registro de domínio .com.br
-          por um ano incluído.
+        <p style="color:var(--ouro-claro);font-weight:700">
+          A partir de seis páginas,
+          o primeiro ano do domínio é grátis!
         </p>
 
-        <ul class="price-features">
-          <li>Seis seções</li>
-          <li>Site responsivo</li>
+        <ul class="features">
+
+          <li>Seis páginas desenvolvidas</li>
+          <li>Design responsivo</li>
           <li>Domínio .com.br no primeiro ano</li>
+          <li>Configuração e publicação do site</li>
           <li>Sem mensalidade obrigatória</li>
-          <li>Possibilidade de ampliar depois</li>
+          <li>Amplie seu site quando desejar</li>
+
         </ul>
 
-        <a class="btn btn-gold" href="#contato">
+        <a class="btn btn-primary" href="#contato">
           Quero meu site ↗
         </a>
 
-        <p class="domain-info">
-          Promoção para projetos com seis ou
-          mais seções contratadas.
-          Domínio sujeito à disponibilidade,
-          registrado em nome do cliente.
+        <p class="domain-note">
+          Promoção para projetos com seis
+          ou mais páginas contratadas.
+          O domínio .com.br está sujeito
+          à disponibilidade.
           A renovação após o primeiro ano
-          não está incluída.
+          fica por conta do cliente.
         </p>
 
       </div>
@@ -1734,47 +1846,48 @@ footer {
     </div>
 
   </div>
+
 </section>
 
-<!-- ======================================
-     SIMULADOR DE ORÇAMENTO
-====================================== -->
+<!-- ==========================================
+     SIMULADOR
+========================================== -->
 
 <section class="calculator" id="simulador">
 
   <div class="container">
 
-    <p class="eyebrow" style="text-align:center">
-      MONTE SEU PROJETO
+    <p class="eyebrow center">
+      MONTE SEU SITE
     </p>
 
-    <h2 class="section-title" style="text-align:center">
+    <h2 class="section-title center">
       Quanto custa
-      <span class="gold">seu site?</span>
+      <span class="gold">seu projeto?</span>
     </h2>
 
-    <p class="section-lead" style="text-align:center;margin:auto">
-      Escolha a quantidade de seções e
-      confira seu orçamento estimado.
+    <p class="section-lead center-lead">
+      Escolha quantas páginas deseja
+      e descubra o valor estimado.
     </p>
 
     <div class="calc-box">
 
       <h3 class="calc-heading">
-        Quantas seções você deseja?
+        Quantas páginas você quer?
       </h3>
 
-      <p class="calc-subtitle">
-        Cada seção custa R$ 70.
-        Você pode adicionar mais depois.
+      <p class="calc-description">
+        Cada página custa R$ 70.
+        Você pode adicionar outras depois.
       </p>
 
       <div class="calc-counter">
 
         <button
-          type="button"
           id="menos"
-          aria-label="Diminuir uma seção">
+          type="button"
+          aria-label="Diminuir quantidade de páginas">
           −
         </button>
 
@@ -1783,9 +1896,9 @@ footer {
         </output>
 
         <button
-          type="button"
           id="mais"
-          aria-label="Adicionar uma seção">
+          type="button"
+          aria-label="Aumentar quantidade de páginas">
           +
         </button>
 
@@ -1794,199 +1907,277 @@ footer {
       <div class="calc-results">
 
         <div class="calc-item">
-          <span>Investimento estimado</span>
-          <strong id="valor">R$ 420</strong>
+
+          <span>Valor estimado</span>
+
+          <strong id="valor">
+            R$ 420
+          </strong>
+
         </div>
 
         <div class="calc-item">
+
           <span>Prazo máximo estimado</span>
-          <strong id="prazo">18 dias úteis</strong>
+
+          <strong id="prazo">
+            18 dias úteis
+          </strong>
+
         </div>
 
       </div>
 
       <div class="calc-bonus" id="bonus" aria-live="polite">
-        ✦ Parabéns! Seu projeto inclui o
-        primeiro ano de domínio .com.br.
+        ✦ A partir de seis páginas,
+        o primeiro ano do domínio é grátis!
       </div>
 
       <div class="calc-actions">
 
         <button
-          type="button"
           class="btn btn-outline"
-          id="copiarOrcamento">
+          type="button"
+          id="copiar">
           Copiar orçamento
         </button>
 
         <a
-          class="btn btn-gold"
+          class="btn btn-primary"
           href="https://wa.me/message/FHWOVDSQ3AKCO1"
           target="_blank"
           rel="noopener noreferrer">
-          Conversar pelo WhatsApp ↗
+          Conversar no WhatsApp ↗
         </a>
 
       </div>
 
-      <p class="calc-note" id="mensagemCopia" aria-live="polite">
-        Estimativa para seções simples de
-        uma mesma página. O prazo começa
-        após a confirmação do pedido e
-        o recebimento dos materiais necessários.
+      <p class="calc-note" id="mensagem" aria-live="polite">
+        Valores para páginas simples.
+        O prazo começa após a confirmação
+        e o recebimento dos materiais.
+        Projetos especiais recebem
+        orçamento personalizado.
       </p>
 
     </div>
 
   </div>
+
 </section>
 
-<!-- ======================================
-     MANUTENÇÃO E ATUALIZAÇÕES
-====================================== -->
+<!-- ==========================================
+     ESTILO VISUAL
+========================================== -->
+
+<section class="styles">
+
+  <div class="container">
+
+    <p class="eyebrow">
+      SUA MARCA, SEU ESTILO
+    </p>
+
+    <h2 class="section-title">
+      Escolha o visual
+      <span class="gold">que combina com você.</span>
+    </h2>
+
+    <p class="section-lead">
+      Você escolhe a direção visual entre
+      nossos modelos disponíveis.
+      Nós adaptamos o conteúdo e as cores
+      para combinar com seu negócio.
+    </p>
+
+    <div class="styles-grid">
+
+      <div class="style-card">
+
+        <div class="style-visual style-modern">
+          <b>Moderno.</b>
+          <i></i>
+          <i></i>
+        </div>
+
+        <h3>Moderno</h3>
+
+        <p>
+          Visual marcante, organizado
+          e contemporâneo.
+        </p>
+
+      </div>
+
+      <div class="style-card">
+
+        <div class="style-visual style-elegant">
+          <b>Elegante.</b>
+          <i></i>
+          <i></i>
+        </div>
+
+        <h3>Elegante</h3>
+
+        <p>
+          Cores refinadas e uma
+          apresentação sofisticada.
+        </p>
+
+      </div>
+
+      <div class="style-card">
+
+        <div class="style-visual style-friendly">
+          <b>Acolhedor.</b>
+          <i></i>
+          <i></i>
+        </div>
+
+        <h3>Acolhedor</h3>
+
+        <p>
+          Leve, amigável e ideal
+          para negócios próximos do público.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ==========================================
+     ATUALIZAÇÕES
+========================================== -->
 
 <section class="updates" id="atualizacoes">
 
   <div class="container updates-grid">
 
-    <div>
+    <div class="updates-info">
 
       <p class="eyebrow">
-        ATUALIZAÇÕES SEM COMPLICAÇÃO
+        ATUALIZAÇÕES SIMPLES
       </p>
 
       <h2 class="section-title">
-        Seu conteúdo
-        <span class="gold">sempre atualizado.</span>
+        Precisa mudar
+        <span class="gold">alguma informação?</span>
       </h2>
 
       <p class="section-lead">
-        Mudou o horário de funcionamento?
-        Precisa alterar uma informação?
-        Quer atualizar a descrição de um serviço?
+        Alterou o horário de atendimento?
+        Mudou o telefone?
+        Quer atualizar a descrição
+        de um produto ou serviço?
       </p>
 
-      <p class="section-lead" style="margin-top:20px">
-        A HYPERBOREA realiza alterações
-        de textos existentes, sem necessidade
-        de contratar uma mensalidade.
+      <p class="section-lead">
+        Nós atualizamos o texto para você.
+        Sem mensalidade obrigatória.
       </p>
 
     </div>
 
-    <div class="update-price">
+    <div class="update-card">
 
       <p class="eyebrow">
         ATUALIZAÇÃO DE TEXTO
       </p>
 
-      <strong>
-        R$ 15
-      </strong>
+      <strong>R$ 15</strong>
 
       <p>
-        Por seção atualizada.
+        Por página atualizada,
+        para alterações simples
+        no texto já existente.
       </p>
 
-      <p style="margin-top:15px">
-        Inclui a substituição de textos
-        fornecidos pelo cliente em uma
-        seção existente, sem alterações
-        na estrutura visual.
-      </p>
-
-      <p class="deadline">
-        Prazo: até 2 dias úteis.
-      </p>
-
-      <div style="margin-top:28px">
-
-        <a
-          class="btn btn-outline"
-          href="https://wa.me/message/FHWOVDSQ3AKCO1"
-          target="_blank"
-          rel="noopener noreferrer">
-          Solicitar atualização ↗
-        </a>
-
+      <div class="update-deadline">
+        Entrega em até 2 dias úteis.
       </div>
+
+      <a
+        class="btn btn-outline"
+        href="https://wa.me/message/FHWOVDSQ3AKCO1"
+        target="_blank"
+        rel="noopener noreferrer">
+        Solicitar atualização ↗
+      </a>
 
     </div>
 
   </div>
+
 </section>
 
-<!-- ======================================
-     ETAPAS
-====================================== -->
+<!-- ==========================================
+     COMO FUNCIONA
+========================================== -->
 
 <section class="process">
 
   <div class="container">
 
     <p class="eyebrow">
-      COMO FUNCIONA
+      SIMPLES ASSIM
     </p>
 
     <h2 class="section-title">
-      Simples do início
-      <span class="gold">à publicação.</span>
+      Você escolhe.
+      <span class="gold">Nós criamos.</span>
     </h2>
 
     <div class="steps">
 
       <div class="step">
 
-        <span class="step-number">
-          01
-        </span>
+        <span class="step-number">01</span>
 
         <h3>
-          Escolha seu site
+          Conte sua ideia
         </h3>
 
         <p>
-          Informe quantas seções deseja,
-          explique seu negócio e envie
-          os textos e imagens disponíveis.
+          Fale conosco pelo WhatsApp,
+          escolha as páginas e o estilo
+          que deseja para seu site.
         </p>
 
       </div>
 
       <div class="step">
 
-        <span class="step-number">
-          02
-        </span>
+        <span class="step-number">02</span>
 
         <h3>
           Nós desenvolvemos
         </h3>
 
         <p>
-          Criamos o layout e organizamos
-          suas informações, respeitando
-          o prazo combinado de até
-          três dias úteis por seção.
+          Você envia seus textos e fotos.
+          A HYPERBOREA organiza tudo
+          em um site bonito e responsivo.
         </p>
 
       </div>
 
       <div class="step">
 
-        <span class="step-number">
-          03
-        </span>
+        <span class="step-number">03</span>
 
         <h3>
           Seu site entra no ar
         </h3>
 
         <p>
-          Após a revisão e aprovação,
-          publicamos o projeto e você
-          já poderá compartilhar
-          seu endereço na internet.
+          Nós cuidamos da configuração
+          e publicação.
+          Você recebe seu endereço
+          pronto para compartilhar.
         </p>
 
       </div>
@@ -1994,152 +2185,134 @@ footer {
     </div>
 
   </div>
+
 </section>
 
-<!-- ======================================
-     CONDIÇÕES DO SERVIÇO
-====================================== -->
+<!-- ==========================================
+     INFORMAÇÕES ESSENCIAIS
+========================================== -->
 
-<section class="conditions">
+<section class="info">
 
   <div class="container">
 
     <p class="eyebrow">
-      INFORMAÇÕES IMPORTANTES
+      DÚVIDAS FREQUENTES
     </p>
 
     <h2 class="section-title">
-      Tudo com
-      <span class="gold">transparência.</span>
+      Tudo bem
+      <span class="gold">simples.</span>
     </h2>
 
-    <div class="conditions-list">
+    <details>
 
-      <details>
-        <summary>
-          O que é considerado uma seção?
-        </summary>
+      <summary>
+        Posso começar com poucas páginas?
+      </summary>
 
-        <p>
-          Uma seção é um bloco de conteúdo
-          de uma página, como apresentação,
-          serviços, galeria simples,
-          localização ou contato.
-          O preço de R$ 70 vale para
-          seções simples dentro de uma
-          estrutura visual modular.
-          Funcionalidades especiais e
-          páginas independentes recebem
-          orçamento personalizado.
-        </p>
-      </details>
+      <p>
+        Sim! Você pode começar com uma
+        ou mais páginas e ampliar seu site
+        quando precisar.
+      </p>
 
-      <details>
-        <summary>
-          Posso começar com poucas seções?
-        </summary>
+    </details>
 
-        <p>
-          Sim. Você pode começar com um
-          projeto pequeno e solicitar
-          novas seções posteriormente,
-          conforme sua necessidade.
-        </p>
-      </details>
+    <details>
 
-      <details>
-        <summary>
-          Quanto tempo leva para ficar pronto?
-        </summary>
+      <summary>
+        Preciso entender de tecnologia?
+      </summary>
 
-        <p>
-          O prazo de referência é de até
-          três dias úteis por seção simples.
-          O prazo total é confirmado antes
-          da contratação, considerando
-          a quantidade de seções e
-          o recebimento dos materiais.
-        </p>
-      </details>
+      <p>
+        Não. A HYPERBOREA cuida das
+        configurações técnicas,
+        da publicação e dos apontamentos
+        necessários ao funcionamento
+        do seu site.
+      </p>
 
-      <details>
-        <summary>
-          Como funciona o domínio grátis?
-        </summary>
+    </details>
 
-        <p>
-          Ao contratar seis ou mais seções
-          para o mesmo projeto, a HYPERBOREA
-          oferece o primeiro ano do
-          registro de um domínio .com.br,
-          sujeito à disponibilidade.
-          O domínio será registrado em nome
-          do cliente. A renovação a partir
-          do segundo ano é responsabilidade
-          do titular.
-        </p>
-      </details>
+    <details>
 
-      <details>
-        <summary>
-          Preciso pagar manutenção mensal?
-        </summary>
+      <summary>
+        Posso escolher a aparência do site?
+      </summary>
 
-        <p>
-          Não. A manutenção não é obrigatória.
-          Alterações simples de texto custam
-          R$ 15 por seção atualizada,
-          com prazo de até dois dias úteis.
-          Novas artes, banners, mudanças
-          de layout e funcionalidades
-          são orçados separadamente.
-        </p>
-      </details>
+      <p>
+        Sim. Você poderá escolher entre
+        os modelos visuais disponíveis
+        e personalizar cores, textos e
+        imagens conforme o projeto.
+      </p>
 
-      <details>
-        <summary>
-          O que preciso fornecer?
-        </summary>
+    </details>
 
-        <p>
-          Os textos, as informações e
-          as imagens que deseja apresentar.
-          Trabalhos adicionais de criação
-          de conteúdo, identidade visual
-          e design gráfico podem ser
-          contratados separadamente.
-        </p>
-      </details>
+    <details>
 
-      <details>
-        <summary>
-          O que está incluído no valor?
-        </summary>
+      <summary>
+        Como funciona o domínio grátis?
+      </summary>
 
-        <p>
-          Desenvolvimento das seções simples
-          contratadas, layout responsivo,
-          navegação básica, integração
-          com link de contato, uma rodada
-          de revisão simples e publicação
-          em hospedagem compatível.
-          Serviços externos pagos, funcionalidades
-          complexas e alterações fora do
-          escopo não estão incluídos.
-          Eventuais defeitos da implementação
-          entregue são tratados como correção,
-          e não como atualização paga.
-        </p>
-      </details>
+      <p>
+        A partir de seis páginas
+        contratadas no mesmo projeto,
+        o primeiro ano do domínio
+        .com.br é grátis,
+        sujeito à disponibilidade.
+        A renovação anual posterior
+        fica por conta do cliente.
+      </p>
 
-    </div>
+    </details>
+
+    <details>
+
+      <summary>
+        Preciso pagar mensalidade?
+      </summary>
+
+      <p>
+        Não há mensalidade obrigatória
+        de manutenção.
+        Atualizações simples de texto
+        custam R$ 15 por página atualizada.
+        Eventuais custos de domínio,
+        hospedagem ou serviços externos
+        são informados no orçamento.
+      </p>
+
+    </details>
+
+    <details>
+
+      <summary>
+        O que está incluído no preço?
+      </summary>
+
+      <p>
+        O valor de R$ 70 é destinado
+        à criação de cada página simples
+        utilizando nossos modelos visuais.
+        Inclui adaptação responsiva,
+        conteúdo fornecido pelo cliente
+        e publicação em hospedagem compatível.
+        Artes novas, funcionalidades especiais
+        e páginas de maior complexidade
+        são orçadas separadamente.
+      </p>
+
+    </details>
 
   </div>
+
 </section>
 
-<!-- ======================================
+<!-- ==========================================
      CONTATO
-====================================== -->
+========================================== -->
 
 <section class="contact" id="contato">
 
@@ -2155,20 +2328,20 @@ footer {
     </h2>
 
     <p class="section-lead">
-      Conte sua ideia para a HYPERBOREA.
-      Vamos encontrar a solução ideal
-      para seu projeto, seu momento
-      e seu orçamento.
+      Escolha seu estilo, conte sua ideia
+      e deixe o resto com a HYPERBOREA.
+      Estamos prontos para criar
+      sua presença digital.
     </p>
 
     <div class="contact-actions">
 
       <a
-        class="btn btn-gold"
+        class="btn btn-primary"
         href="https://wa.me/message/FHWOVDSQ3AKCO1"
         target="_blank"
         rel="noopener noreferrer">
-        Solicitar orçamento ↗
+        Quero meu site! ↗
       </a>
 
       <a
@@ -2180,17 +2353,18 @@ footer {
     </div>
 
   </div>
+
 </section>
 
 </main>
 
-<!-- ======================================
+<!-- ==========================================
      RODAPÉ
-====================================== -->
+========================================== -->
 
-<footer>
+<footer class="footer">
 
-  <div class="container footer-content">
+  <div class="container footer-row">
 
     <p>
       © <span id="anoAtual">2026</span>
@@ -2205,16 +2379,16 @@ footer {
 
 </footer>
 
-<!-- ======================================
+<!-- ==========================================
      WHATSAPP FLUTUANTE
-====================================== -->
+========================================== -->
 
 <a
   class="whatsapp-float"
   href="https://wa.me/message/FHWOVDSQ3AKCO1"
   target="_blank"
   rel="noopener noreferrer"
-  aria-label="Conversar pelo WhatsApp">
+  aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
 
   <img
     src="/assets/img/whats-icon.svg"
@@ -2222,9 +2396,9 @@ footer {
 
 </a>
 
-<!-- ======================================
+<!-- ==========================================
      JAVASCRIPT
-====================================== -->
+========================================== -->
 
 <script>
 
@@ -2238,10 +2412,10 @@ footer {
 
   /* SIMULADOR */
 
-  let secoes = 6;
+  let paginas = 6;
 
-  const precoPorSecao = 70;
-  const diasPorSecao = 3;
+  const precoPagina = 70;
+  const diasPagina = 3;
 
   const quantidade =
     document.getElementById("quantidade");
@@ -2255,112 +2429,119 @@ footer {
   const bonus =
     document.getElementById("bonus");
 
-  const botaoMenos =
+  const menos =
     document.getElementById("menos");
 
-  const botaoMais =
+  const mais =
     document.getElementById("mais");
 
-  const botaoCopiar =
-    document.getElementById("copiarOrcamento");
+  const copiar =
+    document.getElementById("copiar");
 
-  const mensagemCopia =
-    document.getElementById("mensagemCopia");
+  const mensagem =
+    document.getElementById("mensagem");
 
   function moeda(numero) {
+
     return new Intl.NumberFormat("pt-BR", {
       style: "currency",
       currency: "BRL",
       maximumFractionDigits: 0
     }).format(numero);
+
   }
 
-  function atualizarSimulador() {
+  function atualizar() {
 
-    const total = secoes * precoPorSecao;
-    const dias = secoes * diasPorSecao;
+    const total = paginas * precoPagina;
+    const dias = paginas * diasPagina;
 
-    quantidade.textContent = secoes;
+    quantidade.textContent = paginas;
 
     valor.textContent = moeda(total);
 
     prazo.textContent =
-      dias + (dias === 1 ? " dia útil" : " dias úteis");
+      dias + " dias úteis";
 
-    if (secoes >= 6) {
+    if (paginas >= 6) {
 
       bonus.textContent =
-        "✦ Parabéns! Seu projeto inclui o primeiro ano de domínio .com.br, sujeito à disponibilidade.";
+        "✦ A partir de seis páginas, " +
+        "o primeiro ano do domínio é grátis!";
 
     } else {
 
-      const faltam = 6 - secoes;
+      const faltam = 6 - paginas;
 
       bonus.textContent =
         "Adicione mais " + faltam +
-        (faltam === 1 ? " seção" : " seções") +
-        " para receber o primeiro ano de domínio .com.br.";
+        (faltam === 1 ? " página" : " páginas") +
+        " para ganhar o primeiro ano do domínio.";
 
     }
 
-    botaoMenos.disabled = secoes <= 1;
-    botaoMais.disabled = secoes >= 20;
+    menos.disabled = paginas <= 1;
+    mais.disabled = paginas >= 20;
 
   }
 
-  botaoMenos.addEventListener("click", function () {
+  menos.addEventListener("click", function () {
 
-    if (secoes > 1) {
-      secoes--;
-      atualizarSimulador();
+    if (paginas > 1) {
+      paginas--;
+      atualizar();
     }
 
   });
 
-  botaoMais.addEventListener("click", function () {
+  mais.addEventListener("click", function () {
 
-    if (secoes < 20) {
-      secoes++;
-      atualizarSimulador();
+    if (paginas < 20) {
+      paginas++;
+      atualizar();
     }
 
   });
 
   /* COPIAR ORÇAMENTO */
 
-  botaoCopiar.addEventListener("click", async function () {
+  copiar.addEventListener("click", async function () {
 
-    const total = secoes * precoPorSecao;
-    const dias = secoes * diasPorSecao;
+    const total = paginas * precoPagina;
+    const dias = paginas * diasPagina;
 
     let texto =
       "Orçamento HYPERBOREA\n" +
       "Sites & Landing Pages\n\n" +
-      "Seções: " + secoes + "\n" +
+      "Páginas: " + paginas + "\n" +
       "Valor estimado: " + moeda(total) + "\n" +
-      "Prazo máximo estimado: " + dias + " dias úteis\n";
+      "Prazo estimado: até " +
+      dias + " dias úteis\n";
 
-    if (secoes >= 6) {
+    if (paginas >= 6) {
 
       texto +=
-        "Benefício: primeiro ano de domínio .com.br incluído, sujeito à disponibilidade.\n";
+        "O primeiro ano do domínio .com.br " +
+        "é grátis, sujeito à disponibilidade.\n";
 
     }
 
     texto +=
-      "\nProjeto sujeito à confirmação de escopo e condições comerciais.";
+      "\nOrçamento sujeito à confirmação do projeto.";
 
     try {
 
       await navigator.clipboard.writeText(texto);
 
-      mensagemCopia.textContent =
-        "Orçamento copiado! Agora você pode enviá-lo pelo WhatsApp.";
+      mensagem.textContent =
+        "Orçamento copiado! " +
+        "Agora você pode enviá-lo pelo WhatsApp.";
 
     } catch (erro) {
 
-      mensagemCopia.textContent =
-        "Não foi possível copiar automaticamente. Consulte o valor acima e informe-o no WhatsApp.";
+      mensagem.textContent =
+        "Não foi possível copiar automaticamente. " +
+        "Você pode informar o valor pelo WhatsApp.";
 
     }
 
@@ -2368,16 +2549,16 @@ footer {
 
   /* MENU MOBILE */
 
-  const mobileMenu =
+  const menu =
     document.querySelector(".mobile-menu");
 
-  document.querySelectorAll(".mobile-links a")
+  document.querySelectorAll(".mobile-menu nav a")
     .forEach(function (link) {
 
       link.addEventListener("click", function () {
 
-        if (mobileMenu) {
-          mobileMenu.open = false;
+        if (menu) {
+          menu.open = false;
         }
 
       });
@@ -2387,18 +2568,18 @@ footer {
   document.addEventListener("click", function (evento) {
 
     if (
-      mobileMenu &&
-      mobileMenu.open &&
-      !mobileMenu.contains(evento.target)
+      menu &&
+      menu.open &&
+      !menu.contains(evento.target)
     ) {
 
-      mobileMenu.open = false;
+      menu.open = false;
 
     }
 
   });
 
-  atualizarSimulador();
+  atualizar();
 
 })();
 
