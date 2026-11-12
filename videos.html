@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#260713">
+  <meta name="description" content="HYPERBOREA — vídeos comerciais com roteiro, produção visual com IA e edição para produtos, comércios e imóveis. Conheça o portfólio e solicite um orçamento.">
+  <title>Vídeos Comerciais | HYPERBOREA — Agência Criativa</title>
+  <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --vinho:#300817; --vinho-escuro:#19040d; --vinho-claro:#59152a;
+      --ouro:#c6a069; --ouro-claro:#f0d9ae;
+      --texto:#fbf2e8; --suave:#ddc6c1; --linha:rgba(203,163,101,.35);
+    }
+    *,*::before,*::after {box-sizing:border-box}
+    html {scroll-behavior:smooth;scroll-padding-top:92px}
+    body {
+      margin:0;min-width:320px;overflow-x:clip;color:var(--texto);
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      background:radial-gradient(ellipse 55% 20% at 95% 10%,#89304748,transparent 76%),
+        radial-gradient(ellipse 58% 23% at 5% 57%,#7e263a36,transparent 76%),
+        linear-gradient(180deg,#260713,#3b0a1b 45%,#19040d);
+    }
+    h1,h2,h3,p {margin:0}
+    h1,h2,h3 {font-family:Georgia,"Times New Roman",serif;font-weight:500}
+    a {color:inherit;text-decoration:none}
+    img {display:block;max-width:100%}
+    button {font:inherit;cursor:pointer}
+    a:focus-visible,button:focus-visible,summary:focus-visible {outline:2px solid var(--ouro-claro);outline-offset:4px}
+    [hidden] {display:none!important}
+    .container {width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .eyebrow {font-size:.7rem;font-weight:750;letter-spacing:.21em;text-transform:uppercase;color:var(--ouro-claro)}
+    .gold {color:var(--ouro-claro)}
+    .lead {color:var(--suave);line-height:1.83;max-width:680px}
+    .section-title {font-size:clamp(2.4rem,5vw,4.7rem);line-height:1.08;letter-spacing:-.025em;margin:14px 0 18px}
+    .btn {display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:49px;
+      padding:13px 21px;border:1px solid var(--ouro);font-weight:700;font-size:.9rem;
+      transition:transform .2s,background .2s,box-shadow .2s}
+    .btn:hover {transform:translateY(-2px)}
+    .btn-primary {background:var(--ouro);color:#290715}
+    .btn-primary:hover {background:var(--ouro-claro);box-shadow:0 10px 26px #10020a72}
+    .btn-outline {color:var(--ouro-claro);background:#53142933}
+    .btn-outline:hover {background:#75263d}
+    .actions {display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:29px}
+
+    /* Cabeçalho: mesma identidade da index.html */
+    .site-header {position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(215,172,109,.27);
+      background:rgba(29,5,14,.94);backdrop-filter:blur(12px)}
+    .nav-row {min-height:75px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand {display:inline-flex;align-items:center;gap:12px;min-width:0;color:var(--ouro-claro)}
+    .brand img {width:43px;height:48px;object-fit:contain;flex:none}
+    .brand strong {display:block;font:600 clamp(1rem,2vw,1.42rem)/1.1 Georgia,serif;letter-spacing:.16em}
+    .brand small {display:block;margin-top:5px;font-size:.55rem;font-weight:600;letter-spacing:.35em;color:#d5b98e}
+    .nav-links {display:flex;align-items:center;gap:21px;color:#f0dfce;font-size:.86rem}
+    .nav-links a:hover,.nav-links a[aria-current="page"] {color:var(--ouro-claro)}
+    .nav-links .nav-cta {padding:10px 15px;border:1px solid var(--ouro);color:var(--ouro-claro)}
+    .mobile-menu {display:none;position:relative}
+    .mobile-menu summary {list-style:none;padding:9px 13px;border:1px solid var(--ouro-claro);color:var(--ouro-claro);font-size:.85rem;font-weight:700;cursor:pointer}
+    .mobile-menu summary::-webkit-details-marker {display:none}
+    .mobile-menu nav {position:absolute;right:0;top:calc(100% + 12px);min-width:215px;display:grid;gap:8px;
+      padding:12px;background:#310a1a;border:1px solid #e7d2b0;box-shadow:0 18px 40px #000a}
+    .mobile-menu nav a {display:block;padding:12px 14px;border:1px solid #e9d4b67a;color:#f8e8d6;text-align:center}
+    .mobile-menu nav a:hover {background:#5a1730}
+
+    /* Abertura cinematográfica */
+    .hero {padding:clamp(65px,8vw,110px) 0 clamp(70px,8vw,110px)}
+    .hero-grid {display:grid;grid-template-columns:1.07fr .93fr;gap:clamp(30px,5vw,78px);align-items:center}
+    .hero h1 {font-size:clamp(3rem,6.7vw,6.65rem);letter-spacing:-.037em;line-height:1.01;margin:23px 0 25px}
+    .hero .lead {font-size:clamp(.99rem,1.2vw,1.12rem)}
+    .hero-note {margin-top:26px;color:#d5b995;font-size:.8rem;letter-spacing:.07em}
+    .hero-visual {position:relative;max-width:450px;width:100%;margin-inline:auto}
+    .visual-back {position:absolute;inset:25px -15px -18px 19px;border:1px solid #cba16366}
+    .visual-frame {position:relative;isolation:isolate;aspect-ratio:812/1024;max-height:600px;overflow:hidden;
+      background:radial-gradient(ellipse at 50% 42%,#7b294b88,transparent 55%),#230711;
+      border:1px solid #d8ac6f;box-shadow:0 26px 65px #0c020b9c}
+    .visual-frame::after {content:"";position:absolute;inset:9px;border:1px solid #f0d9ae47;pointer-events:none;z-index:2}
+    .visual-frame img {position:relative;z-index:1;width:100%;height:100%;object-fit:contain}
+    .visual-fallback {position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;
+      gap:12px;color:var(--ouro-claro);text-align:center}
+    .visual-fallback span {font:normal clamp(7rem,18vw,12rem) Georgia,serif;opacity:.4}
+    .visual-fallback p {font:normal 1.25rem Georgia,serif;letter-spacing:.08em}
+    .visual-caption {position:absolute;z-index:3;left:18px;right:18px;bottom:18px;padding:12px 10px;
+      color:var(--ouro-claro);background:#220713ea;border:1px solid #cda66a99;
+      text-align:center;font-size:.68rem;font-weight:750;letter-spacing:.14em}
+    .features {border-block:1px solid var(--linha);background:#21071177}
+    .features-row {display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+    .feature {padding:24px 14px;text-align:center;color:#ead7c9;font-size:.87rem;line-height:1.5}
+    .feature+.feature {border-left:1px solid var(--linha)}
+    .feature b {color:var(--ouro-claro);font:normal 1.55rem Georgia,serif;margin-right:8px}
+
+    /* Catálogo: nenhum MP4 é carregado antes do clique */
+    .portfolio {padding:clamp(80px,10vw,132px) 0 105px}
+    .intro {text-align:center}
+    .intro .lead {margin-inline:auto}
+    .notice {max-width:795px;margin:28px auto 0;padding:16px 22px;border:1px solid var(--linha);
+      color:#e8d4c3;background:#250914a8;text-align:center;font-size:.9rem;line-height:1.75}
+    .filters {display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:36px 0 26px}
+    .filter {padding:10px 17px;border:1px solid #c59b6173;background:transparent;color:#e7d0ba;font-size:.83rem}
+    .filter:hover {background:#50152a}
+    .filter[aria-pressed="true"] {background:var(--ouro);border-color:var(--ouro);color:#2e0917;font-weight:750}
+    .portfolio-count {min-height:1.5em;text-align:right;color:#cfb79e;font-size:.76rem;margin-bottom:13px}
+    .portfolio-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:27px}
+    .video-card {min-width:0;background:linear-gradient(145deg,#55203866,#200711e0);border:1px solid var(--linha);
+      box-shadow:0 17px 40px #10020b42;transition:transform .23s,border-color .23s}
+    .video-card:hover {transform:translateY(-4px);border-color:#dfbb83a3}
+    .thumb {position:relative;aspect-ratio:16/9;overflow:hidden;display:grid;place-items:center;
+      border-bottom:1px solid var(--linha);background:#250815}
+    .thumb::before {content:"";position:absolute;inset:0;opacity:.9;
+      background:radial-gradient(circle at 74% 30%,#c6a06936,transparent 32%),linear-gradient(130deg,#6a263e,#2a0818 58%,#13030a)}
+    .thumb[data-tone="padaria"]::before {background:radial-gradient(circle at 36% 65%,#c6a06945,transparent 34%),linear-gradient(135deg,#5d2c25,#240814 65%,#13030a)}
+    .thumb[data-tone="comercio"]::before {background:radial-gradient(circle at 30% 27%,#b5768750,transparent 37%),linear-gradient(120deg,#421c43,#210710 70%)}
+    .thumb[data-tone="imoveis"]::before {background:linear-gradient(139deg,#775b5760,transparent 48%),linear-gradient(25deg,#240712,#65354b 70%,#160510)}
+    .thumb::after {content:"";position:absolute;inset:15px;border:1px solid #f0d9ae55;pointer-events:none;z-index:2}
+    .thumb-mark {position:relative;z-index:1;text-align:center;color:#f0d9ae;display:grid;justify-items:center;gap:8px}
+    .thumb-mark strong {font:normal clamp(3.3rem,7vw,5.4rem)/1 Georgia,serif;opacity:.55}
+    .thumb-mark span {font-size:.68rem;letter-spacing:.25em;font-weight:700}
+    .thumb img {position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover}
+    .thumb-status {position:absolute;top:20px;left:20px;z-index:3;padding:8px 11px;
+      border:1px solid #dfbb83b5;background:#210713dc;color:#f3ddb4;font-size:.65rem;font-weight:750;letter-spacing:.12em}
+    .play-overlay {position:absolute;inset:0;z-index:4;border:0;background:#16040b31;display:grid;place-items:center;color:white}
+    .play-overlay:hover {background:#16040b62}
+    .play-icon {display:grid;place-items:center;width:73px;height:73px;border-radius:50%;background:#300817e8;
+      border:2px solid var(--ouro-claro);font-size:2rem;box-shadow:0 8px 26px #0009}
+    .video-body {padding:25px 27px 28px}
+    .video-category {color:var(--ouro-claro);font-size:.69rem;letter-spacing:.18em;font-weight:700;text-transform:uppercase}
+    .video-body h3 {font-size:clamp(1.45rem,2.5vw,2rem);margin:9px 0 11px}
+    .video-body p {min-height:3.2em;color:var(--suave);line-height:1.7;font-size:.91rem}
+    .video-footer {margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:13px;flex-wrap:wrap}
+    .status-label {color:#e7cb9f;font-size:.76rem}
+    .video-footer a {color:#eed0a4;border-bottom:1px solid var(--ouro);font-size:.83rem;padding-bottom:4px}
+    .portfolio-end {text-align:center;margin-top:35px;color:var(--suave);font-size:.89rem;line-height:1.7}
+
+    /* Criação responsável */
+    .process {padding:94px 0 105px;border-top:1px solid var(--linha)}
+    .process .lead {margin-bottom:36px}
+    .steps {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .step {padding:28px 26px;border-top:1px solid var(--ouro);background:#24091388}
+    .step b {font:normal 2.7rem Georgia,serif;color:var(--ouro)}
+    .step h3 {font-size:1.55rem;margin:15px 0 10px}
+    .step p {font-size:.91rem;line-height:1.74;color:var(--suave)}
+    .promise {padding:90px 0;border-block:1px solid var(--linha);background:linear-gradient(140deg,#4e13294d,#1b0510b0)}
+    .promise-grid {display:grid;grid-template-columns:.8fr 1.2fr;align-items:start;gap:65px}
+    .promise-copy {color:var(--suave);line-height:1.85}
+    .promise-copy strong {color:#f2dfc8}
+    .promise-points {margin:22px 0 0;padding:0;list-style:none;display:grid;gap:15px}
+    .promise-points li {padding-left:24px;position:relative}
+    .promise-points li::before {content:"✦";position:absolute;left:0;color:var(--ouro)}
+    .faq {padding:93px 0}
+    .faq details {max-width:900px;border-bottom:1px solid var(--linha);padding:20px 0}
+    .faq summary {cursor:pointer;color:#f4e5d5;font-size:1rem;font-weight:700}
+    .faq details p {padding:14px 18px 0 0;color:var(--suave);line-height:1.78;font-size:.94rem}
+    .contact {padding:90px 0 98px;text-align:center;border-top:1px solid var(--linha);background:#19040d99}
+    .contact .lead {margin-inline:auto}
+    .contact .actions {justify-content:center}
+    footer {border-top:1px solid var(--linha);padding:28px 0;color:#d1b9a9;font-size:.78rem}
+    .footer-row {display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    footer a {color:var(--ouro-claro)}
+    .whatsapp {position:fixed;z-index:20;right:18px;bottom:18px;width:60px;height:60px;
+      border:2px solid var(--ouro);border-radius:50%;background:var(--vinho);display:grid;
+      place-items:center;padding:6px;box-shadow:0 8px 25px #10030c85}
+    .whatsapp img {width:100%;height:100%;object-fit:contain}
+    .player-dialog {width:min(960px,calc(100% - 28px));max-height:95dvh;padding:19px;
+      color:var(--texto);background:#1c0610;border:1px solid var(--ouro);box-shadow:0 25px 80px #000c}
+    .player-dialog::backdrop {background:#090207e8;backdrop-filter:blur(4px)}
+    .dialog-top {display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}
+    .dialog-top h3 {font-size:clamp(1.2rem,3vw,1.7rem)}
+    .dialog-close {border:1px solid var(--ouro);background:#4d1328;color:var(--ouro-claro);padding:9px 14px;font-weight:700}
+    .player-dialog video {display:block;width:100%;max-height:70dvh;aspect-ratio:16/9;background:#080308}
+    .dialog-note {margin-top:11px;color:var(--suave);font-size:.85rem}
+
+    @media(max-width:960px) {
+      .nav-links {display:none}
+      .mobile-menu {display:block}
+      .hero-grid {grid-template-columns:1fr .86fr;gap:26px}
+      .hero h1 {font-size:clamp(2.8rem,6vw,4.9rem)}
+    }
+    @media(max-width:700px) {
+      .container {width:calc(100% - 32px)}
+      .hero {padding:65px 0 82px}
+      .hero-grid,.promise-grid {grid-template-columns:1fr}
+      .hero-visual {max-width:350px;margin-top:25px}
+      .hero h1 {font-size:clamp(2.85rem,11vw,4.6rem)}
+      .hero-note {line-height:1.6}
+      .features-row {grid-template-columns:1fr}
+      .feature {padding:15px}
+      .feature+.feature {border-left:0;border-top:1px solid var(--linha)}
+      .portfolio,.process,.faq {padding:75px 0}
+      .portfolio-grid,.steps {grid-template-columns:1fr}
+      .filters {justify-content:flex-start}
+      .portfolio-count {text-align:left}
+      .notice {margin-top:20px}
+      .promise {padding:74px 0}
+      .contact {padding:75px 0 90px}
+      .actions .btn {width:100%}
+      .whatsapp {width:55px;height:55px;right:13px;bottom:13px}
+      .brand img {width:35px;height:42px}
+      .brand strong {font-size:1.06rem}
+      .brand small {font-size:.49rem}
+    }
+    @media(prefers-reduced-motion:reduce) {
+      html {scroll-behavior:auto}
+      *,*::before,*::after {transition:none!important}
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="/index.html" aria-label="HYPERBOREA — voltar ao início">
+        <img src="/assets/img/monograma-h.svg" alt="" width="43" height="48">
+        <span><strong>HYPERBOREA</strong><small>AGÊNCIA CRIATIVA</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="/index.html">Início</a>
+        <a href="#portfolio" aria-current="page">Portfólio</a>
+        <a href="#processo">Como funciona</a>
+        <a href="/sobre.html">Sobre</a>
+        <a class="nav-cta" href="#contato">Contato</a>
+      </nav>
+      <details class="mobile-menu">
+        <summary>☰ Menu</summary>
+        <nav aria-label="Navegação para celular">
+          <a href="/index.html">Início</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#processo">Como funciona</a>
+          <a href="/sobre.html">Sobre</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="heroTitle">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">HYPERBOREA · PRODUÇÃO VISUAL</p>
+          <h1 id="heroTitle">Vídeos <span class="gold">Comerciais.</span></h1>
+          <p class="lead">Sua ideia merece ganhar movimento. Criamos conceitos audiovisuais
+            com roteiro, produção visual com inteligência artificial e edição para apresentar
+            produtos, estabelecimentos e imóveis com personalidade.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#portfolio">Explorar o portfólio <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="#contato">Solicitar um orçamento</a>
+          </div>
+          <p class="hero-note">PRODUTOS &nbsp;·&nbsp; COMÉRCIOS &nbsp;·&nbsp; IMÓVEIS</p>
+        </div>
+        <div class="hero-visual" aria-label="Apresentação visual da área de vídeos comerciais">
+          <div class="visual-back" aria-hidden="true"></div>
+          <div class="visual-frame">
+            <div class="visual-fallback" aria-hidden="true"><span>H</span><p>Vídeos Comerciais</p></div>
+            <img id="heroArtwork" src="/assets/img/card-videos-comerciais.webp"
+              alt="Arte de apresentação da HYPERBOREA para vídeos comerciais"
+              width="812" height="1024" decoding="async">
+            <span class="visual-caption">ROTEIRO &nbsp;·&nbsp; VISUAL COM IA &nbsp;·&nbsp; EDIÇÃO</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="features" aria-label="Diferenciais da produção visual">
+      <div class="container features-row">
+        <div class="feature"><b>✦</b> Criação visual personalizada</div>
+        <div class="feature"><b>◈</b> Fidelidade às referências</div>
+        <div class="feature"><b>◇</b> Formatos adequados a cada projeto</div>
+      </div>
+    </div>
+
+    <section class="portfolio" id="portfolio" aria-labelledby="portfolioTitle">
+      <div class="container">
+        <div class="intro">
+          <p class="eyebrow">PORTFÓLIO AUDIOVISUAL</p>
+          <h2 class="section-title" id="portfolioTitle">Histórias que <span class="gold">ganham movimento.</span></h2>
+          <p class="lead">Explore nossas linhas de produção para diferentes tipos de negócio.
+            À medida que os vídeos demonstrativos forem finalizados, você poderá assisti-los
+            aqui mesmo, sem sair do site.</p>
+          <p class="notice"><strong>Portfólio em preparação.</strong> As categorias abaixo apresentam
+            os tipos de vídeo que estamos desenvolvendo. Ainda não representam comerciais
+            finalizados nem trabalhos de clientes.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar vídeos por categoria">
+          <button class="filter" type="button" data-filter="todos" aria-pressed="true">Todos</button>
+          <button class="filter" type="button" data-filter="alimentos" aria-pressed="false">Alimentos &amp; bebidas</button>
+          <button class="filter" type="button" data-filter="comercio" aria-pressed="false">Comércios</button>
+          <button class="filter" type="button" data-filter="imoveis" aria-pressed="false">Imóveis</button>
+        </div>
+        <p class="portfolio-count" id="portfolioCount" aria-live="polite"></p>
+        <div class="portfolio-grid" id="portfolioGrid" aria-label="Catálogo de vídeos comerciais"></div>
+        <p class="portfolio-end">Os filmes demonstrativos serão identificados como criações de
+          portfólio da HYPERBOREA. Produções contratadas por clientes não serão publicadas
+          sem autorização específica.</p>
+      </div>
+    </section>
+
+    <section class="process" id="processo" aria-labelledby="processTitle">
+      <div class="container">
+        <p class="eyebrow">COMO TRABALHAMOS</p>
+        <h2 class="section-title" id="processTitle">Da sua ideia <span class="gold">ao comercial.</span></h2>
+        <p class="lead">Um processo objetivo, pensado para valorizar o que torna seu negócio único.</p>
+        <div class="steps">
+          <article class="step"><b>01</b><h3>Envie seus materiais</h3>
+            <p>Você compartilha fotos, imagens e informações do produto, ambiente ou serviço.
+              Nesta modalidade, não realizamos captação presencial.</p></article>
+          <article class="step"><b>02</b><h3>Criação e movimento</h3>
+            <p>Desenvolvemos conceito, roteiro e produção visual com apoio de IA, respeitando
+              as características fundamentais dos materiais fornecidos.</p></article>
+          <article class="step"><b>03</b><h3>Edição e entrega</h3>
+            <p>Trabalhamos ritmo, continuidade e acabamento. Combinamos duração, formato,
+              revisões e condições de entrega no orçamento.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="promise" aria-labelledby="promiseTitle">
+      <div class="container promise-grid">
+        <div>
+          <p class="eyebrow">NOSSO COMPROMISSO</p>
+          <h2 class="section-title" id="promiseTitle">Criatividade com <span class="gold">transparência.</span></h2>
+        </div>
+        <div class="promise-copy">
+          <p>A inteligência artificial amplia as possibilidades da criação audiovisual,
+            mas não substitui o compromisso com a <strong>fidelidade das informações</strong>.
+            Nosso trabalho parte dos materiais de referência e busca preservar as
+            características essenciais de produtos e espaços.</p>
+          <ul class="promise-points">
+            <li>Informamos o uso de recursos de inteligência artificial no processo.</li>
+            <li>Não apresentamos imóveis, estabelecimentos ou produtos fictícios como se fossem reais.</li>
+            <li>Os vídeos de portfólio são identificados como demonstrativos quando for o caso.</li>
+            <li>Os materiais dos clientes são utilizados dentro do escopo autorizado do projeto.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="duvidas" aria-labelledby="faqTitle">
+      <div class="container">
+        <p class="eyebrow">DÚVIDAS FREQUENTES</p>
+        <h2 class="section-title" id="faqTitle">Antes de <span class="gold">começar.</span></h2>
+        <details><summary>Preciso gravar um vídeo ou fazer filmagens?</summary>
+          <p>Não necessariamente. A produção pode começar a partir de fotografias e outros
+            materiais que você enviar. Nossa modalidade atual não inclui filmagem presencial.</p></details>
+        <details><summary>Vocês utilizam inteligência artificial?</summary>
+          <p>Sim, quando apropriado ao projeto, de forma transparente. Combinamos o conceito
+            visual e os limites de fidelidade antes da produção.</p></details>
+        <details><summary>O vídeo produzido para minha empresa aparecerá no portfólio?</summary>
+          <p>Não automaticamente. O material contratado é entregue ao cliente. Qualquer
+            divulgação pela HYPERBOREA depende de autorização específica.</p></details>
+        <details><summary>Qual é o preço de um vídeo comercial?</summary>
+          <p>O orçamento depende do formato, duração, complexidade e materiais disponíveis.
+            Entre em contato para conversarmos sobre sua necessidade.</p></details>
+      </div>
+    </section>
+
+    <section class="contact" id="contato" aria-labelledby="contactTitle">
+      <div class="container">
+        <p class="eyebrow">VAMOS CRIAR JUNTOS</p>
+        <h2 class="section-title" id="contactTitle">Seu negócio merece <span class="gold">ser visto.</span></h2>
+        <p class="lead">Conte o que deseja apresentar e envie suas referências.
+          Vamos estudar um formato de vídeo comercial para sua ideia.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://wa.me/message/FHWOVDSQ3AKCO1"
+            target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp ↗</a>
+          <a class="btn btn-outline" href="mailto:contato@hyperborea.com.br?subject=Or%C3%A7amento%20de%20v%C3%ADdeo%20comercial">Enviar um e-mail</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-row">
+    <p>© <span id="ano"></span> HYPERBOREA · Agência Criativa</p>
+    <a href="/index.html">Voltar ao início ↑</a>
+  </div></footer>
+
+  <a class="whatsapp" href="https://wa.me/message/FHWOVDSQ3AKCO1"
+    target="_blank" rel="noopener noreferrer" aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
+    <img src="/assets/img/whats-icon.svg" alt="" width="48" height="48">
+  </a>
+
+  <dialog class="player-dialog" id="playerDialog" aria-labelledby="playerTitle">
+    <div class="dialog-top">
+      <h3 id="playerTitle">Vídeo comercial</h3>
+      <button class="dialog-close" id="closePlayer" type="button" aria-label="Fechar vídeo">Fechar ×</button>
+    </div>
+    <video id="portfolioPlayer" controls playsinline preload="none"></video>
+    <p class="dialog-note" id="playerNote">Produção visual HYPERBOREA.</p>
+  </dialog>
+
+  <script>
+    (function(){
+      "use strict";
+      document.getElementById("ano").textContent = new Date().getFullYear();
+
+      /*
+       * CATÁLOGO: para publicar um vídeo demonstrativo finalizado, preencha
+       * video e poster no item. Exemplos de caminhos:
+       * video: "/assets/video/portfolio/cafeteria.mp4",
+       * poster: "/assets/img/portfolio/cafeteria.webp"
+       * Os vídeos são carregados somente após o clique do visitante.
+       * Não inclua vídeos reais de clientes sem autorização específica.
+       */
+      const projetos = [
+        {id:"cafeteria",categoria:"alimentos",categoriaTexto:"ALIMENTOS & BEBIDAS",
+          tom:"cafe",titulo:"Cafeterias & confeitaria",
+          descricao:"Conceitos para cafés, sobremesas, brownies e experiências gastronômicas.",video:"",poster:""},
+        {id:"padaria",categoria:"alimentos",categoriaTexto:"ALIMENTOS & BEBIDAS",
+          tom:"padaria",titulo:"Padarias & produtos",
+          descricao:"Vídeos para valorizar pães, doces, salgados e detalhes que despertam o apetite.",video:"",poster:""},
+        {id:"comercio",categoria:"comercio",categoriaTexto:"COMÉRCIOS & SERVIÇOS",
+          tom:"comercio",titulo:"Lojas & estabelecimentos",
+          descricao:"Apresentações dinâmicas de ambientes, fachadas, serviços e negócios locais.",video:"",poster:""},
+        {id:"imoveis",categoria:"imoveis",categoriaTexto:"IMÓVEIS & AMBIENTES",
+          tom:"imoveis",titulo:"Imóveis & ambientes",
+          descricao:"Percursos visuais e detalhes de espaços residenciais em projetos demonstrativos.",video:"",poster:""}
+      ];
+      const grid = document.getElementById("portfolioGrid");
+      const counter = document.getElementById("portfolioCount");
+      const filters = Array.from(document.querySelectorAll(".filter"));
+      const dialog = document.getElementById("playerDialog");
+      const player = document.getElementById("portfolioPlayer");
+      const whatsapp = "https://wa.me/message/FHWOVDSQ3AKCO1";
+
+      function criarProjeto(projeto){
+        const article = document.createElement("article");
+        article.className = "video-card";
+        article.dataset.category = projeto.categoria;
+        const thumb = document.createElement("div");
+        thumb.className = "thumb";
+        thumb.dataset.tone = projeto.tom;
+        const mark = document.createElement("div");
+        mark.className = "thumb-mark";
+        mark.setAttribute("aria-hidden","true");
+        const letter = document.createElement("strong");
+        letter.textContent = "H";
+        const brand = document.createElement("span");
+        brand.textContent = "HYPERBOREA";
+        mark.append(letter,brand);
+        thumb.appendChild(mark);
+        if(projeto.poster){
+          const img = document.createElement("img");
+          img.src = projeto.poster;
+          img.alt = "";
+          img.loading = "lazy";
+          img.decoding = "async";
+          thumb.appendChild(img);
+        }
+        const status = document.createElement("span");
+        status.className = "thumb-status";
+        status.textContent = projeto.video ? "ASSISTA AO COMERCIAL" : "EM PREPARAÇÃO";
+        thumb.appendChild(status);
+        if(projeto.video){
+          const play = document.createElement("button");
+          play.type = "button";
+          play.className = "play-overlay";
+          play.setAttribute("aria-label","Assistir: " + projeto.titulo);
+          const symbol = document.createElement("span");
+          symbol.className = "play-icon";
+          symbol.textContent = "▶";
+          symbol.setAttribute("aria-hidden","true");
+          play.appendChild(symbol);
+          play.addEventListener("click",function(){abrirVideo(projeto)});
+          thumb.appendChild(play);
+        }
+        const body = document.createElement("div");
+        body.className = "video-body";
+        const tag = document.createElement("div");
+        tag.className = "video-category";
+        tag.textContent = projeto.categoriaTexto;
+        const heading = document.createElement("h3");
+        heading.textContent = projeto.titulo;
+        const description = document.createElement("p");
+        description.textContent = projeto.descricao;
+        const foot = document.createElement("div");
+        foot.className = "video-footer";
+        const note = document.createElement("span");
+        note.className = "status-label";
+        note.textContent = projeto.video ? "Vídeo demonstrativo" : "Demonstração em produção";
+        const link = document.createElement("a");
+        link.href = whatsapp;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = "Solicitar um vídeo assim ↗";
+        foot.append(note,link);
+        body.append(tag,heading,description,foot);
+        article.append(thumb,body);
+        return article;
+      }
+      function filtrar(categoria){
+        let total = 0;
+        Array.from(grid.children).forEach(function(card){
+          const visible = categoria === "todos" || card.dataset.category === categoria;
+          card.hidden = !visible;
+          if(visible) total++;
+        });
+        counter.textContent = total + (total === 1 ? " proposta de produção" : " propostas de produção");
+        filters.forEach(function(button){
+          button.setAttribute("aria-pressed",String(button.dataset.filter === categoria));
+        });
+      }
+      function abrirVideo(projeto){
+        if(!projeto.video) return;
+        document.getElementById("playerTitle").textContent = projeto.titulo;
+        document.getElementById("playerNote").textContent =
+          "Vídeo demonstrativo HYPERBOREA · Produção visual com IA e edição.";
+        if(projeto.poster) player.poster = projeto.poster;
+        else player.removeAttribute("poster");
+        player.src = projeto.video;
+        if(typeof dialog.showModal === "function") dialog.showModal();
+        else dialog.setAttribute("open","");
+        const tentativa = player.play();
+        if(tentativa && typeof tentativa.catch === "function") tentativa.catch(function(){});
+      }
+      function pararVideo(){
+        player.pause();
+        player.removeAttribute("src");
+        player.removeAttribute("poster");
+        player.load();
+      }
+      projetos.forEach(function(projeto){grid.appendChild(criarProjeto(projeto))});
+      filters.forEach(function(button){
+        button.addEventListener("click",function(){filtrar(button.dataset.filter)});
+      });
+      document.getElementById("closePlayer").addEventListener("click",function(){
+        if(typeof dialog.close === "function") dialog.close();
+        else {dialog.removeAttribute("open");pararVideo();}
+      });
+      dialog.addEventListener("close",pararVideo);
+      dialog.addEventListener("click",function(event){
+        if(event.target === dialog) dialog.close();
+      });
+      document.querySelectorAll(".mobile-menu nav a").forEach(function(link){
+        link.addEventListener("click",function(){document.querySelector(".mobile-menu").open = false});
+      });
+      const heroArtwork = document.getElementById("heroArtwork");
+      heroArtwork.addEventListener("error",function(){heroArtwork.hidden = true});
+      filtrar("todos");
+    })();
+  </script>
+</body>
+</html>
