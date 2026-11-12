@@ -276,6 +276,41 @@
       .welcome-media .video-intro { font-size: .88rem; line-height: 1.5; margin-bottom: 14px; }
       .video-shell { width: 100%; }
     }
+    
+/* =========================================
+   HYPERBOREA — TRÊS CARDS NO DESKTOP
+   Mobile permanece inalterado
+   ========================================= */
+
+@media (min-width: 851px) {
+
+  .services-grid {
+    width: min(1180px, calc(100% - 48px));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(14px, 1.8vw, 26px);
+    align-items: stretch;
+  }
+
+  .services-grid > .service-panel:last-child {
+    grid-column: auto;
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .service-panel > .container {
+    padding: clamp(14px, 1.5vw, 22px);
+  }
+
+  .card-stage {
+    width: min(100%, 290px);
+  }
+
+  .service-copy h3 {
+    font-size: clamp(1.6rem, 2.1vw, 2.1rem);
+  }
+
+}
+
 </style>
 </head>
 <body>
