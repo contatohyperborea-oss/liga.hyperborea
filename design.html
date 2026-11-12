@@ -1,0 +1,943 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#300817">
+  <meta name="description" content="Design e Identidade Visual HYPERBOREA. Logotipos 2D vetorizados por R$ 90, banners por R$ 50, posts por R$ 30 e carrosséis por R$ 120. Conheça nosso portfólio.">
+  <title>Design & Identidade Visual | HYPERBOREA</title>
+  <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --vinho:#300817;
+      --escuro:#19040d;
+      --vinho-claro:#5a1931;
+      --ouro:#c6a069;
+      --ouro-claro:#f0d9ae;
+      --texto:#fbf2e8;
+      --suave:#ddc6c1;
+      --linha:rgba(198,160,105,.35);
+      --max:1160px;
+    }
+    * {box-sizing:border-box}
+    html {scroll-behavior:smooth;scroll-padding-top:88px}
+    body {margin:0;min-width:320px;color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6;background:var(--escuro);overflow-x:hidden}
+    body::before {content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 82% 8%,#80304a55,transparent 40%),radial-gradient(ellipse at 10% 70%,#63243e55,transparent 42%),linear-gradient(165deg,#240711 0%,#3b0b20 50%,#18040c 100%)}
+    a {color:inherit;text-decoration:none}
+    img {display:block;max-width:100%}
+    button {font:inherit;cursor:pointer}
+    h1,h2,h3,p {margin:0}
+    h1,h2,h3 {font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.12}
+    :is(a,button,summary):focus-visible {outline:2px solid var(--ouro-claro);outline-offset:4px}
+    .container {width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .eyebrow {font-size:.72rem;font-weight:750;letter-spacing:.22em;text-transform:uppercase;color:var(--ouro-claro)}
+    .gold {color:var(--ouro-claro)}
+    .muted {color:var(--suave)}
+    .section {padding:85px 0}
+    .section-head {max-width:760px;margin-bottom:36px}
+    .section-head h2 {font-size:clamp(2.25rem,4.7vw,4.3rem);margin:12px 0 15px}
+    .section-head p:last-child {color:var(--suave);max-width:700px}
+    .skip {position:absolute;left:12px;top:-70px;z-index:100;padding:10px 15px;background:var(--ouro-claro);color:var(--escuro)}
+    .skip:focus {top:12px}
+    .btn {display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border:1px solid var(--ouro);font-weight:750;font-size:.9rem;text-align:center;transition:background .2s,transform .2s}
+    .btn:hover {transform:translateY(-2px)}
+    .btn-primary {background:var(--ouro);color:var(--escuro)}
+    .btn-primary:hover {background:var(--ouro-claro)}
+    .btn-outline {background:transparent;color:var(--ouro-claro)}
+    .btn-outline:hover {background:#6b2440}
+    .actions {display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}
+
+    /* Cabeçalho coerente com index.html e sites.html */
+
+    .site-header {position:sticky;top:0;z-index:30;border-bottom:1px solid var(--linha);background:rgba(25,4,13,.96);backdrop-filter:blur(12px)}
+    .nav {min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand {display:flex;align-items:center;gap:11px;min-width:0;color:var(--ouro-claro)}
+    .brand img {width:42px;height:46px;object-fit:contain;flex-shrink:0}
+    .brand strong {display:block;font:500 clamp(1.02rem,2vw,1.35rem) Georgia,serif;letter-spacing:.15em;white-space:nowrap}
+    .brand small {display:block;font-size:.55rem;font-weight:700;letter-spacing:.30em;color:#d9bd96;margin-top:2px}
+    .nav-links {display:flex;align-items:center;gap:24px;font-size:.84rem}
+    .nav-links a:hover {color:var(--ouro-claro)}
+    .nav-links .nav-contact {padding:9px 13px;border:1px solid var(--ouro);color:var(--ouro-claro)}
+    .mobile-menu {display:none;position:relative}
+    .mobile-menu summary {cursor:pointer;list-style:none;color:var(--ouro-claro);padding:9px 14px;border:1px solid var(--ouro);font-size:.9rem}
+    .mobile-menu summary::-webkit-details-marker {display:none}
+    .mobile-menu nav {position:absolute;right:0;top:calc(100% + 10px);width:min(265px,calc(100vw - 35px));display:grid;padding:10px;border:1px solid var(--ouro);background:#300817;box-shadow:0 20px 40px #0008}
+    .mobile-menu nav a {padding:11px 14px;border-bottom:1px solid var(--linha)}
+    .mobile-menu nav a:last-child {border-bottom:0}
+
+    /* Abertura / chamada comercial */
+
+    .hero {padding:clamp(65px,8vw,108px) 0 80px;border-bottom:1px solid var(--linha)}
+    .hero-grid {display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,75px);align-items:center}
+    .hero h1 {font-size:clamp(2.85rem,5.8vw,5.6rem);letter-spacing:-.035em;margin:18px 0 22px}
+    .hero-description {max-width:595px;color:var(--suave);font-size:clamp(1rem,1.45vw,1.12rem)}
+    .hero-highlights {display:flex;align-items:center;gap:25px;flex-wrap:wrap;margin-top:29px}
+    .hero-highlights div {border-left:2px solid var(--ouro);padding-left:14px}
+    .hero-highlights strong {display:block;color:var(--ouro-claro);font:2.15rem Georgia,serif;line-height:1.1}
+    .hero-highlights span {display:block;color:var(--suave);font-size:.76rem;margin-top:5px}
+    .hero-art {position:relative;min-height:405px;display:grid;place-items:center}
+    .art-outline {position:absolute;width:87%;aspect-ratio:1;border:1px solid #c6a06970;transform:rotate(13deg)}
+    .art-outline:nth-child(2) {width:66%;transform:rotate(-15deg);border-color:#c6a06955}
+    .hero-board {position:relative;width:min(360px,85%);padding:26px;border:1px solid var(--ouro);background:linear-gradient(145deg,#5b1832,#240714 80%);box-shadow:0 25px 60px #0009;transform:rotate(-4deg)}
+    .hero-board::before,.hero-board::after {content:"";position:absolute;width:24px;height:24px;border:1px solid var(--ouro-claro)}
+    .hero-board::before {top:10px;left:10px;border-right:0;border-bottom:0}
+    .hero-board::after {bottom:10px;right:10px;border-left:0;border-top:0}
+    .hero-board .board-small {font-size:.64rem;letter-spacing:.25em;color:var(--ouro-claro);text-align:center}
+    .board-symbol {width:130px;height:130px;margin:25px auto 17px;padding:18px;border:1px solid var(--ouro);display:grid;place-items:center;background:#200611}
+    .board-symbol img {width:100%;height:100%;object-fit:contain}
+    .board-brand {font:1.9rem Georgia,serif;letter-spacing:.22em;text-align:center;color:var(--ouro-claro)}
+    .board-caption {text-align:center;color:var(--suave);font-size:.73rem;letter-spacing:.16em;margin-top:10px}
+    .board-swatches {display:flex;justify-content:center;gap:9px;margin-top:29px}
+    .board-swatches span {width:33px;height:17px;border:1px solid #ffffff5e;background:var(--swatch)}
+    .quality-strip {border-bottom:1px solid var(--linha);padding:22px 0;background:#16040c70}
+    .quality-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+    .quality-grid span {font-size:.82rem;color:var(--ouro-claro);letter-spacing:.05em}
+
+    /* Cartões de serviços / preços */
+
+    .service-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+    .service-card {min-width:0;display:flex;flex-direction:column;border:1px solid var(--linha);background:linear-gradient(145deg,#4b142b,#230712)}
+    .service-top {height:6px;background:linear-gradient(90deg,var(--ouro),#704630)}
+    .service-card > .service-content {padding:26px;display:flex;flex:1;flex-direction:column}
+    .service-num {color:var(--ouro);font-size:.7rem;letter-spacing:.24em}
+    .service-card h3 {font-size:clamp(1.5rem,2.4vw,2rem);margin:12px 0}
+    .service-card p {font-size:.91rem;color:var(--suave)}
+    .service-price {margin:25px 0 8px;font:2.35rem Georgia,serif;color:var(--ouro-claro);line-height:1.1}
+    .service-price small {display:block;font:.75rem system-ui,sans-serif;color:var(--suave);margin-top:7px}
+    .service-card .service-link {margin-top:auto;padding-top:22px;font-weight:700;font-size:.85rem;color:var(--ouro-claro);text-decoration:underline;text-underline-offset:5px}
+    .service-card.featured {border-color:var(--ouro)}
+    .service-card.featured .service-top {background:var(--ouro-claro)}
+    .small-note {font-size:.81rem;color:var(--suave);margin-top:20px}
+
+    /* Portfólio: exemplos reais e estudos demonstrativos */
+
+    .portfolio {border-block:1px solid var(--linha);background:#17050e88}
+    .filters {display:flex;gap:10px;flex-wrap:wrap;margin:0 0 28px}
+    .filter-btn {padding:9px 16px;background:transparent;color:var(--ouro-claro);border:1px solid var(--linha);font-size:.82rem}
+    .filter-btn:hover,.filter-btn[aria-pressed="true"] {background:var(--ouro);border-color:var(--ouro);color:var(--escuro)}
+    .work-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .work-card {overflow:hidden;background:#2e0d1c;border:1px solid var(--linha)}
+    .work-card[hidden] {display:none!important}
+    .work-art {min-height:260px;aspect-ratio:1.16;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+    .work-caption {padding:19px 20px 21px}
+    .work-caption .type {font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ouro-claro)}
+    .work-caption h3 {font:1.5rem Georgia,serif;margin:7px 0}
+    .work-caption p {font-size:.84rem;color:var(--suave)}
+
+    .art-marajoara {background:#e9e4db;padding:40px}
+    .art-marajoara img {width:min(78%,230px);height:210px;object-fit:contain}
+
+    .art-hyperborea {background:radial-gradient(circle at 50% 20%,#75314b,#240713 70%);flex-direction:column;padding:30px;color:var(--ouro-claro)}
+    .art-hyperborea img {width:100px;height:112px;object-fit:contain;margin-bottom:12px}
+    .art-hyperborea strong {font:1.8rem Georgia,serif;letter-spacing:.17em}
+    .art-hyperborea small {letter-spacing:.22em;font-size:.65rem;margin-top:9px}
+
+    .art-flora {background:#e9e8db;color:#415a42;flex-direction:column;gap:10px}
+    .flora-symbol {position:relative;width:110px;height:110px}
+    .flora-symbol span {position:absolute;left:43px;top:5px;width:27px;height:90px;border-radius:60% 60% 25% 25%;background:#a3b394;transform-origin:50% 52px;transform:rotate(var(--r))}
+    .flora-symbol i {position:absolute;left:45px;top:43px;width:24px;height:24px;border-radius:50%;background:#f7eccc}
+    .art-flora strong {font:2rem Georgia,serif;letter-spacing:.1em}
+    .art-flora small {font-size:.66rem;letter-spacing:.29em;text-transform:uppercase}
+
+    .art-banner {padding:18px;background:#b3a18b}
+    .banner-preview {width:100%;height:80%;min-height:170px;background:linear-gradient(115deg,#2e503e 0 54%,#d7be8f 54%);border:7px solid #f5eedf;display:flex;align-items:center;justify-content:space-between;padding:22px;box-shadow:0 13px 25px #0004}
+    .banner-copy {position:relative;z-index:1;color:#fff7e4}
+    .banner-copy small {text-transform:uppercase;letter-spacing:.18em;font-size:.55rem}
+    .banner-copy strong {display:block;font:clamp(1.3rem,2.6vw,2.3rem)/1.1 Georgia,serif;margin:10px 0}
+    .banner-copy b {display:inline-block;padding:5px 10px;background:#e8d2a8;color:#2e503e;font-size:.57rem;letter-spacing:.07em}
+    .cup {position:relative;width:80px;height:68px;background:#fff5de;border-radius:4px 4px 28px 28px;transform:rotate(-7deg);box-shadow:0 10px 0 -4px #38513d;flex-shrink:0}
+    .cup::after {content:"";position:absolute;right:-20px;top:8px;width:23px;height:35px;border:9px solid #fff5de;border-left:0;border-radius:0 50% 50% 0}
+    .cup::before {content:"";position:absolute;left:10px;right:10px;top:8px;height:12px;border-radius:50%;background:#765039}
+
+    .art-post {background:#d1bca9;padding:26px}
+    .post-preview {aspect-ratio:4/5;width:min(195px,78%);background:#f1e8dc;color:#54362b;box-shadow:12px 16px 0 #6e4d40;border:1px solid #e5d5bd;padding:19px 15px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(5deg)}
+    .post-preview small {text-align:center;letter-spacing:.2em;font-size:.5rem}
+    .post-preview .flower {font:5.5rem Georgia,serif;text-align:center;color:#ac6754;line-height:1}
+    .post-preview strong {font:1.43rem Georgia,serif;text-align:center;line-height:1.07}
+
+    .art-carousel {background:linear-gradient(135deg,#384f60,#172733);gap:6px;padding:20px}
+    .carousel-slide {width:17%;height:68%;background:#f2e8d5;color:#263d4c;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:5px;box-shadow:0 7px 12px #0003}
+    .carousel-slide:nth-child(even) {background:#d0b897}
+    .carousel-slide strong {font:clamp(1.2rem,2.5vw,2.3rem) Georgia,serif}
+    .carousel-slide small {font-size:.5rem;text-align:center;overflow-wrap:anywhere}
+
+    .art-identity {background:#f0e8db;padding:22px}
+    .identity-sheet {width:100%;background:#fff9ef;color:#31473e;box-shadow:0 14px 26px #0004;padding:20px;display:grid;gap:13px}
+    .identity-sheet strong {font:1.65rem Georgia,serif;letter-spacing:.1em}
+    .identity-sheet small {letter-spacing:.12em;font-size:.55rem}
+    .identity-shapes {display:flex;justify-content:space-between;gap:12px}
+    .identity-shapes span {height:60px;flex:1;border-radius:50% 50% 8% 8%;background:var(--b);min-width:0}
+    .identity-swatches {display:flex;gap:7px}
+    .identity-swatches i {width:25px;height:16px;background:var(--c)}
+
+    /* Identidade visual e pacotes */
+
+    .identity-section {border-bottom:1px solid var(--linha)}
+    .identity-layout {display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:start}
+    .identity-copy h2 {font-size:clamp(2.1rem,4.5vw,4.3rem);margin:15px 0}
+    .identity-copy p {color:var(--suave);margin-top:16px}
+    .identity-packs {display:grid;gap:16px}
+    .pack {border:1px solid var(--linha);padding:25px;background:#320b1e}
+    .pack h3 {font:1.8rem Georgia,serif;margin-bottom:10px}
+    .pack p {color:var(--suave);font-size:.88rem}
+    .pack ul {padding-left:19px;margin:17px 0;color:var(--suave);font-size:.88rem}
+    .pack li {margin:7px 0}
+    .pack-footer {border-top:1px solid var(--linha);padding-top:15px;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap}
+    .pack-footer strong {color:var(--ouro-claro);font-size:.9rem}
+    .pack-footer a {font-size:.85rem;text-decoration:underline;text-underline-offset:4px}
+    .steps {display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+    .step {border-top:1px solid var(--ouro);padding-top:21px}
+    .step b {font:2.7rem Georgia,serif;color:var(--ouro)}
+    .step h3 {font-size:1.5rem;margin:11px 0}
+    .step p {font-size:.87rem;color:var(--suave)}
+    .faq {background:#17040b88;border-block:1px solid var(--linha)}
+    .faq details {max-width:860px;border-bottom:1px solid var(--linha);padding:20px 0}
+    .faq summary {cursor:pointer;color:var(--ouro-claro);font-weight:700}
+    .faq details p {color:var(--suave);font-size:.9rem;margin-top:12px}
+    .contact {text-align:center;padding:100px 0}
+    .contact .container {max-width:740px}
+    .contact h2 {font-size:clamp(2.4rem,5vw,4.8rem);margin:15px 0}
+    .contact p:not(.eyebrow) {color:var(--suave)}
+    .contact .actions {justify-content:center}
+    .footer {padding:25px 0;border-top:1px solid var(--linha);color:var(--suave);font-size:.79rem}
+    .footer-row {display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .footer a {color:var(--ouro-claro)}
+    .whatsapp {position:fixed;bottom:18px;right:18px;width:60px;height:60px;border:2px solid var(--ouro);border-radius:50%;background:var(--vinho);display:grid;place-items:center;padding:7px;z-index:40;box-shadow:0 6px 25px #0009}
+    .whatsapp img {width:100%;height:100%;object-fit:contain}
+
+    /* Responsividade */
+
+    @media(max-width:980px) {
+      .nav-links {display:none}
+      .mobile-menu {display:block}
+      .hero-grid {grid-template-columns:1fr 1fr;gap:20px}
+      .hero-art {min-height:340px}
+      .service-grid,.work-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+      .identity-layout {grid-template-columns:1fr;gap:30px}
+    }
+    @media(max-width:680px) {
+      .container {width:calc(100% - 32px)}
+      .section {padding:66px 0}
+      .hero {padding:61px 0}
+      .hero-grid {grid-template-columns:1fr}
+      .hero h1 {font-size:clamp(2.85rem,11vw,4.2rem)}
+      .hero-art {min-height:320px}
+      .hero-board {width:min(315px,85%);padding:20px}
+      .board-symbol {width:108px;height:108px;margin:17px auto}
+      .board-brand {font-size:1.55rem}
+      .hero-highlights {gap:18px}
+      .quality-grid {grid-template-columns:1fr;gap:10px}
+      .service-grid,.work-grid,.steps {grid-template-columns:1fr}
+      .work-art {min-height:250px}
+      .actions .btn {width:100%}
+      .whatsapp {width:54px;height:54px;bottom:12px;right:12px}
+      .contact {padding:75px 0}
+    }
+    @media(prefers-reduced-motion:reduce) {
+      html {scroll-behavior:auto}
+      .btn {transition:none}
+      .btn:hover {transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/index.html" aria-label="HYPERBOREA — início">
+        <img src="/assets/img/monograma-h.svg" alt="" width="42" height="46">
+        <span>
+          <strong>HYPERBOREA</strong>
+          <small>AGÊNCIA CRIATIVA</small>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Menu principal">
+        <a href="/index.html">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#identidade">Identidade Visual</a>
+        <a href="/sites.html">Sites</a>
+        <a class="nav-contact" href="#contato">Contato</a>
+      </nav>
+
+      <details class="mobile-menu">
+        <summary>☰ Menu</summary>
+        <nav aria-label="Menu móvel">
+          <a href="/index.html">Início</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#identidade">Identidade Visual</a>
+          <a href="/sites.html">Sites & Web Design</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- APRESENTAÇÃO -->
+
+    <section class="hero" aria-labelledby="heroTitulo">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">HYPERBOREA · Design & Identidade Visual</p>
+          <h1 id="heroTitulo">
+            Seu negócio com
+            <span class="gold">uma identidade própria.</span>
+          </h1>
+          <p class="hero-description">
+            Criamos logotipos vetorizados, banners,
+            artes para redes sociais e elementos gráficos
+            para destacar sua marca. Design pensado para
+            quem está começando e para quem quer crescer.
+          </p>
+
+          <div class="hero-highlights">
+            <div>
+              <strong>R$ 90</strong>
+              <span>Logotipo 2D vetorizado</span>
+            </div>
+            <div>
+              <strong>R$ 30</strong>
+              <span>Post individual</span>
+            </div>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="#portfolio">
+              Conhecer o portfólio
+            </a>
+            <a class="btn btn-outline" href="#servicos">
+              Ver todos os preços
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-label="Apresentação gráfica da identidade HYPERBOREA">
+          <span class="art-outline" aria-hidden="true"></span>
+          <span class="art-outline" aria-hidden="true"></span>
+
+          <div class="hero-board">
+            <p class="board-small">IDENTIDADE VISUAL</p>
+            <div class="board-symbol">
+              <img src="/assets/img/monograma-h.svg" alt="Monograma HYPERBOREA">
+            </div>
+            <div class="board-brand">HYPERBOREA</div>
+            <p class="board-caption">FORMA · COR · IDENTIDADE</p>
+            <div class="board-swatches" aria-hidden="true">
+              <span style="--swatch:#300817"></span>
+              <span style="--swatch:#c6a069"></span>
+              <span style="--swatch:#f0d9ae"></span>
+              <span style="--swatch:#fbf2e8"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quality-strip" aria-label="Características dos serviços">
+      <div class="container quality-grid">
+        <span>Design 2D e vetorial</span>
+        <span>Valores acessíveis e claros</span>
+        <span>Artes digitais para sua marca</span>
+      </div>
+    </div>
+
+    <!-- SERVIÇOS -->
+
+    <section class="section" id="servicos" aria-labelledby="servicosTitulo">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Serviços e investimentos</p>
+          <h2 id="servicosTitulo">
+            Criatividade que cabe
+            <span class="gold">no seu orçamento.</span>
+          </h2>
+          <p>
+            Escolha a peça que sua empresa precisa.
+            Os valores abaixo são por criação e o escopo
+            é confirmado antes do início do projeto.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card featured">
+            <div class="service-top"></div>
+            <div class="service-content">
+              <span class="service-num">01 / MARCA</span>
+              <h3>Logotipo profissional</h3>
+              <p>
+                Logotipo 2D vetorizado para representar
+                seu negócio. Entrega digital em SVG e PNG
+                com fundo transparente.
+              </p>
+              <div class="service-price">
+                R$ 90
+                <small>por logotipo</small>
+              </div>
+              <a class="service-link" href="#contato">
+                Solicitar logotipo ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-top"></div>
+            <div class="service-content">
+              <span class="service-num">02 / DIGITAL</span>
+              <h3>Banner para site</h3>
+              <p>
+                Peça gráfica para destacar produtos,
+                campanhas ou serviços. Versões desktop
+                e mobile incluídas no valor.
+              </p>
+              <div class="service-price">
+                R$ 50
+                <small>banner com adaptações desktop e mobile</small>
+              </div>
+              <a class="service-link" href="#contato">
+                Solicitar banner ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-top"></div>
+            <div class="service-content">
+              <span class="service-num">03 / REDES SOCIAIS</span>
+              <h3>Post individual</h3>
+              <p>
+                Arte estática para Instagram, Facebook
+                ou outra rede social, produzida no
+                formato combinado.
+              </p>
+              <div class="service-price">
+                R$ 30
+                <small>por arte individual</small>
+              </div>
+              <a class="service-link" href="#contato">
+                Solicitar post ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-top"></div>
+            <div class="service-content">
+              <span class="service-num">04 / REDES SOCIAIS</span>
+              <h3>Post carrossel</h3>
+              <p>
+                Sequência visual com cinco imagens
+                para apresentar um produto, contar uma
+                história ou divulgar informações.
+              </p>
+              <div class="service-price">
+                R$ 120
+                <small>carrossel com 5 imagens</small>
+              </div>
+              <a class="service-link" href="#contato">
+                Solicitar carrossel ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-top"></div>
+            <div class="service-content">
+              <span class="service-num">05 / IDENTIDADE</span>
+              <h3>Identidade visual essencial</h3>
+              <p>
+                Uma base visual consistente com
+                logotipo, paleta de cores, tipografia
+                e elementos gráficos essenciais.
+              </p>
+              <div class="service-price">
+                Sob consulta
+                <small>valor em definição</small>
+              </div>
+              <a class="service-link" href="#identidade">
+                Conhecer o pacote ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-top"></div>
+            <div class="service-content">
+              <span class="service-num">06 / IDENTIDADE</span>
+              <h3>Identidade visual completa</h3>
+              <p>
+                Um sistema visual ampliado com
+                variações, elementos gráficos e
+                exemplos de aplicação da sua marca.
+              </p>
+              <div class="service-price">
+                Sob consulta
+                <small>valor em definição</small>
+              </div>
+              <a class="service-link" href="#identidade">
+                Conhecer o pacote ↗
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="small-note">
+          * Valores para criação digital conforme escopo acordado.
+          Impressão, gestão de redes, animação, modelagem 3D e
+          registro no INPI não estão incluídos.
+        </p>
+      </div>
+    </section>
+
+    <!-- PORTFÓLIO -->
+
+    <section class="section portfolio" id="portfolio" aria-labelledby="portfolioTitulo">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Portfólio visual</p>
+          <h2 id="portfolioTitulo">
+            Veja ideias <span class="gold">ganharem forma.</span>
+          </h2>
+          <p>
+            Uma seleção de identidades da nossa agência e estudos visuais
+            para demonstrar possibilidades de criação.
+            Os projetos conceituais estão identificados como demonstrativos.
+          </p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtrar trabalhos por categoria">
+          <button class="filter-btn" data-filter="todos" aria-pressed="true" type="button">Todos</button>
+          <button class="filter-btn" data-filter="logotipo" aria-pressed="false" type="button">Logotipos</button>
+          <button class="filter-btn" data-filter="banner" aria-pressed="false" type="button">Banners</button>
+          <button class="filter-btn" data-filter="social" aria-pressed="false" type="button">Redes sociais</button>
+          <button class="filter-btn" data-filter="identidade" aria-pressed="false" type="button">Identidade visual</button>
+        </div>
+
+        <div class="work-grid" id="galeria">
+
+          <!-- MARAJOARA -->
+
+          <article class="work-card" data-category="logotipo identidade">
+            <div class="work-art art-marajoara">
+              <img
+                src="/assets/img/realizacoes/logo-marajoara-oficial-otimizado1.svg"
+                loading="lazy"
+                alt="Logotipo do Edifício Marajoara">
+            </div>
+            <div class="work-caption">
+              <span class="type">Projeto · Logotipo</span>
+              <h3>Edifício Marajoara</h3>
+              <p>Exemplo de identidade gráfica já presente nas realizações da HYPERBOREA.</p>
+            </div>
+          </article>
+
+          <!-- HYPERBOREA -->
+
+          <article class="work-card" data-category="logotipo identidade">
+            <div class="work-art art-hyperborea">
+              <img src="/assets/img/monograma-h.svg"
+                   loading="lazy"
+                   alt="Monograma H da HYPERBOREA">
+              <strong>HYPERBOREA</strong>
+              <small>AGÊNCIA CRIATIVA</small>
+            </div>
+            <div class="work-caption">
+              <span class="type">Marca própria · Identidade visual</span>
+              <h3>HYPERBOREA</h3>
+              <p>Nosso monograma, lettering e combinação de vinho e dourado.</p>
+            </div>
+          </article>
+
+          <!-- FLORA -->
+
+          <article class="work-card" data-category="logotipo identidade">
+            <div class="work-art art-flora" aria-label="Conceito ilustrativo de logotipo Flora Estúdio">
+              <div class="flora-symbol" aria-hidden="true">
+                <span style="--r:0deg"></span>
+                <span style="--r:72deg"></span>
+                <span style="--r:144deg"></span>
+                <span style="--r:216deg"></span>
+                <span style="--r:288deg"></span>
+                <i></i>
+              </div>
+              <strong>FLORA</strong>
+              <small>ESTÚDIO CRIATIVO</small>
+            </div>
+            <div class="work-caption">
+              <span class="type">Estudo demonstrativo · Logotipo</span>
+              <h3>Flora Estúdio</h3>
+              <p>Conceito fictício de marca com símbolo floral e tipografia.</p>
+            </div>
+          </article>
+
+          <!-- BANNER -->
+
+          <article class="work-card" data-category="banner">
+            <div class="work-art art-banner" aria-label="Estudo demonstrativo de banner para cafeteria">
+              <div class="banner-preview">
+                <div class="banner-copy">
+                  <small>CAFEZINHO DA CASA</small>
+                  <strong>Uma pausa<br>especial.</strong>
+                  <b>CONHEÇA</b>
+                </div>
+                <div class="cup" aria-hidden="true"></div>
+              </div>
+            </div>
+            <div class="work-caption">
+              <span class="type">Estudo demonstrativo · Banner</span>
+              <h3>Campanha para site</h3>
+              <p>Exemplo fictício de banner publicitário para uma cafeteria.</p>
+            </div>
+          </article>
+
+          <!-- POST -->
+
+          <article class="work-card" data-category="social">
+            <div class="work-art art-post" aria-label="Estudo demonstrativo de post para rede social">
+              <div class="post-preview">
+                <small>ATELIÊ BOTÂNICO</small>
+                <span class="flower" aria-hidden="true">✺</span>
+                <strong>Novos ciclos,<br>novas flores.</strong>
+              </div>
+            </div>
+            <div class="work-caption">
+              <span class="type">Estudo demonstrativo · Redes sociais</span>
+              <h3>Post para Instagram</h3>
+              <p>Exemplo fictício de composição gráfica para uma publicação.</p>
+            </div>
+          </article>
+
+          <!-- CARROSSEL -->
+
+          <article class="work-card" data-category="social">
+            <div class="work-art art-carousel" aria-label="Estudo demonstrativo de carrossel com cinco telas">
+              <div class="carousel-slide">
+                <strong>01</strong><small>Comece</small>
+              </div>
+              <div class="carousel-slide">
+                <strong>02</strong><small>Descubra</small>
+              </div>
+              <div class="carousel-slide">
+                <strong>03</strong><small>Crie</small>
+              </div>
+              <div class="carousel-slide">
+                <strong>04</strong><small>Compartilhe</small>
+              </div>
+              <div class="carousel-slide">
+                <strong>05</strong><small>Cresça</small>
+              </div>
+            </div>
+            <div class="work-caption">
+              <span class="type">Estudo demonstrativo · Carrossel</span>
+              <h3>Sequência de cinco posts</h3>
+              <p>Modelo fictício para apresentar conteúdos em etapas.</p>
+            </div>
+          </article>
+
+          <!-- IDENTIDADE COMPLETA -->
+
+          <article class="work-card" data-category="identidade">
+            <div class="work-art art-identity" aria-label="Estudo demonstrativo de sistema de identidade visual">
+              <div class="identity-sheet">
+                <strong>VERDÁLIA</strong>
+                <small>CONCEITO DE IDENTIDADE VISUAL</small>
+                <div class="identity-shapes" aria-hidden="true">
+                  <span style="--b:#304b40"></span>
+                  <span style="--b:#b5c1a4"></span>
+                  <span style="--b:#d8b27d"></span>
+                </div>
+                <div class="identity-swatches" aria-hidden="true">
+                  <i style="--c:#304b40"></i>
+                  <i style="--c:#b5c1a4"></i>
+                  <i style="--c:#d8b27d"></i>
+                  <i style="--c:#eee0c7"></i>
+                </div>
+              </div>
+            </div>
+            <div class="work-caption">
+              <span class="type">Estudo demonstrativo · Identidade visual</span>
+              <h3>Verdália</h3>
+              <p>Conceito fictício mostrando paleta, lettering e formas complementares.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- IDENTIDADE VISUAL -->
+
+    <section class="section identity-section" id="identidade" aria-labelledby="identidadeTitulo">
+      <div class="container identity-layout">
+        <div class="identity-copy">
+          <p class="eyebrow">Mais do que um logotipo</p>
+          <h2 id="identidadeTitulo">
+            Uma marca precisa ter
+            <span class="gold">seu próprio universo visual.</span>
+          </h2>
+          <p>
+            Um logotipo identifica. Uma identidade visual conecta cores,
+            tipografia, símbolos, grafismos e aplicações para que a marca
+            seja reconhecida em qualquer lugar.
+          </p>
+          <p>
+            Por isso, também criamos elementos gráficos e visuais
+            que pertencem à linguagem da sua marca.
+          </p>
+        </div>
+
+        <div class="identity-packs">
+
+          <article class="pack">
+            <h3>Identidade visual essencial</h3>
+            <p>
+              Para negócios que precisam começar com uma imagem
+              organizada e consistente.
+            </p>
+            <ul>
+              <li>Logotipo 2D vetorizado</li>
+              <li>Paleta de cores e tipografia</li>
+              <li>Elemento gráfico complementar</li>
+              <li>Guia resumido de aplicação</li>
+            </ul>
+            <div class="pack-footer">
+              <strong>Valor sob consulta</strong>
+              <a href="#contato">Quero uma identidade essencial ↗</a>
+            </div>
+          </article>
+
+          <article class="pack">
+            <h3>Identidade visual completa</h3>
+            <p>
+              Para marcas que desejam um conjunto visual
+              mais amplo e versátil.
+            </p>
+            <ul>
+              <li>Logotipo e suas versões de uso</li>
+              <li>Paleta de cores e sistema tipográfico</li>
+              <li>Conjunto ampliado de elementos gráficos</li>
+              <li>Exemplos de aplicações digitais</li>
+              <li>Mini manual de identidade visual</li>
+            </ul>
+            <div class="pack-footer">
+              <strong>Valor sob consulta</strong>
+              <a href="#contato">Quero uma identidade completa ↗</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESSO DE CONTRATAÇÃO -->
+
+    <section class="section" id="processo" aria-labelledby="processoTitulo">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Como trabalhamos</p>
+          <h2 id="processoTitulo">
+            Simples para contratar.
+            <span class="gold">Criativo para realizar.</span>
+          </h2>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <b>01</b>
+            <h3>Conte sua ideia</h3>
+            <p>
+              Você apresenta seu negócio, suas referências
+              e a peça que deseja criar.
+            </p>
+          </div>
+
+          <div class="step">
+            <b>02</b>
+            <h3>Alinhamos o projeto</h3>
+            <p>
+              Confirmamos os materiais, as dimensões,
+              os formatos de entrega e os ajustes previstos.
+            </p>
+          </div>
+
+          <div class="step">
+            <b>03</b>
+            <h3>Entregamos sua arte</h3>
+            <p>
+              Produzimos e enviamos os arquivos digitais
+              combinados, prontos para o uso previsto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERGUNTAS FREQUENTES -->
+
+    <section class="section faq" aria-labelledby="faqTitulo">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Dúvidas frequentes</p>
+          <h2 id="faqTitulo">
+            Informação clara
+            <span class="gold">antes de contratar.</span>
+          </h2>
+        </div>
+
+        <details>
+          <summary>O logotipo de R$ 90 é realmente vetorizado?</summary>
+          <p>
+            Sim. A proposta é entregar um logotipo profissional
+            em 2D com arquivo SVG vetorial e versão PNG transparente.
+            Não se trata de uma imagem raster apenas renomeada como SVG.
+          </p>
+        </details>
+
+        <details>
+          <summary>Vocês fazem logotipos em 3D?</summary>
+          <p>
+            A oferta padrão desta página é de logotipos 2D vetorizados.
+            Modelagem e animação em 3D não estão incluídas.
+          </p>
+        </details>
+
+        <details>
+          <summary>O banner de R$ 50 inclui desktop e mobile?</summary>
+          <p>
+            Sim. O valor cobre as duas adaptações estáticas do mesmo
+            banner para uso no site, dentro das dimensões alinhadas
+            na contratação.
+          </p>
+        </details>
+
+        <details>
+          <summary>Em quais redes sociais posso usar os posts?</summary>
+          <p>
+            Podemos criar artes para Instagram, Facebook e outras
+            plataformas, com as dimensões combinadas. Para posts
+            verticais do feed do Instagram, 1080 × 1350 px é uma
+            das opções mais usadas.
+          </p>
+        </details>
+
+        <details>
+          <summary>Qual a diferença entre logotipo e identidade visual?</summary>
+          <p>
+            O logotipo é um elemento que identifica a marca.
+            A identidade visual organiza o conjunto de cores,
+            fontes, símbolos, grafismos e regras de aplicação.
+          </p>
+        </details>
+
+        <details>
+          <summary>O preço inclui impressão ou gestão das redes sociais?</summary>
+          <p>
+            Não. Os valores desta página são para criação
+            de peças digitais. Impressão, publicações recorrentes,
+            gestão de perfis e outros serviços são tratados separadamente.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+
+    <section class="contact" id="contato" aria-labelledby="contatoTitulo">
+      <div class="container">
+        <p class="eyebrow">Vamos criar sua próxima identidade?</p>
+        <h2 id="contatoTitulo">
+          Sua ideia merece
+          <span class="gold">ganhar forma.</span>
+        </h2>
+        <p>
+          Converse com a HYPERBOREA sobre um logotipo,
+          banner, post, carrossel ou projeto de identidade visual.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank"
+             rel="noopener noreferrer">
+            Solicitar orçamento no WhatsApp ↗
+          </a>
+          <a class="btn btn-outline"
+             href="mailto:contato@hyperborea.com.br?subject=Or%C3%A7amento%20-%20Design%20e%20Identidade%20Visual">
+            Enviar e-mail ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <p>
+        © <span id="anoAtual">2026</span>
+        HYPERBOREA · Identidade, criatividade e futuro.
+      </p>
+      <a href="/index.html">Voltar ao início ↑</a>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+
+  <a class="whatsapp"
+     href="https://wa.me/message/FHWOVDSQ3AKCO1"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
+    <img src="/assets/img/whats-icon.svg" alt="">
+  </a>
+
+  <!-- FUNCIONALIDADES -->
+
+  <script>
+    (() => {
+      "use strict";
+
+      document.getElementById("anoAtual").textContent =
+        new Date().getFullYear();
+
+      const buttons = document.querySelectorAll(".filter-btn");
+      const cards = document.querySelectorAll(".work-card");
+
+      buttons.forEach(button => button.addEventListener("click", () => {
+        const chosen = button.dataset.filter;
+
+        buttons.forEach(item => {
+          item.setAttribute(
+            "aria-pressed",
+            String(item === button)
+          );
+        });
+
+        cards.forEach(card => {
+          card.hidden =
+            chosen !== "todos" &&
+            !card.dataset.category.split(" ").includes(chosen);
+        });
+      }));
+
+      document.querySelectorAll(".mobile-menu nav a")
+        .forEach(link => {
+          link.addEventListener("click", () => {
+            document.querySelector(".mobile-menu").open = false;
+          });
+        });
+
+    })();
+  </script>
+</body>
+</html>
