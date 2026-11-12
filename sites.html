@@ -285,7 +285,7 @@ footer a{color:var(--claro)}
 <div class="benefits">
   <div class="container benefit-grid">
     <div class="benefit">✦ Site responsivo e profissional</div>
-    <div class="benefit">◷ Até 3 dias úteis por página</div>
+    <div class="benefit">◷ Entrega de 1 até 3 dias úteis por página</div>
     <div class="benefit">✓ Sem mensalidade obrigatória</div>
   </div>
 </div>
@@ -377,7 +377,7 @@ footer a{color:var(--claro)}
           <li>Design responsivo</li>
           <li>Modelos visuais disponíveis</li>
           <li>Integração com WhatsApp</li>
-          <li>Até 3 dias úteis por página</li>
+          <li>Entrega de 1 até 3 dias úteis por página</li>
           <li>Possibilidade de adicionar páginas</li>
           <li>Uma rodada de ajustes na entrega</li>
         </ul>
@@ -446,8 +446,8 @@ footer a{color:var(--claro)}
           <strong id="valor">R$ 420</strong>
         </div>
         <div>
-          <span>Prazo estimado</span>
-          <strong id="prazo">18 dias úteis</strong>
+          <span>Prazo de entrega estimado</span>
+          <strong id="prazo">De 1 até 18 dias úteis</strong>
         </div>
       </div>
 
@@ -468,9 +468,10 @@ footer a{color:var(--claro)}
       </div>
 
       <p class="calc-info" id="mensagem" aria-live="polite">
-        Estimativa para páginas desenvolvidas com os modelos
-        disponíveis. Prazo contado após a confirmação
-        e o recebimento dos materiais.
+        Cada página tem prazo de entrega de 1 até 3 dias úteis.
+        O prazo total pode ser menor que o máximo estimado.
+        A contagem começa após a confirmação do pedido
+        e o recebimento dos materiais necessários.
       </p>
     </div>
   </div>
@@ -533,7 +534,7 @@ footer a{color:var(--claro)}
         Por página atualizada, para substituição
         de texto existente fornecido pelo cliente.
       </p>
-      <div class="deadline">Prazo de até 2 dias úteis.</div>
+      <div class="deadline">Entrega de 1 até 2 dias úteis.</div>
       <a class="btn outline"
          href="https://wa.me/message/FHWOVDSQ3AKCO1"
          target="_blank" rel="noopener noreferrer">
@@ -697,7 +698,9 @@ footer a{color:var(--claro)}
   function atualizar(){
     quantidade.textContent = paginas;
     valor.textContent = reais(paginas * 70);
-    prazo.textContent = (paginas * 3) + " dias úteis";
+
+    prazo.textContent =
+      "De 1 até " + (paginas * 3) + " dias úteis";
 
     bonus.textContent = paginas >= 6
       ? "A partir de seis páginas, o primeiro ano do domínio é grátis!"
@@ -726,9 +729,9 @@ footer a{color:var(--claro)}
       "Orçamento HYPERBOREA\n" +
       "Páginas: " + paginas + "\n" +
       "Valor estimado: " + reais(paginas * 70) + "\n" +
-      "Prazo estimado: até " + (paginas * 3) + " dias úteis\n" +
+      "Prazo estimado: de 1 até " + (paginas * 3) + " dias úteis\n" +
       (paginas >= 6
-        ? "Primeiro ano do domínio .com.br grátis, sujeito à disponibilidade.\n"
+        ? "O primeiro ano do domínio .com.br é grátis, sujeito à disponibilidade.\n"
         : "") +
       "Sujeito à confirmação do projeto.";
 
