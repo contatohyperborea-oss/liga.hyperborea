@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -53,13 +54,14 @@
     .nav-links a{text-align:center}
 
 
-    /* Vídeo de boas-vindas: colocado após o menu; MP4 só é requisitado no clique. */
+    /* Vídeo institucional via YouTube, carregado somente após o clique. */
     .welcome-media{padding:clamp(25px,5vw,55px) 0 clamp(25px,4vw,48px);border-bottom:1px solid var(--linha);text-align:center}
     .welcome-media .eyebrow{margin-bottom:10px}
     .welcome-media h2{font-size:clamp(1.55rem,3.1vw,2.55rem);margin-bottom:10px;color:var(--ouro-claro)}
     .welcome-media .video-intro{color:var(--suave);font-size:.92rem;line-height:1.6;margin:0 auto 19px;max-width:600px}
     .video-shell{position:relative;margin:0 auto;width:min(100%,920px);aspect-ratio:16/9;background:#16030b;border:1px solid #d8ad70;box-shadow:0 20px 55px #08020975;overflow:hidden}
-    .video-shell video{display:block;width:100%;height:100%;object-fit:contain;background:#120207}
+    .video-shell iframe{display:block;width:100%;height:100%;border:0;background:#120207}
+    .video-poster{display:block;width:100%;height:100%;object-fit:cover}
     .video-trigger{position:absolute;inset:0;display:grid;place-items:center;cursor:pointer;border:0;padding:0;background:linear-gradient(0deg,rgba(18,3,9,.36),transparent 45%);color:#fff;transition:background .2s}
     .video-trigger:hover{background:linear-gradient(0deg,rgba(18,3,9,.50),rgba(18,3,9,.12))}
     .video-trigger:focus-visible{outline:3px solid #ffe5ad;outline-offset:-5px}
@@ -331,19 +333,19 @@
     </div>
   </header>
   <main>
-    <!-- O vídeo não é carregado até que o visitante solicite o play. -->
+    <!-- O YouTube só é carregado após o visitante apertar o play. -->
     <section class="welcome-media" aria-labelledby="tituloBoasVindas">
       <div class="container">
-        <p class="eyebrow">Uma apresentação em vídeo</p>
-        <h2 id="tituloBoasVindas">Boas-vindas à HYPERBOREA</h2>
+        <p class="eyebrow">Apresentação institucional</p>
+        <h2 id="tituloBoasVindas">Conheça a HYPERBOREA</h2>
         <p class="video-intro">Conheça nossa apresentação audiovisual. Aperte o play para assistir.</p>
         <div class="video-shell" id="welcomeVideoShell">
-          <video id="welcomeVideo" playsinline preload="none" poster="/assets/img/boas-vindas-poster.webp?v=20261111b" aria-label="Vídeo de boas-vindas da HYPERBOREA"></video>
-          <button class="video-trigger" type="button" id="playWelcome" aria-label="Reproduzir vídeo de boas-vindas">
+          <img class="video-poster" src="https://i.ytimg.com/vi/DmsXeT1VzQk/hqdefault.jpg" alt="Capa da apresentação institucional da HYPERBOREA" loading="lazy" decoding="async" width="480" height="360">
+          <button class="video-trigger" type="button" id="playWelcome" aria-label="Reproduzir apresentação institucional da HYPERBOREA no YouTube">
             <span class="video-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 4.5 20 12 8 19.5Z"/></svg></span>
           </button>
         </div>
-        <div class="video-after"><p class="video-message" id="welcomeVideoMessage" role="status" aria-live="polite">O vídeo começa somente quando você apertar o play.</p><a href="/assets/video/boa-vindas.mp4?v=20261111v4" target="_blank" rel="noopener noreferrer">Abrir vídeo em outra aba ↗</a></div>
+        <div class="video-after"><p class="video-message" id="welcomeVideoMessage" role="status" aria-live="polite">O vídeo começa somente quando você apertar o play.</p><a href="https://www.youtube.com/watch?v=DmsXeT1VzQk" target="_blank" rel="noopener noreferrer">Assistir no YouTube ↗</a></div>
       </div>
     </section>
     <section class="hero" aria-labelledby="tituloPrincipal">
@@ -424,24 +426,21 @@
       if (image.complete && !image.naturalWidth) image.hidden = true;
     });
     document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', () => { link.closest('details').open = false; }));
-    // Vídeo: por padrão NÃO possui src; somente o clique solicita o MP4 ao servidor.
-    const welcomeVideo = document.getElementById('welcomeVideo');
+    // O player do YouTube é inserido somente quando o visitante clica.
     const playWelcome = document.getElementById('playWelcome');
     const welcomeShell = document.getElementById('welcomeVideoShell');
     const videoMessage = document.getElementById('welcomeVideoMessage');
     playWelcome.addEventListener('click', () => {
+      const player = document.createElement('iframe');
+      player.title = 'HYPERBOREA — Apresentação Institucional';
+      player.src = 'https://www.youtube-nocookie.com/embed/DmsXeT1VzQk?autoplay=1&playsinline=1&rel=0';
+      player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      player.allowFullscreen = true;
+      player.referrerPolicy = 'strict-origin-when-cross-origin';
+      welcomeShell.replaceChildren(player);
       welcomeShell.classList.add('is-started');
-      welcomeVideo.controls = true;
-      if (!welcomeVideo.getAttribute('src')) welcomeVideo.src = '/assets/video/boa-vindas.mp4?v=20261111v4';
-      videoMessage.textContent = 'Carregando apresentação…';
-      welcomeVideo.load();
-      const playing = welcomeVideo.play();
-      if (playing && typeof playing.catch === 'function') playing.catch(() => {
-        videoMessage.textContent = 'Não foi possível iniciar automaticamente. Use o play do próprio vídeo ou abra em outra aba.';
-      });
+      videoMessage.textContent = 'Player do YouTube aberto. Se necessário, toque no play.';
     });
-    welcomeVideo.addEventListener('playing', () => { videoMessage.textContent = 'Apresentação em reprodução.'; });
-    welcomeVideo.addEventListener('error', () => { videoMessage.textContent = 'Este navegador não conseguiu carregar o vídeo. Experimente o link para abrir em outra aba.'; });
 
     // Carrossel acessível: arraste no celular, use as setas ou as teclas de navegação.
     const projectTrack = document.getElementById('projectsTrack');
