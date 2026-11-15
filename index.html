@@ -53,7 +53,6 @@
     .mobile-menu nav a:hover,.mobile-menu nav a:focus-visible{border-color:#fff0d3;background:#5a1730}
     .nav-links a{text-align:center}
 
-
     /* Vídeo institucional via YouTube, carregado somente após o clique. */
     .welcome-media{padding:clamp(25px,5vw,55px) 0 clamp(25px,4vw,48px);border-bottom:1px solid var(--linha);text-align:center}
     .welcome-media .eyebrow{margin-bottom:10px}
@@ -214,6 +213,7 @@
       .project-grid{scroll-behavior:auto!important}
       .video-play-icon,.video-trigger{transition:none}
     }
+
     /* ABERTURA DESKTOP: vídeo à esquerda, texto à direita,
        ambos centralizados, sem alterar a versão mobile. */
     @media (min-width: 851px) {
@@ -278,7 +278,7 @@
       .welcome-media .video-intro { font-size: .88rem; line-height: 1.5; margin-bottom: 14px; }
       .video-shell { width: 100%; }
     }
-    
+
 /* =========================================
    HYPERBOREA — TRÊS CARDS NO DESKTOP
    Mobile permanece inalterado
@@ -332,22 +332,62 @@
       </details>
     </div>
   </header>
+
   <main>
-    <!-- O YouTube só é carregado após o visitante apertar o play. -->
+
+    <!-- Nova apresentação institucional da HYPERBOREA.
+         A imagem local é exibida antes do clique.
+         O player do YouTube somente é carregado após o play. -->
     <section class="welcome-media" aria-labelledby="tituloBoasVindas">
       <div class="container">
         <p class="eyebrow">Apresentação institucional</p>
         <h2 id="tituloBoasVindas">Conheça a HYPERBOREA</h2>
         <p class="video-intro">Conheça nossa apresentação audiovisual. Aperte o play para assistir.</p>
+
         <div class="video-shell" id="welcomeVideoShell">
-          <img class="video-poster" src="https://youtu.be/wm2-DK73qlc?is=xHMztqYz1oIw0ul7/hqdefault.jpg" alt="Capa da apresentação institucional da HYPERBOREA" loading="lazy" decoding="async" width="480" height="360">
-          <button class="video-trigger" type="button" id="playWelcome" aria-label="Reproduzir apresentação institucional da HYPERBOREA no YouTube">
-            <span class="video-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M8 4.5 20 12 8 19.5Z"/></svg></span>
+          <img
+            class="video-poster"
+            src="/assets/img/capa-video-institucional.png"
+            alt="Capa da apresentação institucional da HYPERBOREA"
+            decoding="async"
+            fetchpriority="high"
+          >
+
+          <button
+            class="video-trigger"
+            type="button"
+            id="playWelcome"
+            aria-label="Reproduzir apresentação institucional da HYPERBOREA no YouTube"
+          >
+            <span class="video-play-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path d="M8 4.5 20 12 8 19.5Z"/>
+              </svg>
+            </span>
           </button>
         </div>
-        <div class="video-after"><p class="video-message" id="welcomeVideoMessage" role="status" aria-live="polite">O vídeo começa somente quando você apertar o play.</p><a href="https://www.youtube.com/watch?v=DmsXeT1VzQk" target="_blank" rel="noopener noreferrer">Assistir no YouTube ↗</a></div>
+
+        <div class="video-after">
+          <p
+            class="video-message"
+            id="welcomeVideoMessage"
+            role="status"
+            aria-live="polite"
+          >
+            O vídeo começa somente quando você apertar o play.
+          </p>
+
+          <a
+            href="https://www.youtube.com/watch?v=wm2-DK73qlc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Assistir no YouTube ↗
+          </a>
+        </div>
       </div>
     </section>
+
     <section class="hero" aria-labelledby="tituloPrincipal">
       <div class="container"><div class="hero-copy">
         <p class="eyebrow">HYPERBOREA • Agência criativa</p>
@@ -411,34 +451,57 @@
     <section class="contact" id="contato" aria-labelledby="tituloContato"><div class="container">
       <p class="eyebrow">Vamos conversar?</p><h2 id="tituloContato">Sua próxima ideia <span class="gold">começa aqui.</span></h2>
       <p>Conte-nos sobre o seu projeto. Vamos encontrar uma forma de dar identidade e presença à sua ideia.</p>
-      <div class="contact-actions"><a href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="https://www.instagram.com/agencia.hyperborea/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="mailto:contato@hyperborea.com.br">E-mail ↗</a></div>
+      <div class="contact-actions"><a href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="https://www.instagram.com/hyperborea.agencia/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="mailto:contato@hyperborea.com.br">E-mail ↗</a></div>
     </div></section>
   </main>
+
   <footer class="footer"><div class="container">© <span id="anoAtual">2026</span> HYPERBOREA · Identidade, criatividade e futuro.</div></footer>
 </div>
+
 <a class="whatsapp-float" href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer" aria-label="Conversar com a HYPERBOREA pelo WhatsApp"><span class="wa-fallback" aria-hidden="true">WA</span><img src="/assets/img/whats-icon.svg" alt="" aria-hidden="true"></a>
+
 <script>
   (() => {
     'use strict';
+
     document.getElementById('anoAtual').textContent = new Date().getFullYear();
+
     document.querySelectorAll('.card-frame img, .project-art img').forEach(image => {
       image.addEventListener('error', () => { image.hidden = true; });
       if (image.complete && !image.naturalWidth) image.hidden = true;
     });
-    document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', () => { link.closest('details').open = false; }));
-    // O player do YouTube é inserido somente quando o visitante clica.
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', () => {
+      link.closest('details').open = false;
+    }));
+
+    /* ==================================================
+       HYPERBOREA — NOVO VÍDEO INSTITUCIONAL DO YOUTUBE
+
+       ID: wm2-DK73qlc
+       Capa: /assets/img/capa-video-institucional.png
+
+       O iframe só é inserido quando o visitante clica.
+       ================================================== */
+
     const playWelcome = document.getElementById('playWelcome');
     const welcomeShell = document.getElementById('welcomeVideoShell');
     const videoMessage = document.getElementById('welcomeVideoMessage');
+
     playWelcome.addEventListener('click', () => {
       const player = document.createElement('iframe');
+
       player.title = 'HYPERBOREA — Apresentação Institucional';
-      player.src = 'https://www.youtube-nocookie.com/embed/DmsXeT1VzQk?autoplay=1&playsinline=1&rel=0';
+
+      player.src = 'https://www.youtube-nocookie.com/embed/wm2-DK73qlc?autoplay=1&playsinline=1&rel=0';
+
       player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       player.allowFullscreen = true;
       player.referrerPolicy = 'strict-origin-when-cross-origin';
+
       welcomeShell.replaceChildren(player);
       welcomeShell.classList.add('is-started');
+
       videoMessage.textContent = 'Player do YouTube aberto. Se necessário, toque no play.';
     });
 
@@ -448,6 +511,7 @@
     const prevProject = document.getElementById('projectsPrev');
     const nextProject = document.getElementById('projectsNext');
     const projectCount = document.getElementById('projectCount');
+
     function updateProjects() {
       const end = Math.max(0, projectTrack.scrollWidth - projectTrack.clientWidth);
       const left = projectTrack.scrollLeft;
@@ -456,81 +520,125 @@
       const idx = Math.min(projectSlides.length - 1, Math.max(0, Math.round(left / (cardW + gap))));
       const visible = Math.max(1, Math.floor((projectTrack.clientWidth + gap + 1) / (cardW + gap)));
       const last = Math.min(projectSlides.length, idx + visible);
-      projectCount.textContent = idx + 1 === last ? `${idx + 1} de ${projectSlides.length}` : `${idx + 1}–${last} de ${projectSlides.length}`;
+
+      projectCount.textContent = idx + 1 === last
+        ? `${idx + 1} de ${projectSlides.length}`
+        : `${idx + 1}–${last} de ${projectSlides.length}`;
+
       prevProject.disabled = left <= 2;
       nextProject.disabled = left >= end - 2;
     }
+
     function advanceProject(direction) {
       if (!projectSlides.length) return;
+
       const gap = parseFloat(getComputedStyle(projectTrack).gap) || 0;
       const step = projectSlides[0].getBoundingClientRect().width + gap;
-      const target = Math.max(0, Math.min(projectTrack.scrollWidth - projectTrack.clientWidth, projectTrack.scrollLeft + direction * step));
-      projectTrack.scrollTo({ left: target, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+      const target = Math.max(
+        0,
+        Math.min(
+          projectTrack.scrollWidth - projectTrack.clientWidth,
+          projectTrack.scrollLeft + direction * step
+        )
+      );
+
+      projectTrack.scrollTo({
+        left: target,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+      });
     }
+
     prevProject.addEventListener('click', () => advanceProject(-1));
     nextProject.addEventListener('click', () => advanceProject(1));
     projectTrack.addEventListener('scroll', updateProjects, { passive: true });
+
     projectTrack.addEventListener('keydown', event => {
       if (event.target !== projectTrack) return;
-      if (event.key === 'ArrowRight') { event.preventDefault(); advanceProject(1); }
-      if (event.key === 'ArrowLeft') { event.preventDefault(); advanceProject(-1); }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        advanceProject(1);
+      }
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        advanceProject(-1);
+      }
     });
+
     window.addEventListener('resize', updateProjects, { passive: true });
     updateProjects();
 
     /* Movimento progressivo com fluidez e desaceleração. */
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (reduced.matches || !('requestAnimationFrame' in window)) return;
+
     const cards = [...document.querySelectorAll('[data-scroll-card]')];
     const copies = [...document.querySelectorAll('.copy-reveal')];
+
     if (!cards.length) return;
     document.documentElement.classList.add('motion-enabled');
 
     const clamp = (value,min,max) => Math.max(min,Math.min(max,value));
-    const SMOOTHING_MS = 260; // Maior = mais lento e suave
+    const SMOOTHING_MS = 260;
     const states = new WeakMap();
+
     let queued = false;
     let lastTime = 0;
 
     function render(now) {
       queued = false;
+
       const dt = lastTime ? Math.min(Math.max(now - lastTime, 0), 64) : 16;
       lastTime = now;
+
       const alpha = 1 - Math.exp(-dt / SMOOTHING_MS);
       const h = window.innerHeight || 700;
       const travel = Math.max(340, Math.min(780, h * .78));
       const distance = Math.min(490, Math.max(260, window.innerWidth * .78));
+
       let moving = false;
 
-      // Lê o pai estático; assim o movimento não interfere na própria medida.
       const targets = cards.map(card => {
         const top = card.parentElement.getBoundingClientRect().top;
         const p = clamp((h * .96 - top) / travel, 0, 1);
-        return p * p * (3 - 2 * p); // smoothstep
+        return p * p * (3 - 2 * p);
       });
 
       cards.forEach((card, i) => {
         const target = targets[i];
         let state = states.get(card);
+
         if (!state) {
           state = { progress: target };
           states.set(card, state);
         }
+
         state.progress += (target - state.progress) * alpha;
-        if (Math.abs(target - state.progress) > .001) moving = true;
-        else state.progress = target;
+
+        if (Math.abs(target - state.progress) > .001) {
+          moving = true;
+        } else {
+          state.progress = target;
+        }
+
         const p = state.progress;
         const side = card.dataset.direction === 'right' ? 1 : -1;
         const x = side * distance * (1 - p);
         const angle = -side * 24 * (1 - p);
         const z = -95 * (1 - p);
         const scale = .87 + .13 * p;
-        card.style.transform = `translate3d(${x.toFixed(1)}px,0,${z.toFixed(1)}px) rotateY(${angle.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+
+        card.style.transform =
+          `translate3d(${x.toFixed(1)}px,0,${z.toFixed(1)}px) rotateY(${angle.toFixed(2)}deg) scale(${scale.toFixed(3)})`;
+
         card.style.opacity = String(clamp(.09 + .91 * p, 0, 1));
       });
+
       copies.forEach(copy => {
-        if (copy.getBoundingClientRect().top < h * .85) copy.classList.add('shown');
+        if (copy.getBoundingClientRect().top < h * .85) {
+          copy.classList.add('shown');
+        }
       });
+
       if (moving) schedule();
     }
 
@@ -540,10 +648,12 @@
         requestAnimationFrame(render);
       }
     }
+
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule, { passive: true });
     window.addEventListener('pageshow', schedule);
     reduced.addEventListener?.('change', () => window.location.reload());
+
     schedule();
   })();
 </script>
