@@ -5,9 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#260713">
-  <meta name="description" content="HYPERBOREA — vídeos comerciais com roteiro, produção visual com IA e edição. Conheça o portfólio e os preços fixos de vídeos comerciais de 15 segundos a 2 minutos: de R$ 35 a R$ 190.">
+  <meta name="description" content="Vídeos comerciais HYPERBOREA. Produção visual com IA e edição. Escolha vídeos de 15 segundos a 2 minutos com preços fixos de R$ 35 a R$ 190.">
+
   <title>Vídeos Comerciais | HYPERBOREA — Agência Criativa</title>
-  <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
+
+  <link rel="icon"
+        href="/assets/img/monograma-h.svg"
+        type="image/svg+xml">
 
   <style>
     :root {
@@ -21,11 +25,13 @@
       --linha:rgba(203,163,101,.35);
     }
 
-    *,*::before,*::after {box-sizing:border-box}
+    *,*::before,*::after {
+      box-sizing:border-box;
+    }
 
     html {
       scroll-behavior:smooth;
-      scroll-padding-top:92px;
+      scroll-padding-top:90px;
     }
 
     body {
@@ -35,21 +41,55 @@
       color:var(--texto);
       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
       background:
-        radial-gradient(ellipse 55% 20% at 95% 10%,#89304748,transparent 76%),
-        radial-gradient(ellipse 58% 23% at 5% 57%,#7e263a36,transparent 76%),
-        linear-gradient(180deg,#260713,#3b0a1b 45%,#19040d);
+        radial-gradient(
+          ellipse 55% 23% at 95% 12%,
+          #89304748,
+          transparent 76%
+        ),
+        radial-gradient(
+          ellipse 58% 23% at 5% 57%,
+          #7e263a36,
+          transparent 76%
+        ),
+        linear-gradient(
+          180deg,
+          #260713,
+          #3b0a1b 45%,
+          #19040d
+        );
     }
 
-    h1,h2,h3,p {margin:0}
+    h1,h2,h3,p {
+      margin:0;
+    }
 
     h1,h2,h3 {
       font-family:Georgia,"Times New Roman",serif;
       font-weight:500;
     }
 
-    a {color:inherit;text-decoration:none}
-    img {display:block;max-width:100%}
-    button {font:inherit;cursor:pointer}
+    a {
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img {
+      display:block;
+      max-width:100%;
+    }
+
+    button {
+      font:inherit;
+      cursor:pointer;
+    }
+
+    summary {
+      cursor:pointer;
+    }
+
+    [hidden] {
+      display:none!important;
+    }
 
     a:focus-visible,
     button:focus-visible,
@@ -58,50 +98,55 @@
       outline-offset:4px;
     }
 
-    [hidden] {display:none!important}
-
     .container {
       width:min(1160px,calc(100% - 40px));
       margin-inline:auto;
     }
 
     .eyebrow {
+      color:var(--ouro-claro);
       font-size:.7rem;
       font-weight:750;
-      letter-spacing:.21em;
+      letter-spacing:.19em;
       text-transform:uppercase;
+    }
+
+    .gold {
       color:var(--ouro-claro);
     }
 
-    .gold {color:var(--ouro-claro)}
-
     .lead {
       color:var(--suave);
-      line-height:1.83;
-      max-width:680px;
+      line-height:1.75;
     }
 
     .section-title {
-      font-size:clamp(2.4rem,5vw,4.7rem);
-      line-height:1.08;
+      font-size:clamp(2rem,4vw,3.7rem);
+      line-height:1.1;
       letter-spacing:-.025em;
-      margin:14px 0 18px;
+      margin:12px 0 17px;
     }
 
     .btn {
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      gap:10px;
-      min-height:49px;
-      padding:13px 21px;
+      gap:9px;
+      min-height:46px;
+      padding:11px 19px;
       border:1px solid var(--ouro);
+      font-size:.87rem;
       font-weight:700;
-      font-size:.9rem;
-      transition:transform .2s,background .2s,box-shadow .2s;
+      text-align:center;
+      transition:
+        transform .2s,
+        background .2s,
+        box-shadow .2s;
     }
 
-    .btn:hover {transform:translateY(-2px)}
+    .btn:hover {
+      transform:translateY(-2px);
+    }
 
     .btn-primary {
       background:var(--ouro);
@@ -110,25 +155,29 @@
 
     .btn-primary:hover {
       background:var(--ouro-claro);
-      box-shadow:0 10px 26px #10020a72;
+      box-shadow:0 9px 25px #10020a72;
     }
 
     .btn-outline {
-      color:var(--ouro-claro);
       background:#53142933;
+      color:var(--ouro-claro);
     }
 
-    .btn-outline:hover {background:#75263d}
+    .btn-outline:hover {
+      background:#75263d;
+    }
 
     .actions {
       display:flex;
       align-items:center;
-      gap:14px;
       flex-wrap:wrap;
-      margin-top:29px;
+      gap:12px;
+      margin-top:23px;
     }
 
-    /* CABEÇALHO */
+    /* ========================================
+       CABEÇALHO
+       ======================================== */
 
     .site-header {
       position:sticky;
@@ -171,10 +220,10 @@
     .brand small {
       display:block;
       margin-top:5px;
+      color:#d5b98e;
       font-size:.55rem;
       font-weight:600;
       letter-spacing:.35em;
-      color:#d5b98e;
     }
 
     .nav-links {
@@ -182,11 +231,10 @@
       align-items:center;
       gap:21px;
       color:#f0dfce;
-      font-size:.86rem;
+      font-size:.85rem;
     }
 
-    .nav-links a:hover,
-    .nav-links a[aria-current="page"] {
+    .nav-links a:hover {
       color:var(--ouro-claro);
     }
 
@@ -208,7 +256,6 @@
       color:var(--ouro-claro);
       font-size:.85rem;
       font-weight:700;
-      cursor:pointer;
     }
 
     .mobile-menu summary::-webkit-details-marker {
@@ -240,186 +287,114 @@
       background:#5a1730;
     }
 
-    /* ABERTURA */
+    /* ========================================
+       ABERTURA COMPACTA
+
+       Banner removido.
+       Apresentação curta.
+       ======================================== */
 
     .hero {
-      padding:clamp(65px,8vw,110px) 0 clamp(70px,8vw,110px);
+      padding:clamp(34px,5vw,59px) 0
+              clamp(24px,3vw,36px);
     }
 
-    .hero-grid {
-      display:grid;
-      grid-template-columns:1.07fr .93fr;
-      gap:clamp(30px,5vw,78px);
-      align-items:center;
+    .hero-content {
+      max-width:1010px;
+      margin-inline:auto;
+      text-align:center;
     }
 
     .hero h1 {
-      font-size:clamp(3rem,6.7vw,6.65rem);
-      letter-spacing:-.037em;
-      line-height:1.01;
-      margin:23px 0 25px;
+      margin:11px 0 13px;
+      font-size:clamp(2.5rem,5.4vw,4.8rem);
+      line-height:1.04;
+      letter-spacing:-.035em;
     }
 
     .hero .lead {
-      font-size:clamp(.99rem,1.2vw,1.12rem);
+      max-width:790px;
+      margin-inline:auto;
+      font-size:clamp(.95rem,1.3vw,1.05rem);
+      line-height:1.65;
+    }
+
+    .hero .actions {
+      justify-content:center;
+      margin-top:20px;
     }
 
     .hero-note {
-      margin-top:26px;
-      color:#d5b995;
-      font-size:.8rem;
+      margin-top:16px;
+      color:#e1c49c;
+      font-size:.76rem;
       letter-spacing:.07em;
+      line-height:1.6;
     }
 
-    .hero-visual {
-      position:relative;
-      max-width:450px;
-      width:100%;
+    /* ========================================
+       VITRINE COMERCIAL
+
+       Desktop:
+       vídeos à esquerda,
+       preços à direita.
+
+       Mobile:
+       preços compactos e vídeos na sequência.
+       ======================================== */
+
+    .showcase {
+      padding:30px 0 64px;
+      border-top:1px solid var(--linha);
+    }
+
+    .showcase-heading {
+      text-align:center;
+      margin-bottom:23px;
+    }
+
+    .showcase-heading h2 {
+      margin:8px auto 9px;
+      font-size:clamp(1.7rem,3.2vw,2.7rem);
+      color:var(--ouro-claro);
+    }
+
+    .showcase-heading p:last-child {
+      max-width:720px;
       margin-inline:auto;
-    }
-
-    .visual-back {
-      position:absolute;
-      inset:25px -15px -18px 19px;
-      border:1px solid #cba16366;
-    }
-
-    .visual-frame {
-      position:relative;
-      isolation:isolate;
-      aspect-ratio:812/1024;
-      max-height:600px;
-      overflow:hidden;
-      background:
-        radial-gradient(ellipse at 50% 42%,#7b294b88,transparent 55%),
-        #230711;
-      border:1px solid #d8ac6f;
-      box-shadow:0 26px 65px #0c020b9c;
-    }
-
-    .visual-frame::after {
-      content:"";
-      position:absolute;
-      inset:9px;
-      border:1px solid #f0d9ae47;
-      pointer-events:none;
-      z-index:2;
-    }
-
-    .visual-frame img {
-      position:relative;
-      z-index:1;
-      width:100%;
-      height:100%;
-      object-fit:contain;
-    }
-
-    .visual-fallback {
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-direction:column;
-      gap:12px;
-      color:var(--ouro-claro);
-      text-align:center;
-    }
-
-    .visual-fallback span {
-      font:normal clamp(7rem,18vw,12rem) Georgia,serif;
-      opacity:.4;
-    }
-
-    .visual-fallback p {
-      font:normal 1.25rem Georgia,serif;
-      letter-spacing:.08em;
-    }
-
-    .visual-caption {
-      position:absolute;
-      z-index:3;
-      left:18px;
-      right:18px;
-      bottom:18px;
-      padding:12px 10px;
-      color:var(--ouro-claro);
-      background:#220713ea;
-      border:1px solid #cda66a99;
-      text-align:center;
-      font-size:.68rem;
-      font-weight:750;
-      letter-spacing:.14em;
-    }
-
-    /* DIFERENCIAIS */
-
-    .features {
-      border-block:1px solid var(--linha);
-      background:#21071177;
-    }
-
-    .features-row {
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-    }
-
-    .feature {
-      padding:24px 14px;
-      text-align:center;
-      color:#ead7c9;
-      font-size:.87rem;
-      line-height:1.5;
-    }
-
-    .feature+.feature {
-      border-left:1px solid var(--linha);
-    }
-
-    .feature b {
-      color:var(--ouro-claro);
-      font:normal 1.55rem Georgia,serif;
-      margin-right:8px;
-    }
-
-    /* PORTFÓLIO */
-
-    .portfolio {
-      padding:clamp(80px,10vw,132px) 0 105px;
-    }
-
-    .intro {text-align:center}
-
-    .intro .lead {
-      margin-inline:auto;
-    }
-
-    .notice {
-      max-width:795px;
-      margin:28px auto 0;
-      padding:16px 22px;
-      border:1px solid var(--linha);
-      color:#e8d4c3;
-      background:#250914a8;
-      text-align:center;
+      color:var(--suave);
       font-size:.9rem;
-      line-height:1.75;
+      line-height:1.65;
+    }
+
+    .showcase-layout {
+      display:grid;
+      grid-template-columns:minmax(0,1.23fr) minmax(360px,.92fr);
+      gap:25px;
+      align-items:start;
+    }
+
+    /* ========================================
+       EXEMPLOS DE VÍDEOS
+       ======================================== */
+
+    .portfolio-content {
+      min-width:0;
     }
 
     .filters {
       display:flex;
-      justify-content:center;
       flex-wrap:wrap;
-      gap:10px;
-      margin:36px 0 26px;
+      gap:7px;
+      margin-bottom:12px;
     }
 
     .filter {
-      padding:10px 17px;
+      padding:9px 11px;
       border:1px solid #c59b6173;
       background:transparent;
       color:#e7d0ba;
-      font-size:.83rem;
+      font-size:.75rem;
     }
 
     .filter:hover {
@@ -434,29 +409,32 @@
     }
 
     .portfolio-count {
-      min-height:1.5em;
-      text-align:right;
+      min-height:1.4em;
+      margin:0 0 11px;
       color:#cfb79e;
       font-size:.76rem;
-      margin-bottom:13px;
     }
 
     .portfolio-grid {
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:27px;
+      gap:15px;
     }
 
     .video-card {
       min-width:0;
-      background:linear-gradient(145deg,#55203866,#200711e0);
       border:1px solid var(--linha);
-      box-shadow:0 17px 40px #10020b42;
+      background:linear-gradient(
+        145deg,
+        #55203866,
+        #200711e0
+      );
+      box-shadow:0 13px 28px #10020b42;
       transition:transform .23s,border-color .23s;
     }
 
     .video-card:hover {
-      transform:translateY(-4px);
+      transform:translateY(-3px);
       border-color:#dfbb83a3;
     }
 
@@ -476,32 +454,67 @@
       inset:0;
       opacity:.9;
       background:
-        radial-gradient(circle at 74% 30%,#c6a06936,transparent 32%),
-        linear-gradient(130deg,#6a263e,#2a0818 58%,#13030a);
+        radial-gradient(
+          circle at 74% 30%,
+          #c6a06936,
+          transparent 32%
+        ),
+        linear-gradient(
+          130deg,
+          #6a263e,
+          #2a0818 58%,
+          #13030a
+        );
     }
 
     .thumb[data-tone="padaria"]::before {
       background:
-        radial-gradient(circle at 36% 65%,#c6a06945,transparent 34%),
-        linear-gradient(135deg,#5d2c25,#240814 65%,#13030a);
+        radial-gradient(
+          circle at 36% 65%,
+          #c6a06945,
+          transparent 34%
+        ),
+        linear-gradient(
+          135deg,
+          #5d2c25,
+          #240814 65%,
+          #13030a
+        );
     }
 
     .thumb[data-tone="comercio"]::before {
       background:
-        radial-gradient(circle at 30% 27%,#b5768750,transparent 37%),
-        linear-gradient(120deg,#421c43,#210710 70%);
+        radial-gradient(
+          circle at 30% 27%,
+          #b5768750,
+          transparent 37%
+        ),
+        linear-gradient(
+          120deg,
+          #421c43,
+          #210710 70%
+        );
     }
 
     .thumb[data-tone="imoveis"]::before {
       background:
-        linear-gradient(139deg,#775b5760,transparent 48%),
-        linear-gradient(25deg,#240712,#65354b 70%,#160510);
+        linear-gradient(
+          139deg,
+          #775b5760,
+          transparent 48%
+        ),
+        linear-gradient(
+          25deg,
+          #240712,
+          #65354b 70%,
+          #160510
+        );
     }
 
     .thumb::after {
       content:"";
       position:absolute;
-      inset:15px;
+      inset:10px;
       border:1px solid #f0d9ae55;
       pointer-events:none;
       z-index:2;
@@ -510,21 +523,21 @@
     .thumb-mark {
       position:relative;
       z-index:1;
-      text-align:center;
-      color:#f0d9ae;
       display:grid;
       justify-items:center;
-      gap:8px;
+      gap:5px;
+      text-align:center;
+      color:#f0d9ae;
     }
 
     .thumb-mark strong {
-      font:normal clamp(3.3rem,7vw,5.4rem)/1 Georgia,serif;
+      font:normal clamp(3rem,6vw,5rem)/1 Georgia,serif;
       opacity:.55;
     }
 
     .thumb-mark span {
-      font-size:.68rem;
-      letter-spacing:.25em;
+      font-size:.65rem;
+      letter-spacing:.21em;
       font-weight:700;
     }
 
@@ -539,26 +552,26 @@
 
     .thumb-status {
       position:absolute;
-      top:20px;
-      left:20px;
+      top:13px;
+      left:13px;
       z-index:3;
-      padding:8px 11px;
+      padding:6px 9px;
       border:1px solid #dfbb83b5;
       background:#210713dc;
       color:#f3ddb4;
-      font-size:.65rem;
+      font-size:.59rem;
       font-weight:750;
-      letter-spacing:.12em;
+      letter-spacing:.08em;
     }
 
     .play-overlay {
       position:absolute;
       inset:0;
       z-index:4;
-      border:0;
-      background:#16040b31;
       display:grid;
       place-items:center;
+      border:0;
+      background:#16040b31;
       color:white;
     }
 
@@ -569,212 +582,243 @@
     .play-icon {
       display:grid;
       place-items:center;
-      width:73px;
-      height:73px;
+      width:62px;
+      height:62px;
       border-radius:50%;
       background:#300817e8;
       border:2px solid var(--ouro-claro);
-      font-size:2rem;
+      font-size:1.75rem;
       box-shadow:0 8px 26px #0009;
     }
 
     .video-body {
-      padding:25px 27px 28px;
+      padding:15px 17px 18px;
     }
 
     .video-category {
       color:var(--ouro-claro);
-      font-size:.69rem;
-      letter-spacing:.18em;
+      font-size:.62rem;
+      letter-spacing:.12em;
       font-weight:700;
       text-transform:uppercase;
     }
 
     .video-body h3 {
-      font-size:clamp(1.45rem,2.5vw,2rem);
-      margin:9px 0 11px;
+      font-size:clamp(1.15rem,1.8vw,1.55rem);
+      margin:7px 0;
+      line-height:1.2;
     }
 
     .video-body p {
-      min-height:3.2em;
       color:var(--suave);
-      line-height:1.7;
-      font-size:.91rem;
+      line-height:1.58;
+      font-size:.83rem;
     }
 
     .video-footer {
-      margin-top:20px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:13px;
       flex-wrap:wrap;
+      gap:8px;
+      margin-top:14px;
     }
 
     .status-label {
       color:#e7cb9f;
-      font-size:.76rem;
+      font-size:.69rem;
     }
 
     .video-footer a {
       color:#eed0a4;
       border-bottom:1px solid var(--ouro);
-      font-size:.83rem;
-      padding-bottom:4px;
+      font-size:.76rem;
+      padding-bottom:3px;
     }
 
-    .portfolio-end {
+    .portfolio-note {
+      margin-top:13px;
+      color:#d5bcaf;
+      font-size:.76rem;
+      line-height:1.55;
+    }
+
+    /* ========================================
+       PREÇOS AO LADO DOS EXEMPLOS
+       ======================================== */
+
+    .pricing-panel {
+      min-width:0;
+      position:sticky;
+      top:96px;
+      padding:19px;
+      border:1px solid var(--linha);
+      background:linear-gradient(
+        145deg,
+        #4a1429e8,
+        #210710f5 75%
+      );
+      box-shadow:0 17px 40px #10020b55;
+    }
+
+    .pricing-header {
       text-align:center;
-      margin-top:35px;
+      margin-bottom:17px;
+    }
+
+    .pricing-header h3 {
+      font-size:clamp(1.65rem,2.5vw,2.1rem);
+      color:var(--ouro-claro);
+      margin:7px 0;
+    }
+
+    .pricing-header p:last-child {
       color:var(--suave);
-      font-size:.89rem;
-      line-height:1.7;
-    }
-
-    /* NOVA SEÇÃO — PREÇOS DOS VÍDEOS COMERCIAIS */
-
-    .pricing {
-      padding:95px 0 110px;
-      border-top:1px solid var(--linha);
-      background:linear-gradient(150deg,#4a102542,#1c0510a8);
-    }
-
-    .pricing .intro .lead {
-      margin-inline:auto;
+      font-size:.83rem;
+      line-height:1.55;
     }
 
     .prices-grid {
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:19px;
-      margin-top:38px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:9px;
     }
 
     .price-card {
       display:flex;
       flex-direction:column;
-      align-items:flex-start;
       min-width:0;
-      padding:28px 25px;
-      background:linear-gradient(150deg,#5b193049,#200710de);
+      padding:14px 11px 11px;
       border:1px solid #c59b617a;
-      box-shadow:0 16px 37px #10020a38;
-      transition:border-color .2s,transform .2s;
+      background:#260917b0;
+      text-align:center;
+      transition:border-color .2s;
     }
 
     .price-card:hover {
-      border-color:#f0d9ae;
-      transform:translateY(-3px);
+      border-color:var(--ouro-claro);
     }
 
-    .price-card h3 {
-      font-size:1.65rem;
+    .price-card h4 {
+      margin:0;
+      min-height:2.3em;
       color:#f5e2cf;
+      font-size:.8rem;
+      font-weight:650;
+      line-height:1.25;
     }
 
-    .price-card .price {
-      font:500 clamp(2.1rem,3vw,2.75rem)/1.15 Georgia,serif;
+    .price-value {
+      margin:6px 0 10px;
       color:var(--ouro-claro);
-      margin:17px 0 13px;
+      font:500 clamp(1.36rem,2.2vw,1.85rem)/1.15 Georgia,serif;
+      white-space:nowrap;
     }
 
-    .price-card p {
-      font-size:.9rem;
+    .price-card a {
+      display:block;
+      margin-top:auto;
+      padding:8px 6px;
+      border:1px solid var(--ouro);
+      background:#53142955;
+      color:#f1d5ae;
+      font-size:.73rem;
+      font-weight:700;
+    }
+
+    .price-card a:hover {
+      background:#75263d;
+    }
+
+    .pricing-description {
+      margin-top:15px;
       color:var(--suave);
+      font-size:.78rem;
       line-height:1.65;
-      margin-bottom:23px;
-      flex:1;
     }
 
-    .price-card .btn {
-      width:100%;
-      text-align:center;
-      font-size:.85rem;
-      padding:12px;
-    }
-
-    .pricing-note {
-      margin:24px auto 0;
-      max-width:910px;
-      text-align:center;
-      color:var(--suave);
-      font-size:.9rem;
-      line-height:1.75;
-    }
-
-    .pricing-note strong {
+    .pricing-description strong {
       color:var(--ouro-claro);
     }
 
     .pricing-more {
-      text-align:center;
-      margin-top:24px;
-      line-height:1.7;
+      margin-top:12px;
+      color:var(--suave);
+      font-size:.8rem;
+      line-height:1.6;
     }
 
     .pricing-more a {
       color:var(--ouro-claro);
       border-bottom:1px solid var(--ouro);
-      padding-bottom:3px;
     }
 
-    /* PROCESSO DE PRODUÇÃO */
+    /* ========================================
+       COMO FUNCIONA
+       ======================================== */
 
     .process {
-      padding:94px 0 105px;
+      padding:56px 0 65px;
       border-top:1px solid var(--linha);
     }
 
     .process .lead {
-      margin-bottom:36px;
+      margin-bottom:25px;
     }
 
     .steps {
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:22px;
+      gap:18px;
     }
 
     .step {
-      padding:28px 26px;
+      padding:23px 21px;
       border-top:1px solid var(--ouro);
       background:#24091388;
     }
 
     .step b {
-      font:normal 2.7rem Georgia,serif;
       color:var(--ouro);
+      font:normal 2.35rem Georgia,serif;
     }
 
     .step h3 {
-      font-size:1.55rem;
-      margin:15px 0 10px;
+      font-size:1.42rem;
+      margin:11px 0 9px;
     }
 
     .step p {
-      font-size:.91rem;
-      line-height:1.74;
+      font-size:.88rem;
+      line-height:1.67;
       color:var(--suave);
     }
 
-    /* COMPROMISSO */
+    /* ========================================
+       COMPROMISSO E CONFIANÇA
+       ======================================== */
 
     .promise {
-      padding:90px 0;
+      padding:57px 0 63px;
       border-block:1px solid var(--linha);
-      background:linear-gradient(140deg,#4e13294d,#1b0510b0);
+      background:linear-gradient(
+        140deg,
+        #4e13294d,
+        #1b0510b0
+      );
     }
 
     .promise-grid {
       display:grid;
-      grid-template-columns:.8fr 1.2fr;
+      grid-template-columns:.82fr 1.18fr;
       align-items:start;
-      gap:65px;
+      gap:45px;
     }
 
     .promise-copy {
       color:var(--suave);
-      line-height:1.85;
+      line-height:1.75;
+      font-size:.9rem;
     }
 
     .promise-copy strong {
@@ -782,16 +826,16 @@
     }
 
     .promise-points {
-      margin:22px 0 0;
-      padding:0;
       list-style:none;
       display:grid;
-      gap:15px;
+      gap:11px;
+      margin:16px 0 0;
+      padding:0;
     }
 
     .promise-points li {
-      padding-left:24px;
       position:relative;
+      padding-left:23px;
     }
 
     .promise-points li::before {
@@ -801,48 +845,52 @@
       color:var(--ouro);
     }
 
-    /* DÚVIDAS */
+    /* ========================================
+       DÚVIDAS
+       ======================================== */
 
     .faq {
-      padding:93px 0;
+      padding:55px 0 65px;
     }
 
     .faq details {
       max-width:900px;
       border-bottom:1px solid var(--linha);
-      padding:20px 0;
+      padding:17px 0;
     }
 
     .faq summary {
-      cursor:pointer;
       color:#f4e5d5;
-      font-size:1rem;
+      font-size:.97rem;
       font-weight:700;
     }
 
     .faq details p {
-      padding:14px 18px 0 0;
+      padding:12px 14px 0 0;
       color:var(--suave);
-      line-height:1.78;
-      font-size:.94rem;
+      line-height:1.72;
+      font-size:.9rem;
     }
 
-    .faq details a {
+    .faq a {
       color:var(--ouro-claro);
       text-decoration:underline;
       text-underline-offset:3px;
     }
 
-    /* CONTATO */
+    /* ========================================
+       CONTATO
+       ======================================== */
 
     .contact {
-      padding:90px 0 98px;
-      text-align:center;
+      padding:55px 0 67px;
       border-top:1px solid var(--linha);
       background:#19040d99;
+      text-align:center;
     }
 
     .contact .lead {
+      max-width:610px;
       margin-inline:auto;
     }
 
@@ -850,9 +898,13 @@
       justify-content:center;
     }
 
+    /* ========================================
+       RODAPÉ
+       ======================================== */
+
     footer {
       border-top:1px solid var(--linha);
-      padding:28px 0;
+      padding:26px 0;
       color:#d1b9a9;
       font-size:.78rem;
     }
@@ -861,8 +913,8 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:15px;
       flex-wrap:wrap;
+      gap:15px;
     }
 
     footer a {
@@ -876,12 +928,12 @@
       bottom:18px;
       width:60px;
       height:60px;
-      border:2px solid var(--ouro);
-      border-radius:50%;
-      background:var(--vinho);
       display:grid;
       place-items:center;
       padding:6px;
+      border:2px solid var(--ouro);
+      border-radius:50%;
+      background:var(--vinho);
       box-shadow:0 8px 25px #10030c85;
     }
 
@@ -891,15 +943,17 @@
       object-fit:contain;
     }
 
-    /* PLAYER DO PORTFÓLIO */
+    /* ========================================
+       PLAYER DOS VÍDEOS
+       ======================================== */
 
     .player-dialog {
       width:min(960px,calc(100% - 28px));
       max-height:95dvh;
       padding:19px;
-      color:var(--texto);
-      background:#1c0610;
       border:1px solid var(--ouro);
+      background:#1c0610;
+      color:var(--texto);
       box-shadow:0 25px 80px #000c;
     }
 
@@ -921,10 +975,10 @@
     }
 
     .dialog-close {
+      padding:9px 14px;
       border:1px solid var(--ouro);
       background:#4d1328;
       color:var(--ouro-claro);
-      padding:9px 14px;
       font-weight:700;
     }
 
@@ -942,123 +996,93 @@
       font-size:.85rem;
     }
 
-    /* RESPONSIVIDADE */
+    /* ========================================
+       TABLET
+       ======================================== */
 
-    @media(max-width:960px) {
-      .nav-links {display:none}
-      .mobile-menu {display:block}
+    @media(max-width:1050px) {
 
-      .hero-grid {
-        grid-template-columns:1fr .86fr;
-        gap:26px;
+      .nav-links {
+        display:none;
       }
 
-      .hero h1 {
-        font-size:clamp(2.8rem,6vw,4.9rem);
+      .mobile-menu {
+        display:block;
       }
 
-      .prices-grid {
-        grid-template-columns:repeat(2,minmax(0,1fr));
+      .showcase-layout {
+        grid-template-columns:minmax(0,1fr) minmax(310px,.85fr);
+        gap:16px;
+      }
+
+      .pricing-panel {
+        padding:14px;
+      }
+
+      .price-card {
+        padding:12px 7px 9px;
       }
     }
 
-    @media(max-width:700px) {
+    /* ========================================
+       MOBILE
+       ======================================== */
+
+    @media(max-width:790px) {
+
+      .showcase-layout {
+        display:flex;
+        flex-direction:column;
+        gap:23px;
+      }
+
+      .pricing-panel {
+        position:static;
+        order:-1;
+        width:100%;
+        padding:17px;
+      }
+
+      .portfolio-content {
+        width:100%;
+      }
+
+      .prices-grid {
+        grid-template-columns:repeat(3,minmax(0,1fr));
+      }
+
+      .price-card h4 {
+        font-size:.75rem;
+      }
+
+      .price-card a {
+        font-size:.69rem;
+      }
+
+      .price-value {
+        font-size:1.38rem;
+      }
+
+      .promise-grid {
+        grid-template-columns:1fr;
+        gap:22px;
+      }
+
+      .steps {
+        grid-template-columns:1fr;
+        gap:13px;
+      }
+    }
+
+    @media(max-width:570px) {
+
       .container {
         width:calc(100% - 32px);
       }
 
-      .hero {
-        padding:65px 0 82px;
-      }
-
-      .hero-grid,
-      .promise-grid {
-        grid-template-columns:1fr;
-      }
-
-      .hero-visual {
-        max-width:350px;
-        margin-top:25px;
-      }
-
-      .hero h1 {
-        font-size:clamp(2.85rem,11vw,4.6rem);
-      }
-
-      .hero-note {
-        line-height:1.6;
-      }
-
-      .features-row {
-        grid-template-columns:1fr;
-      }
-
-      .feature {
-        padding:15px;
-      }
-
-      .feature+.feature {
-        border-left:0;
-        border-top:1px solid var(--linha);
-      }
-
-      .portfolio,
-      .process,
-      .faq {
-        padding:75px 0;
-      }
-
-      .portfolio-grid,
-      .steps,
-      .prices-grid {
-        grid-template-columns:1fr;
-      }
-
-      .filters {
-        justify-content:flex-start;
-      }
-
-      .portfolio-count {
-        text-align:left;
-      }
-
-      .notice {
-        margin-top:20px;
-      }
-
-      .pricing {
-        padding:74px 0 83px;
-      }
-
-      .prices-grid {
-        gap:13px;
-      }
-
-      .price-card {
-        padding:24px 22px;
-      }
-
-      .price-card p {
-        margin-bottom:18px;
-      }
-
-      .promise {
-        padding:74px 0;
-      }
-
-      .contact {
-        padding:75px 0 90px;
-      }
-
-      .actions .btn {
-        width:100%;
-      }
-
-      .whatsapp {
-        width:55px;
-        height:55px;
-        right:13px;
-        bottom:13px;
+      .site-header,
+      .nav-row {
+        min-height:66px;
       }
 
       .brand img {
@@ -1073,10 +1097,106 @@
       .brand small {
         font-size:.49rem;
       }
+
+      .hero {
+        padding:33px 0 28px;
+      }
+
+      .hero h1 {
+        font-size:clamp(2.55rem,10vw,3.8rem);
+      }
+
+      .hero .lead {
+        font-size:.92rem;
+      }
+
+      .hero .actions .btn {
+        flex:1 1 165px;
+      }
+
+      .showcase {
+        padding:23px 0 48px;
+      }
+
+      .showcase-heading {
+        margin-bottom:17px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns:1fr;
+        gap:15px;
+      }
+
+      .thumb {
+        max-height:260px;
+      }
+
+      .filters {
+        gap:6px;
+      }
+
+      .filter {
+        padding:9px 10px;
+      }
+
+      .pricing-panel {
+        padding:14px 11px;
+      }
+
+      .prices-grid {
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:6px;
+      }
+
+      .price-card {
+        padding:10px 4px 7px;
+      }
+
+      .price-card h4 {
+        min-height:2.4em;
+        font-size:.66rem;
+      }
+
+      .price-value {
+        margin:7px 0;
+        font-size:clamp(1rem,4.2vw,1.35rem);
+      }
+
+      .price-card a {
+        padding:8px 3px;
+        font-size:.61rem;
+        line-height:1.3;
+      }
+
+      .pricing-header h3 {
+        font-size:1.9rem;
+      }
+
+      .process,
+      .promise,
+      .faq,
+      .contact {
+        padding-top:48px;
+        padding-bottom:56px;
+      }
+
+      .contact .actions .btn {
+        width:100%;
+      }
+
+      .whatsapp {
+        width:55px;
+        height:55px;
+        right:13px;
+        bottom:13px;
+      }
     }
 
     @media(prefers-reduced-motion:reduce) {
-      html {scroll-behavior:auto}
+
+      html {
+        scroll-behavior:auto;
+      }
 
       *,*::before,*::after {
         transition:none!important;
@@ -1087,38 +1207,68 @@
 
 <body>
 
+  <!-- =====================================
+       CABEÇALHO
+       ===================================== -->
+
   <header class="site-header">
+
     <div class="container nav-row">
 
-      <a class="brand" href="/index.html"
+      <a class="brand"
+         href="/index.html"
          aria-label="HYPERBOREA — voltar ao início">
-        <img src="/assets/img/monograma-h.svg"
-             alt="" width="43" height="48">
+
+        <img
+          src="/assets/img/monograma-h.svg"
+          alt=""
+          width="43"
+          height="48">
+
         <span>
           <strong>HYPERBOREA</strong>
           <small>AGÊNCIA CRIATIVA</small>
         </span>
+
       </a>
 
-      <nav class="nav-links" aria-label="Navegação principal">
+      <nav class="nav-links"
+           aria-label="Navegação principal">
+
         <a href="/index.html">Início</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#precos" aria-current="page">Preços</a>
+
+        <a href="#portfolio">Exemplos</a>
+
+        <a href="#precos">Preços</a>
+
         <a href="#processo">Como funciona</a>
+
         <a href="/sobre.html">Sobre</a>
+
         <a class="nav-cta" href="#contato">Contato</a>
+
       </nav>
 
       <details class="mobile-menu">
+
         <summary>☰ Menu</summary>
+
         <nav aria-label="Navegação para celular">
+
           <a href="/index.html">Início</a>
-          <a href="#portfolio">Portfólio</a>
+
+          <a href="#portfolio">Exemplos</a>
+
           <a href="#precos">Preços</a>
+
           <a href="#processo">Como funciona</a>
+
           <a href="/sobre.html">Sobre</a>
+
           <a href="#contato">Contato</a>
+
         </nav>
+
       </details>
 
     </div>
@@ -1126,14 +1276,20 @@
 
   <main>
 
-    <!-- ABERTURA -->
+    <!-- =====================================
+         ABERTURA DIRETA
 
-    <section class="hero" id="inicio"
+         Sem banner de imagem.
+         ===================================== -->
+
+    <section class="hero"
+             id="inicio"
              aria-labelledby="heroTitle">
 
-      <div class="container hero-grid">
+      <div class="container">
 
-        <div>
+        <div class="hero-content">
+
           <p class="eyebrow">
             HYPERBOREA · PRODUÇÃO VISUAL
           </p>
@@ -1143,368 +1299,317 @@
           </h1>
 
           <p class="lead">
-            Sua ideia merece ganhar movimento.
-            Criamos conceitos audiovisuais com roteiro,
-            produção visual com inteligência artificial
-            e edição para apresentar produtos,
-            estabelecimentos e imóveis com personalidade.
+            Produzimos vídeos comerciais com roteiro,
+            recursos visuais de inteligência artificial
+            e edição para apresentar seus produtos,
+            serviços, estabelecimentos e imóveis.
+
+            Escolha a duração, confira os preços
+            e conheça nossos exemplos.
           </p>
 
           <div class="actions">
+
             <a class="btn btn-primary" href="#portfolio">
-              Explorar o portfólio
-              <span aria-hidden="true">↗</span>
+              Ver exemplos ↗
             </a>
 
             <a class="btn btn-outline" href="#precos">
-              Ver preços e durações
+              Conferir preços
             </a>
+
           </div>
 
           <p class="hero-note">
-            DE 15 SEGUNDOS A 2 MINUTOS
+            VÍDEOS DE 15 SEGUNDOS A 2 MINUTOS
             &nbsp;·&nbsp;
             R$ 35 A R$ 190
           </p>
+
         </div>
 
-        <div class="hero-visual"
-             aria-label="Apresentação visual da área de vídeos comerciais">
+      </div>
+    </section>
 
-          <div class="visual-back" aria-hidden="true"></div>
+    <!-- =====================================
+         VITRINE
 
-          <div class="visual-frame">
+         EXEMPLOS + TABELA DE PREÇOS
+         ===================================== -->
 
-            <div class="visual-fallback" aria-hidden="true">
-              <span>H</span>
-              <p>Vídeos Comerciais</p>
+    <section class="showcase"
+             id="portfolio"
+             aria-labelledby="showcaseTitle">
+
+      <div class="container">
+
+        <div class="showcase-heading">
+
+          <p class="eyebrow">
+            CONHEÇA NOSSA PRODUÇÃO
+          </p>
+
+          <h2 id="showcaseTitle">
+            Exemplos e <span class="gold">preços.</span>
+          </h2>
+
+          <p>
+            Conheça os tipos de comerciais que produzimos
+            e escolha a duração ideal para o seu negócio.
+          </p>
+
+        </div>
+
+        <div class="showcase-layout">
+
+          <!-- EXEMPLOS DOS VÍDEOS -->
+
+          <div class="portfolio-content">
+
+            <div class="filters"
+                 role="group"
+                 aria-label="Filtrar vídeos por categoria">
+
+              <button
+                class="filter"
+                type="button"
+                data-filter="todos"
+                aria-pressed="true">
+                Todos
+              </button>
+
+              <button
+                class="filter"
+                type="button"
+                data-filter="alimentos"
+                aria-pressed="false">
+                Alimentos &amp; bebidas
+              </button>
+
+              <button
+                class="filter"
+                type="button"
+                data-filter="comercio"
+                aria-pressed="false">
+                Comércios
+              </button>
+
+              <button
+                class="filter"
+                type="button"
+                data-filter="imoveis"
+                aria-pressed="false">
+                Imóveis
+              </button>
+
             </div>
 
-            <img
-              id="heroArtwork"
-              src="/assets/img/card-videos-comerciais.webp"
-              alt="Arte de apresentação da HYPERBOREA para vídeos comerciais"
-              width="812"
-              height="1024"
-              decoding="async"
-            >
+            <p
+              class="portfolio-count"
+              id="portfolioCount"
+              aria-live="polite">
+            </p>
 
-            <span class="visual-caption">
-              ROTEIRO &nbsp;·&nbsp;
-              VISUAL COM IA &nbsp;·&nbsp;
-              EDIÇÃO
-            </span>
+            <div
+              class="portfolio-grid"
+              id="portfolioGrid"
+              aria-label="Exemplos de vídeos comerciais">
+            </div>
+
+            <p class="portfolio-note">
+              Os vídeos demonstrativos são criações de
+              portfólio da HYPERBOREA.
+
+              Trabalhos contratados por clientes não são
+              publicados sem autorização específica.
+            </p>
 
           </div>
+
+          <!-- PREÇOS -->
+
+          <aside class="pricing-panel"
+                 id="precos"
+                 aria-labelledby="pricingTitle">
+
+            <div class="pricing-header">
+
+              <p class="eyebrow">
+                PREÇOS TRANSPARENTES
+              </p>
+
+              <h3 id="pricingTitle">
+                Escolha seu <span class="gold">comercial.</span>
+              </h3>
+
+              <p>
+                Valores fixos por duração, iguais
+                para negócios de todos os tamanhos.
+              </p>
+
+            </div>
+
+            <div class="prices-grid"
+                 aria-label="Tabela de preços de vídeos comerciais">
+
+              <!-- 15 SEGUNDOS -->
+
+              <article class="price-card">
+
+                <h4>15 segundos</h4>
+
+                <p class="price-value">
+                  R$ 35,00
+                </p>
+
+                <a
+                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contratar vídeo de 15 segundos por 35 reais">
+                  Contratar ↗
+                </a>
+
+              </article>
+
+              <!-- 30 SEGUNDOS -->
+
+              <article class="price-card">
+
+                <h4>30 segundos</h4>
+
+                <p class="price-value">
+                  R$ 70,00
+                </p>
+
+                <a
+                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contratar vídeo de 30 segundos por 70 reais">
+                  Contratar ↗
+                </a>
+
+              </article>
+
+              <!-- 45 SEGUNDOS -->
+
+              <article class="price-card">
+
+                <h4>45 segundos</h4>
+
+                <p class="price-value">
+                  R$ 100,00
+                </p>
+
+                <a
+                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contratar vídeo de 45 segundos por 100 reais">
+                  Contratar ↗
+                </a>
+
+              </article>
+
+              <!-- 1 MINUTO -->
+
+              <article class="price-card">
+
+                <h4>1 minuto</h4>
+
+                <p class="price-value">
+                  R$ 130,00
+                </p>
+
+                <a
+                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contratar vídeo de 1 minuto por 130 reais">
+                  Contratar ↗
+                </a>
+
+              </article>
+
+              <!-- 1 MINUTO E 30 SEGUNDOS -->
+
+              <article class="price-card">
+
+                <h4>1 minuto e 30 segundos</h4>
+
+                <p class="price-value">
+                  R$ 160,00
+                </p>
+
+                <a
+                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contratar vídeo de 1 minuto e 30 segundos por 160 reais">
+                  Contratar ↗
+                </a>
+
+              </article>
+
+              <!-- 2 MINUTOS -->
+
+              <article class="price-card">
+
+                <h4>2 minutos</h4>
+
+                <p class="price-value">
+                  R$ 190,00
+                </p>
+
+                <a
+                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Contratar vídeo de 2 minutos por 190 reais">
+                  Contratar ↗
+                </a>
+
+              </article>
+
+            </div>
+
+            <p class="pricing-description">
+
+              <strong>O serviço inclui:</strong>
+              conceito e roteiro, produção visual com apoio
+              de IA e edição, utilizando as imagens,
+              informações e referências enviadas pelo cliente.
+
+              Não realizamos filmagem presencial.
+
+              Prazo, formato de entrega e condições dos ajustes
+              são confirmados antes da contratação.
+
+            </p>
+
+            <p class="pricing-more">
+
+              Precisa de um vídeo com mais de 2 minutos?
+
+              <a
+                href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                target="_blank"
+                rel="noopener noreferrer">
+                Fale conosco pelo WhatsApp ↗
+              </a>
+
+            </p>
+
+          </aside>
+
         </div>
       </div>
     </section>
 
-    <!-- DIFERENCIAIS -->
-
-    <div class="features"
-         aria-label="Diferenciais da produção visual">
-
-      <div class="container features-row">
-
-        <div class="feature">
-          <b>✦</b> Criação visual personalizada
-        </div>
-
-        <div class="feature">
-          <b>◈</b> Fidelidade às referências
-        </div>
-
-        <div class="feature">
-          <b>◇</b> Preços claros para todos os negócios
-        </div>
-
-      </div>
-    </div>
-
-    <!-- PORTFÓLIO -->
-
-    <section class="portfolio"
-             id="portfolio"
-             aria-labelledby="portfolioTitle">
-
-      <div class="container">
-
-        <div class="intro">
-          <p class="eyebrow">PORTFÓLIO AUDIOVISUAL</p>
-
-          <h2 class="section-title" id="portfolioTitle">
-            Histórias que
-            <span class="gold">ganham movimento.</span>
-          </h2>
-
-          <p class="lead">
-            Explore nossas linhas de produção para
-            diferentes tipos de negócio.
-            À medida que os vídeos demonstrativos forem
-            finalizados, você poderá assisti-los aqui mesmo,
-            sem sair do site.
-            Escolha a duração do seu comercial e confira
-            o preço na seção seguinte.
-          </p>
-
-          <p class="notice">
-            <strong>Portfólio em preparação.</strong>
-            As categorias abaixo apresentam os tipos de
-            vídeo que estamos desenvolvendo.
-            Ainda não representam comerciais finalizados
-            nem trabalhos de clientes.
-          </p>
-        </div>
-
-        <div class="filters"
-             role="group"
-             aria-label="Filtrar vídeos por categoria">
-
-          <button class="filter"
-                  type="button"
-                  data-filter="todos"
-                  aria-pressed="true">
-            Todos
-          </button>
-
-          <button class="filter"
-                  type="button"
-                  data-filter="alimentos"
-                  aria-pressed="false">
-            Alimentos &amp; bebidas
-          </button>
-
-          <button class="filter"
-                  type="button"
-                  data-filter="comercio"
-                  aria-pressed="false">
-            Comércios
-          </button>
-
-          <button class="filter"
-                  type="button"
-                  data-filter="imoveis"
-                  aria-pressed="false">
-            Imóveis
-          </button>
-        </div>
-
-        <p class="portfolio-count"
-           id="portfolioCount"
-           aria-live="polite"></p>
-
-        <div
-          class="portfolio-grid"
-          id="portfolioGrid"
-          aria-label="Catálogo de vídeos comerciais">
-        </div>
-
-        <p class="portfolio-end">
-          Os filmes demonstrativos serão identificados como
-          criações de portfólio da HYPERBOREA.
-          Produções contratadas por clientes não serão
-          publicadas sem autorização específica.
-        </p>
-
-      </div>
-    </section>
-
-    <!-- NOVA TABELA DE PREÇOS -->
-
-    <section class="pricing"
-             id="precos"
-             aria-labelledby="pricingTitle">
-
-      <div class="container">
-
-        <div class="intro">
-
-          <p class="eyebrow">PREÇOS TRANSPARENTES</p>
-
-          <h2 class="section-title" id="pricingTitle">
-            Seu comercial.
-            <span class="gold">Seu preço.</span>
-          </h2>
-
-          <p class="lead">
-            Qualidade visual e valores definidos para
-            vídeos comerciais de 15 segundos a 2 minutos.
-
-            Escolha a duração que combina com seu projeto.
-
-            Os mesmos preços valem para negócios de
-            todos os tamanhos.
-          </p>
-
-        </div>
-
-        <div class="prices-grid"
-             aria-label="Preços fixos por duração">
-
-          <!-- 15 SEGUNDOS -->
-
-          <article class="price-card">
-            <h3>15 segundos</h3>
-
-            <div class="price">R$ 35,00</div>
-
-            <p>
-              Roteiro, produção visual com IA e edição,
-              a partir dos materiais enviados por você.
-            </p>
-
-            <a
-              class="btn btn-outline"
-              href="https://wa.me/message/FHWOVDSQ3AKCO1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contratar vídeo comercial de 15 segundos por R$ 35,00">
-              Contratar pelo WhatsApp ↗
-            </a>
-          </article>
-
-          <!-- 30 SEGUNDOS -->
-
-          <article class="price-card">
-            <h3>30 segundos</h3>
-
-            <div class="price">R$ 70,00</div>
-
-            <p>
-              Roteiro, produção visual com IA e edição,
-              a partir dos materiais enviados por você.
-            </p>
-
-            <a
-              class="btn btn-outline"
-              href="https://wa.me/message/FHWOVDSQ3AKCO1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contratar vídeo comercial de 30 segundos por R$ 70,00">
-              Contratar pelo WhatsApp ↗
-            </a>
-          </article>
-
-          <!-- 45 SEGUNDOS -->
-
-          <article class="price-card">
-            <h3>45 segundos</h3>
-
-            <div class="price">R$ 100,00</div>
-
-            <p>
-              Roteiro, produção visual com IA e edição,
-              a partir dos materiais enviados por você.
-            </p>
-
-            <a
-              class="btn btn-outline"
-              href="https://wa.me/message/FHWOVDSQ3AKCO1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contratar vídeo comercial de 45 segundos por R$ 100,00">
-              Contratar pelo WhatsApp ↗
-            </a>
-          </article>
-
-          <!-- 1 MINUTO -->
-
-          <article class="price-card">
-            <h3>1 minuto</h3>
-
-            <div class="price">R$ 130,00</div>
-
-            <p>
-              Roteiro, produção visual com IA e edição,
-              a partir dos materiais enviados por você.
-            </p>
-
-            <a
-              class="btn btn-outline"
-              href="https://wa.me/message/FHWOVDSQ3AKCO1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contratar vídeo comercial de 1 minuto por R$ 130,00">
-              Contratar pelo WhatsApp ↗
-            </a>
-          </article>
-
-          <!-- 1 MINUTO E 30 SEGUNDOS -->
-
-          <article class="price-card">
-            <h3>1 minuto e 30 segundos</h3>
-
-            <div class="price">R$ 160,00</div>
-
-            <p>
-              Roteiro, produção visual com IA e edição,
-              a partir dos materiais enviados por você.
-            </p>
-
-            <a
-              class="btn btn-outline"
-              href="https://wa.me/message/FHWOVDSQ3AKCO1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contratar vídeo comercial de 1 minuto e 30 segundos por R$ 160,00">
-              Contratar pelo WhatsApp ↗
-            </a>
-          </article>
-
-          <!-- 2 MINUTOS -->
-
-          <article class="price-card">
-            <h3>2 minutos</h3>
-
-            <div class="price">R$ 190,00</div>
-
-            <p>
-              Roteiro, produção visual com IA e edição,
-              a partir dos materiais enviados por você.
-            </p>
-
-            <a
-              class="btn btn-outline"
-              href="https://wa.me/message/FHWOVDSQ3AKCO1"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Contratar vídeo comercial de 2 minutos por R$ 190,00">
-              Contratar pelo WhatsApp ↗
-            </a>
-          </article>
-
-        </div>
-
-        <p class="pricing-note">
-          <strong>O que está incluído:</strong>
-          conceito e roteiro, produção visual com auxílio de
-          inteligência artificial e edição, com base nas
-          imagens, informações e referências fornecidas
-          pelo cliente.
-
-          Não realizamos filmagem presencial.
-
-          Antes da contratação, confirmamos formato de entrega,
-          prazo e condições dos ajustes para o trabalho solicitado.
-        </p>
-
-        <p class="pricing-more">
-          Precisa de um comercial com
-          <strong>mais de 2 minutos</strong>?
-
-          <a
-            href="https://wa.me/message/FHWOVDSQ3AKCO1"
-            target="_blank"
-            rel="noopener noreferrer">
-            Converse conosco pelo WhatsApp ↗
-          </a>
-        </p>
-
-      </div>
-    </section>
-
-    <!-- PROCESSO DE PRODUÇÃO -->
+    <!-- =====================================
+         COMO FUNCIONA
+         ===================================== -->
 
     <section class="process"
              id="processo"
@@ -1512,66 +1617,81 @@
 
       <div class="container">
 
-        <p class="eyebrow">COMO TRABALHAMOS</p>
+        <p class="eyebrow">
+          COMO TRABALHAMOS
+        </p>
 
-        <h2 class="section-title" id="processTitle">
+        <h2 class="section-title"
+            id="processTitle">
+
           Da sua ideia
           <span class="gold">ao comercial.</span>
+
         </h2>
 
         <p class="lead">
-          Um processo objetivo, pensado para valorizar
-          o que torna seu negócio único.
+          Um processo direto, com comunicação clara
+          do início até a entrega.
         </p>
 
         <div class="steps">
 
           <article class="step">
+
             <b>01</b>
+
+            <h3>Escolha a duração</h3>
+
+            <p>
+              Confira nossa tabela e escolha o vídeo
+              que deseja contratar.
+
+              O valor é definido pela duração,
+              sem diferenciação pelo tamanho da empresa.
+            </p>
+
+          </article>
+
+          <article class="step">
+
+            <b>02</b>
 
             <h3>Envie seus materiais</h3>
 
             <p>
-              Você compartilha fotos, imagens e informações
-              do produto, ambiente ou serviço.
+              Compartilhe as fotos, informações e referências
+              do seu produto, serviço ou estabelecimento.
 
-              Nesta modalidade, não realizamos
-              captação presencial.
+              Desenvolvemos o roteiro e a proposta visual
+              com apoio de inteligência artificial.
             </p>
+
           </article>
 
           <article class="step">
-            <b>02</b>
 
-            <h3>Criação e movimento</h3>
-
-            <p>
-              Desenvolvemos conceito, roteiro e produção
-              visual com apoio de IA, respeitando as
-              características fundamentais dos
-              materiais fornecidos.
-            </p>
-          </article>
-
-          <article class="step">
             <b>03</b>
 
-            <h3>Edição e entrega</h3>
+            <h3>Produção e entrega</h3>
 
             <p>
-              Produzimos a duração escolhida, com atenção
-              ao ritmo, continuidade e acabamento.
+              Trabalhamos a edição, a continuidade e
+              o acabamento do comercial.
 
-              Antes de começar, confirmamos o formato de
-              entrega, o prazo e as condições dos ajustes.
+              Confirmamos prazo, formato de entrega
+              e condições de ajustes antes de começar.
             </p>
+
           </article>
 
         </div>
+
       </div>
     </section>
 
-    <!-- NOSSO COMPROMISSO -->
+    <!-- =====================================
+         COMPROMISSO
+         ===================================== -->
 
     <section class="promise"
              aria-labelledby="promiseTitle">
@@ -1579,56 +1699,69 @@
       <div class="container promise-grid">
 
         <div>
-          <p class="eyebrow">NOSSO COMPROMISSO</p>
 
-          <h2 class="section-title" id="promiseTitle">
+          <p class="eyebrow">
+            NOSSO COMPROMISSO
+          </p>
+
+          <h2 class="section-title"
+              id="promiseTitle">
+
             Criatividade com
             <span class="gold">transparência.</span>
+
           </h2>
+
         </div>
 
         <div class="promise-copy">
 
           <p>
-            A inteligência artificial amplia as
-            possibilidades da criação audiovisual,
-            mas não substitui o compromisso com a
-            <strong>fidelidade das informações</strong>.
+            Produzimos vídeos com apoio de inteligência
+            artificial, mas a responsabilidade com as
+            informações e com os materiais fornecidos
+            pelo cliente permanece fundamental.
 
-            Nosso trabalho parte dos materiais de referência
-            e busca preservar as características essenciais
-            de produtos e espaços.
+            Buscamos preservar as características essenciais
+            de produtos, ambientes e estabelecimentos.
           </p>
 
           <ul class="promise-points">
 
             <li>
-              Informamos o uso de recursos de
-              inteligência artificial no processo.
+              Preços anunciados de forma clara.
             </li>
 
             <li>
-              Não apresentamos imóveis, estabelecimentos
-              ou produtos fictícios como se fossem reais.
+              Uso de inteligência artificial informado
+              ao cliente.
             </li>
 
             <li>
-              Os vídeos de portfólio são identificados
-              como demonstrativos quando for o caso.
+              Respeito aos materiais e às referências
+              autorizadas.
             </li>
 
             <li>
-              Os materiais dos clientes são utilizados
-              dentro do escopo autorizado do projeto.
+              Vídeos demonstrativos identificados como
+              criações de portfólio.
+            </li>
+
+            <li>
+              Trabalhos de clientes não publicados sem
+              autorização específica.
             </li>
 
           </ul>
+
         </div>
 
       </div>
     </section>
 
-    <!-- DÚVIDAS FREQUENTES -->
+    <!-- =====================================
+         DÚVIDAS FREQUENTES
+         ===================================== -->
 
     <section class="faq"
              id="duvidas"
@@ -1636,113 +1769,111 @@
 
       <div class="container">
 
-        <p class="eyebrow">DÚVIDAS FREQUENTES</p>
+        <p class="eyebrow">
+          DÚVIDAS FREQUENTES
+        </p>
 
-        <h2 class="section-title" id="faqTitle">
+        <h2 class="section-title"
+            id="faqTitle">
+
           Antes de
-          <span class="gold">começar.</span>
+          <span class="gold">contratar.</span>
+
         </h2>
 
         <details>
+
+          <summary>
+            Os preços são os mesmos para qualquer empresa?
+          </summary>
+
+          <p>
+            Sim. Os valores da tabela são os mesmos
+            para todos os clientes que contratarem
+            o serviço nas condições anunciadas.
+
+            O valor é definido pela duração escolhida.
+          </p>
+
+        </details>
+
+        <details>
+
           <summary>
             Preciso gravar um vídeo ou fazer filmagens?
           </summary>
 
           <p>
-            Não necessariamente. A produção pode começar
-            a partir de fotografias e outros materiais
-            que você enviar.
+            Não necessariamente.
+
+            Podemos desenvolver a produção visual a
+            partir de fotografias e outros materiais
+            enviados por você.
 
             Nossa modalidade atual não inclui
             filmagem presencial.
           </p>
+
         </details>
 
         <details>
+
           <summary>
             Vocês utilizam inteligência artificial?
           </summary>
 
           <p>
-            Sim, quando apropriado ao projeto, de forma
-            transparente.
+            Sim. Utilizamos ferramentas de inteligência
+            artificial para auxiliar a produção visual,
+            junto ao trabalho de roteiro e edição.
 
-            Combinamos o conceito visual e os limites
-            de fidelidade antes da produção.
+            Buscamos respeitar as características
+            essenciais dos materiais fornecidos.
           </p>
+
         </details>
 
         <details>
+
           <summary>
-            O vídeo produzido para minha empresa
-            aparecerá no portfólio?
+            Posso contratar um vídeo com mais de 2 minutos?
+          </summary>
+
+          <p>
+            Sim.
+
+            Para produções com mais de 2 minutos,
+            entre em contato pelo WhatsApp.
+
+            Esses projetos não fazem parte dos
+            seis preços da tabela.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Meu comercial aparecerá no portfólio?
           </summary>
 
           <p>
             Não automaticamente.
 
-            O material contratado é entregue ao cliente.
+            O vídeo contratado é entregue ao cliente.
 
-            Qualquer divulgação pela HYPERBOREA depende
+            A divulgação pela HYPERBOREA depende
             de autorização específica.
           </p>
-        </details>
 
-        <details>
-          <summary>
-            Qual é o preço de um vídeo comercial?
-          </summary>
-
-          <p>
-            Temos seis durações com preços definidos:
-            15 segundos por R$ 35,00;
-            30 segundos por R$ 70,00;
-            45 segundos por R$ 100,00;
-            1 minuto por R$ 130,00;
-            1 minuto e 30 segundos por R$ 160,00;
-            e 2 minutos por R$ 190,00.
-
-            <a href="#precos">
-              Confira as opções e contrate pelo WhatsApp.
-            </a>
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            Uma empresa grande paga mais
-            que um pequeno comércio?
-          </summary>
-
-          <p>
-            Não.
-
-            Os valores desta tabela são os mesmos
-            para todos os clientes que contratarem
-            o serviço dentro das condições anunciadas.
-
-            O preço depende apenas da duração escolhida.
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            Vocês produzem vídeos com mais de 2 minutos?
-          </summary>
-
-          <p>
-            Sim, podemos conversar sobre produções de
-            duração maior pelo WhatsApp.
-
-            Essas produções não fazem parte da tabela
-            de 15 segundos a 2 minutos.
-          </p>
         </details>
 
       </div>
     </section>
 
-    <!-- CONTATO -->
+    <!-- =====================================
+         CONTATO
+         ===================================== -->
 
     <section class="contact"
              id="contato"
@@ -1750,19 +1881,24 @@
 
       <div class="container">
 
-        <p class="eyebrow">VAMOS CRIAR JUNTOS</p>
+        <p class="eyebrow">
+          VAMOS PRODUZIR SEU COMERCIAL
+        </p>
 
-        <h2 class="section-title" id="contactTitle">
-          Seu negócio merece
-          <span class="gold">ser visto.</span>
+        <h2 class="section-title"
+            id="contactTitle">
+
+          Sua ideia merece
+          <span class="gold">ser vista.</span>
+
         </h2>
 
         <p class="lead">
-          Escolha a duração, confira o valor e conte
-          o que deseja apresentar.
+          Escolha a duração do seu vídeo,
+          confira o preço e envie seus materiais.
 
-          Envie suas imagens e referências pelo WhatsApp
-          para começarmos a conversar sobre a produção.
+          Estamos prontos para conversar
+          sobre a sua produção comercial.
         </p>
 
         <div class="actions">
@@ -1772,22 +1908,30 @@
             href="https://wa.me/message/FHWOVDSQ3AKCO1"
             target="_blank"
             rel="noopener noreferrer">
-            Conversar pelo WhatsApp ↗
+
+            Contratar pelo WhatsApp ↗
           </a>
 
-          <a class="btn btn-outline" href="#precos">
-            Ver tabela de preços
+          <a
+            class="btn btn-outline"
+            href="#precos">
+
+            Rever os preços
           </a>
 
         </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- RODAPÉ -->
+  <!-- =====================================
+       RODAPÉ
+       ===================================== -->
 
   <footer>
+
     <div class="container footer-row">
 
       <p>
@@ -1800,6 +1944,7 @@
       </a>
 
     </div>
+
   </footer>
 
   <!-- WHATSAPP FLUTUANTE -->
@@ -1816,24 +1961,32 @@
       alt=""
       width="48"
       height="48">
+
   </a>
 
-  <!-- PLAYER DO PORTFÓLIO -->
+  <!-- =====================================
+       PLAYER DOS VÍDEOS
+       ===================================== -->
 
-  <dialog class="player-dialog"
-          id="playerDialog"
-          aria-labelledby="playerTitle">
+  <dialog
+    class="player-dialog"
+    id="playerDialog"
+    aria-labelledby="playerTitle">
 
     <div class="dialog-top">
 
-      <h3 id="playerTitle">Vídeo comercial</h3>
+      <h3 id="playerTitle">
+        Vídeo comercial
+      </h3>
 
       <button
         class="dialog-close"
         id="closePlayer"
         type="button"
         aria-label="Fechar vídeo">
+
         Fechar ×
+
       </button>
 
     </div>
@@ -1851,7 +2004,9 @@
 
   </dialog>
 
-  <!-- JAVASCRIPT DO PORTFÓLIO -->
+  <!-- =====================================
+       JAVASCRIPT
+       ===================================== -->
 
   <script>
     (function() {
@@ -1863,61 +2018,69 @@
       /*
        * CATÁLOGO DE VÍDEOS DEMONSTRATIVOS
        *
-       * Para publicar um vídeo finalizado,
-       * preencha video e poster no item.
+       * Cada projeto possui:
+       *
+       * video: arquivo MP4
+       * poster: imagem de capa
        *
        * Exemplo:
        *
        * video: "/assets/video/portfolio/cafeteria.mp4"
        * poster: "/assets/img/portfolio/cafeteria.webp"
        *
-       * Os vídeos só carregam após o clique.
+       * Enquanto video estiver vazio, o projeto
+       * será apresentado como "EM PREPARAÇÃO".
        *
-       * Não publique trabalhos reais de clientes
-       * sem autorização específica.
+       * Não inserir vídeos de clientes sem
+       * autorização específica.
        */
 
       const projetos = [
+
         {
           id:"cafeteria",
           categoria:"alimentos",
           categoriaTexto:"ALIMENTOS & BEBIDAS",
           tom:"cafe",
           titulo:"Cafeterias & confeitaria",
-          descricao:"Conceitos para cafés, sobremesas, brownies e experiências gastronômicas.",
+          descricao:"Vídeos para cafés, sobremesas e experiências gastronômicas.",
           video:"",
           poster:""
         },
+
         {
           id:"padaria",
           categoria:"alimentos",
           categoriaTexto:"ALIMENTOS & BEBIDAS",
           tom:"padaria",
           titulo:"Padarias & produtos",
-          descricao:"Vídeos para valorizar pães, doces, salgados e detalhes que despertam o apetite.",
+          descricao:"Vídeos para apresentar pães, doces, salgados e produtos.",
           video:"",
           poster:""
         },
+
         {
           id:"comercio",
           categoria:"comercio",
           categoriaTexto:"COMÉRCIOS & SERVIÇOS",
           tom:"comercio",
           titulo:"Lojas & estabelecimentos",
-          descricao:"Apresentações dinâmicas de ambientes, fachadas, serviços e negócios locais.",
+          descricao:"Vídeos de ambientes, fachadas, serviços e estabelecimentos.",
           video:"",
           poster:""
         },
+
         {
           id:"imoveis",
           categoria:"imoveis",
           categoriaTexto:"IMÓVEIS & AMBIENTES",
           tom:"imoveis",
           titulo:"Imóveis & ambientes",
-          descricao:"Percursos visuais e detalhes de espaços residenciais em projetos demonstrativos.",
+          descricao:"Apresentações visuais de espaços residenciais e ambientes.",
           video:"",
           poster:""
         }
+
       ];
 
       const grid =
@@ -1927,7 +2090,9 @@
         document.getElementById("portfolioCount");
 
       const filters =
-        Array.from(document.querySelectorAll(".filter"));
+        Array.from(
+          document.querySelectorAll(".filter")
+        );
 
       const dialog =
         document.getElementById("playerDialog");
@@ -1938,39 +2103,61 @@
       const whatsapp =
         "https://wa.me/message/FHWOVDSQ3AKCO1";
 
+      /* CRIA OS CARDS DO PORTFÓLIO */
+
       function criarProjeto(projeto) {
 
-        const article = document.createElement("article");
+        const article =
+          document.createElement("article");
+
         article.className = "video-card";
         article.dataset.category = projeto.categoria;
 
-        const thumb = document.createElement("div");
+        const thumb =
+          document.createElement("div");
+
         thumb.className = "thumb";
         thumb.dataset.tone = projeto.tom;
 
-        const mark = document.createElement("div");
+        const mark =
+          document.createElement("div");
+
         mark.className = "thumb-mark";
         mark.setAttribute("aria-hidden","true");
 
-        const letter = document.createElement("strong");
+        const letter =
+          document.createElement("strong");
+
         letter.textContent = "H";
 
-        const brand = document.createElement("span");
+        const brand =
+          document.createElement("span");
+
         brand.textContent = "HYPERBOREA";
 
         mark.append(letter,brand);
         thumb.appendChild(mark);
 
+        /* IMAGEM DO VÍDEO */
+
         if (projeto.poster) {
-          const img = document.createElement("img");
+
+          const img =
+            document.createElement("img");
+
           img.src = projeto.poster;
           img.alt = "";
           img.loading = "lazy";
           img.decoding = "async";
+
           thumb.appendChild(img);
         }
 
-        const status = document.createElement("span");
+        /* STATUS DO VÍDEO */
+
+        const status =
+          document.createElement("span");
+
         status.className = "thumb-status";
 
         status.textContent = projeto.video
@@ -1979,9 +2166,13 @@
 
         thumb.appendChild(status);
 
+        /* BOTÃO DE REPRODUÇÃO */
+
         if (projeto.video) {
 
-          const play = document.createElement("button");
+          const play =
+            document.createElement("button");
+
           play.type = "button";
           play.className = "play-overlay";
 
@@ -1990,7 +2181,9 @@
             "Assistir: " + projeto.titulo
           );
 
-          const symbol = document.createElement("span");
+          const symbol =
+            document.createElement("span");
+
           symbol.className = "play-icon";
           symbol.textContent = "▶";
           symbol.setAttribute("aria-hidden","true");
@@ -2004,80 +2197,120 @@
           thumb.appendChild(play);
         }
 
-        const body = document.createElement("div");
+        /* INFORMAÇÕES DO CARD */
+
+        const body =
+          document.createElement("div");
+
         body.className = "video-body";
 
-        const tag = document.createElement("div");
+        const tag =
+          document.createElement("div");
+
         tag.className = "video-category";
         tag.textContent = projeto.categoriaTexto;
 
-        const heading = document.createElement("h3");
+        const heading =
+          document.createElement("h3");
+
         heading.textContent = projeto.titulo;
 
-        const description = document.createElement("p");
+        const description =
+          document.createElement("p");
+
         description.textContent = projeto.descricao;
 
-        const foot = document.createElement("div");
+        const foot =
+          document.createElement("div");
+
         foot.className = "video-footer";
 
-        const note = document.createElement("span");
+        const note =
+          document.createElement("span");
+
         note.className = "status-label";
 
         note.textContent = projeto.video
           ? "Vídeo demonstrativo"
           : "Demonstração em produção";
 
-        const link = document.createElement("a");
+        const link =
+          document.createElement("a");
+
         link.href = whatsapp;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
-        link.textContent = "Contratar um vídeo assim ↗";
+
+        link.textContent =
+          "Contratar um vídeo assim ↗";
 
         foot.append(note,link);
 
-        body.append(tag,heading,description,foot);
+        body.append(
+          tag,
+          heading,
+          description,
+          foot
+        );
+
         article.append(thumb,body);
 
         return article;
       }
 
+      /* FILTROS */
+
       function filtrar(categoria) {
 
         let total = 0;
 
-        Array.from(grid.children).forEach(function(card) {
+        Array.from(grid.children).forEach(
+          function(card) {
 
-          const visible =
-            categoria === "todos" ||
-            card.dataset.category === categoria;
+            const visible =
+              categoria === "todos" ||
+              card.dataset.category === categoria;
 
-          card.hidden = !visible;
+            card.hidden = !visible;
 
-          if (visible) total++;
-        });
+            if (visible) {
+              total++;
+            }
+
+          }
+        );
 
         counter.textContent =
           total +
           (total === 1
-            ? " proposta de produção"
-            : " propostas de produção");
+            ? " exemplo de produção"
+            : " exemplos de produção");
 
         filters.forEach(function(button) {
+
           button.setAttribute(
             "aria-pressed",
-            String(button.dataset.filter === categoria)
+            String(
+              button.dataset.filter === categoria
+            )
           );
+
         });
       }
 
+      /* PLAYER DE VÍDEO */
+
       function abrirVideo(projeto) {
 
-        if (!projeto.video) return;
+        if (!projeto.video) {
+          return;
+        }
 
-        document.getElementById("playerTitle").textContent =
-          projeto.titulo;
+        document.getElementById("playerTitle")
+          .textContent = projeto.titulo;
 
-        document.getElementById("playerNote").textContent =
+        document.getElementById("playerNote")
+          .textContent =
           "Vídeo demonstrativo HYPERBOREA · Produção visual com IA e edição.";
 
         if (projeto.poster) {
@@ -2107,54 +2340,95 @@
       function pararVideo() {
 
         player.pause();
+
         player.removeAttribute("src");
         player.removeAttribute("poster");
+
         player.load();
       }
 
+      /* INICIALIZA O PORTFÓLIO */
+
       projetos.forEach(function(projeto) {
-        grid.appendChild(criarProjeto(projeto));
+
+        grid.appendChild(
+          criarProjeto(projeto)
+        );
+
       });
 
       filters.forEach(function(button) {
-        button.addEventListener("click",function() {
-          filtrar(button.dataset.filter);
-        });
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            filtrar(button.dataset.filter);
+
+          }
+        );
+
       });
+
+      /* FECHAR PLAYER */
 
       document.getElementById("closePlayer")
         .addEventListener("click",function() {
 
           if (typeof dialog.close === "function") {
+
             dialog.close();
+
           } else {
+
             dialog.removeAttribute("open");
             pararVideo();
+
           }
+
         });
 
-      dialog.addEventListener("close",pararVideo);
+      dialog.addEventListener(
+        "close",
+        pararVideo
+      );
 
-      dialog.addEventListener("click",function(event) {
-        if (event.target === dialog) {
-          dialog.close();
+      dialog.addEventListener(
+        "click",
+        function(event) {
+
+          if (event.target === dialog) {
+
+            if (typeof dialog.close === "function") {
+              dialog.close();
+            } else {
+              dialog.removeAttribute("open");
+              pararVideo();
+            }
+
+          }
+
         }
-      });
+      );
+
+      /* MENU MOBILE */
 
       document.querySelectorAll(".mobile-menu nav a")
         .forEach(function(link) {
 
-          link.addEventListener("click",function() {
-            document.querySelector(".mobile-menu").open = false;
-          });
+          link.addEventListener(
+            "click",
+            function() {
+
+              document.querySelector(".mobile-menu")
+                .open = false;
+
+            }
+          );
+
         });
 
-      const heroArtwork =
-        document.getElementById("heroArtwork");
-
-      heroArtwork.addEventListener("error",function() {
-        heroArtwork.hidden = true;
-      });
+      /* FILTRO INICIAL */
 
       filtrar("todos");
 
