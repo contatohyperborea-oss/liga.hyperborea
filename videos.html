@@ -2340,50 +2340,72 @@
 
       function abrirVideo(projeto) {
 
-        if (!projeto.video) {
-          return;
-        }
+function abrirVideo(projeto) {
+  if (!projeto.video) return;
 
-        document.getElementById("playerTitle")
-          .textContent = projeto.titulo;
+  document.getElementById("playerTitle")
+    .textContent = projeto.titulo;
 
-        document.getElementById("playerNote")
-          .textContent =
-          "Vídeo demonstrativo HYPERBOREA · Produção visual com IA e edição.";
+  document.getElementById("playerNote")
+    .textContent =
+    "Vídeo demonstrativo HYPERBOREA · Produção visual com IA e edição.";
 
-        if (projeto.poster) {
-          player.poster = projeto.poster;
-        } else {
-          player.removeAttribute("poster");
-        }
+  pararVideo();
 
-        player.src = projeto.video;
+  const youtube = projeto.video.includes(
+    "youtube.com/embed/"
+  );
 
-        if (typeof dialog.showModal === "function") {
-          dialog.showModal();
-        } else {
-          dialog.setAttribute("open","");
-        }
+  const midia = document.createElement(
+    youtube ? "iframe" : "video"
+  );
 
-        const tentativa = player.play();
+  if (youtube) {
+    midia.title = "Reproduzir: " + projeto.titulo;
+    midia.allow =
+      "autoplay; encrypted-media; picture-in-picture";
+    midia.allowFullscreen = true;
+  } else {
+    midia.controls = true;
+    midia.playsInline = true;
+    midia.preload = "metadata";
 
-        if (
-          tentativa &&
-          typeof tentativa.catch === "function"
-        ) {
-          tentativa.catch(function(){});
-        }
-      }
+    if (projeto.poster) {
+      midia.poster = projeto.poster;
+    }
+  }
 
-      function pararVideo() {
+  midia.src = projeto.video;
+  player.appendChild(midia);
 
-        player.pause();
+  if (typeof dialog.showModal === "function") {
+    dialog.showModal();
+  } else {
+    dialog.setAttribute("open", "");
+  }
 
-        player.removeAttribute("src");
-        player.removeAttribute("poster");
+  if (!youtube) {
+    const tentativa = midia.play();
 
-        player.load();
-      }
+    if (
+      tentativa &&
+      typeof tentativa.catch === "function"
+    ) {
+      tentativa.catch(function() {});
+    }
+  }
+}
+
+function pararVideo() {
+  const video = player.querySelector("video");
+
+  if (video) {
+    video.pause();
+  }
+
+  player.replaceChildren();
+}
+
 
       /* INICIALIZA O PORTFÓLIO */
 
