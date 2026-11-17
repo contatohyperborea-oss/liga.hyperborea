@@ -982,12 +982,21 @@
       font-weight:700;
     }
 
-    .player-dialog video {
-      display:block;
-      width:100%;
-      max-height:70dvh;
-      aspect-ratio:16/9;
-      background:#080308;
+.player-slot {
+  width:100%;
+  aspect-ratio:16/9;
+  background:#080308;
+}
+
+.player-slot iframe,
+.player-slot video {
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  background:#080308;
+}
+
     }
 
     .dialog-note {
@@ -2020,12 +2029,12 @@
 
     </div>
 
-    <video
-      id="portfolioPlayer"
-      controls
-      playsinline
-      preload="none">
-    </video>
+    
+<div
+  id="portfolioPlayer"
+  class="player-slot">
+</div>
+
 
     <p class="dialog-note" id="playerNote">
       Produção visual HYPERBOREA.
