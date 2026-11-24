@@ -5,13 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#260713">
-  <meta name="description" content="Vídeos comerciais HYPERBOREA em HD 720p. Produção visual com IA e edição. Escolha vídeos de 15 segundos a 2 minutos com preços fixos de R$ 35 a R$ 190.">
+  <meta name="description" content="Vídeos comerciais HYPERBOREA em HD 720p. Produção visual com IA e edição. Vídeos de 15 segundos a 2 minutos, com preços de R$ 35 a R$ 190. Conheça nosso portfólio horizontal e vertical.">
 
   <title>Vídeos Comerciais | HYPERBOREA — Agência Criativa</title>
 
-  <link rel="icon"
-        href="/assets/img/monograma-h.svg"
-        type="image/svg+xml">
+  <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
 
   <style>
     :root {
@@ -41,22 +39,9 @@
       color:var(--texto);
       font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
       background:
-        radial-gradient(
-          ellipse 55% 23% at 95% 12%,
-          #89304748,
-          transparent 76%
-        ),
-        radial-gradient(
-          ellipse 58% 23% at 5% 57%,
-          #7e263a36,
-          transparent 76%
-        ),
-        linear-gradient(
-          180deg,
-          #260713,
-          #3b0a1b 45%,
-          #19040d
-        );
+        radial-gradient(ellipse 55% 23% at 95% 12%,#89304748,transparent 76%),
+        radial-gradient(ellipse 58% 23% at 5% 57%,#7e263a36,transparent 76%),
+        linear-gradient(180deg,#260713,#3b0a1b 45%,#19040d);
     }
 
     h1,h2,h3,p {
@@ -138,10 +123,7 @@
       font-size:.87rem;
       font-weight:700;
       text-align:center;
-      transition:
-        transform .2s,
-        background .2s,
-        box-shadow .2s;
+      transition:transform .2s,background .2s,box-shadow .2s;
     }
 
     .btn:hover {
@@ -289,9 +271,6 @@
 
     /* ========================================
        ABERTURA COMPACTA
-
-       Banner removido.
-       Apresentação curta.
        ======================================== */
 
     .hero {
@@ -334,13 +313,6 @@
 
     /* ========================================
        VITRINE COMERCIAL
-
-       Desktop:
-       vídeos à esquerda,
-       preços à direita.
-
-       Mobile:
-       preços compactos e vídeos na sequência.
        ======================================== */
 
     .showcase {
@@ -375,7 +347,7 @@
     }
 
     /* ========================================
-       EXEMPLOS DE VÍDEOS
+       FILTROS DO PORTFÓLIO
        ======================================== */
 
     .portfolio-content {
@@ -415,6 +387,48 @@
       font-size:.76rem;
     }
 
+    /* ========================================
+       COMPARAÇÃO 16:9 E 9:16
+       ======================================== */
+
+    .format-comparison {
+      margin-bottom:18px;
+      padding:17px 19px;
+      border:1px solid #d2a76e80;
+      background:linear-gradient(125deg,#57213980,#210710b0);
+    }
+
+    .format-comparison h3 {
+      color:var(--ouro-claro);
+      font-size:1.26rem;
+      line-height:1.3;
+      margin-bottom:8px;
+    }
+
+    .format-comparison p {
+      color:var(--suave);
+      font-size:.82rem;
+      line-height:1.7;
+    }
+
+    .format-labels {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:13px;
+    }
+
+    .format-labels span {
+      border:1px solid #c59b6180;
+      padding:7px 10px;
+      color:#f1dbba;
+      font-size:.72rem;
+    }
+
+    /* ========================================
+       CARDS DOS VÍDEOS
+       ======================================== */
+
     .portfolio-grid {
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -424,11 +438,7 @@
     .video-card {
       min-width:0;
       border:1px solid var(--linha);
-      background:linear-gradient(
-        145deg,
-        #55203866,
-        #200711e0
-      );
+      background:linear-gradient(145deg,#55203866,#200711e0);
       box-shadow:0 13px 28px #10020b42;
       transition:transform .23s,border-color .23s;
     }
@@ -454,61 +464,26 @@
       inset:0;
       opacity:.9;
       background:
-        radial-gradient(
-          circle at 74% 30%,
-          #c6a06936,
-          transparent 32%
-        ),
-        linear-gradient(
-          130deg,
-          #6a263e,
-          #2a0818 58%,
-          #13030a
-        );
+        radial-gradient(circle at 74% 30%,#c6a06936,transparent 32%),
+        linear-gradient(130deg,#6a263e,#2a0818 58%,#13030a);
     }
 
     .thumb[data-tone="padaria"]::before {
       background:
-        radial-gradient(
-          circle at 36% 65%,
-          #c6a06945,
-          transparent 34%
-        ),
-        linear-gradient(
-          135deg,
-          #5d2c25,
-          #240814 65%,
-          #13030a
-        );
+        radial-gradient(circle at 36% 65%,#c6a06945,transparent 34%),
+        linear-gradient(135deg,#5d2c25,#240814 65%,#13030a);
     }
 
     .thumb[data-tone="comercio"]::before {
       background:
-        radial-gradient(
-          circle at 30% 27%,
-          #b5768750,
-          transparent 37%
-        ),
-        linear-gradient(
-          120deg,
-          #421c43,
-          #210710 70%
-        );
+        radial-gradient(circle at 30% 27%,#b5768750,transparent 37%),
+        linear-gradient(120deg,#421c43,#210710 70%);
     }
 
     .thumb[data-tone="imoveis"]::before {
       background:
-        linear-gradient(
-          139deg,
-          #775b5760,
-          transparent 48%
-        ),
-        linear-gradient(
-          25deg,
-          #240712,
-          #65354b 70%,
-          #160510
-        );
+        linear-gradient(139deg,#775b5760,transparent 48%),
+        linear-gradient(25deg,#240712,#65354b 70%,#160510);
     }
 
     .thumb::after {
@@ -550,6 +525,17 @@
       object-fit:cover;
     }
 
+    /* Capa dos Shorts centralizada em 9:16 */
+
+    .thumb[data-format="vertical"] img {
+      left:50%;
+      width:31.64%;
+      height:100%;
+      transform:translateX(-50%);
+      object-fit:cover;
+      box-shadow:0 0 0 1px #e9c994,0 0 30px #0008;
+    }
+
     .thumb-status {
       position:absolute;
       top:13px;
@@ -562,6 +548,20 @@
       font-size:.59rem;
       font-weight:750;
       letter-spacing:.08em;
+    }
+
+    .thumb-format {
+      position:absolute;
+      right:11px;
+      bottom:11px;
+      z-index:3;
+      padding:6px 9px;
+      border:1px solid #dfbb83b5;
+      background:#210713e8;
+      color:#f3ddb4;
+      font-size:.59rem;
+      font-weight:750;
+      letter-spacing:.06em;
     }
 
     .play-overlay {
@@ -636,6 +636,20 @@
       padding-bottom:3px;
     }
 
+    .video-links {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 15px;
+      margin-top:12px;
+    }
+
+    .video-links a {
+      color:#eed0a4;
+      font-size:.75rem;
+      border-bottom:1px solid var(--ouro);
+      padding-bottom:3px;
+    }
+
     .portfolio-note {
       margin-top:13px;
       color:#d5bcaf;
@@ -644,7 +658,7 @@
     }
 
     /* ========================================
-       PREÇOS AO LADO DOS EXEMPLOS
+       PREÇOS
        ======================================== */
 
     .pricing-panel {
@@ -653,11 +667,7 @@
       top:96px;
       padding:19px;
       border:1px solid var(--linha);
-      background:linear-gradient(
-        145deg,
-        #4a1429e8,
-        #210710f5 75%
-      );
+      background:linear-gradient(145deg,#4a1429e8,#210710f5 75%);
       box-shadow:0 17px 40px #10020b55;
     }
 
@@ -795,17 +805,13 @@
     }
 
     /* ========================================
-       COMPROMISSO E CONFIANÇA
+       COMPROMISSO
        ======================================== */
 
     .promise {
       padding:57px 0 63px;
       border-block:1px solid var(--linha);
-      background:linear-gradient(
-        140deg,
-        #4e13294d,
-        #1b0510b0
-      );
+      background:linear-gradient(140deg,#4e13294d,#1b0510b0);
     }
 
     .promise-grid {
@@ -846,7 +852,7 @@
     }
 
     /* ========================================
-       DÚVIDAS
+       PERGUNTAS FREQUENTES
        ======================================== */
 
     .faq {
@@ -982,27 +988,40 @@
       font-weight:700;
     }
 
-.player-slot {
-  width:100%;
-  aspect-ratio:16/9;
-  background:#080308;
-}
+    /* Player horizontal padrão */
 
-.player-slot iframe,
-.player-slot video {
-  display:block;
-  width:100%;
-  height:100%;
-  border:0;
-  background:#080308;
-}
+    .player-slot {
+      width:100%;
+      aspect-ratio:16/9;
+      background:#080308;
+    }
 
+    .player-slot iframe,
+    .player-slot video {
+      display:block;
+      width:100%;
+      height:100%;
+      border:0;
+      background:#080308;
+    }
+
+    /* Player vertical para Shorts 9:16 */
+
+    .player-dialog.is-vertical {
+      width:min(450px,calc(100% - 28px));
+    }
+
+    .player-dialog.is-vertical .player-slot {
+      width:min(100%,320px,36dvh);
+      aspect-ratio:9/16;
+      margin-inline:auto;
     }
 
     .dialog-note {
       margin-top:11px;
       color:var(--suave);
       font-size:.85rem;
+      text-align:center;
     }
 
     /* ========================================
@@ -1010,7 +1029,6 @@
        ======================================== */
 
     @media(max-width:1050px) {
-
       .nav-links {
         display:none;
       }
@@ -1038,7 +1056,6 @@
        ======================================== */
 
     @media(max-width:790px) {
-
       .showcase-layout {
         display:flex;
         flex-direction:column;
@@ -1084,7 +1101,6 @@
     }
 
     @media(max-width:570px) {
-
       .container {
         width:calc(100% - 32px);
       }
@@ -1199,10 +1215,21 @@
         right:13px;
         bottom:13px;
       }
+
+      .player-dialog {
+        padding:12px;
+      }
+
+      .dialog-top {
+        gap:8px;
+      }
+
+      .dialog-top h3 {
+        font-size:1.15rem;
+      }
     }
 
     @media(prefers-reduced-motion:reduce) {
-
       html {
         scroll-behavior:auto;
       }
@@ -1221,7 +1248,6 @@
        ===================================== -->
 
   <header class="site-header">
-
     <div class="container nav-row">
 
       <a class="brand"
@@ -1238,46 +1264,30 @@
           <strong>HYPERBOREA</strong>
           <small>AGÊNCIA CRIATIVA</small>
         </span>
-
       </a>
 
       <nav class="nav-links"
            aria-label="Navegação principal">
 
         <a href="/index.html">Início</a>
-
         <a href="#portfolio">Exemplos</a>
-
         <a href="#precos">Preços</a>
-
         <a href="#processo">Como funciona</a>
-
         <a href="/sobre.html">Sobre</a>
-
         <a class="nav-cta" href="#contato">Contato</a>
-
       </nav>
 
       <details class="mobile-menu">
-
         <summary>☰ Menu</summary>
 
         <nav aria-label="Navegação para celular">
-
           <a href="/index.html">Início</a>
-
           <a href="#portfolio">Exemplos</a>
-
           <a href="#precos">Preços</a>
-
           <a href="#processo">Como funciona</a>
-
           <a href="/sobre.html">Sobre</a>
-
           <a href="#contato">Contato</a>
-
         </nav>
-
       </details>
 
     </div>
@@ -1286,9 +1296,7 @@
   <main>
 
     <!-- =====================================
-         ABERTURA DIRETA
-
-         Sem banner de imagem.
+         ABERTURA
          ===================================== -->
 
     <section class="hero"
@@ -1296,7 +1304,6 @@
              aria-labelledby="heroTitle">
 
       <div class="container">
-
         <div class="hero-content">
 
           <p class="eyebrow">
@@ -1318,7 +1325,6 @@
           </p>
 
           <div class="actions">
-
             <a class="btn btn-primary" href="#portfolio">
               Ver exemplos ↗
             </a>
@@ -1326,7 +1332,6 @@
             <a class="btn btn-outline" href="#precos">
               Conferir preços
             </a>
-
           </div>
 
           <p class="hero-note">
@@ -1338,14 +1343,11 @@
           </p>
 
         </div>
-
       </div>
     </section>
 
     <!-- =====================================
-         VITRINE
-
-         EXEMPLOS + TABELA DE PREÇOS
+         VITRINE: VÍDEOS + PREÇOS
          ===================================== -->
 
     <section class="showcase"
@@ -1365,79 +1367,112 @@
           </h2>
 
           <p>
-            Conheça os tipos de comerciais que produzimos
-            e escolha a duração ideal para o seu negócio.
+            Conheça nossos vídeos comerciais e institucionais,
+            com exemplos de produtos, estabelecimentos
+            e imóveis em diferentes formatos.
           </p>
 
         </div>
 
         <div class="showcase-layout">
 
-          <!-- EXEMPLOS DOS VÍDEOS -->
+          <!-- PORTFÓLIO -->
 
           <div class="portfolio-content">
+
+            <!-- COMPARAÇÃO DOS BROWNIES -->
+
+            <div class="format-comparison">
+
+              <h3>
+                Um mesmo produto. Dois formatos.
+              </h3>
+
+              <p>
+                Confira nosso comercial de brownie
+                em duas versões: horizontal 16:9
+                para sites, apresentações e YouTube,
+                e vertical 9:16 para Shorts,
+                Reels e Stories.
+
+                A HYPERBOREA adapta a produção
+                para diferentes plataformas,
+                valorizando a apresentação
+                do seu produto.
+              </p>
+
+              <div class="format-labels">
+                <span>HORIZONTAL · 16:9</span>
+                <span>VERTICAL · 9:16</span>
+              </div>
+
+            </div>
+
+            <!-- FILTROS -->
 
             <div class="filters"
                  role="group"
                  aria-label="Filtrar vídeos por categoria">
 
-              <button
-                class="filter"
-                type="button"
-                data-filter="todos"
-                aria-pressed="true">
+              <button class="filter"
+                      type="button"
+                      data-filter="todos"
+                      aria-pressed="true">
                 Todos
               </button>
 
-              <button
-                class="filter"
-                type="button"
-                data-filter="alimentos"
-                aria-pressed="false">
+              <button class="filter"
+                      type="button"
+                      data-filter="alimentos"
+                      aria-pressed="false">
                 Alimentos &amp; bebidas
               </button>
 
-              <button
-                class="filter"
-                type="button"
-                data-filter="comercio"
-                aria-pressed="false">
+              <button class="filter"
+                      type="button"
+                      data-filter="comercio"
+                      aria-pressed="false">
                 Comércios
               </button>
 
-              <button
-                class="filter"
-                type="button"
-                data-filter="imoveis"
-                aria-pressed="false">
+              <button class="filter"
+                      type="button"
+                      data-filter="imoveis"
+                      aria-pressed="false">
                 Imóveis
               </button>
 
             </div>
 
-            <p
-              class="portfolio-count"
-              id="portfolioCount"
-              aria-live="polite">
-            </p>
+            <p class="portfolio-count"
+               id="portfolioCount"
+               aria-live="polite"></p>
 
-            <div
-              class="portfolio-grid"
-              id="portfolioGrid"
-              aria-label="Exemplos de vídeos comerciais">
+            <!-- CARDS GERADOS PELO JAVASCRIPT -->
+
+            <div class="portfolio-grid"
+                 id="portfolioGrid"
+                 aria-label="Exemplos de vídeos comerciais">
             </div>
 
             <p class="portfolio-note">
-              Os vídeos demonstrativos são criações de
-              portfólio da HYPERBOREA.
+              Nosso portfólio inclui produções
+              demonstrativas e apresentações
+              institucionais.
 
-              Trabalhos contratados por clientes não são
-              publicados sem autorização específica.
+              Projetos fictícios são identificados
+              nas respectivas descrições.
+
+              Trabalhos contratados por clientes
+              não são publicados sem autorização
+              específica.
             </p>
 
           </div>
 
-          <!-- PREÇOS -->
+          <!-- =====================================
+               TABELA DE PREÇOS
+               ===================================== -->
 
           <aside class="pricing-panel"
                  id="precos"
@@ -1464,158 +1499,104 @@
             <div class="prices-grid"
                  aria-label="Tabela de preços de vídeos comerciais">
 
-              <!-- 15 SEGUNDOS -->
-
               <article class="price-card">
-
                 <h4>15 segundos</h4>
-
-                <p class="price-value">
-                  R$ 35,00
-                </p>
-
-                <a
-                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Contratar vídeo de 15 segundos por 35 reais">
+                <p class="price-value">R$ 35,00</p>
+                <a href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Contratar vídeo de 15 segundos por 35 reais">
                   Contratar ↗
                 </a>
-
               </article>
 
-              <!-- 30 SEGUNDOS -->
-
               <article class="price-card">
-
                 <h4>30 segundos</h4>
-
-                <p class="price-value">
-                  R$ 70,00
-                </p>
-
-                <a
-                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Contratar vídeo de 30 segundos por 70 reais">
+                <p class="price-value">R$ 70,00</p>
+                <a href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Contratar vídeo de 30 segundos por 70 reais">
                   Contratar ↗
                 </a>
-
               </article>
 
-              <!-- 45 SEGUNDOS -->
-
               <article class="price-card">
-
                 <h4>45 segundos</h4>
-
-                <p class="price-value">
-                  R$ 100,00
-                </p>
-
-                <a
-                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Contratar vídeo de 45 segundos por 100 reais">
+                <p class="price-value">R$ 100,00</p>
+                <a href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Contratar vídeo de 45 segundos por 100 reais">
                   Contratar ↗
                 </a>
-
               </article>
 
-              <!-- 1 MINUTO -->
-
               <article class="price-card">
-
                 <h4>1 minuto</h4>
-
-                <p class="price-value">
-                  R$ 130,00
-                </p>
-
-                <a
-                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Contratar vídeo de 1 minuto por 130 reais">
+                <p class="price-value">R$ 130,00</p>
+                <a href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Contratar vídeo de 1 minuto por 130 reais">
                   Contratar ↗
                 </a>
-
               </article>
 
-              <!-- 1 MINUTO E 30 SEGUNDOS -->
-
               <article class="price-card">
-
                 <h4>1 minuto e 30 segundos</h4>
-
-                <p class="price-value">
-                  R$ 160,00
-                </p>
-
-                <a
-                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Contratar vídeo de 1 minuto e 30 segundos por 160 reais">
+                <p class="price-value">R$ 160,00</p>
+                <a href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Contratar vídeo de 1 minuto e 30 segundos por 160 reais">
                   Contratar ↗
                 </a>
-
               </article>
 
-              <!-- 2 MINUTOS -->
-
               <article class="price-card">
-
                 <h4>2 minutos</h4>
-
-                <p class="price-value">
-                  R$ 190,00
-                </p>
-
-                <a
-                  href="https://wa.me/message/FHWOVDSQ3AKCO1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Contratar vídeo de 2 minutos por 190 reais">
+                <p class="price-value">R$ 190,00</p>
+                <a href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Contratar vídeo de 2 minutos por 190 reais">
                   Contratar ↗
                 </a>
-
               </article>
 
             </div>
 
             <p class="pricing-description">
-
               <strong>O serviço inclui:</strong>
-              conceito e roteiro, produção visual com apoio
-              de IA e edição, utilizando as imagens,
-              informações e referências enviadas pelo cliente.
+              conceito e roteiro, produção visual
+              com apoio de IA e edição, utilizando
+              as imagens, informações e referências
+              enviadas pelo cliente.
 
               Não realizamos filmagem presencial.
 
               <strong>Resolução de entrega:</strong>
-              HD 720p (1280 × 720 pixels no formato horizontal).
-              Full HD 1080p não está incluído nos valores
-              anunciados.
+              HD 720p (1280 × 720 pixels no formato
+              horizontal). Vídeos verticais possuem
+              dimensões adaptadas à orientação 9:16.
 
-              Prazo, formato de entrega e condições dos ajustes
-              são confirmados antes da contratação.
+              Full HD 1080p não está incluído
+              nos valores anunciados.
 
+              Prazo, formato de entrega e condições
+              dos ajustes são confirmados antes
+              da contratação.
             </p>
 
             <p class="pricing-more">
-
               Precisa de um vídeo com mais de 2 minutos?
 
-              <a
-                href="https://wa.me/message/FHWOVDSQ3AKCO1"
-                target="_blank"
-                rel="noopener noreferrer">
+              <a href="https://wa.me/message/FHWOVDSQ3AKCO1"
+                 target="_blank"
+                 rel="noopener noreferrer">
                 Fale conosco pelo WhatsApp ↗
               </a>
-
             </p>
 
           </aside>
@@ -1638,12 +1619,9 @@
           COMO TRABALHAMOS
         </p>
 
-        <h2 class="section-title"
-            id="processTitle">
-
+        <h2 class="section-title" id="processTitle">
           Da sua ideia
           <span class="gold">ao comercial.</span>
-
         </h2>
 
         <p class="lead">
@@ -1654,55 +1632,45 @@
         <div class="steps">
 
           <article class="step">
-
             <b>01</b>
-
             <h3>Escolha a duração</h3>
-
             <p>
               Confira nossa tabela e escolha o vídeo
               que deseja contratar.
 
               O valor é definido pela duração,
-              sem diferenciação pelo tamanho da empresa.
+              sem diferenciação pelo tamanho
+              da empresa.
             </p>
-
           </article>
 
           <article class="step">
-
             <b>02</b>
-
             <h3>Envie seus materiais</h3>
-
             <p>
-              Compartilhe as fotos, informações e referências
-              do seu produto, serviço ou estabelecimento.
+              Compartilhe as fotos, informações
+              e referências do seu produto,
+              serviço ou estabelecimento.
 
-              Desenvolvemos o roteiro e a proposta visual
-              com apoio de inteligência artificial.
+              Desenvolvemos o roteiro e a proposta
+              visual com apoio de inteligência
+              artificial.
             </p>
-
           </article>
 
           <article class="step">
-
             <b>03</b>
-
             <h3>Produção e entrega</h3>
-
             <p>
-              Trabalhamos a edição, a continuidade e
-              o acabamento do comercial.
+              Trabalhamos a edição, a continuidade
+              e o acabamento do comercial.
 
               Confirmamos prazo, formato de entrega
               e condições de ajustes antes de começar.
             </p>
-
           </article>
 
         </div>
-
       </div>
     </section>
 
@@ -1716,63 +1684,51 @@
       <div class="container promise-grid">
 
         <div>
-
           <p class="eyebrow">
             NOSSO COMPROMISSO
           </p>
 
-          <h2 class="section-title"
-              id="promiseTitle">
-
+          <h2 class="section-title" id="promiseTitle">
             Criatividade com
             <span class="gold">transparência.</span>
-
           </h2>
-
         </div>
 
         <div class="promise-copy">
 
           <p>
             Produzimos vídeos com apoio de inteligência
-            artificial, mas a responsabilidade com as
-            informações e com os materiais fornecidos
-            pelo cliente permanece fundamental.
+            artificial, mas a responsabilidade com
+            as informações e com os materiais
+            fornecidos pelo cliente permanece
+            fundamental.
 
-            Buscamos preservar as características essenciais
-            de produtos, ambientes e estabelecimentos.
+            Buscamos preservar as características
+            essenciais de produtos, ambientes
+            e estabelecimentos.
           </p>
 
           <ul class="promise-points">
-
+            <li>Preços anunciados de forma clara.</li>
             <li>
-              Preços anunciados de forma clara.
+              Uso de inteligência artificial
+              informado ao cliente.
             </li>
-
             <li>
-              Uso de inteligência artificial informado
-              ao cliente.
+              Respeito aos materiais e às
+              referências autorizadas.
             </li>
-
             <li>
-              Respeito aos materiais e às referências
-              autorizadas.
+              Vídeos demonstrativos identificados
+              como criações de portfólio.
             </li>
-
             <li>
-              Vídeos demonstrativos identificados como
-              criações de portfólio.
+              Trabalhos de clientes não publicados
+              sem autorização específica.
             </li>
-
-            <li>
-              Trabalhos de clientes não publicados sem
-              autorização específica.
-            </li>
-
           </ul>
 
         </div>
-
       </div>
     </section>
 
@@ -1790,20 +1746,15 @@
           DÚVIDAS FREQUENTES
         </p>
 
-        <h2 class="section-title"
-            id="faqTitle">
-
+        <h2 class="section-title" id="faqTitle">
           Antes de
           <span class="gold">contratar.</span>
-
         </h2>
 
         <details>
-
           <summary>
             Os preços são os mesmos para qualquer empresa?
           </summary>
-
           <p>
             Sim. Os valores da tabela são os mesmos
             para todos os clientes que contratarem
@@ -1811,55 +1762,61 @@
 
             O valor é definido pela duração escolhida.
           </p>
-
         </details>
 
         <details>
-
           <summary>
             Qual é a resolução dos vídeos comerciais?
           </summary>
-
           <p>
             Os vídeos comerciais anunciados nesta página
             são entregues em HD 720p, com resolução
             de 1280 × 720 pixels no formato horizontal.
 
-            Para vídeos verticais, as dimensões são
-            adaptadas à orientação.
+            Para vídeos verticais, as dimensões
+            são adaptadas à orientação 9:16.
 
             HD 720p não é o mesmo que Full HD 1080p.
             A produção em Full HD não está incluída
             nos preços da tabela.
           </p>
-
         </details>
 
         <details>
+          <summary>
+            Vocês produzem vídeos horizontais e verticais?
+          </summary>
+          <p>
+            Sim. Podemos desenvolver vídeos em formato
+            horizontal 16:9 para sites, YouTube e
+            apresentações, ou em formato vertical 9:16
+            para Shorts, Reels e Stories.
 
+            No portfólio, você pode comparar duas
+            versões do mesmo comercial de brownie.
+          </p>
+        </details>
+
+        <details>
           <summary>
             Preciso gravar um vídeo ou fazer filmagens?
           </summary>
-
           <p>
             Não necessariamente.
 
-            Podemos desenvolver a produção visual a
-            partir de fotografias e outros materiais
-            enviados por você.
+            Podemos desenvolver a produção visual
+            a partir de fotografias e outros
+            materiais enviados por você.
 
             Nossa modalidade atual não inclui
             filmagem presencial.
           </p>
-
         </details>
 
         <details>
-
           <summary>
             Vocês utilizam inteligência artificial?
           </summary>
-
           <p>
             Sim. Utilizamos ferramentas de inteligência
             artificial para auxiliar a produção visual,
@@ -1868,33 +1825,25 @@
             Buscamos respeitar as características
             essenciais dos materiais fornecidos.
           </p>
-
         </details>
 
         <details>
-
           <summary>
             Posso contratar um vídeo com mais de 2 minutos?
           </summary>
-
           <p>
-            Sim.
-
-            Para produções com mais de 2 minutos,
+            Sim. Para produções com mais de 2 minutos,
             entre em contato pelo WhatsApp.
 
             Esses projetos não fazem parte dos
             seis preços da tabela.
           </p>
-
         </details>
 
         <details>
-
           <summary>
             Meu comercial aparecerá no portfólio?
           </summary>
-
           <p>
             Não automaticamente.
 
@@ -1903,7 +1852,6 @@
             A divulgação pela HYPERBOREA depende
             de autorização específica.
           </p>
-
         </details>
 
       </div>
@@ -1923,12 +1871,9 @@
           VAMOS PRODUZIR SEU COMERCIAL
         </p>
 
-        <h2 class="section-title"
-            id="contactTitle">
-
+        <h2 class="section-title" id="contactTitle">
           Sua ideia merece
           <span class="gold">ser vista.</span>
-
         </h2>
 
         <p class="lead">
@@ -1940,23 +1885,16 @@
         </p>
 
         <div class="actions">
-
-          <a
-            class="btn btn-primary"
-            href="https://wa.me/message/FHWOVDSQ3AKCO1"
-            target="_blank"
-            rel="noopener noreferrer">
-
+          <a class="btn btn-primary"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank"
+             rel="noopener noreferrer">
             Contratar pelo WhatsApp ↗
           </a>
 
-          <a
-            class="btn btn-outline"
-            href="#precos">
-
+          <a class="btn btn-outline" href="#precos">
             Rever os preços
           </a>
-
         </div>
 
       </div>
@@ -1969,7 +1907,6 @@
        ===================================== -->
 
   <footer>
-
     <div class="container footer-row">
 
       <p>
@@ -1982,34 +1919,29 @@
       </a>
 
     </div>
-
   </footer>
 
   <!-- WHATSAPP FLUTUANTE -->
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/message/FHWOVDSQ3AKCO1"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
+  <a class="whatsapp"
+     href="https://wa.me/message/FHWOVDSQ3AKCO1"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
 
-    <img
-      src="/assets/img/whats-icon.svg"
-      alt=""
-      width="48"
-      height="48">
-
+    <img src="/assets/img/whats-icon.svg"
+         alt=""
+         width="48"
+         height="48">
   </a>
 
   <!-- =====================================
        PLAYER DOS VÍDEOS
        ===================================== -->
 
-  <dialog
-    class="player-dialog"
-    id="playerDialog"
-    aria-labelledby="playerTitle">
+  <dialog class="player-dialog"
+          id="playerDialog"
+          aria-labelledby="playerTitle">
 
     <div class="dialog-top">
 
@@ -2017,24 +1949,18 @@
         Vídeo comercial
       </h3>
 
-      <button
-        class="dialog-close"
-        id="closePlayer"
-        type="button"
-        aria-label="Fechar vídeo">
-
+      <button class="dialog-close"
+              id="closePlayer"
+              type="button"
+              aria-label="Fechar vídeo">
         Fechar ×
-
       </button>
 
     </div>
 
-    
-<div
-  id="portfolioPlayer"
-  class="player-slot">
-</div>
-
+    <div id="portfolioPlayer"
+         class="player-slot">
+    </div>
 
     <p class="dialog-note" id="playerNote">
       Produção visual HYPERBOREA.
@@ -2053,27 +1979,91 @@
       document.getElementById("ano").textContent =
         new Date().getFullYear();
 
-      /*
-       * CATÁLOGO DE VÍDEOS DEMONSTRATIVOS
-       *
-       * Cada projeto possui:
-       *
-       * video: arquivo MP4
-       * poster: imagem de capa
-       *
-       * Exemplo:
-       *
-       * video: "/assets/video/portfolio/cafeteria.mp4"
-       * poster: "/assets/img/portfolio/cafeteria.webp"
-       *
-       * Enquanto video estiver vazio, o projeto
-       * será apresentado como "EM PREPARAÇÃO".
-       *
-       * Não inserir vídeos de clientes sem
-       * autorização específica.
-       */
+      /* =====================================
+         CATÁLOGO DOS VÍDEOS
+
+         formato:
+         horizontal = 16:9
+         vertical   = 9:16
+
+         video:
+         endereço incorporado do YouTube
+         ou caminho para MP4.
+
+         poster:
+         capa do vídeo.
+
+         Projetos sem vídeo aparecem
+         como EM PREPARAÇÃO.
+         ===================================== */
 
       const projetos = [
+
+        /* BROWNIE HORIZONTAL */
+
+        {
+          id:"brownie-horizontal",
+          categoria:"alimentos",
+          categoriaTexto:"ALIMENTOS & BEBIDAS",
+          tom:"cafe",
+          titulo:"Brownie — Comercial horizontal",
+          descricao:"O brownie em formato horizontal 16:9, ideal para sites, YouTube e apresentações comerciais. Compare com a versão vertical do mesmo comercial.",
+          formato:"horizontal",
+          formatoTexto:"HORIZONTAL · 16:9",
+          video:"https://www.youtube.com/embed/RaY5M4ILHOk?autoplay=1&playsinline=1&rel=0",
+          youtube:"https://youtu.be/RaY5M4ILHOk",
+          poster:"https://i.ytimg.com/vi/RaY5M4ILHOk/hqdefault.jpg"
+        },
+
+        /* BROWNIE VERTICAL — SHORTS */
+
+        {
+          id:"brownie-vertical",
+          categoria:"alimentos",
+          categoriaTexto:"ALIMENTOS & BEBIDAS",
+          tom:"cafe",
+          titulo:"Brownie — Comercial vertical",
+          descricao:"O mesmo conceito do brownie adaptado ao formato vertical 9:16, ideal para YouTube Shorts, Instagram Reels e Stories.",
+          formato:"vertical",
+          formatoTexto:"VERTICAL · 9:16",
+          video:"https://www.youtube.com/embed/Wza4-_aK-Ds?autoplay=1&playsinline=1&rel=0",
+          youtube:"https://youtube.com/shorts/Wza4-_aK-Ds",
+          poster:"https://i.ytimg.com/vi/Wza4-_aK-Ds/hqdefault.jpg"
+        },
+
+        /* PADARIA SABORES DA VIDA */
+
+        {
+          id:"padaria",
+          categoria:"alimentos",
+          categoriaTexto:"ALIMENTOS & BEBIDAS",
+          tom:"padaria",
+          titulo:"Padaria Sabores da Vida",
+          descricao:"Vídeo institucional demonstrativo de uma padaria fictícia, apresentando seus ambientes e estrutura por meio da produção visual da HYPERBOREA.",
+          formato:"horizontal",
+          formatoTexto:"INSTITUCIONAL",
+          video:"https://www.youtube.com/embed/wHYan7zHfbU?autoplay=1&playsinline=1&rel=0",
+          youtube:"https://youtu.be/wHYan7zHfbU",
+          poster:"https://i.ytimg.com/vi/wHYan7zHfbU/hqdefault.jpg"
+        },
+
+        /* EDIFÍCIO MARAJOARA III */
+
+        {
+          id:"marajoara-iii",
+          categoria:"imoveis",
+          categoriaTexto:"IMÓVEIS & AMBIENTES",
+          tom:"imoveis",
+          titulo:"Edifício Marajoara III",
+          descricao:"Produção institucional apresentando o Edifício Marajoara III e demonstrando as possibilidades da comunicação audiovisual para condomínios e imóveis.",
+          formato:"horizontal",
+          formatoTexto:"INSTITUCIONAL",
+          video:"https://www.youtube.com/embed/HsGtVSaM8K4?autoplay=1&playsinline=1&rel=0",
+          youtube:"https://youtu.be/HsGtVSaM8K4",
+          poster:"https://i.ytimg.com/vi/HsGtVSaM8K4/hqdefault.jpg"
+        },
+
+        /* CAFETERIAS — FUTURO */
 
         {
           id:"cafeteria",
@@ -2082,31 +2072,28 @@
           tom:"cafe",
           titulo:"Cafeterias & confeitaria",
           descricao:"Vídeos para cafés, sobremesas e experiências gastronômicas.",
+          formato:"horizontal",
           video:"",
+          youtube:"",
           poster:""
         },
 
-{
-  id:"padaria",
-  categoria:"alimentos",
-  categoriaTexto:"ALIMENTOS & BEBIDAS",
-  tom:"padaria",
-  titulo:"Padaria Sabores da Vida",
-  descricao:"Vídeo comercial demonstrativo de uma padaria fictícia, produzido para o portfólio da HYPERBOREA.",
-  video:"https://www.youtube.com/embed/TdLYaJr3gIo?autoplay=1&playsinline=1&rel=0",
-  poster:"https://i.ytimg.com/vi/TdLYaJr3gIo/hqdefault.jpg"
-},
+        /* COMÉRCIOS — FUTURO */
 
-      {
+        {
           id:"comercio",
           categoria:"comercio",
           categoriaTexto:"COMÉRCIOS & SERVIÇOS",
           tom:"comercio",
           titulo:"Lojas & estabelecimentos",
           descricao:"Vídeos de ambientes, fachadas, serviços e estabelecimentos.",
+          formato:"horizontal",
           video:"",
+          youtube:"",
           poster:""
         },
+
+        /* IMÓVEIS — FUTURO */
 
         {
           id:"imoveis",
@@ -2115,11 +2102,17 @@
           tom:"imoveis",
           titulo:"Imóveis & ambientes",
           descricao:"Apresentações visuais de espaços residenciais e ambientes.",
+          formato:"horizontal",
           video:"",
+          youtube:"",
           poster:""
         }
 
       ];
+
+      /* =====================================
+         ELEMENTOS DA PÁGINA
+         ===================================== */
 
       const grid =
         document.getElementById("portfolioGrid");
@@ -2128,9 +2121,7 @@
         document.getElementById("portfolioCount");
 
       const filters =
-        Array.from(
-          document.querySelectorAll(".filter")
-        );
+        Array.from(document.querySelectorAll(".filter"));
 
       const dialog =
         document.getElementById("playerDialog");
@@ -2141,7 +2132,9 @@
       const whatsapp =
         "https://wa.me/message/FHWOVDSQ3AKCO1";
 
-      /* CRIA OS CARDS DO PORTFÓLIO */
+      /* =====================================
+         CRIAR CARDS DO PORTFÓLIO
+         ===================================== */
 
       function criarProjeto(projeto) {
 
@@ -2156,6 +2149,10 @@
 
         thumb.className = "thumb";
         thumb.dataset.tone = projeto.tom;
+        thumb.dataset.format =
+          projeto.formato || "horizontal";
+
+        /* MARCA DE FUNDO */
 
         const mark =
           document.createElement("div");
@@ -2176,7 +2173,7 @@
         mark.append(letter,brand);
         thumb.appendChild(mark);
 
-        /* IMAGEM DO VÍDEO */
+        /* CAPA DO VÍDEO */
 
         if (projeto.poster) {
 
@@ -2188,10 +2185,14 @@
           img.loading = "lazy";
           img.decoding = "async";
 
+          img.addEventListener("error",function() {
+            img.hidden = true;
+          });
+
           thumb.appendChild(img);
         }
 
-        /* STATUS DO VÍDEO */
+        /* STATUS */
 
         const status =
           document.createElement("span");
@@ -2199,12 +2200,25 @@
         status.className = "thumb-status";
 
         status.textContent = projeto.video
-          ? "ASSISTA AO COMERCIAL"
+          ? "ASSISTA AO VÍDEO"
           : "EM PREPARAÇÃO";
 
         thumb.appendChild(status);
 
-        /* BOTÃO DE REPRODUÇÃO */
+        /* IDENTIFICAÇÃO DO FORMATO */
+
+        if (projeto.formatoTexto) {
+
+          const formato =
+            document.createElement("span");
+
+          formato.className = "thumb-format";
+          formato.textContent = projeto.formatoTexto;
+
+          thumb.appendChild(formato);
+        }
+
+        /* BOTÃO PLAY */
 
         if (projeto.video) {
 
@@ -2235,7 +2249,7 @@
           thumb.appendChild(play);
         }
 
-        /* INFORMAÇÕES DO CARD */
+        /* CORPO DO CARD */
 
         const body =
           document.createElement("div");
@@ -2269,7 +2283,7 @@
         note.className = "status-label";
 
         note.textContent = projeto.video
-          ? "Vídeo demonstrativo"
+          ? "Produção HYPERBOREA"
           : "Demonstração em produção";
 
         const link =
@@ -2291,12 +2305,37 @@
           foot
         );
 
+        /* LINK EXTERNO DO YOUTUBE */
+
+        if (projeto.youtube) {
+
+          const links =
+            document.createElement("div");
+
+          links.className = "video-links";
+
+          const youtubeLink =
+            document.createElement("a");
+
+          youtubeLink.href = projeto.youtube;
+          youtubeLink.target = "_blank";
+          youtubeLink.rel = "noopener noreferrer";
+
+          youtubeLink.textContent =
+            "Assistir no YouTube ↗";
+
+          links.appendChild(youtubeLink);
+          body.appendChild(links);
+        }
+
         article.append(thumb,body);
 
         return article;
       }
 
-      /* FILTROS */
+      /* =====================================
+         FILTROS
+         ===================================== */
 
       function filtrar(categoria) {
 
@@ -2314,7 +2353,6 @@
             if (visible) {
               total++;
             }
-
           }
         );
 
@@ -2328,84 +2366,112 @@
 
           button.setAttribute(
             "aria-pressed",
-            String(
-              button.dataset.filter === categoria
-            )
+            String(button.dataset.filter === categoria)
           );
 
         });
       }
 
-      /* PLAYER DE VÍDEO */
+      /* =====================================
+         PLAYER HORIZONTAL E VERTICAL
+         ===================================== */
 
-function abrirVideo(projeto) {
-  if (!projeto.video) return;
+      function abrirVideo(projeto) {
 
-  document.getElementById("playerTitle")
-    .textContent = projeto.titulo;
+        if (!projeto.video) return;
 
-  document.getElementById("playerNote")
-    .textContent =
-    "Vídeo demonstrativo HYPERBOREA · Produção visual com IA e edição.";
+        pararVideo();
 
-  pararVideo();
+        document.getElementById("playerTitle")
+          .textContent = projeto.titulo;
 
-  const youtube = projeto.video.includes(
-    "youtube.com/embed/"
-  );
+        const vertical =
+          projeto.formato === "vertical";
 
-  const midia = document.createElement(
-    youtube ? "iframe" : "video"
-  );
+        dialog.classList.toggle(
+          "is-vertical",
+          vertical
+        );
 
-  if (youtube) {
-    midia.title = "Reproduzir: " + projeto.titulo;
-    midia.allow =
-      "autoplay; encrypted-media; picture-in-picture";
-    midia.allowFullscreen = true;
-  } else {
-    midia.controls = true;
-    midia.playsInline = true;
-    midia.preload = "metadata";
+        document.getElementById("playerNote")
+          .textContent = vertical
+            ? "Formato vertical 9:16 · Produção visual HYPERBOREA com IA e edição."
+            : "Formato horizontal 16:9 · Produção visual HYPERBOREA com IA e edição.";
 
-    if (projeto.poster) {
-      midia.poster = projeto.poster;
-    }
-  }
+        const youtube =
+          projeto.video.includes("youtube.com/embed/");
 
-  midia.src = projeto.video;
-  player.appendChild(midia);
+        const midia =
+          document.createElement(
+            youtube ? "iframe" : "video"
+          );
 
-  if (typeof dialog.showModal === "function") {
-    dialog.showModal();
-  } else {
-    dialog.setAttribute("open", "");
-  }
+        if (youtube) {
 
-  if (!youtube) {
-    const tentativa = midia.play();
+          midia.title =
+            "Reproduzir: " + projeto.titulo;
 
-    if (
-      tentativa &&
-      typeof tentativa.catch === "function"
-    ) {
-      tentativa.catch(function() {});
-    }
-  }
-}
+          midia.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
 
-function pararVideo() {
-  const video = player.querySelector("video");
+          midia.allowFullscreen = true;
 
-  if (video) {
-    video.pause();
-  }
+          midia.referrerPolicy =
+            "strict-origin-when-cross-origin";
 
-  player.replaceChildren();
-}
+        } else {
 
+          midia.controls = true;
+          midia.playsInline = true;
+          midia.preload = "metadata";
 
-      /* INICIALIZA O PORTFÓLIO */
+          if (projeto.poster) {
+            midia.poster = projeto.poster;
+          }
+        }
+
+        midia.src = projeto.video;
+
+        player.appendChild(midia);
+
+        if (typeof dialog.showModal === "function") {
+          dialog.showModal();
+        } else {
+          dialog.setAttribute("open","");
+        }
+
+        if (!youtube) {
+
+          const tentativa = midia.play();
+
+          if (
+            tentativa &&
+            typeof tentativa.catch === "function"
+          ) {
+            tentativa.catch(function() {});
+          }
+        }
+      }
+
+      /* =====================================
+         PARAR REPRODUÇÃO
+         ===================================== */
+
+      function pararVideo() {
+
+        const video =
+          player.querySelector("video");
+
+        if (video) {
+          video.pause();
+        }
+
+        player.replaceChildren();
+      }
+
+      /* =====================================
+         INICIALIZAR PORTFÓLIO
+         ===================================== */
 
       projetos.forEach(function(projeto) {
 
@@ -2420,28 +2486,24 @@ function pararVideo() {
         button.addEventListener(
           "click",
           function() {
-
             filtrar(button.dataset.filter);
-
           }
         );
 
       });
 
-      /* FECHAR PLAYER */
+      /* =====================================
+         FECHAR PLAYER
+         ===================================== */
 
       document.getElementById("closePlayer")
         .addEventListener("click",function() {
 
           if (typeof dialog.close === "function") {
-
             dialog.close();
-
           } else {
-
             dialog.removeAttribute("open");
             pararVideo();
-
           }
 
         });
@@ -2465,11 +2527,12 @@ function pararVideo() {
             }
 
           }
-
         }
       );
 
-      /* MENU MOBILE */
+      /* =====================================
+         MENU MOBILE
+         ===================================== */
 
       document.querySelectorAll(".mobile-menu nav a")
         .forEach(function(link) {
