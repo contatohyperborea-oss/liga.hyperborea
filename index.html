@@ -323,13 +323,27 @@ body {
   background-attachment: fixed;
 }
 
+/* DESATIVA O GRAFISMO ANTIGO */
+
+.site-background {
+  display: none;
+}
+
+.page-shell::after {
+  display: none;
+}
+
+.hero::after {
+  display: none;
+}
+
 /* RESPONSIVIDADE DO FUNDO */
 
 @media (max-width: 768px) {
   body {
     background-position: center center;
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
   }
 }
 
