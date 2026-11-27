@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#000000">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="description" content="Design e Identidade Visual HYPERBOREA. Logotipos vetorizados, banners, cartões de visita, posts, carrosséis, panfletos e elementos gráficos. Serviços a partir de R$ 20,00.">
 
-  <title>Design & Identidade Visual | HYPERBOREA</title>
+  <meta name="description" content="Design e Identidade Visual HYPERBOREA. Logotipos vetorizados, banners, cartões de visita, posts, carrosséis, panfletos A4 e elementos gráficos. Serviços a partir de R$ 20,00. Impressão sob consulta.">
 
-  <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
+  <title>Design &amp; Identidade Visual | HYPERBOREA</title>
+
+  <link rel="icon"
+        href="/assets/img/monograma-h.svg"
+        type="image/svg+xml">
 
   <style>
 
@@ -276,7 +279,9 @@
 
     .hero {
       padding:clamp(26px,5vw,48px);
-      background:linear-gradient(135deg,var(--vinho),#81012370);
+      background:linear-gradient(
+        135deg,var(--vinho),#81012370
+      );
       border:1px solid var(--dourado-radar);
     }
 
@@ -319,7 +324,10 @@
       font-weight:700;
       text-align:center;
       border:1px solid var(--marfim);
-      transition:background .2s,border-color .2s,transform .2s;
+      transition:
+        background .2s,
+        border-color .2s,
+        transform .2s;
     }
 
     .btn-primary {
@@ -359,9 +367,13 @@
       display:flex;
       flex-direction:column;
       padding:23px 19px;
-      background:linear-gradient(145deg,var(--vinho),#81012370);
+      background:linear-gradient(
+        145deg,var(--vinho),#81012370
+      );
       border:1px solid var(--linha);
-      transition:transform .25s,border-color .25s;
+      transition:
+        transform .25s,
+        border-color .25s;
     }
 
     .service-card:hover {
@@ -440,6 +452,78 @@
       color:var(--suave);
       font-size:.79rem;
       line-height:1.7;
+    }
+
+    /* ========================================
+       IMPRESSÃO — A COMBINAR
+       ======================================== */
+
+    .print-panel {
+      display:grid;
+      grid-template-columns:minmax(0,1.5fr)
+                            minmax(0,1fr);
+      align-items:center;
+      gap:25px;
+      margin-top:25px;
+      padding:clamp(20px,4vw,30px);
+      background:var(--preto);
+      border:1px solid var(--dourado-radar);
+    }
+
+    .print-copy {
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .print-heading {
+      display:flex;
+      align-items:center;
+      gap:13px;
+    }
+
+    .print-icon {
+      width:38px;
+      height:38px;
+      flex:none;
+      color:var(--dourado-solar);
+    }
+
+    .print-heading h3 {
+      font-size:clamp(1.3rem,3vw,1.9rem);
+      line-height:1.2;
+    }
+
+    .print-copy p {
+      font-size:.85rem;
+      line-height:1.75;
+      color:var(--suave);
+    }
+
+    .print-offer {
+      display:grid;
+      gap:13px;
+      text-align:center;
+    }
+
+    .print-price {
+      padding:19px 12px;
+      background:var(--vinho);
+      border:1px solid var(--linha);
+    }
+
+    .print-price strong {
+      display:block;
+      font:500 clamp(1.2rem,3vw,1.6rem)
+            Georgia,serif;
+      color:var(--marfim);
+    }
+
+    .print-price small {
+      display:block;
+      margin-top:7px;
+      color:var(--suave);
+      font-size:.73rem;
     }
 
     /* ========================================
@@ -549,9 +633,8 @@
     /* ========================================
        AMOSTRAS GRÁFICAS PROVISÓRIAS
 
-       Posteriormente, substituir os elementos
-       demonstrativos por arquivos SVG e WebP
-       oficiais da HYPERBOREA.
+       Substituir futuramente por arquivos
+       SVG e WebP oficiais da HYPERBOREA.
        ======================================== */
 
     .art-marajoara {
@@ -609,7 +692,9 @@
     .banner-demo {
       width:100%;
       padding:18px 12px;
-      background:linear-gradient(110deg,#7B4A2D,#362219);
+      background:linear-gradient(
+        110deg,#7B4A2D,#362219
+      );
       border:1px solid #E5B98255;
       text-align:left;
       color:#FFF2D9;
@@ -622,7 +707,8 @@
 
     .banner-demo strong {
       display:block;
-      font:500 clamp(.85rem,2.5vw,1.8rem) Georgia,serif;
+      font:500 clamp(.85rem,2.5vw,1.8rem)
+           Georgia,serif;
       margin:7px 0;
     }
 
@@ -660,7 +746,8 @@
     }
 
     .post-demo strong {
-      font:500 clamp(.72rem,2vw,1.2rem) Georgia,serif;
+      font:500 clamp(.72rem,2vw,1.2rem)
+           Georgia,serif;
     }
 
     .art-carousel {
@@ -687,7 +774,8 @@
     }
 
     .carousel-slide strong {
-      font:500 clamp(.7rem,2vw,1.4rem) Georgia,serif;
+      font:500 clamp(.7rem,2vw,1.4rem)
+           Georgia,serif;
     }
 
     .art-identity {
@@ -697,7 +785,8 @@
     }
 
     .art-identity strong {
-      font:500 clamp(1rem,3vw,1.8rem) Georgia,serif;
+      font:500 clamp(1rem,3vw,1.8rem)
+           Georgia,serif;
       letter-spacing:.12em;
     }
 
@@ -719,7 +808,8 @@
     }
 
     .placeholder-symbol {
-      font:500 clamp(2.2rem,5vw,4rem) Georgia,serif;
+      font:500 clamp(2.2rem,5vw,4rem)
+           Georgia,serif;
       color:var(--dourado-solar);
     }
 
@@ -873,7 +963,9 @@
       min-width:0;
       padding:24px;
       border:1px solid var(--dourado-radar);
-      transition:transform .25s,border-color .25s;
+      transition:
+        transform .25s,
+        border-color .25s;
     }
 
     .department-card:hover {
@@ -975,8 +1067,12 @@
     .whatsapp {
       position:fixed;
       z-index:40;
-      right:calc(20px + env(safe-area-inset-right,0px));
-      bottom:calc(20px + env(safe-area-inset-bottom,0px));
+      right:calc(
+        20px + env(safe-area-inset-right,0px)
+      );
+      bottom:calc(
+        20px + env(safe-area-inset-bottom,0px)
+      );
       width:66px;
       height:66px;
       padding:6px;
@@ -1122,6 +1218,21 @@
         justify-content:flex-start;
         gap:10px;
         font-size:.77rem;
+      }
+
+      .print-panel {
+        grid-template-columns:1fr;
+        padding:18px;
+        gap:17px;
+      }
+
+      .print-icon {
+        width:30px;
+        height:30px;
+      }
+
+      .print-copy p {
+        font-size:.79rem;
       }
 
       .filters {
@@ -1281,13 +1392,16 @@
 
       </a>
 
-      <nav class="nav-links" aria-label="Menu principal">
+      <nav class="nav-links"
+           aria-label="Menu principal">
+
         <a href="/index.html">Início</a>
         <a href="#servicos">Preços</a>
         <a href="#portfolio">Portfólio</a>
         <a href="#duvidas">Dúvidas</a>
         <a href="#departamentos">Outros serviços</a>
         <a class="nav-cta" href="#contato">Contratar</a>
+
       </nav>
 
       <details class="mobile-menu">
@@ -1295,14 +1409,17 @@
         <summary>☰ Menu</summary>
 
         <nav aria-label="Navegação móvel">
+
           <a href="/index.html">Início</a>
           <a href="#servicos">Preços</a>
+          <a href="#impressao">Impressão</a>
           <a href="#portfolio">Portfólio</a>
           <a href="#incluso">O que está incluso</a>
           <a href="#processo">Como contratar</a>
           <a href="#duvidas">Dúvidas</a>
           <a href="#departamentos">Outros serviços</a>
           <a href="#contato">Contratar</a>
+
         </nav>
 
       </details>
@@ -1333,10 +1450,12 @@
       </p>
 
       <div class="hero-info">
+
         <span>SERVIÇOS A PARTIR DE R$ 20</span>
         <span>CRIAÇÃO PROFISSIONAL</span>
         <span>ENTREGA DIGITAL</span>
         <span>DUAS RODADAS DE REVISÃO</span>
+
       </div>
 
     </section>
@@ -1388,7 +1507,9 @@
              href="https://wa.me/message/FHWOVDSQ3AKCO1"
              target="_blank" rel="noopener noreferrer"
              aria-label="Contratar logotipo por 50 reais">
+
             Contratar ↗
+
           </a>
 
         </article>
@@ -1417,7 +1538,9 @@
              href="https://wa.me/message/FHWOVDSQ3AKCO1"
              target="_blank" rel="noopener noreferrer"
              aria-label="Contratar banner por 30 reais">
+
             Contratar ↗
+
           </a>
 
         </article>
@@ -1426,7 +1549,9 @@
 
         <article class="service-card" id="cartao">
 
-          <span class="service-type">03 / COMUNICAÇÃO</span>
+          <span class="service-type">
+            03 / COMUNICAÇÃO
+          </span>
 
           <h3>Cartão de visita</h3>
 
@@ -1434,7 +1559,7 @@
             Criação de arte digital para apresentar
             sua marca, atividade profissional
             e informações de contato.
-            Impressão não inclusa.
+            Impressão sob consulta.
           </p>
 
           <p class="service-price">R$ 30,00</p>
@@ -1445,7 +1570,9 @@
              href="https://wa.me/message/FHWOVDSQ3AKCO1"
              target="_blank" rel="noopener noreferrer"
              aria-label="Contratar cartão de visita por 30 reais">
+
             Contratar ↗
+
           </a>
 
         </article>
@@ -1454,7 +1581,9 @@
 
         <article class="service-card" id="post">
 
-          <span class="service-type">04 / REDES SOCIAIS</span>
+          <span class="service-type">
+            04 / REDES SOCIAIS
+          </span>
 
           <h3>Post individual</h3>
 
@@ -1467,13 +1596,17 @@
 
           <p class="service-price">R$ 20,00</p>
 
-          <p class="service-unit">Por publicação visual</p>
+          <p class="service-unit">
+            Por publicação visual
+          </p>
 
           <a class="btn btn-outline"
              href="https://wa.me/message/FHWOVDSQ3AKCO1"
              target="_blank" rel="noopener noreferrer"
              aria-label="Contratar post por 20 reais">
+
             Contratar ↗
+
           </a>
 
         </article>
@@ -1482,7 +1615,9 @@
 
         <article class="service-card" id="carrossel">
 
-          <span class="service-type">05 / REDES SOCIAIS</span>
+          <span class="service-type">
+            05 / REDES SOCIAIS
+          </span>
 
           <h3>Post carrossel</h3>
 
@@ -1495,41 +1630,52 @@
 
           <p class="service-price">R$ 80,00</p>
 
-          <p class="service-unit">Carrossel com 5 imagens</p>
+          <p class="service-unit">
+            Carrossel com 5 imagens
+          </p>
 
           <a class="btn btn-outline"
              href="https://wa.me/message/FHWOVDSQ3AKCO1"
              target="_blank" rel="noopener noreferrer"
              aria-label="Contratar carrossel por 80 reais">
+
             Contratar ↗
+
           </a>
 
         </article>
 
-        <!-- PANFLETO -->
+        <!-- PANFLETO DIGITAL A4 -->
 
         <article class="service-card" id="panfleto">
 
-          <span class="service-type">06 / PUBLICIDADE</span>
+          <span class="service-type">
+            06 / PUBLICIDADE
+          </span>
 
-          <h3>Panfleto digital</h3>
+          <h3>Panfleto digital A4</h3>
 
           <p class="service-description">
-            Arte profissional para divulgar
-            seu estabelecimento, seus produtos,
-            serviços e ofertas.
-            Impressão não inclusa.
+            Criação profissional de panfletos
+            e folhetos em formato A4,
+            para divulgar produtos, serviços,
+            campanhas e comunicados.
+            Impressão sob consulta.
           </p>
 
-          <p class="service-price">R$ 30,00</p>
+          <p class="service-price">R$ 50,00</p>
 
-          <p class="service-unit">Por arte contratada</p>
+          <p class="service-unit">
+            Por arte digital A4
+          </p>
 
           <a class="btn btn-outline"
              href="https://wa.me/message/FHWOVDSQ3AKCO1"
              target="_blank" rel="noopener noreferrer"
-             aria-label="Contratar panfleto por 30 reais">
+             aria-label="Contratar panfleto digital A4 por 50 reais">
+
             Contratar ↗
+
           </a>
 
         </article>
@@ -1538,7 +1684,9 @@
 
         <article class="service-card" id="elemento">
 
-          <span class="service-type">07 / VETORIZAÇÃO</span>
+          <span class="service-type">
+            07 / VETORIZAÇÃO
+          </span>
 
           <h3>Elemento gráfico vetorizado</h3>
 
@@ -1551,13 +1699,17 @@
 
           <p class="service-price">R$ 20,00</p>
 
-          <p class="service-unit">Por elemento contratado</p>
+          <p class="service-unit">
+            Por elemento contratado
+          </p>
 
           <a class="btn btn-outline"
              href="https://wa.me/message/FHWOVDSQ3AKCO1"
              target="_blank" rel="noopener noreferrer"
              aria-label="Contratar elemento gráfico por 20 reais">
+
             Contratar ↗
+
           </a>
 
         </article>
@@ -1565,19 +1717,98 @@
       </div>
 
       <div class="pricing-summary">
+
         <span>1 a 3 dias úteis</span>
         <span>2 rodadas de revisão</span>
         <span>Pagamento via Pix</span>
         <span>Entrega digital</span>
+
       </div>
 
       <p class="pricing-note">
+
         Os valores correspondem à criação digital
         conforme o escopo contratado.
         Impressão, gestão de redes sociais,
         modelagem 3D e registro de marca
-        não estão incluídos.
+        não estão incluídos nos valores anunciados.
+
       </p>
+
+      <!-- ==================================
+           IMPRESSÃO — A COMBINAR
+           ================================== -->
+
+      <aside class="print-panel"
+             id="impressao"
+             aria-labelledby="printTitle">
+
+        <div class="print-copy">
+
+          <div class="print-heading">
+
+            <svg class="print-icon"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="1.5"
+                 stroke-linecap="round"
+                 stroke-linejoin="round"
+                 aria-hidden="true">
+
+              <path d="M6 9V3h12v6"/>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+              <rect x="6" y="14" width="12" height="7"/>
+              <path d="M18 12h.01"/>
+
+            </svg>
+
+            <h3 id="printTitle">
+              Precisa de material impresso?
+            </h3>
+
+          </div>
+
+          <p>
+
+            Nossos valores correspondem
+            à criação das artes digitais.
+
+            Caso necessite de impressão,
+            consulte-nos sobre disponibilidade,
+            materiais, quantidades,
+            valores e prazos.
+
+          </p>
+
+        </div>
+
+        <div class="print-offer">
+
+          <div class="print-price">
+
+            <strong>
+              Impressão — a combinar
+            </strong>
+
+            <small>
+              Mediante consulta e orçamento
+            </small>
+
+          </div>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            Consultar pelo WhatsApp ↗
+
+          </a>
+
+        </div>
+
+      </aside>
 
     </section>
 
@@ -1607,48 +1838,57 @@
            aria-label="Categorias do portfólio">
 
         <button class="filter" type="button"
-                data-filter="todos" aria-pressed="true">
+                data-filter="todos"
+                aria-pressed="true">
           Todos
         </button>
 
         <button class="filter" type="button"
-                data-filter="logotipo" aria-pressed="false">
+                data-filter="logotipo"
+                aria-pressed="false">
           Logotipos
         </button>
 
         <button class="filter" type="button"
-                data-filter="banner" aria-pressed="false">
+                data-filter="banner"
+                aria-pressed="false">
           Banners
         </button>
 
         <button class="filter" type="button"
-                data-filter="cartao" aria-pressed="false">
+                data-filter="cartao"
+                aria-pressed="false">
           Cartões
         </button>
 
         <button class="filter" type="button"
-                data-filter="social" aria-pressed="false">
+                data-filter="social"
+                aria-pressed="false">
           Redes sociais
         </button>
 
         <button class="filter" type="button"
-                data-filter="panfleto" aria-pressed="false">
+                data-filter="panfleto"
+                aria-pressed="false">
           Panfletos
         </button>
 
         <button class="filter" type="button"
-                data-filter="elemento" aria-pressed="false">
+                data-filter="elemento"
+                aria-pressed="false">
           Elementos gráficos
         </button>
 
         <button class="filter" type="button"
-                data-filter="identidade" aria-pressed="false">
+                data-filter="identidade"
+                aria-pressed="false">
           Identidade visual
         </button>
 
       </div>
 
-      <p class="portfolio-count" id="portfolioCount"
+      <p class="portfolio-count"
+         id="portfolioCount"
          aria-live="polite"></p>
 
       <div class="portfolio-grid" id="portfolioGrid">
@@ -1663,7 +1903,8 @@
             <img
               src="/assets/img/realizacoes/logo-marajoara-oficial-otimizado1.svg"
               alt="Logotipo do Edifício Marajoara III"
-              loading="lazy" decoding="async">
+              loading="lazy"
+              decoding="async">
 
           </div>
 
@@ -1693,7 +1934,8 @@
 
             <img src="/assets/img/monograma-h.svg"
                  alt="Monograma H da HYPERBOREA"
-                 loading="lazy" decoding="async">
+                 loading="lazy"
+                 decoding="async">
 
             <strong>HYPERBOREA</strong>
 
@@ -1835,11 +2077,25 @@
 
           <div class="work-art art-carousel">
 
-            <div class="carousel-slide"><strong>01</strong></div>
-            <div class="carousel-slide"><strong>02</strong></div>
-            <div class="carousel-slide"><strong>03</strong></div>
-            <div class="carousel-slide"><strong>04</strong></div>
-            <div class="carousel-slide"><strong>05</strong></div>
+            <div class="carousel-slide">
+              <strong>01</strong>
+            </div>
+
+            <div class="carousel-slide">
+              <strong>02</strong>
+            </div>
+
+            <div class="carousel-slide">
+              <strong>03</strong>
+            </div>
+
+            <div class="carousel-slide">
+              <strong>04</strong>
+            </div>
+
+            <div class="carousel-slide">
+              <strong>05</strong>
+            </div>
 
           </div>
 
@@ -1903,7 +2159,8 @@
 
         <article class="work-card"
                  data-category="cartao"
-                 data-pending="true" hidden>
+                 data-pending="true"
+                 hidden>
 
           <div class="work-art art-placeholder">
 
@@ -1933,12 +2190,13 @@
 
         </article>
 
-        <!-- PANFLETO
+        <!-- PANFLETO A4
              SUBSTITUIR POR ARQUIVO OFICIAL -->
 
         <article class="work-card"
                  data-category="panfleto"
-                 data-pending="true" hidden>
+                 data-pending="true"
+                 hidden>
 
           <div class="work-art art-placeholder">
 
@@ -1957,7 +2215,7 @@
               PUBLICIDADE
             </span>
 
-            <h3>Panfletos digitais</h3>
+            <h3>Panfletos digitais A4</h3>
 
             <p>
               Novas amostras serão adicionadas
@@ -1973,7 +2231,8 @@
 
         <article class="work-card"
                  data-category="elemento"
-                 data-pending="true" hidden>
+                 data-pending="true"
+                 hidden>
 
           <div class="work-art art-placeholder">
 
@@ -2042,7 +2301,8 @@
 
         <article class="included-item">
 
-          <span class="included-check" aria-hidden="true">✓</span>
+          <span class="included-check"
+                aria-hidden="true">✓</span>
 
           <div>
 
@@ -2060,7 +2320,8 @@
 
         <article class="included-item">
 
-          <span class="included-check" aria-hidden="true">✓</span>
+          <span class="included-check"
+                aria-hidden="true">✓</span>
 
           <div>
 
@@ -2077,7 +2338,8 @@
 
         <article class="included-item">
 
-          <span class="included-check" aria-hidden="true">✓</span>
+          <span class="included-check"
+                aria-hidden="true">✓</span>
 
           <div>
 
@@ -2096,7 +2358,8 @@
 
         <article class="included-item">
 
-          <span class="included-check" aria-hidden="true">✓</span>
+          <span class="included-check"
+                aria-hidden="true">✓</span>
 
           <div>
 
@@ -2114,7 +2377,8 @@
 
         <article class="included-item">
 
-          <span class="included-check" aria-hidden="true">✓</span>
+          <span class="included-check"
+                aria-hidden="true">✓</span>
 
           <div>
 
@@ -2132,7 +2396,8 @@
 
         <article class="included-item">
 
-          <span class="included-check" aria-hidden="true">✓</span>
+          <span class="included-check"
+                aria-hidden="true">✓</span>
 
           <div>
 
@@ -2269,9 +2534,13 @@
             1 a 3 dias úteis, contado após
             a confirmação do pagamento
             e o recebimento dos materiais necessários.
+
             O prazo total de projetos com várias peças
             e as condições de revisão são confirmados
             antes da contratação.
+
+            Eventuais serviços de impressão
+            possuem prazos definidos separadamente.
           </p>
 
         </details>
@@ -2286,6 +2555,7 @@
             Sim. O logotipo é desenvolvido em 2D
             e entregue em SVG vetorial,
             além de uma versão PNG transparente.
+
             Não se trata de uma imagem raster
             simplesmente renomeada como SVG.
           </p>
@@ -2302,6 +2572,7 @@
             O formato vetorial permite ampliar
             e reduzir os elementos gráficos
             sem perder a definição das formas vetoriais.
+
             É adequado para diversas aplicações
             digitais e gráficas.
           </p>
@@ -2318,6 +2589,7 @@
             A oferta padrão desta página
             corresponde à criação de logotipos
             2D vetorizados.
+
             Modelagem e animação em 3D
             não estão incluídas.
           </p>
@@ -2350,9 +2622,11 @@
             é contratada com a HYPERBOREA,
             a respectiva inserção no site contratado
             com nossa agência está inclusa.
+
             Se você já possui a arte,
             pode contratar apenas a inserção
             por R$ 5,00 no departamento de
+
             <a class="gold" href="/sites.html">
               Sites &amp; Web Design.
             </a>
@@ -2367,10 +2641,12 @@
           </summary>
 
           <p>
-            Não. O valor de R$ 30,00
-            corresponde ao desenvolvimento
-            da arte digital do cartão.
-            A impressão física não está inclusa.
+            O valor de R$ 30,00 corresponde
+            ao desenvolvimento da arte digital.
+
+            A impressão física não está inclusa
+            no preço anunciado, mas pode ser
+            consultada separadamente.
           </p>
 
         </details>
@@ -2386,6 +2662,7 @@
             Facebook e outras plataformas,
             conforme as dimensões
             e o formato acordado.
+
             A publicação e a gestão dos perfis
             não estão incluídas.
           </p>
@@ -2401,6 +2678,7 @@
           <p>
             O carrossel de R$ 80,00
             inclui cinco imagens com unidade visual.
+
             Imagens adicionais devem ser
             combinadas separadamente.
           </p>
@@ -2410,14 +2688,46 @@
         <details>
 
           <summary>
-            O panfleto digital inclui impressão?
+            O que está incluso no panfleto A4 de R$ 50?
           </summary>
 
           <p>
-            Não. O valor anunciado corresponde
-            à criação da arte digital,
-            nas dimensões definidas
-            durante a contratação.
+            O valor de R$ 50,00 corresponde
+            à criação profissional de uma arte digital
+            em formato A4, com dimensões
+            de 21 × 29,7 centímetros.
+
+            O serviço inclui o desenvolvimento
+            visual e as duas rodadas de revisão previstas.
+
+            A impressão não está inclusa
+            e pode ser consultada separadamente.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            A HYPERBOREA oferece serviços de impressão?
+          </summary>
+
+          <p>
+            Nosso serviço principal é a criação
+            e a entrega de artes digitais.
+
+            Caso necessite de materiais impressos,
+            entre em contato para consultarmos
+            as possibilidades de atendimento.
+
+            A disponibilidade, o tipo de papel,
+            o acabamento, a quantidade,
+            o valor e o prazo serão definidos
+            em orçamento separado.
+
+            Nenhum serviço de impressão está
+            automaticamente incluso nos valores
+            anunciados nesta página.
           </p>
 
         </details>
@@ -2433,6 +2743,7 @@
             como um ícone, símbolo,
             ornamento ou grafismo,
             desenvolvida em formato vetorial.
+
             O valor de R$ 20,00 corresponde
             a um elemento dentro do escopo acordado.
           </p>
@@ -2448,9 +2759,11 @@
           <p>
             Cada compra inclui duas rodadas
             de revisão dentro da proposta contratada.
+
             Uma rodada corresponde a um conjunto
             de solicitações de ajustes
             apresentado pelo cliente.
+
             Revisões adicionais são orçadas
             separadamente.
           </p>
@@ -2481,6 +2794,7 @@
           <p>
             As revisões contemplam ajustes
             dentro do conceito contratado.
+
             Uma reformulação completa da proposta
             caracteriza um novo serviço,
             sujeito a uma nova contratação,
@@ -2499,6 +2813,7 @@
             O pagamento é realizado antecipadamente
             por meio do Pix, após o alinhamento
             das condições comerciais.
+
             A produção começa após a confirmação
             do pagamento e o recebimento
             dos materiais necessários.
@@ -2514,8 +2829,10 @@
 
           <p>
             Não automaticamente.
+
             Os trabalhos contratados são
             entregues ao cliente.
+
             A divulgação pela HYPERBOREA
             depende de autorização específica.
           </p>
@@ -2530,7 +2847,8 @@
          06 — CONHEÇA NOSSOS OUTROS SERVIÇOS
          ====================================== -->
 
-    <section class="content-panel" id="departamentos"
+    <section class="content-panel"
+             id="departamentos"
              aria-labelledby="departmentsTitle">
 
       <div class="panel-heading">
@@ -2618,7 +2936,8 @@
          CONTRATAÇÃO FINAL
          ====================================== -->
 
-    <section class="contact-panel" id="contato"
+    <section class="contact-panel"
+             id="contato"
              aria-labelledby="contactTitle">
 
       <h2 id="contactTitle">
@@ -2633,10 +2952,13 @@
 
       <a class="btn btn-primary"
          href="https://wa.me/message/FHWOVDSQ3AKCO1"
-         target="_blank" rel="noopener noreferrer">
+         target="_blank"
+         rel="noopener noreferrer">
 
         <img src="/assets/img/whats-icon.svg"
-             alt="" width="27" height="27">
+             alt=""
+             width="27"
+             height="27">
 
         Contatar pelo WhatsApp ↗
 
@@ -2646,7 +2968,9 @@
 
   </main>
 
-  <!-- RODAPÉ -->
+  <!-- ======================================
+       RODAPÉ
+       ====================================== -->
 
   <footer>
 
@@ -2669,11 +2993,14 @@
 
   <a class="whatsapp"
      href="https://wa.me/message/FHWOVDSQ3AKCO1"
-     target="_blank" rel="noopener noreferrer"
+     target="_blank"
+     rel="noopener noreferrer"
      aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
 
     <img src="/assets/img/whats-icon.svg"
-         alt="" width="48" height="48">
+         alt=""
+         width="48"
+         height="48">
 
   </a>
 
@@ -2692,7 +3019,9 @@
       document.getElementById("ano").textContent =
         new Date().getFullYear();
 
-      /* FILTROS DO PORTFÓLIO */
+      /* ==================================
+         FILTROS DO PORTFÓLIO
+         ================================== */
 
       const filters = [
         ...document.querySelectorAll(".filter")
@@ -2725,7 +3054,9 @@
           card.hidden = !visible;
 
           if (visible && !pendente) {
+
             total++;
+
           }
 
         });
@@ -2742,8 +3073,13 @@
         filters.forEach(button => {
 
           button.setAttribute(
+
             "aria-pressed",
-            String(button.dataset.filter === categoria)
+
+            String(
+              button.dataset.filter === categoria
+            )
+
           );
 
         });
@@ -2762,7 +3098,9 @@
 
       filtrar("todos");
 
-      /* MENU MOBILE */
+      /* ==================================
+         MENU MOBILE
+         ================================== */
 
       const menu =
         document.querySelector(".mobile-menu");
@@ -2771,7 +3109,9 @@
         .forEach(link => {
 
           link.addEventListener("click",() => {
+
             menu.open = false;
+
           });
 
         });
@@ -2779,15 +3119,22 @@
       document.addEventListener("keydown",event => {
 
         if (event.key === "Escape") {
+
           menu.open = false;
+
         }
 
       });
 
       document.addEventListener("click",event => {
 
-        if (menu.open && !menu.contains(event.target)) {
+        if (
+          menu.open &&
+          !menu.contains(event.target)
+        ) {
+
           menu.open = false;
+
         }
 
       });
