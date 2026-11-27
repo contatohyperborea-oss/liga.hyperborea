@@ -1,1952 +1,2800 @@
-
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#300817">
-
-<meta name="description" content="HYPERBOREA — Design profissional e identidade visual para dar destaque à sua marca. Logotipos vetorizados, banners, posts, carrosséis e elementos gráficos.">
-
-<title>Design & Identidade Visual | HYPERBOREA</title>
-
-<link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
-
-<style>
-:root {
-  --vinho:#300817;
-  --escuro:#19040d;
-  --vinho-claro:#5a1931;
-  --ouro:#c6a069;
-  --ouro-claro:#f0d9ae;
-  --texto:#fbf2e8;
-  --suave:#ddc6c1;
-  --linha:rgba(198,160,105,.35);
-  --max:1160px;
-}
-
-* {box-sizing:border-box}
-
-html {
-  scroll-behavior:smooth;
-  scroll-padding-top:88px;
-}
-
-body {
-  margin:0;
-  min-width:320px;
-  color:var(--texto);
-  font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
-  line-height:1.6;
-  background:var(--escuro);
-  overflow-x:hidden;
-}
-
-body::before {
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  background:
-    radial-gradient(ellipse at 82% 8%,#80304a55,transparent 40%),
-    radial-gradient(ellipse at 10% 70%,#63243e55,transparent 42%),
-    linear-gradient(165deg,#240711 0%,#3b0b20 50%,#18040c 100%);
-}
-
-a {color:inherit;text-decoration:none}
-img {display:block;max-width:100%}
-button {font:inherit;cursor:pointer}
-h1,h2,h3,p {margin:0}
-
-h1,h2,h3 {
-  font-family:Georgia,"Times New Roman",serif;
-  font-weight:400;
-  line-height:1.12;
-}
-
-:is(a,button,summary):focus-visible {
-  outline:2px solid var(--ouro-claro);
-  outline-offset:4px;
-}
-
-.container {
-  width:min(var(--max),calc(100% - 40px));
-  margin-inline:auto;
-}
-
-.eyebrow {
-  font-size:.72rem;
-  font-weight:750;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--ouro-claro);
-}
-
-.gold {color:var(--ouro-claro)}
-
-.professional {
-  color:var(--ouro-claro);
-  font-weight:700;
-  text-shadow:0 2px 24px rgba(198,160,105,.13);
-}
-
-.muted {color:var(--suave)}
-.section {padding:85px 0}
-
-.section-head {
-  max-width:760px;
-  margin-bottom:36px;
-}
-
-.section-head h2 {
-  font-size:clamp(2.25rem,4.7vw,4.3rem);
-  margin:12px 0 15px;
-}
-
-.section-head p:last-child {
-  color:var(--suave);
-  max-width:700px;
-}
-
-.skip {
-  position:absolute;
-  left:12px;
-  top:-70px;
-  z-index:100;
-  padding:10px 15px;
-  background:var(--ouro-claro);
-  color:var(--escuro);
-}
-
-.skip:focus {top:12px}
-
-.btn {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:48px;
-  padding:12px 20px;
-  border:1px solid var(--ouro);
-  font-weight:750;
-  font-size:.9rem;
-  text-align:center;
-  transition:background .2s,transform .2s;
-}
-
-.btn:hover {transform:translateY(-2px)}
-.btn-primary {background:var(--ouro);color:var(--escuro)}
-.btn-primary:hover {background:var(--ouro-claro)}
-.btn-outline {background:transparent;color:var(--ouro-claro)}
-.btn-outline:hover {background:#6b2440}
-
-.actions {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:29px;
-}
-
-/* CABEÇALHO */
-
-.site-header {
-  position:sticky;
-  top:0;
-  z-index:30;
-  border-bottom:1px solid var(--linha);
-  background:rgba(25,4,13,.96);
-  backdrop-filter:blur(12px);
-}
-
-.nav {
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:11px;
-  min-width:0;
-  color:var(--ouro-claro);
-}
-
-.brand img {
-  width:42px;
-  height:46px;
-  object-fit:contain;
-  flex-shrink:0;
-}
-
-.brand strong {
-  display:block;
-  font:500 clamp(1.02rem,2vw,1.35rem) Georgia,serif;
-  letter-spacing:.15em;
-  white-space:nowrap;
-}
-
-.brand small {
-  display:block;
-  font-size:.55rem;
-  font-weight:700;
-  letter-spacing:.30em;
-  color:#d9bd96;
-  margin-top:2px;
-}
-
-.nav-links {
-  display:flex;
-  align-items:center;
-  gap:24px;
-  font-size:.84rem;
-}
-
-.nav-links a:hover {color:var(--ouro-claro)}
-
-.nav-links .nav-contact {
-  padding:9px 13px;
-  border:1px solid var(--ouro);
-  color:var(--ouro-claro);
-}
-
-/* MENU MOBILE */
-
-.mobile-menu {
-  display:none;
-  position:relative;
-}
-
-.mobile-menu summary {
-  cursor:pointer;
-  list-style:none;
-  color:var(--ouro-claro);
-  padding:9px 14px;
-  border:1px solid var(--ouro);
-  font-size:.9rem;
-}
-
-.mobile-menu summary::-webkit-details-marker {
-  display:none;
-}
-
-.mobile-menu nav {
-  position:absolute;
-  right:0;
-  top:calc(100% + 10px);
-  width:min(265px,calc(100vw - 35px));
-  display:grid;
-  padding:10px;
-  border:1px solid var(--ouro);
-  background:#300817;
-  box-shadow:0 20px 40px #0008;
-}
-
-.mobile-menu nav a {
-  padding:11px 14px;
-  border-bottom:1px solid var(--linha);
-}
-
-.mobile-menu nav a:last-child {border-bottom:0}
-
-/* HERO */
-
-.hero {
-  padding:clamp(65px,8vw,108px) 0 80px;
-  border-bottom:1px solid var(--linha);
-}
-
-.hero-grid {
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:clamp(24px,5vw,75px);
-  align-items:center;
-}
-
-.hero h1 {
-  font-size:clamp(2.85rem,5.8vw,5.6rem);
-  letter-spacing:-.035em;
-  margin:18px 0 22px;
-}
-
-.hero-description {
-  max-width:595px;
-  color:var(--suave);
-  font-size:clamp(1rem,1.45vw,1.12rem);
-}
-
-.hero-highlights {
-  display:flex;
-  align-items:center;
-  gap:25px;
-  flex-wrap:wrap;
-  margin-top:29px;
-}
-
-.hero-highlights div {
-  border-left:2px solid var(--ouro);
-  padding-left:14px;
-}
-
-.hero-highlights strong {
-  display:block;
-  color:var(--ouro-claro);
-  font:2.15rem Georgia,serif;
-  line-height:1.1;
-}
-
-.hero-highlights span {
-  display:block;
-  color:var(--suave);
-  font-size:.76rem;
-  margin-top:5px;
-}
-
-/* COMPOSIÇÃO VISUAL */
-
-.hero-art {
-  position:relative;
-  min-height:405px;
-  display:grid;
-  place-items:center;
-}
-
-.art-outline {
-  position:absolute;
-  width:87%;
-  aspect-ratio:1;
-  border:1px solid #c6a06970;
-  transform:rotate(13deg);
-}
-
-.art-outline:nth-child(2) {
-  width:66%;
-  transform:rotate(-15deg);
-  border-color:#c6a06955;
-}
-
-.hero-board {
-  position:relative;
-  width:min(360px,85%);
-  padding:26px;
-  border:1px solid var(--ouro);
-  background:linear-gradient(145deg,#5b1832,#240714 80%);
-  box-shadow:0 25px 60px #0009;
-  transform:rotate(-4deg);
-}
-
-.hero-board::before,
-.hero-board::after {
-  content:"";
-  position:absolute;
-  width:24px;
-  height:24px;
-  border:1px solid var(--ouro-claro);
-}
-
-.hero-board::before {
-  top:10px;
-  left:10px;
-  border-right:0;
-  border-bottom:0;
-}
-
-.hero-board::after {
-  bottom:10px;
-  right:10px;
-  border-left:0;
-  border-top:0;
-}
-
-.board-small {
-  font-size:.64rem;
-  letter-spacing:.25em;
-  color:var(--ouro-claro);
-  text-align:center;
-}
-
-.board-symbol {
-  width:130px;
-  height:130px;
-  margin:25px auto 17px;
-  padding:18px;
-  border:1px solid var(--ouro);
-  display:grid;
-  place-items:center;
-  background:#200611;
-}
-
-.board-symbol img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.board-brand {
-  font:1.9rem Georgia,serif;
-  letter-spacing:.22em;
-  text-align:center;
-  color:var(--ouro-claro);
-}
-
-.board-caption {
-  text-align:center;
-  color:var(--suave);
-  font-size:.73rem;
-  letter-spacing:.16em;
-  margin-top:10px;
-}
-
-.board-swatches {
-  display:flex;
-  justify-content:center;
-  gap:9px;
-  margin-top:29px;
-}
-
-.board-swatches span {
-  width:33px;
-  height:17px;
-  border:1px solid #ffffff5e;
-  background:var(--swatch);
-}
-
-/* FAIXA DE QUALIDADES */
-
-.quality-strip {
-  border-bottom:1px solid var(--linha);
-  padding:22px 0;
-  background:#16040c70;
-}
-
-.quality-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  text-align:center;
-}
-
-.quality-grid span {
-  font-size:.82rem;
-  color:var(--ouro-claro);
-  letter-spacing:.05em;
-}
-
-/* SERVIÇOS */
-
-.service-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:20px;
-}
-
-.service-card {
-  min-width:0;
-  display:flex;
-  flex-direction:column;
-  border:1px solid var(--linha);
-  background:linear-gradient(145deg,#4b142b,#230712);
-}
-
-.service-top {
-  height:6px;
-  background:linear-gradient(90deg,var(--ouro),#704630);
-}
-
-.service-content {
-  padding:26px;
-  display:flex;
-  flex:1;
-  flex-direction:column;
-}
-
-.service-num {
-  color:var(--ouro);
-  font-size:.7rem;
-  letter-spacing:.24em;
-}
-
-.service-card h3 {
-  font-size:clamp(1.5rem,2.4vw,2rem);
-  margin:12px 0;
-}
-
-.service-card p {
-  font-size:.91rem;
-  color:var(--suave);
-}
-
-.service-price {
-  margin:25px 0 8px;
-  font:2.35rem Georgia,serif;
-  color:var(--ouro-claro);
-  line-height:1.1;
-}
-
-.service-price small {
-  display:block;
-  font:.75rem system-ui,sans-serif;
-  color:var(--suave);
-  margin-top:7px;
-}
-
-.service-link {
-  margin-top:auto;
-  padding-top:22px;
-  font-weight:700;
-  font-size:.85rem;
-  color:var(--ouro-claro);
-  text-decoration:underline;
-  text-underline-offset:5px;
-}
-
-.service-card.featured {
-  border-color:var(--ouro);
-}
-
-.service-card.featured .service-top {
-  background:var(--ouro-claro);
-}
-
-.small-note {
-  font-size:.81rem;
-  color:var(--suave);
-  margin-top:20px;
-}
-
-/* PORTFÓLIO */
-
-.portfolio {
-  border-block:1px solid var(--linha);
-  background:#17050e88;
-}
-
-.filters {
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:0 0 28px;
-}
-
-.filter-btn {
-  padding:9px 16px;
-  background:transparent;
-  color:var(--ouro-claro);
-  border:1px solid var(--linha);
-  font-size:.82rem;
-}
-
-.filter-btn:hover,
-.filter-btn[aria-pressed="true"] {
-  background:var(--ouro);
-  border-color:var(--ouro);
-  color:var(--escuro);
-}
-
-.work-grid {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:22px;
-}
-
-.work-card {
-  overflow:hidden;
-  background:#2e0d1c;
-  border:1px solid var(--linha);
-}
-
-.work-card[hidden] {
-  display:none!important;
-}
-
-.work-art {
-  min-height:260px;
-  aspect-ratio:1.16;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  position:relative;
-}
-
-.work-caption {
-  padding:19px 20px 21px;
-}
-
-.work-caption .type {
-  font-size:.68rem;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-  color:var(--ouro-claro);
-}
-
-.work-caption h3 {
-  font:1.5rem Georgia,serif;
-  margin:7px 0;
-}
-
-.work-caption p {
-  font-size:.84rem;
-  color:var(--suave);
-}
-
-/* MARAJOARA */
-
-.art-marajoara {
-  background:#e9e4db;
-  padding:40px;
-}
-
-.art-marajoara img {
-  width:min(78%,230px);
-  height:210px;
-  object-fit:contain;
-}
-
-/* HYPERBOREA */
-
-.art-hyperborea {
-  background:radial-gradient(circle at 50% 20%,#75314b,#240713 70%);
-  flex-direction:column;
-  padding:30px;
-  color:var(--ouro-claro);
-}
-
-.art-hyperborea img {
-  width:100px;
-  height:112px;
-  object-fit:contain;
-  margin-bottom:12px;
-}
-
-.art-hyperborea strong {
-  font:1.8rem Georgia,serif;
-  letter-spacing:.17em;
-}
-
-.art-hyperborea small {
-  letter-spacing:.22em;
-  font-size:.65rem;
-  margin-top:9px;
-}
-
-/* DEMONSTRAÇÃO FLORA */
-
-.art-flora {
-  background:#e9e8db;
-  color:#415a42;
-  flex-direction:column;
-  gap:10px;
-}
-
-.flora-symbol {
-  position:relative;
-  width:110px;
-  height:110px;
-}
-
-.flora-symbol span {
-  position:absolute;
-  left:43px;
-  top:5px;
-  width:27px;
-  height:90px;
-  border-radius:60% 60% 25% 25%;
-  background:#a3b394;
-  transform-origin:50% 52px;
-  transform:rotate(var(--r));
-}
-
-.flora-symbol i {
-  position:absolute;
-  left:45px;
-  top:43px;
-  width:24px;
-  height:24px;
-  border-radius:50%;
-  background:#f7eccc;
-}
-
-.art-flora strong {
-  font:2rem Georgia,serif;
-  letter-spacing:.1em;
-}
-
-.art-flora small {
-  font-size:.66rem;
-  letter-spacing:.29em;
-  text-transform:uppercase;
-}
-
-/* DEMONSTRAÇÃO BANNER */
-
-.art-banner {
-  padding:18px;
-  background:#b3a18b;
-}
-
-.banner-preview {
-  width:100%;
-  height:80%;
-  min-height:170px;
-  background:linear-gradient(115deg,#2e503e 0 54%,#d7be8f 54%);
-  border:7px solid #f5eedf;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:22px;
-  box-shadow:0 13px 25px #0004;
-}
-
-.banner-copy {
-  position:relative;
-  z-index:1;
-  color:#fff7e4;
-}
-
-.banner-copy small {
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  font-size:.55rem;
-}
-
-.banner-copy strong {
-  display:block;
-  font:clamp(1.3rem,2.6vw,2.3rem)/1.1 Georgia,serif;
-  margin:10px 0;
-}
-
-.banner-copy b {
-  display:inline-block;
-  padding:5px 10px;
-  background:#e8d2a8;
-  color:#2e503e;
-  font-size:.57rem;
-  letter-spacing:.07em;
-}
-
-.cup {
-  position:relative;
-  width:80px;
-  height:68px;
-  background:#fff5de;
-  border-radius:4px 4px 28px 28px;
-  transform:rotate(-7deg);
-  box-shadow:0 10px 0 -4px #38513d;
-  flex-shrink:0;
-}
-
-.cup::after {
-  content:"";
-  position:absolute;
-  right:-20px;
-  top:8px;
-  width:23px;
-  height:35px;
-  border:9px solid #fff5de;
-  border-left:0;
-  border-radius:0 50% 50% 0;
-}
-
-.cup::before {
-  content:"";
-  position:absolute;
-  left:10px;
-  right:10px;
-  top:8px;
-  height:12px;
-  border-radius:50%;
-  background:#765039;
-}
-
-/* DEMONSTRAÇÃO POST */
-
-.art-post {
-  background:#d1bca9;
-  padding:26px;
-}
-
-.post-preview {
-  aspect-ratio:4/5;
-  width:min(195px,78%);
-  background:#f1e8dc;
-  color:#54362b;
-  box-shadow:12px 16px 0 #6e4d40;
-  border:1px solid #e5d5bd;
-  padding:19px 15px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  transform:rotate(5deg);
-}
-
-.post-preview small {
-  text-align:center;
-  letter-spacing:.2em;
-  font-size:.5rem;
-}
-
-.post-preview .flower {
-  font:5.5rem Georgia,serif;
-  text-align:center;
-  color:#ac6754;
-  line-height:1;
-}
-
-.post-preview strong {
-  font:1.43rem Georgia,serif;
-  text-align:center;
-  line-height:1.07;
-}
-
-/* DEMONSTRAÇÃO CARROSSEL */
-
-.art-carousel {
-  background:linear-gradient(135deg,#384f60,#172733);
-  gap:6px;
-  padding:20px;
-}
-
-.carousel-slide {
-  width:17%;
-  height:68%;
-  background:#f2e8d5;
-  color:#263d4c;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  padding:5px;
-  box-shadow:0 7px 12px #0003;
-}
-
-.carousel-slide:nth-child(even) {
-  background:#d0b897;
-}
-
-.carousel-slide strong {
-  font:clamp(1.2rem,2.5vw,2.3rem) Georgia,serif;
-}
-
-.carousel-slide small {
-  font-size:.5rem;
-  text-align:center;
-  overflow-wrap:anywhere;
-}
-
-/* DEMONSTRAÇÃO IDENTIDADE */
-
-.art-identity {
-  background:#f0e8db;
-  padding:22px;
-}
-
-.identity-sheet {
-  width:100%;
-  background:#fff9ef;
-  color:#31473e;
-  box-shadow:0 14px 26px #0004;
-  padding:20px;
-  display:grid;
-  gap:13px;
-}
-
-.identity-sheet strong {
-  font:1.65rem Georgia,serif;
-  letter-spacing:.1em;
-}
-
-.identity-sheet small {
-  letter-spacing:.12em;
-  font-size:.55rem;
-}
-
-.identity-shapes {
-  display:flex;
-  justify-content:space-between;
-  gap:12px;
-}
-
-.identity-shapes span {
-  height:60px;
-  flex:1;
-  border-radius:50% 50% 8% 8%;
-  background:var(--b);
-  min-width:0;
-}
-
-.identity-swatches {
-  display:flex;
-  gap:7px;
-}
-
-.identity-swatches i {
-  width:25px;
-  height:16px;
-  background:var(--c);
-}
-
-/* PACOTES */
-
-.identity-section {
-  border-bottom:1px solid var(--linha);
-}
-
-.identity-layout {
-  display:grid;
-  grid-template-columns:.9fr 1.1fr;
-  gap:55px;
-  align-items:start;
-}
-
-.identity-copy h2 {
-  font-size:clamp(2.1rem,4.5vw,4.3rem);
-  margin:15px 0;
-}
-
-.identity-copy p {
-  color:var(--suave);
-  margin-top:16px;
-}
-
-.identity-packs {
-  display:grid;
-  gap:16px;
-}
-
-.pack {
-  border:1px solid var(--linha);
-  padding:25px;
-  background:#320b1e;
-}
-
-.pack h3 {
-  font:1.8rem Georgia,serif;
-  margin-bottom:10px;
-}
-
-.pack p {
-  color:var(--suave);
-  font-size:.88rem;
-}
-
-.pack ul {
-  padding-left:19px;
-  margin:17px 0;
-  color:var(--suave);
-  font-size:.88rem;
-}
-
-.pack li {margin:7px 0}
-
-.pack-footer {
-  border-top:1px solid var(--linha);
-  padding-top:15px;
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-
-.pack-footer strong {
-  color:var(--ouro-claro);
-  font-size:.9rem;
-}
-
-.pack-footer a {
-  font-size:.85rem;
-  text-decoration:underline;
-  text-underline-offset:4px;
-}
-
-/* PROCESSO */
-
-.steps {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:25px;
-}
-
-.step {
-  border-top:1px solid var(--ouro);
-  padding-top:21px;
-}
-
-.step b {
-  font:2.7rem Georgia,serif;
-  color:var(--ouro);
-}
-
-.step h3 {
-  font-size:1.5rem;
-  margin:11px 0;
-}
-
-.step p {
-  font-size:.87rem;
-  color:var(--suave);
-}
-
-/* FAQ */
-
-.faq {
-  background:#17040b88;
-  border-block:1px solid var(--linha);
-}
-
-.faq details {
-  max-width:860px;
-  border-bottom:1px solid var(--linha);
-  padding:20px 0;
-}
-
-.faq summary {
-  cursor:pointer;
-  color:var(--ouro-claro);
-  font-weight:700;
-}
-
-.faq details p {
-  color:var(--suave);
-  font-size:.9rem;
-  margin-top:12px;
-}
-
-/* CONTATO E RODAPÉ */
-
-.contact {
-  text-align:center;
-  padding:100px 0;
-}
-
-.contact .container {
-  max-width:740px;
-}
-
-.contact h2 {
-  font-size:clamp(2.4rem,5vw,4.8rem);
-  margin:15px 0;
-}
-
-.contact p:not(.eyebrow) {
-  color:var(--suave);
-}
-
-.contact .actions {
-  justify-content:center;
-}
-
-.footer {
-  padding:25px 0;
-  border-top:1px solid var(--linha);
-  color:var(--suave);
-  font-size:.79rem;
-}
-
-.footer-row {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-  flex-wrap:wrap;
-}
-
-.footer a {
-  color:var(--ouro-claro);
-}
-
-.whatsapp {
-  position:fixed;
-  bottom:18px;
-  right:18px;
-  width:60px;
-  height:60px;
-  border:2px solid var(--ouro);
-  border-radius:50%;
-  background:var(--vinho);
-  display:grid;
-  place-items:center;
-  padding:7px;
-  z-index:40;
-  box-shadow:0 6px 25px #0009;
-}
-
-.whatsapp img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-/* RESPONSIVIDADE */
-
-@media(max-width:980px) {
-  .nav-links {display:none}
-  .mobile-menu {display:block}
-  .hero-grid {grid-template-columns:1fr 1fr;gap:20px}
-  .hero-art {min-height:340px}
-  .service-grid,.work-grid {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-  .identity-layout {grid-template-columns:1fr;gap:30px}
-}
-
-@media(max-width:680px) {
-  .container {width:calc(100% - 32px)}
-  .section {padding:66px 0}
-  .hero {padding:61px 0}
-  .hero-grid {grid-template-columns:1fr}
-  .hero h1 {font-size:clamp(2.85rem,11vw,4.2rem)}
-  .hero-art {min-height:320px}
-  .hero-board {width:min(315px,85%);padding:20px}
-  .board-symbol {
-    width:108px;
-    height:108px;
-    margin:17px auto;
-  }
-  .board-brand {font-size:1.55rem}
-  .hero-highlights {gap:18px}
-  .quality-grid {grid-template-columns:1fr;gap:10px}
-  .service-grid,.work-grid,.steps {grid-template-columns:1fr}
-  .work-art {min-height:250px}
-  .actions .btn {width:100%}
-  .whatsapp {
-    width:54px;
-    height:54px;
-    bottom:12px;
-    right:12px;
-  }
-  .contact {padding:75px 0}
-}
-
-@media(prefers-reduced-motion:reduce) {
-  html {scroll-behavior:auto}
-  .btn {transition:none}
-  .btn:hover {transform:none}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Design e Identidade Visual HYPERBOREA. Logotipos vetorizados, banners, cartões de visita, posts, carrosséis, panfletos e elementos gráficos. Serviços a partir de R$ 20,00.">
+
+  <title>Design & Identidade Visual | HYPERBOREA</title>
+
+  <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
+
+  <style>
+
+    /* ========================================
+       HYPERBOREA — IDENTIDADE CROMÁTICA
+       ======================================== */
+
+    :root {
+      --vinho:#810123;
+      --azul-boreal:#002161;
+      --verde:#005B33;
+      --preto:#000000;
+      --branco-polar:#FEF9EF;
+      --marfim:#FEF7EE;
+      --dourado-solar:#F7AE08;
+      --dourado-radar:#C68301;
+      --texto:var(--branco-polar);
+      --suave:rgba(254,249,239,.80);
+      --linha:rgba(254,249,239,.20);
+      --linha-solar:rgba(247,174,8,.35);
+    }
+
+    /* CONFIGURAÇÕES GERAIS */
+
+    *,*::before,*::after {
+      box-sizing:border-box;
+    }
+
+    html {
+      scroll-behavior:smooth;
+      scroll-padding-top:95px;
+    }
+
+    body {
+      margin:0;
+      background:var(--preto);
+      color:var(--texto);
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+    }
+
+    img {
+      display:block;
+      max-width:100%;
+    }
+
+    a {
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button,summary {
+      cursor:pointer;
+    }
+
+    button {
+      font:inherit;
+    }
+
+    [hidden] {
+      display:none!important;
+    }
+
+    h1,h2,h3,h4,p {
+      margin:0;
+    }
+
+    h1,h2,h3,h4 {
+      font-family:Georgia,"Times New Roman",serif;
+      font-weight:500;
+      color:var(--marfim);
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline:2px solid var(--dourado-solar);
+      outline-offset:4px;
+    }
+
+    .container {
+      width:min(1160px,calc(100% - 40px));
+      margin-inline:auto;
+    }
+
+    .gold {
+      color:var(--dourado-solar);
+    }
+
+    .eyebrow {
+      color:var(--dourado-solar);
+      font-size:.69rem;
+      font-weight:750;
+      letter-spacing:.20em;
+      text-transform:uppercase;
+    }
+
+    .skip {
+      position:absolute;
+      top:-100px;
+      left:15px;
+      z-index:100;
+      padding:12px;
+      background:var(--marfim);
+      color:var(--preto);
+    }
+
+    .skip:focus {
+      top:10px;
+    }
+
+    /* ========================================
+       CABEÇALHO
+       ======================================== */
+
+    .site-header {
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(0,0,0,.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--linha-solar);
+    }
+
+    .nav-row {
+      min-height:75px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand {
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      color:var(--marfim);
+    }
+
+    .brand img {
+      width:43px;
+      height:48px;
+      object-fit:contain;
+    }
+
+    .brand strong {
+      display:block;
+      font:600 clamp(.99rem,2vw,1.45rem) Georgia,serif;
+      letter-spacing:.16em;
+    }
+
+    .brand small {
+      display:block;
+      margin-top:5px;
+      color:var(--dourado-solar);
+      font-size:.55rem;
+      font-weight:600;
+      letter-spacing:.30em;
+    }
+
+    .nav-links {
+      display:flex;
+      align-items:center;
+      gap:22px;
+      font-size:.86rem;
+    }
+
+    .nav-links a:hover {
+      color:var(--dourado-solar);
+    }
+
+    .nav-cta {
+      padding:10px 15px;
+      border:1px solid var(--dourado-radar);
+    }
+
+    /* MENU MOBILE */
+
+    .mobile-menu {
+      display:none;
+      position:relative;
+    }
+
+    .mobile-menu summary {
+      list-style:none;
+      padding:10px 13px;
+      border:1px solid var(--marfim);
+      color:var(--marfim);
+      font-size:.85rem;
+      font-weight:700;
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .mobile-menu nav {
+      position:absolute;
+      right:0;
+      top:calc(100% + 12px);
+      min-width:205px;
+      display:grid;
+      gap:8px;
+      padding:12px;
+      background:var(--preto);
+      border:1px solid var(--dourado-radar);
+      box-shadow:0 18px 40px #000A;
+    }
+
+    .mobile-menu nav a {
+      padding:12px;
+      border:1px solid var(--linha);
+      text-align:center;
+      white-space:nowrap;
+      font-size:.85rem;
+    }
+
+    .mobile-menu nav a:hover {
+      background:var(--vinho);
+      border-color:var(--dourado-solar);
+    }
+
+    /* ========================================
+       CONTAINERS COMERCIAIS
+       ======================================== */
+
+    .page-content {
+      display:grid;
+      gap:26px;
+      padding-top:30px;
+      padding-bottom:60px;
+    }
+
+    .content-panel {
+      min-width:0;
+      padding:clamp(20px,4vw,38px);
+      background:var(--preto);
+      border:1px solid var(--dourado-radar);
+    }
+
+    .panel-heading {
+      margin-bottom:25px;
+    }
+
+    .panel-heading h2 {
+      font-size:clamp(1.65rem,3.5vw,2.6rem);
+      line-height:1.15;
+      margin-bottom:10px;
+    }
+
+    .panel-heading p {
+      color:var(--suave);
+      font-size:.91rem;
+      line-height:1.7;
+    }
+
+    .section-number {
+      color:var(--dourado-solar);
+      margin-right:7px;
+    }
+
+    /* ========================================
+       ABERTURA COMERCIAL
+       ======================================== */
+
+    .hero {
+      padding:clamp(26px,5vw,48px);
+      background:linear-gradient(135deg,var(--vinho),#81012370);
+      border:1px solid var(--dourado-radar);
+    }
+
+    .hero h1 {
+      font-size:clamp(2.5rem,6vw,4.5rem);
+      line-height:1.05;
+      margin:14px 0 16px;
+    }
+
+    .hero .lead {
+      max-width:790px;
+      font-size:clamp(.91rem,1.3vw,1.05rem);
+      line-height:1.75;
+      color:var(--branco-polar);
+    }
+
+    .hero-info {
+      display:flex;
+      flex-wrap:wrap;
+      gap:9px;
+      margin-top:23px;
+    }
+
+    .hero-info span {
+      padding:9px 13px;
+      border:1px solid var(--linha);
+      background:#00000025;
+      font-size:.75rem;
+    }
+
+    /* BOTÕES */
+
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:13px 19px;
+      font-size:.86rem;
+      font-weight:700;
+      text-align:center;
+      border:1px solid var(--marfim);
+      transition:background .2s,border-color .2s,transform .2s;
+    }
+
+    .btn-primary {
+      background:var(--branco-polar);
+      color:var(--vinho);
+    }
+
+    .btn-primary:hover {
+      background:var(--dourado-solar);
+      color:var(--preto);
+      border-color:var(--dourado-solar);
+      transform:translateY(-2px);
+    }
+
+    .btn-outline {
+      background:transparent;
+      color:var(--marfim);
+    }
+
+    .btn-outline:hover {
+      background:#FEF9EF12;
+      border-color:var(--dourado-solar);
+    }
+
+    /* ========================================
+       01 — SERVIÇOS E VALORES
+       ======================================== */
+
+    .service-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:15px;
+    }
+
+    .service-card {
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      padding:23px 19px;
+      background:linear-gradient(145deg,var(--vinho),#81012370);
+      border:1px solid var(--linha);
+      transition:transform .25s,border-color .25s;
+    }
+
+    .service-card:hover {
+      transform:translateY(-3px);
+      border-color:var(--dourado-solar);
+    }
+
+    .service-type {
+      font-size:.65rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      color:var(--dourado-solar);
+      margin-bottom:12px;
+    }
+
+    .service-card h3 {
+      font-size:clamp(1.15rem,2.2vw,1.55rem);
+      line-height:1.2;
+      margin-bottom:12px;
+    }
+
+    .service-description {
+      font-size:.83rem;
+      color:var(--suave);
+      line-height:1.65;
+      margin-bottom:19px;
+    }
+
+    .service-price {
+      font-size:clamp(1.6rem,3vw,2.4rem);
+      font-weight:750;
+      letter-spacing:-.05em;
+      white-space:nowrap;
+      margin-top:auto;
+    }
+
+    .service-unit {
+      color:var(--suave);
+      font-size:.71rem;
+      margin-top:5px;
+      margin-bottom:17px;
+    }
+
+    .service-card .btn {
+      width:100%;
+      background:#00000035;
+      border-color:var(--dourado-radar);
+    }
+
+    .service-card .btn:hover {
+      background:var(--branco-polar);
+      color:var(--vinho);
+      border-color:var(--branco-polar);
+    }
+
+    .pricing-summary {
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:13px 25px;
+      margin-top:24px;
+      padding:18px 12px;
+      background:#81012326;
+      border:1px solid var(--linha);
+      font-size:.82rem;
+    }
+
+    .pricing-summary span::before {
+      content:"✓";
+      color:var(--dourado-solar);
+      margin-right:7px;
+    }
+
+    .pricing-note {
+      margin-top:18px;
+      color:var(--suave);
+      font-size:.79rem;
+      line-height:1.7;
+    }
+
+    /* ========================================
+       02 — PORTFÓLIO VISUAL
+       ======================================== */
+
+    .filters {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+
+    .filter {
+      padding:10px 14px;
+      color:var(--marfim);
+      background:var(--preto);
+      border:1px solid var(--linha);
+      font-size:.79rem;
+    }
+
+    .filter[aria-pressed="true"] {
+      background:var(--vinho);
+      border-color:var(--dourado-solar);
+    }
+
+    .filter:hover {
+      border-color:var(--dourado-solar);
+    }
+
+    .portfolio-count {
+      color:var(--suave);
+      font-size:.75rem;
+      margin:15px 0;
+    }
+
+    .portfolio-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:17px;
+    }
+
+    .work-card {
+      min-width:0;
+      display:flex;
+      flex-direction:column;
+      background:#81012320;
+      border:1px solid var(--linha);
+      transition:border-color .2s;
+    }
+
+    .work-card:hover {
+      border-color:var(--dourado-radar);
+    }
+
+    .work-art {
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      aspect-ratio:4/3;
+      padding:20px;
+      overflow:hidden;
+      background:var(--vinho);
+      text-align:center;
+    }
+
+    .work-art img {
+      max-width:75%;
+      max-height:75%;
+      object-fit:contain;
+    }
+
+    .work-caption {
+      display:flex;
+      flex-direction:column;
+      flex:1;
+      padding:17px;
+    }
+
+    .work-category {
+      color:var(--dourado-solar);
+      font-size:.62rem;
+      letter-spacing:.08em;
+      margin-bottom:8px;
+    }
+
+    .work-caption h3 {
+      font-size:clamp(1.05rem,2vw,1.4rem);
+      line-height:1.2;
+      margin-bottom:8px;
+    }
+
+    .work-caption p {
+      color:var(--suave);
+      font-size:.79rem;
+      line-height:1.65;
+    }
+
+    .portfolio-note {
+      color:var(--suave);
+      font-size:.78rem;
+      line-height:1.7;
+      margin-top:23px;
+    }
+
+    /* ========================================
+       AMOSTRAS GRÁFICAS PROVISÓRIAS
+
+       Posteriormente, substituir os elementos
+       demonstrativos por arquivos SVG e WebP
+       oficiais da HYPERBOREA.
+       ======================================== */
+
+    .art-marajoara {
+      background:var(--marfim);
+    }
+
+    .art-hyperborea {
+      background:var(--preto);
+      gap:7px;
+    }
+
+    .art-hyperborea img {
+      width:65px;
+      height:80px;
+    }
+
+    .art-hyperborea strong {
+      font-family:Georgia,serif;
+      font-size:clamp(.8rem,2vw,1.35rem);
+      letter-spacing:.12em;
+      color:var(--marfim);
+    }
+
+    .art-hyperborea small {
+      font-size:.48rem;
+      letter-spacing:.18em;
+      color:var(--dourado-solar);
+    }
+
+    .art-flora {
+      background:#E9E6D8;
+      color:#304B40;
+      gap:8px;
+    }
+
+    .flora-symbol {
+      font-size:clamp(3rem,7vw,5rem);
+      line-height:1;
+    }
+
+    .art-flora strong {
+      font:500 1.5rem Georgia,serif;
+      letter-spacing:.18em;
+    }
+
+    .art-flora small {
+      font-size:.55rem;
+      letter-spacing:.14em;
+    }
+
+    .art-banner {
+      background:#2D201A;
+    }
+
+    .banner-demo {
+      width:100%;
+      padding:18px 12px;
+      background:linear-gradient(110deg,#7B4A2D,#362219);
+      border:1px solid #E5B98255;
+      text-align:left;
+      color:#FFF2D9;
+    }
+
+    .banner-demo small {
+      font-size:.48rem;
+      letter-spacing:.10em;
+    }
+
+    .banner-demo strong {
+      display:block;
+      font:500 clamp(.85rem,2.5vw,1.8rem) Georgia,serif;
+      margin:7px 0;
+    }
+
+    .banner-demo b {
+      display:inline-block;
+      padding:5px 8px;
+      background:#FFF2D9;
+      color:#362219;
+      font-size:.46rem;
+    }
+
+    .art-post {
+      background:#D6DFC9;
+    }
+
+    .post-demo {
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      width:76%;
+      aspect-ratio:1;
+      padding:8px;
+      background:#304B40;
+      color:#EEE0C7;
+    }
+
+    .post-demo small {
+      font-size:.48rem;
+      letter-spacing:.10em;
+    }
+
+    .post-demo span {
+      font-size:clamp(1.7rem,4vw,3rem);
+    }
+
+    .post-demo strong {
+      font:500 clamp(.72rem,2vw,1.2rem) Georgia,serif;
+    }
+
+    .art-carousel {
+      flex-direction:row;
+      gap:4px;
+      background:#E9D5BC;
+    }
+
+    .carousel-slide {
+      display:flex;
+      flex:1;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      min-width:0;
+      aspect-ratio:3/5;
+      background:#810123;
+      color:var(--marfim);
+    }
+
+    .carousel-slide:nth-child(even) {
+      background:#B88C6A;
+      color:#2B1519;
+    }
+
+    .carousel-slide strong {
+      font:500 clamp(.7rem,2vw,1.4rem) Georgia,serif;
+    }
+
+    .art-identity {
+      background:#EEE0C7;
+      color:#304B40;
+      gap:12px;
+    }
+
+    .art-identity strong {
+      font:500 clamp(1rem,3vw,1.8rem) Georgia,serif;
+      letter-spacing:.12em;
+    }
+
+    .identity-swatches {
+      display:flex;
+      gap:5px;
+    }
+
+    .identity-swatches span {
+      width:clamp(18px,4vw,40px);
+      height:clamp(18px,4vw,40px);
+      border:1px solid #0002;
+    }
+
+    .art-placeholder {
+      background:#81012330;
+      color:var(--marfim);
+      gap:12px;
+    }
+
+    .placeholder-symbol {
+      font:500 clamp(2.2rem,5vw,4rem) Georgia,serif;
+      color:var(--dourado-solar);
+    }
+
+    .placeholder-label {
+      font-size:.60rem;
+      letter-spacing:.10em;
+    }
+
+    /* ========================================
+       03 — O QUE ESTÁ INCLUSO?
+       ======================================== */
+
+    .included-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:13px;
+    }
+
+    .included-item {
+      display:flex;
+      align-items:flex-start;
+      gap:13px;
+      padding:18px;
+      background:#81012326;
+      border:1px solid var(--linha);
+    }
+
+    .included-check {
+      color:var(--dourado-solar);
+      font-size:1.25rem;
+      font-weight:700;
+    }
+
+    .included-item h3 {
+      font-size:1.12rem;
+      margin-bottom:6px;
+    }
+
+    .included-item p {
+      color:var(--suave);
+      font-size:.82rem;
+      line-height:1.6;
+    }
+
+    /* ========================================
+       04 — COMO CONTRATAR
+       ======================================== */
+
+    .steps {
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:13px;
+    }
+
+    .step {
+      padding:21px 17px;
+      background:#81012326;
+      border:1px solid var(--linha);
+    }
+
+    .step-number {
+      display:grid;
+      place-items:center;
+      width:38px;
+      height:38px;
+      background:var(--vinho);
+      border:1px solid var(--dourado-radar);
+      color:var(--dourado-solar);
+      font:500 1.2rem Georgia,serif;
+      margin-bottom:17px;
+    }
+
+    .step h3 {
+      font-size:1.2rem;
+      margin-bottom:10px;
+    }
+
+    .step p {
+      color:var(--suave);
+      font-size:.82rem;
+      line-height:1.65;
+    }
+
+    /* ========================================
+       05 — ESCLARECIMENTOS
+       ======================================== */
+
+    .faq-list {
+      display:grid;
+      gap:9px;
+    }
+
+    .faq-list details {
+      background:#81012326;
+      border:1px solid var(--linha);
+    }
+
+    .faq-list summary {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px;
+      list-style:none;
+      color:var(--marfim);
+      font-size:.88rem;
+      font-weight:650;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .faq-list summary::after {
+      content:"+";
+      color:var(--dourado-solar);
+      font-size:1.3rem;
+      font-weight:400;
+      flex:none;
+    }
+
+    .faq-list details[open] {
+      border-color:var(--dourado-radar);
+    }
+
+    .faq-list details[open] summary::after {
+      content:"−";
+    }
+
+    .faq-list details p {
+      padding:0 18px 20px;
+      color:var(--suave);
+      font-size:.85rem;
+      line-height:1.8;
+    }
+
+    /* ========================================
+       06 — OUTROS DEPARTAMENTOS
+       ======================================== */
+
+    .departments-grid {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:15px;
+    }
+
+    .department-card {
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+      min-width:0;
+      padding:24px;
+      border:1px solid var(--dourado-radar);
+      transition:transform .25s,border-color .25s;
+    }
+
+    .department-card:hover {
+      transform:translateY(-3px);
+      border-color:var(--dourado-solar);
+    }
+
+    .department-sites {
+      background:var(--azul-boreal);
+    }
+
+    .department-videos {
+      background:var(--verde);
+    }
+
+    .department-card h3 {
+      font-size:clamp(1.4rem,3vw,2rem);
+    }
+
+    .department-card p {
+      font-size:.87rem;
+      line-height:1.65;
+      color:var(--suave);
+    }
+
+    .department-price {
+      font-size:clamp(1.5rem,3vw,2.2rem);
+      font-weight:750;
+      margin-top:auto;
+    }
+
+    .department-details {
+      font-size:.83rem;
+      color:var(--dourado-solar);
+      font-weight:700;
+      padding-top:12px;
+      border-top:1px solid var(--linha);
+    }
+
+    /* ========================================
+       CONTRATAÇÃO FINAL
+       ======================================== */
+
+    .contact-panel {
+      padding:clamp(28px,5vw,42px);
+      background:var(--vinho);
+      border:1px solid var(--dourado-radar);
+      text-align:center;
+    }
+
+    .contact-panel h2 {
+      font-size:clamp(1.65rem,4vw,2.8rem);
+      margin-bottom:12px;
+    }
+
+    .contact-panel p {
+      color:var(--branco-polar);
+      font-size:.91rem;
+      line-height:1.7;
+      max-width:620px;
+      margin:0 auto 22px;
+    }
+
+    .contact-panel .btn {
+      min-width:min(100%,320px);
+      padding:16px 25px;
+    }
+
+    .contact-panel .btn img {
+      width:27px;
+      height:27px;
+      object-fit:contain;
+    }
+
+    /* RODAPÉ */
+
+    footer {
+      border-top:1px solid var(--linha-solar);
+      background:var(--preto);
+      padding:27px 0 85px;
+    }
+
+    .footer-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:15px;
+      color:var(--suave);
+      font-size:.78rem;
+    }
+
+    .footer-row a:hover {
+      color:var(--dourado-solar);
+    }
+
+    /* WHATSAPP FLUTUANTE */
+
+    .whatsapp {
+      position:fixed;
+      z-index:40;
+      right:calc(20px + env(safe-area-inset-right,0px));
+      bottom:calc(20px + env(safe-area-inset-bottom,0px));
+      width:66px;
+      height:66px;
+      padding:6px;
+      background:var(--preto);
+      border:2px solid var(--dourado-radar);
+      border-radius:50%;
+      box-shadow:0 7px 24px #0008;
+      transition:transform .2s;
+    }
+
+    .whatsapp:hover {
+      transform:translateY(-3px);
+    }
+
+    .whatsapp img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+
+    /* ========================================
+       RESPONSIVIDADE — TABLET
+       ======================================== */
+
+    @media(max-width:850px) {
+
+      .nav-links {
+        display:none;
+      }
+
+      .mobile-menu {
+        display:block;
+      }
+
+      .service-grid,
+      .portfolio-grid,
+      .steps {
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+    }
+
+    /* ========================================
+       RESPONSIVIDADE — CELULAR
+       ======================================== */
+
+    @media(max-width:570px) {
+
+      html {
+        scroll-padding-top:80px;
+      }
+
+      .container {
+        width:calc(100% - 28px);
+      }
+
+      .nav-row {
+        min-height:66px;
+        gap:10px;
+      }
+
+      .brand {
+        gap:8px;
+      }
+
+      .brand img {
+        width:35px;
+        height:42px;
+      }
+
+      .brand strong {
+        font-size:1.02rem;
+        letter-spacing:.13em;
+      }
+
+      .brand small {
+        font-size:.48rem;
+      }
+
+      .page-content {
+        gap:18px;
+        padding-top:18px;
+      }
+
+      .content-panel {
+        padding:17px 13px;
+      }
+
+      .hero {
+        padding:26px 19px;
+      }
+
+      .hero h1 {
+        font-size:clamp(2rem,8vw,2.6rem);
+      }
+
+      .hero-info {
+        gap:6px;
+      }
+
+      .hero-info span {
+        font-size:.65rem;
+        padding:7px 8px;
+      }
+
+      .service-grid,
+      .portfolio-grid {
+        gap:9px;
+      }
+
+      .service-card {
+        padding:17px 11px 12px;
+      }
+
+      .service-type {
+        font-size:.55rem;
+        letter-spacing:.05em;
+      }
+
+      .service-card h3 {
+        font-size:1.08rem;
+      }
+
+      .service-description {
+        font-size:.75rem;
+        line-height:1.6;
+      }
+
+      .service-price {
+        font-size:1.55rem;
+      }
+
+      .service-unit {
+        font-size:.65rem;
+      }
+
+      .service-card .btn {
+        font-size:.75rem;
+        padding:11px 5px;
+      }
+
+      .pricing-summary {
+        justify-content:flex-start;
+        gap:10px;
+        font-size:.77rem;
+      }
+
+      .filters {
+        gap:6px;
+      }
+
+      .filter {
+        font-size:.70rem;
+        padding:9px 10px;
+      }
+
+      .work-art {
+        padding:9px;
+      }
+
+      .work-caption {
+        padding:12px 10px;
+      }
+
+      .work-category {
+        font-size:.53rem;
+      }
+
+      .work-caption h3 {
+        font-size:1.05rem;
+      }
+
+      .work-caption p {
+        font-size:.74rem;
+      }
+
+      .art-hyperborea img {
+        width:43px;
+        height:50px;
+      }
+
+      .art-hyperborea strong {
+        font-size:.70rem;
+      }
+
+      .art-hyperborea small {
+        font-size:.40rem;
+      }
+
+      .banner-demo {
+        padding:10px 7px;
+      }
+
+      .included-grid,
+      .departments-grid {
+        grid-template-columns:1fr;
+      }
+
+      .steps {
+        gap:9px;
+      }
+
+      .step {
+        padding:16px 12px;
+      }
+
+      .step h3 {
+        font-size:1.05rem;
+      }
+
+      .step p {
+        font-size:.77rem;
+      }
+
+      .department-card {
+        padding:21px;
+      }
+
+      .contact-panel {
+        padding:27px 16px;
+      }
+
+      .contact-panel .btn {
+        width:100%;
+      }
+
+      .footer-row {
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .whatsapp {
+        width:60px;
+        height:60px;
+        right:14px;
+        bottom:14px;
+      }
+
+    }
+
+    @media(max-width:340px) {
+
+      .service-grid,
+      .portfolio-grid {
+        grid-template-columns:1fr;
+      }
+
+      .brand strong {
+        font-size:.88rem;
+      }
+
+      .brand small {
+        font-size:.42rem;
+      }
+
+      .mobile-menu summary {
+        padding:9px;
+      }
+
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      html {
+        scroll-behavior:auto;
+      }
+
+      *,*::before,*::after {
+        transition-duration:.01ms!important;
+        animation-duration:.01ms!important;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
 
-<a class="skip" href="#conteudo">
-  Ir para o conteúdo
-</a>
+  <a class="skip" href="#conteudo">
+    Ir para o conteúdo
+  </a>
 
-<!-- CABEÇALHO -->
+  <!-- ======================================
+       CABEÇALHO
+       ====================================== -->
 
-<header class="site-header">
-  <div class="container nav">
+  <header class="site-header">
 
-    <a class="brand" href="/index.html" aria-label="HYPERBOREA — início">
-      <img src="/assets/img/monograma-h.svg" alt="" width="42" height="46">
-      <span>
-        <strong>HYPERBOREA</strong>
-        <small>AGÊNCIA CRIATIVA</small>
-      </span>
-    </a>
+    <div class="container nav-row">
 
-    <nav class="nav-links" aria-label="Menu principal">
-      <a href="/index.html">Início</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#identidade">Identidade Visual</a>
-      <a href="/sites.html">Sites</a>
-      <a class="nav-contact" href="#contato">Contato</a>
-    </nav>
+      <a class="brand" href="/index.html"
+         aria-label="HYPERBOREA — voltar ao início">
 
-    <details class="mobile-menu">
-      <summary>☰ Menu</summary>
-      <nav aria-label="Menu móvel">
-        <a href="/index.html">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#portfolio">Portfólio</a>
-        <a href="#identidade">Identidade Visual</a>
-        <a href="/sites.html">Sites & Web Design</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </details>
+        <img src="/assets/img/monograma-h.svg"
+             alt="" width="43" height="48">
 
-  </div>
-</header>
-
-<main id="conteudo">
-
-<!-- APRESENTAÇÃO -->
-
-<section class="hero" aria-labelledby="heroTitulo">
-  <div class="container hero-grid">
-
-    <div>
-      <p class="eyebrow">
-        HYPERBOREA · DESIGN & IDENTIDADE VISUAL PROFISSIONAL
-      </p>
-
-      <h1 id="heroTitulo">
-        Design <span class="professional">profissional</span>
-        para dar identidade e destaque à sua marca.
-      </h1>
-
-      <p class="hero-description">
-        Criamos logotipos 2D vetorizados, banners para
-        desktop e mobile, posts, carrosséis e elementos
-        gráficos exclusivos. Soluções visuais profissionais,
-        com atenção à identidade, à apresentação e à
-        consistência da sua marca.
-      </p>
-
-      <div class="hero-highlights">
-        <div>
-          <strong>R$ 90</strong>
-          <span>Logotipo 2D vetorizado</span>
-        </div>
-        <div>
-          <strong>R$ 30</strong>
-          <span>Post individual</span>
-        </div>
-      </div>
-
-      <div class="actions">
-        <a class="btn btn-primary" href="#portfolio">
-          Conhecer o portfólio
-        </a>
-        <a class="btn btn-outline" href="#servicos">
-          Ver todos os preços
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-art" aria-label="Identidade visual HYPERBOREA">
-      <span class="art-outline" aria-hidden="true"></span>
-      <span class="art-outline" aria-hidden="true"></span>
-
-      <div class="hero-board">
-        <p class="board-small">IDENTIDADE VISUAL</p>
-
-        <div class="board-symbol">
-          <img src="/assets/img/monograma-h.svg"
-               alt="Monograma HYPERBOREA">
-        </div>
-
-        <div class="board-brand">HYPERBOREA</div>
-        <p class="board-caption">FORMA · COR · IDENTIDADE</p>
-
-        <div class="board-swatches" aria-hidden="true">
-          <span style="--swatch:#300817"></span>
-          <span style="--swatch:#c6a069"></span>
-          <span style="--swatch:#f0d9ae"></span>
-          <span style="--swatch:#fbf2e8"></span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- DIFERENCIAIS -->
-
-<div class="quality-strip">
-  <div class="container quality-grid">
-    <span>Design profissional e vetorial</span>
-    <span>Banners adaptados para desktop e mobile</span>
-    <span>Portfólio responsivo em celular e computador</span>
-  </div>
-</div>
-
-<!-- SERVIÇOS E PREÇOS -->
-
-<section class="section" id="servicos">
-  <div class="container">
-
-    <div class="section-head">
-      <p class="eyebrow">Nossos serviços profissionais</p>
-
-      <h2>
-        Soluções profissionais
-        <span class="gold">para sua marca.</span>
-      </h2>
-
-      <p>
-        Conheça nossos serviços de design e criação visual.
-        Cada peça é desenvolvida para comunicar com clareza,
-        valorizar a identidade da sua marca e atender às
-        dimensões do formato contratado.
-      </p>
-    </div>
-
-    <div class="service-grid">
-
-      <article class="service-card featured">
-        <div class="service-top"></div>
-        <div class="service-content">
-          <span class="service-num">01 / MARCA</span>
-          <h3>Logotipo profissional</h3>
-          <p>
-            Criação profissional de logotipo 2D vetorizado,
-            com formas nítidas para diferentes aplicações.
-            Entrega digital em SVG e PNG com fundo transparente.
-          </p>
-          <div class="service-price">
-            R$ 90
-            <small>por logotipo</small>
-          </div>
-          <a class="service-link" href="#contato">
-            Solicitar logotipo ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top"></div>
-        <div class="service-content">
-          <span class="service-num">02 / DIGITAL</span>
-          <h3>Banner para site</h3>
-          <p>
-            Banner digital profissional para valorizar
-            produtos, campanhas ou serviços. Versões para
-            desktop e mobile incluídas no valor.
-          </p>
-          <div class="service-price">
-            R$ 50
-            <small>banner com adaptações desktop e mobile</small>
-          </div>
-          <a class="service-link" href="#contato">
-            Solicitar banner ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top"></div>
-        <div class="service-content">
-          <span class="service-num">03 / REDES SOCIAIS</span>
-          <h3>Post individual</h3>
-          <p>
-            Post profissional para Instagram, Facebook
-            ou outra rede social, com composição e
-            dimensões adequadas ao formato combinado.
-          </p>
-          <div class="service-price">
-            R$ 30
-            <small>por arte individual</small>
-          </div>
-          <a class="service-link" href="#contato">
-            Solicitar post ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top"></div>
-        <div class="service-content">
-          <span class="service-num">04 / REDES SOCIAIS</span>
-          <h3>Post carrossel</h3>
-          <p>
-            Carrossel profissional de cinco imagens,
-            com unidade visual para apresentar produtos,
-            serviços e conteúdos.
-          </p>
-          <div class="service-price">
-            R$ 120
-            <small>carrossel com 5 imagens</small>
-          </div>
-          <a class="service-link" href="#contato">
-            Solicitar carrossel ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top"></div>
-        <div class="service-content">
-          <span class="service-num">05 / IDENTIDADE</span>
-          <h3>Identidade visual essencial</h3>
-          <p>
-            Uma base visual consistente com logotipo,
-            paleta de cores, tipografia e elementos
-            gráficos essenciais.
-          </p>
-          <div class="service-price">
-            Sob consulta
-            <small>valor em definição</small>
-          </div>
-          <a class="service-link" href="#identidade">
-            Conhecer o pacote ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="service-card">
-        <div class="service-top"></div>
-        <div class="service-content">
-          <span class="service-num">06 / IDENTIDADE</span>
-          <h3>Identidade visual completa</h3>
-          <p>
-            Um sistema visual ampliado com variações,
-            elementos gráficos e exemplos de aplicação
-            da sua marca.
-          </p>
-          <div class="service-price">
-            Sob consulta
-            <small>valor em definição</small>
-          </div>
-          <a class="service-link" href="#identidade">
-            Conhecer o pacote ↗
-          </a>
-        </div>
-      </article>
-
-    </div>
-
-    <p class="small-note">
-      * Valores para criação digital conforme escopo acordado.
-      Impressão, gestão de redes, animação, modelagem 3D e
-      registro no INPI não estão incluídos.
-    </p>
-  </div>
-</section>
-
-<!-- PORTFÓLIO -->
-
-<section class="section portfolio" id="portfolio">
-  <div class="container">
-
-    <div class="section-head">
-      <p class="eyebrow">Portfólio visual</p>
-
-      <h2>
-        Veja ideias
-        <span class="gold">ganharem forma.</span>
-      </h2>
-
-      <p>
-        Conheça exemplos de soluções visuais e identidades
-        criadas pela agência, além de estudos conceituais.
-        Os projetos demonstrativos estão identificados para
-        uma apresentação transparente do portfólio.
-      </p>
-    </div>
-
-    <div class="filters" role="group" aria-label="Categorias do portfólio">
-      <button class="filter-btn" data-filter="todos"
-              aria-pressed="true" type="button">Todos</button>
-
-      <button class="filter-btn" data-filter="logotipo"
-              aria-pressed="false" type="button">Logotipos</button>
-
-      <button class="filter-btn" data-filter="banner"
-              aria-pressed="false" type="button">Banners</button>
-
-      <button class="filter-btn" data-filter="social"
-              aria-pressed="false" type="button">Redes sociais</button>
-
-      <button class="filter-btn" data-filter="identidade"
-              aria-pressed="false" type="button">Identidade visual</button>
-    </div>
-
-    <div class="work-grid" id="galeria">
-
-      <!-- MARAJOARA -->
-
-      <article class="work-card" data-category="logotipo identidade">
-        <div class="work-art art-marajoara">
-          <img
-            src="/assets/img/realizacoes/logo-marajoara-oficial-otimizado1.svg"
-            loading="lazy"
-            alt="Logotipo do Edifício Marajoara">
-        </div>
-
-        <div class="work-caption">
-          <span class="type">Projeto · Logotipo</span>
-          <h3>Edifício Marajoara</h3>
-          <p>
-            Exemplo de identidade gráfica já presente
-            nas realizações da HYPERBOREA.
-          </p>
-        </div>
-      </article>
-
-      <!-- HYPERBOREA -->
-
-      <article class="work-card" data-category="logotipo identidade">
-        <div class="work-art art-hyperborea">
-          <img
-            src="/assets/img/monograma-h.svg"
-            loading="lazy"
-            alt="Monograma H da HYPERBOREA">
-
+        <span>
           <strong>HYPERBOREA</strong>
           <small>AGÊNCIA CRIATIVA</small>
-        </div>
+        </span>
 
-        <div class="work-caption">
-          <span class="type">Marca própria · Identidade visual</span>
-          <h3>HYPERBOREA</h3>
-          <p>
-            Nosso monograma, lettering e combinação
-            de vinho e dourado.
+      </a>
+
+      <nav class="nav-links" aria-label="Menu principal">
+        <a href="/index.html">Início</a>
+        <a href="#servicos">Preços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a href="#departamentos">Outros serviços</a>
+        <a class="nav-cta" href="#contato">Contratar</a>
+      </nav>
+
+      <details class="mobile-menu">
+
+        <summary>☰ Menu</summary>
+
+        <nav aria-label="Navegação móvel">
+          <a href="/index.html">Início</a>
+          <a href="#servicos">Preços</a>
+          <a href="#portfolio">Portfólio</a>
+          <a href="#incluso">O que está incluso</a>
+          <a href="#processo">Como contratar</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#departamentos">Outros serviços</a>
+          <a href="#contato">Contratar</a>
+        </nav>
+
+      </details>
+
+    </div>
+
+  </header>
+
+  <main class="container page-content" id="conteudo">
+
+    <!-- ABERTURA COMERCIAL -->
+
+    <section class="hero" aria-labelledby="heroTitle">
+
+      <p class="eyebrow">
+        HYPERBOREA · CRIAÇÃO VISUAL
+      </p>
+
+      <h1 id="heroTitle">
+        Design &amp; Identidade Visual
+      </h1>
+
+      <p class="lead">
+        Design profissional para valorizar sua marca.
+        Criamos logotipos, banners, cartões de visita,
+        artes para redes sociais e elementos gráficos.
+        Escolha seu serviço e conheça nossos trabalhos.
+      </p>
+
+      <div class="hero-info">
+        <span>SERVIÇOS A PARTIR DE R$ 20</span>
+        <span>CRIAÇÃO PROFISSIONAL</span>
+        <span>ENTREGA DIGITAL</span>
+        <span>DUAS RODADAS DE REVISÃO</span>
+      </div>
+
+    </section>
+
+    <!-- ======================================
+         01 — SERVIÇOS E VALORES
+         ====================================== -->
+
+    <section class="content-panel" id="servicos"
+             aria-labelledby="servicesTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="servicesTitle">
+          <span class="section-number">01</span>
+          Serviços e valores
+        </h2>
+
+        <p>
+          Escolha a peça que deseja desenvolver.
+          Preços definidos por serviço,
+          com criação profissional e entrega digital.
+        </p>
+
+      </div>
+
+      <div class="service-grid">
+
+        <!-- LOGOTIPO -->
+
+        <article class="service-card" id="logotipo">
+
+          <span class="service-type">01 / MARCA</span>
+
+          <h3>Logotipo profissional</h3>
+
+          <p class="service-description">
+            Criação de logotipo 2D vetorizado,
+            com entrega em SVG e PNG transparente.
+            Inserção inclusa em site contratado
+            com a HYPERBOREA.
           </p>
-        </div>
-      </article>
 
-      <!-- FLORA -->
+          <p class="service-price">R$ 50,00</p>
 
-      <article class="work-card" data-category="logotipo identidade">
-        <div class="work-art art-flora">
-          <div class="flora-symbol" aria-hidden="true">
-            <span style="--r:0deg"></span>
-            <span style="--r:72deg"></span>
-            <span style="--r:144deg"></span>
-            <span style="--r:216deg"></span>
-            <span style="--r:288deg"></span>
-            <i></i>
+          <p class="service-unit">Por logotipo</p>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Contratar logotipo por 50 reais">
+            Contratar ↗
+          </a>
+
+        </article>
+
+        <!-- BANNER -->
+
+        <article class="service-card" id="banner">
+
+          <span class="service-type">02 / DIGITAL</span>
+
+          <h3>Banner digital</h3>
+
+          <p class="service-description">
+            Banner profissional para apresentar
+            produtos, serviços e campanhas.
+            Adaptações para desktop e mobile.
+            Inserção inclusa em site contratado
+            com a HYPERBOREA.
+          </p>
+
+          <p class="service-price">R$ 30,00</p>
+
+          <p class="service-unit">Por banner</p>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Contratar banner por 30 reais">
+            Contratar ↗
+          </a>
+
+        </article>
+
+        <!-- CARTÃO DE VISITA -->
+
+        <article class="service-card" id="cartao">
+
+          <span class="service-type">03 / COMUNICAÇÃO</span>
+
+          <h3>Cartão de visita</h3>
+
+          <p class="service-description">
+            Criação de arte digital para apresentar
+            sua marca, atividade profissional
+            e informações de contato.
+            Impressão não inclusa.
+          </p>
+
+          <p class="service-price">R$ 30,00</p>
+
+          <p class="service-unit">Por arte contratada</p>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Contratar cartão de visita por 30 reais">
+            Contratar ↗
+          </a>
+
+        </article>
+
+        <!-- POST INDIVIDUAL -->
+
+        <article class="service-card" id="post">
+
+          <span class="service-type">04 / REDES SOCIAIS</span>
+
+          <h3>Post individual</h3>
+
+          <p class="service-description">
+            Arte profissional para divulgar
+            produtos, serviços, promoções
+            e informações nas redes sociais,
+            no formato combinado.
+          </p>
+
+          <p class="service-price">R$ 20,00</p>
+
+          <p class="service-unit">Por publicação visual</p>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Contratar post por 20 reais">
+            Contratar ↗
+          </a>
+
+        </article>
+
+        <!-- CARROSSEL -->
+
+        <article class="service-card" id="carrossel">
+
+          <span class="service-type">05 / REDES SOCIAIS</span>
+
+          <h3>Post carrossel</h3>
+
+          <p class="service-description">
+            Sequência de cinco imagens
+            com unidade visual para apresentar
+            informações, produtos, serviços
+            ou campanhas.
+          </p>
+
+          <p class="service-price">R$ 80,00</p>
+
+          <p class="service-unit">Carrossel com 5 imagens</p>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Contratar carrossel por 80 reais">
+            Contratar ↗
+          </a>
+
+        </article>
+
+        <!-- PANFLETO -->
+
+        <article class="service-card" id="panfleto">
+
+          <span class="service-type">06 / PUBLICIDADE</span>
+
+          <h3>Panfleto digital</h3>
+
+          <p class="service-description">
+            Arte profissional para divulgar
+            seu estabelecimento, seus produtos,
+            serviços e ofertas.
+            Impressão não inclusa.
+          </p>
+
+          <p class="service-price">R$ 30,00</p>
+
+          <p class="service-unit">Por arte contratada</p>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Contratar panfleto por 30 reais">
+            Contratar ↗
+          </a>
+
+        </article>
+
+        <!-- ELEMENTO GRÁFICO -->
+
+        <article class="service-card" id="elemento">
+
+          <span class="service-type">07 / VETORIZAÇÃO</span>
+
+          <h3>Elemento gráfico vetorizado</h3>
+
+          <p class="service-description">
+            Criação de símbolo, ornamento,
+            ícone ou elemento gráfico 2D,
+            conforme o escopo combinado.
+            Entrega em formato SVG.
+          </p>
+
+          <p class="service-price">R$ 20,00</p>
+
+          <p class="service-unit">Por elemento contratado</p>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Contratar elemento gráfico por 20 reais">
+            Contratar ↗
+          </a>
+
+        </article>
+
+      </div>
+
+      <div class="pricing-summary">
+        <span>1 a 3 dias úteis</span>
+        <span>2 rodadas de revisão</span>
+        <span>Pagamento via Pix</span>
+        <span>Entrega digital</span>
+      </div>
+
+      <p class="pricing-note">
+        Os valores correspondem à criação digital
+        conforme o escopo contratado.
+        Impressão, gestão de redes sociais,
+        modelagem 3D e registro de marca
+        não estão incluídos.
+      </p>
+
+    </section>
+
+    <!-- ======================================
+         02 — PORTFÓLIO VISUAL
+         ====================================== -->
+
+    <section class="content-panel" id="portfolio"
+             aria-labelledby="portfolioTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="portfolioTitle">
+          <span class="section-number">02</span>
+          Portfólio de design
+        </h2>
+
+        <p>
+          Conheça nossas criações e estudos visuais.
+          Selecione uma categoria para visualizar
+          os exemplos de cada serviço.
+        </p>
+
+      </div>
+
+      <div class="filters" role="group"
+           aria-label="Categorias do portfólio">
+
+        <button class="filter" type="button"
+                data-filter="todos" aria-pressed="true">
+          Todos
+        </button>
+
+        <button class="filter" type="button"
+                data-filter="logotipo" aria-pressed="false">
+          Logotipos
+        </button>
+
+        <button class="filter" type="button"
+                data-filter="banner" aria-pressed="false">
+          Banners
+        </button>
+
+        <button class="filter" type="button"
+                data-filter="cartao" aria-pressed="false">
+          Cartões
+        </button>
+
+        <button class="filter" type="button"
+                data-filter="social" aria-pressed="false">
+          Redes sociais
+        </button>
+
+        <button class="filter" type="button"
+                data-filter="panfleto" aria-pressed="false">
+          Panfletos
+        </button>
+
+        <button class="filter" type="button"
+                data-filter="elemento" aria-pressed="false">
+          Elementos gráficos
+        </button>
+
+        <button class="filter" type="button"
+                data-filter="identidade" aria-pressed="false">
+          Identidade visual
+        </button>
+
+      </div>
+
+      <p class="portfolio-count" id="portfolioCount"
+         aria-live="polite"></p>
+
+      <div class="portfolio-grid" id="portfolioGrid">
+
+        <!-- EDIFÍCIO MARAJOARA -->
+
+        <article class="work-card"
+                 data-category="logotipo identidade">
+
+          <div class="work-art art-marajoara">
+
+            <img
+              src="/assets/img/realizacoes/logo-marajoara-oficial-otimizado1.svg"
+              alt="Logotipo do Edifício Marajoara III"
+              loading="lazy" decoding="async">
+
           </div>
 
-          <strong>FLORA</strong>
-          <small>ESTÚDIO CRIATIVO</small>
-        </div>
+          <div class="work-caption">
 
-        <div class="work-caption">
-          <span class="type">Estudo demonstrativo · Logotipo</span>
-          <h3>Flora Estúdio</h3>
-          <p>
-            Conceito fictício de marca com símbolo floral
-            e tipografia.
-          </p>
-        </div>
-      </article>
+            <span class="work-category">
+              PROJETO · LOGOTIPO
+            </span>
 
-      <!-- BANNER -->
+            <h3>Edifício Marajoara III</h3>
 
-      <article class="work-card" data-category="banner">
-        <div class="work-art art-banner">
+            <p>
+              Identidade gráfica presente
+              nas realizações da HYPERBOREA.
+            </p>
 
-          <div class="banner-preview">
-            <div class="banner-copy">
+          </div>
+
+        </article>
+
+        <!-- HYPERBOREA -->
+
+        <article class="work-card"
+                 data-category="logotipo identidade">
+
+          <div class="work-art art-hyperborea">
+
+            <img src="/assets/img/monograma-h.svg"
+                 alt="Monograma H da HYPERBOREA"
+                 loading="lazy" decoding="async">
+
+            <strong>HYPERBOREA</strong>
+
+            <small>AGÊNCIA CRIATIVA</small>
+
+          </div>
+
+          <div class="work-caption">
+
+            <span class="work-category">
+              MARCA PRÓPRIA
+            </span>
+
+            <h3>HYPERBOREA</h3>
+
+            <p>
+              Nosso monograma e nossa
+              identidade visual.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- FLORA ESTÚDIO -->
+
+        <article class="work-card"
+                 data-category="logotipo identidade">
+
+          <div class="work-art art-flora">
+
+            <span class="flora-symbol"
+                  aria-hidden="true">✿</span>
+
+            <strong>FLORA</strong>
+
+            <small>ESTÚDIO CRIATIVO</small>
+
+          </div>
+
+          <div class="work-caption">
+
+            <span class="work-category">
+              ESTUDO DEMONSTRATIVO
+            </span>
+
+            <h3>Flora Estúdio</h3>
+
+            <p>
+              Conceito fictício de marca
+              com símbolo floral e tipografia.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- BANNER DEMONSTRATIVO -->
+
+        <article class="work-card"
+                 data-category="banner">
+
+          <div class="work-art art-banner">
+
+            <div class="banner-demo">
+
               <small>CAFEZINHO DA CASA</small>
+
               <strong>
-                Uma pausa<br>
-                especial.
+                Uma pausa especial.
               </strong>
+
               <b>CONHEÇA</b>
+
             </div>
 
-            <div class="cup" aria-hidden="true"></div>
           </div>
 
-        </div>
+          <div class="work-caption">
 
-        <div class="work-caption">
-          <span class="type">Estudo demonstrativo · Banner</span>
-          <h3>Campanha para site</h3>
-          <p>
-            Exemplo fictício de banner publicitário
-            para uma cafeteria.
-          </p>
-        </div>
-      </article>
+            <span class="work-category">
+              ESTUDO DEMONSTRATIVO · BANNER
+            </span>
 
-      <!-- POST -->
+            <h3>Campanha para site</h3>
 
-      <article class="work-card" data-category="social">
-        <div class="work-art art-post">
+            <p>
+              Conceito de banner publicitário
+              para uma cafeteria fictícia.
+            </p>
 
-          <div class="post-preview">
-            <small>ATELIÊ BOTÂNICO</small>
-            <span class="flower" aria-hidden="true">✺</span>
-            <strong>
-              Novos ciclos,<br>
-              novas flores.
-            </strong>
           </div>
 
-        </div>
+        </article>
 
-        <div class="work-caption">
-          <span class="type">Estudo demonstrativo · Redes sociais</span>
-          <h3>Post para Instagram</h3>
-          <p>
-            Exemplo fictício de composição gráfica
-            para uma publicação.
-          </p>
-        </div>
-      </article>
+        <!-- POST DEMONSTRATIVO -->
 
-      <!-- CARROSSEL -->
+        <article class="work-card"
+                 data-category="social">
 
-      <article class="work-card" data-category="social">
-        <div class="work-art art-carousel">
+          <div class="work-art art-post">
 
-          <div class="carousel-slide">
-            <strong>01</strong><small>Comece</small>
+            <div class="post-demo">
+
+              <small>ATELIÊ BOTÂNICO</small>
+
+              <span aria-hidden="true">✺</span>
+
+              <strong>
+                Novos ciclos,<br>
+                novas flores.
+              </strong>
+
+            </div>
+
           </div>
 
-          <div class="carousel-slide">
-            <strong>02</strong><small>Descubra</small>
+          <div class="work-caption">
+
+            <span class="work-category">
+              ESTUDO DEMONSTRATIVO · POST
+            </span>
+
+            <h3>Post para Instagram</h3>
+
+            <p>
+              Exemplo de composição visual
+              para redes sociais.
+            </p>
+
           </div>
 
-          <div class="carousel-slide">
-            <strong>03</strong><small>Crie</small>
+        </article>
+
+        <!-- CARROSSEL DEMONSTRATIVO -->
+
+        <article class="work-card"
+                 data-category="social">
+
+          <div class="work-art art-carousel">
+
+            <div class="carousel-slide"><strong>01</strong></div>
+            <div class="carousel-slide"><strong>02</strong></div>
+            <div class="carousel-slide"><strong>03</strong></div>
+            <div class="carousel-slide"><strong>04</strong></div>
+            <div class="carousel-slide"><strong>05</strong></div>
+
           </div>
 
-          <div class="carousel-slide">
-            <strong>04</strong><small>Compartilhe</small>
+          <div class="work-caption">
+
+            <span class="work-category">
+              ESTUDO DEMONSTRATIVO · CARROSSEL
+            </span>
+
+            <h3>Sequência de cinco posts</h3>
+
+            <p>
+              Modelo visual para apresentar
+              conteúdos em etapas.
+            </p>
+
           </div>
 
-          <div class="carousel-slide">
-            <strong>05</strong><small>Cresça</small>
-          </div>
+        </article>
 
-        </div>
+        <!-- IDENTIDADE VISUAL -->
 
-        <div class="work-caption">
-          <span class="type">Estudo demonstrativo · Carrossel</span>
-          <h3>Sequência de cinco posts</h3>
-          <p>
-            Modelo fictício para apresentar conteúdos
-            em etapas.
-          </p>
-        </div>
-      </article>
+        <article class="work-card"
+                 data-category="identidade">
 
-      <!-- IDENTIDADE VISUAL -->
+          <div class="work-art art-identity">
 
-      <article class="work-card" data-category="identidade">
-        <div class="work-art art-identity">
-
-          <div class="identity-sheet">
             <strong>VERDÁLIA</strong>
-            <small>CONCEITO DE IDENTIDADE VISUAL</small>
 
-            <div class="identity-shapes" aria-hidden="true">
-              <span style="--b:#304b40"></span>
-              <span style="--b:#b5c1a4"></span>
-              <span style="--b:#d8b27d"></span>
+            <div class="identity-swatches"
+                 aria-hidden="true">
+
+              <span style="background:#304B40"></span>
+              <span style="background:#B5C1A4"></span>
+              <span style="background:#D8B27D"></span>
+              <span style="background:#EEE0C7"></span>
+
             </div>
 
-            <div class="identity-swatches" aria-hidden="true">
-              <i style="--c:#304b40"></i>
-              <i style="--c:#b5c1a4"></i>
-              <i style="--c:#d8b27d"></i>
-              <i style="--c:#eee0c7"></i>
-            </div>
           </div>
 
-        </div>
+          <div class="work-caption">
 
-        <div class="work-caption">
-          <span class="type">
-            Estudo demonstrativo · Identidade visual
-          </span>
-          <h3>Verdália</h3>
+            <span class="work-category">
+              ESTUDO DEMONSTRATIVO
+            </span>
+
+            <h3>Verdália</h3>
+
+            <p>
+              Conceito fictício de paleta,
+              tipografia e identidade visual.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- CARTÃO DE VISITA
+             SUBSTITUIR POR ARQUIVO OFICIAL -->
+
+        <article class="work-card"
+                 data-category="cartao"
+                 data-pending="true" hidden>
+
+          <div class="work-art art-placeholder">
+
+            <span class="placeholder-symbol"
+                  aria-hidden="true">▱</span>
+
+            <span class="placeholder-label">
+              AMOSTRA EM PREPARAÇÃO
+            </span>
+
+          </div>
+
+          <div class="work-caption">
+
+            <span class="work-category">
+              CARTÃO DE VISITA
+            </span>
+
+            <h3>Cartões profissionais</h3>
+
+            <p>
+              Novas amostras serão adicionadas
+              ao portfólio.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- PANFLETO
+             SUBSTITUIR POR ARQUIVO OFICIAL -->
+
+        <article class="work-card"
+                 data-category="panfleto"
+                 data-pending="true" hidden>
+
+          <div class="work-art art-placeholder">
+
+            <span class="placeholder-symbol"
+                  aria-hidden="true">▤</span>
+
+            <span class="placeholder-label">
+              AMOSTRA EM PREPARAÇÃO
+            </span>
+
+          </div>
+
+          <div class="work-caption">
+
+            <span class="work-category">
+              PUBLICIDADE
+            </span>
+
+            <h3>Panfletos digitais</h3>
+
+            <p>
+              Novas amostras serão adicionadas
+              ao portfólio.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- ELEMENTOS GRÁFICOS
+             SUBSTITUIR POR ARQUIVO OFICIAL -->
+
+        <article class="work-card"
+                 data-category="elemento"
+                 data-pending="true" hidden>
+
+          <div class="work-art art-placeholder">
+
+            <span class="placeholder-symbol"
+                  aria-hidden="true">✦</span>
+
+            <span class="placeholder-label">
+              AMOSTRA EM PREPARAÇÃO
+            </span>
+
+          </div>
+
+          <div class="work-caption">
+
+            <span class="work-category">
+              VETORIZAÇÃO
+            </span>
+
+            <h3>Elementos gráficos</h3>
+
+            <p>
+              Novas amostras serão adicionadas
+              ao portfólio.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <p class="portfolio-note">
+
+        Os estudos demonstrativos são identificados
+        nas respectivas descrições.
+        Trabalhos contratados por clientes
+        somente são divulgados mediante
+        autorização específica.
+
+      </p>
+
+    </section>
+
+    <!-- ======================================
+         03 — O QUE ESTÁ INCLUSO?
+         ====================================== -->
+
+    <section class="content-panel" id="incluso"
+             aria-labelledby="includedTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="includedTitle">
+          <span class="section-number">03</span>
+          O que está incluso?
+        </h2>
+
+        <p>
+          Conheça as condições de criação
+          e entrega dos nossos serviços.
+        </p>
+
+      </div>
+
+      <div class="included-grid">
+
+        <article class="included-item">
+
+          <span class="included-check" aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Criação profissional</h3>
+
+            <p>
+              Desenvolvimento da peça visual
+              conforme as informações,
+              referências e necessidades do cliente.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check" aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Personalização visual</h3>
+
+            <p>
+              Composição, cores e tipografia
+              alinhadas à identidade da sua marca.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check" aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Entrega digital</h3>
+
+            <p>
+              Arquivos nos formatos e dimensões
+              definidos durante a contratação.
+              Logotipos e elementos vetorizados
+              são entregues em SVG.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check" aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Duas rodadas de revisão</h3>
+
+            <p>
+              Duas rodadas de ajustes
+              dentro da proposta contratada,
+              sem cobrança adicional.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check" aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Inserção de logotipo</h3>
+
+            <p>
+              Logotipos criados pela HYPERBOREA
+              possuem a respectiva inserção inclusa
+              no site contratado com nossa agência.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check" aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Inserção de banner</h3>
+
+            <p>
+              Banners criados pela HYPERBOREA
+              possuem a respectiva inserção inclusa
+              no site contratado com nossa agência.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ======================================
+         04 — COMO CONTRATAR
+         ====================================== -->
+
+    <section class="content-panel" id="processo"
+             aria-labelledby="processTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="processTitle">
+          <span class="section-number">04</span>
+          Como contratar
+        </h2>
+
+        <p>
+          Da sua ideia à entrega da arte,
+          com comunicação clara em todas as etapas.
+        </p>
+
+      </div>
+
+      <div class="steps">
+
+        <article class="step">
+
+          <span class="step-number">1</span>
+
+          <h3>Escolha seu serviço</h3>
+
           <p>
-            Conceito fictício mostrando paleta,
-            lettering e formas complementares.
+            Consulte nossa tabela de preços
+            e escolha a peça que deseja desenvolver.
           </p>
-        </div>
-      </article>
 
-    </div>
-  </div>
-</section>
+        </article>
 
-<!-- IDENTIDADE VISUAL -->
+        <article class="step">
 
-<section class="section identity-section" id="identidade">
-  <div class="container identity-layout">
+          <span class="step-number">2</span>
 
-    <div class="identity-copy">
-      <p class="eyebrow">Mais do que um logotipo</p>
+          <h3>Envie suas referências</h3>
 
-      <h2>
-        Uma marca precisa ter
-        <span class="gold">seu próprio universo visual.</span>
+          <p>
+            Compartilhe informações, cores,
+            imagens e referências do seu projeto
+            pelo WhatsApp.
+          </p>
+
+        </article>
+
+        <article class="step">
+
+          <span class="step-number">3</span>
+
+          <h3>Confirme a contratação</h3>
+
+          <p>
+            Alinhamos os detalhes do serviço,
+            os formatos de entrega
+            e o pagamento antecipado via Pix.
+          </p>
+
+        </article>
+
+        <article class="step">
+
+          <span class="step-number">4</span>
+
+          <h3>Criação e entrega</h3>
+
+          <p>
+            Desenvolvemos sua arte,
+            apresentamos a proposta,
+            realizamos as revisões previstas
+            e efetuamos a entrega digital.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ======================================
+         05 — ESCLARECIMENTOS
+         ====================================== -->
+
+    <section class="content-panel" id="duvidas"
+             aria-labelledby="faqTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="faqTitle">
+          <span class="section-number">05</span>
+          Esclarecimentos
+        </h2>
+
+        <p>
+          Informações importantes
+          antes da contratação.
+        </p>
+
+      </div>
+
+      <div class="faq-list">
+
+        <details>
+
+          <summary>
+            Qual é o prazo de produção?
+          </summary>
+
+          <p>
+            O prazo comercial padrão é de
+            1 a 3 dias úteis, contado após
+            a confirmação do pagamento
+            e o recebimento dos materiais necessários.
+            O prazo total de projetos com várias peças
+            e as condições de revisão são confirmados
+            antes da contratação.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            O logotipo de R$ 50 é realmente vetorizado?
+          </summary>
+
+          <p>
+            Sim. O logotipo é desenvolvido em 2D
+            e entregue em SVG vetorial,
+            além de uma versão PNG transparente.
+            Não se trata de uma imagem raster
+            simplesmente renomeada como SVG.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Qual é a vantagem de um arquivo SVG?
+          </summary>
+
+          <p>
+            O formato vetorial permite ampliar
+            e reduzir os elementos gráficos
+            sem perder a definição das formas vetoriais.
+            É adequado para diversas aplicações
+            digitais e gráficas.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Vocês desenvolvem logotipos em 3D?
+          </summary>
+
+          <p>
+            A oferta padrão desta página
+            corresponde à criação de logotipos
+            2D vetorizados.
+            Modelagem e animação em 3D
+            não estão incluídas.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            O banner inclui versões desktop e mobile?
+          </summary>
+
+          <p>
+            Sim. A criação de banner para site
+            por R$ 30,00 inclui as adaptações
+            estáticas da mesma peça para desktop
+            e mobile, nas dimensões combinadas.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Preciso pagar pela inserção do logotipo ou banner?
+          </summary>
+
+          <p>
+            Quando a criação do logotipo ou do banner
+            é contratada com a HYPERBOREA,
+            a respectiva inserção no site contratado
+            com nossa agência está inclusa.
+            Se você já possui a arte,
+            pode contratar apenas a inserção
+            por R$ 5,00 no departamento de
+            <a class="gold" href="/sites.html">
+              Sites &amp; Web Design.
+            </a>
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            O cartão de visita inclui impressão?
+          </summary>
+
+          <p>
+            Não. O valor de R$ 30,00
+            corresponde ao desenvolvimento
+            da arte digital do cartão.
+            A impressão física não está inclusa.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Para quais redes sociais vocês criam posts?
+          </summary>
+
+          <p>
+            Criamos artes para Instagram,
+            Facebook e outras plataformas,
+            conforme as dimensões
+            e o formato acordado.
+            A publicação e a gestão dos perfis
+            não estão incluídas.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Quantas imagens estão inclusas no carrossel?
+          </summary>
+
+          <p>
+            O carrossel de R$ 80,00
+            inclui cinco imagens com unidade visual.
+            Imagens adicionais devem ser
+            combinadas separadamente.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            O panfleto digital inclui impressão?
+          </summary>
+
+          <p>
+            Não. O valor anunciado corresponde
+            à criação da arte digital,
+            nas dimensões definidas
+            durante a contratação.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            O que é um elemento gráfico vetorizado?
+          </summary>
+
+          <p>
+            É uma peça gráfica 2D,
+            como um ícone, símbolo,
+            ornamento ou grafismo,
+            desenvolvida em formato vetorial.
+            O valor de R$ 20,00 corresponde
+            a um elemento dentro do escopo acordado.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Como funcionam as revisões?
+          </summary>
+
+          <p>
+            Cada compra inclui duas rodadas
+            de revisão dentro da proposta contratada.
+            Uma rodada corresponde a um conjunto
+            de solicitações de ajustes
+            apresentado pelo cliente.
+            Revisões adicionais são orçadas
+            separadamente.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            E se houver algum erro da HYPERBOREA?
+          </summary>
+
+          <p>
+            Erros de responsabilidade da HYPERBOREA
+            são corrigidos gratuitamente
+            e não consomem as rodadas de revisão
+            incluídas na contratação.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Posso mudar completamente a proposta?
+          </summary>
+
+          <p>
+            As revisões contemplam ajustes
+            dentro do conceito contratado.
+            Uma reformulação completa da proposta
+            caracteriza um novo serviço,
+            sujeito a uma nova contratação,
+            observados os direitos legais do cliente.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Qual é a forma de pagamento?
+          </summary>
+
+          <p>
+            O pagamento é realizado antecipadamente
+            por meio do Pix, após o alinhamento
+            das condições comerciais.
+            A produção começa após a confirmação
+            do pagamento e o recebimento
+            dos materiais necessários.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Minha arte será divulgada no portfólio?
+          </summary>
+
+          <p>
+            Não automaticamente.
+            Os trabalhos contratados são
+            entregues ao cliente.
+            A divulgação pela HYPERBOREA
+            depende de autorização específica.
+          </p>
+
+        </details>
+
+      </div>
+
+    </section>
+
+    <!-- ======================================
+         06 — CONHEÇA NOSSOS OUTROS SERVIÇOS
+         ====================================== -->
+
+    <section class="content-panel" id="departamentos"
+             aria-labelledby="departmentsTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="departmentsTitle">
+          <span class="section-number">06</span>
+          Conheça nossos outros serviços
+        </h2>
+
+        <p>
+          Sua identidade visual pode ir ainda mais longe.
+          Conheça nossas soluções de desenvolvimento web
+          e produção audiovisual.
+        </p>
+
+      </div>
+
+      <div class="departments-grid">
+
+        <!-- SITES — AZUL BOREAL -->
+
+        <a class="department-card department-sites"
+           href="/sites.html">
+
+          <span class="eyebrow">
+            DESENVOLVIMENTO WEB
+          </span>
+
+          <h3>Sites &amp; Web Design</h3>
+
+          <p>
+            Sua marca na internet.
+            Desenvolvemos sites responsivos,
+            catálogos digitais e páginas
+            de apresentação profissional.
+          </p>
+
+          <div class="department-price">
+            R$ 20,00
+          </div>
+
+          <p>Por página desenvolvida</p>
+
+          <span class="department-details">
+            Mais detalhes ↗
+          </span>
+
+        </a>
+
+        <!-- VÍDEOS — VERDE -->
+
+        <a class="department-card department-videos"
+           href="/videos.html">
+
+          <span class="eyebrow">
+            PRODUÇÃO AUDIOVISUAL
+          </span>
+
+          <h3>Vídeos Comerciais</h3>
+
+          <p>
+            Dê movimento à sua marca.
+            Produzimos vídeos comerciais
+            com roteiro, recursos visuais
+            de inteligência artificial e edição.
+          </p>
+
+          <div class="department-price">
+            R$ 30 a R$ 180
+          </div>
+
+          <p>De 15 segundos a 2 minutos</p>
+
+          <span class="department-details">
+            Mais detalhes ↗
+          </span>
+
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ======================================
+         CONTRATAÇÃO FINAL
+         ====================================== -->
+
+    <section class="contact-panel" id="contato"
+             aria-labelledby="contactTitle">
+
+      <h2 id="contactTitle">
+        Contrate seu design
       </h2>
 
       <p>
-        Um logotipo identifica. Uma identidade visual
-        profissional reúne cores, tipografia, símbolos,
-        grafismos e aplicações para construir uma
-        apresentação consistente da marca em diferentes meios.
+        Escolha seu serviço e entre em contato.
+        Vamos alinhar os detalhes e desenvolver
+        a próxima criação visual da sua marca.
       </p>
 
-      <p>
-        Por isso, também criamos elementos gráficos e
-        visuais que pertencem à linguagem da sua marca.
-      </p>
-    </div>
+      <a class="btn btn-primary"
+         href="https://wa.me/message/FHWOVDSQ3AKCO1"
+         target="_blank" rel="noopener noreferrer">
 
-    <div class="identity-packs">
+        <img src="/assets/img/whats-icon.svg"
+             alt="" width="27" height="27">
 
-      <article class="pack">
-        <h3>Identidade visual essencial</h3>
-        <p>
-          Para marcas que buscam uma apresentação visual
-          organizada e consistente.
-        </p>
+        Contatar pelo WhatsApp ↗
 
-        <ul>
-          <li>Logotipo 2D vetorizado</li>
-          <li>Paleta de cores e tipografia</li>
-          <li>Elemento gráfico complementar</li>
-          <li>Guia resumido de aplicação</li>
-        </ul>
-
-        <div class="pack-footer">
-          <strong>Valor sob consulta</strong>
-          <a href="#contato">Quero uma identidade essencial ↗</a>
-        </div>
-      </article>
-
-      <article class="pack">
-        <h3>Identidade visual completa</h3>
-        <p>
-          Para marcas que desejam um conjunto visual
-          mais amplo e versátil.
-        </p>
-
-        <ul>
-          <li>Logotipo e suas versões de uso</li>
-          <li>Paleta de cores e sistema tipográfico</li>
-          <li>Conjunto ampliado de elementos gráficos</li>
-          <li>Exemplos de aplicações digitais</li>
-          <li>Mini manual de identidade visual</li>
-        </ul>
-
-        <div class="pack-footer">
-          <strong>Valor sob consulta</strong>
-          <a href="#contato">Quero uma identidade completa ↗</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ETAPAS -->
-
-<section class="section" id="processo">
-  <div class="container">
-
-    <div class="section-head">
-      <p class="eyebrow">Como trabalhamos</p>
-      <h2>
-        Simples para contratar.
-        <span class="gold">Criativo para realizar.</span>
-      </h2>
-    </div>
-
-    <div class="steps">
-
-      <div class="step">
-        <b>01</b>
-        <h3>Conte sua ideia</h3>
-        <p>
-          Você apresenta seu negócio, suas referências
-          e a peça que deseja criar.
-        </p>
-      </div>
-
-      <div class="step">
-        <b>02</b>
-        <h3>Alinhamos o projeto</h3>
-        <p>
-          Confirmamos os materiais, as dimensões,
-          os formatos de entrega e os ajustes previstos.
-        </p>
-      </div>
-
-      <div class="step">
-        <b>03</b>
-        <h3>Entregamos sua arte</h3>
-        <p>
-          Produzimos e enviamos os arquivos digitais
-          combinados, prontos para o uso previsto.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PERGUNTAS FREQUENTES -->
-
-<section class="section faq">
-  <div class="container">
-
-    <div class="section-head">
-      <p class="eyebrow">Dúvidas frequentes</p>
-      <h2>
-        Informação clara
-        <span class="gold">antes de contratar.</span>
-      </h2>
-    </div>
-
-    <details>
-      <summary>O logotipo de R$ 90 é realmente vetorizado?</summary>
-      <p>
-        Sim. A proposta é entregar um logotipo profissional
-        em 2D com arquivo SVG vetorial e versão PNG transparente.
-        Não se trata de uma imagem raster apenas renomeada como SVG.
-      </p>
-    </details>
-
-    <details>
-      <summary>Vocês fazem logotipos em 3D?</summary>
-      <p>
-        A oferta padrão desta página é de logotipos 2D
-        vetorizados. Modelagem e animação em 3D
-        não estão incluídas.
-      </p>
-    </details>
-
-    <details>
-      <summary>O banner de R$ 50 inclui desktop e mobile?</summary>
-      <p>
-        Sim. O valor cobre as duas adaptações estáticas
-        do mesmo banner para uso no site, dentro das
-        dimensões alinhadas na contratação.
-      </p>
-    </details>
-
-    <details>
-      <summary>Em quais redes sociais posso usar os posts?</summary>
-      <p>
-        Podemos criar artes para Instagram, Facebook e
-        outras plataformas, com as dimensões combinadas.
-        Para posts verticais do feed do Instagram,
-        1080 × 1350 px é uma das opções mais usadas.
-      </p>
-    </details>
-
-    <details>
-      <summary>Qual a diferença entre logotipo e identidade visual?</summary>
-      <p>
-        O logotipo é um elemento que identifica a marca.
-        A identidade visual organiza o conjunto de cores,
-        fontes, símbolos, grafismos e regras de aplicação.
-      </p>
-    </details>
-
-    <details>
-      <summary>O preço inclui impressão ou gestão das redes sociais?</summary>
-      <p>
-        Não. Os valores desta página são para criação
-        de peças digitais. Impressão, publicações recorrentes,
-        gestão de perfis e outros serviços são tratados separadamente.
-      </p>
-    </details>
-
-  </div>
-</section>
-
-<!-- CONTATO -->
-
-<section class="contact" id="contato">
-  <div class="container">
-
-    <p class="eyebrow">Vamos criar sua próxima identidade?</p>
-
-    <h2>
-      Sua ideia merece
-      <span class="gold">ganhar forma.</span>
-    </h2>
-
-    <p>
-      Solicite criação profissional de logotipo,
-      banner, post, carrossel ou projeto de identidade visual.
-      Vamos construir uma apresentação que valorize sua marca.
-    </p>
-
-    <div class="actions">
-
-      <a
-        class="btn btn-primary"
-        href="https://wa.me/message/FHWOVDSQ3AKCO1"
-        target="_blank"
-        rel="noopener noreferrer">
-        Solicitar orçamento no WhatsApp ↗
       </a>
 
-      <a
-        class="btn btn-outline"
-        href="mailto:contato@hyperborea.com.br?subject=Or%C3%A7amento%20-%20Design%20e%20Identidade%20Visual">
-        Enviar e-mail ↗
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+
+    <div class="container footer-row">
+
+      <p>
+        © <span id="ano">2026</span>
+        HYPERBOREA · Agência Criativa
+      </p>
+
+      <a href="/index.html">
+        Voltar ao início ↑
       </a>
 
     </div>
-  </div>
-</section>
 
-</main>
+  </footer>
 
-<!-- RODAPÉ -->
+  <!-- WHATSAPP FLUTUANTE -->
 
-<footer class="footer">
-  <div class="container footer-row">
-    <p>
-      © <span id="anoAtual">2026</span>
-      HYPERBOREA · Identidade, criatividade e futuro.
-    </p>
-    <a href="/index.html">Voltar ao início ↑</a>
-  </div>
-</footer>
+  <a class="whatsapp"
+     href="https://wa.me/message/FHWOVDSQ3AKCO1"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
 
-<!-- WHATSAPP FLUTUANTE -->
+    <img src="/assets/img/whats-icon.svg"
+         alt="" width="48" height="48">
 
-<a
-  class="whatsapp"
-  href="https://wa.me/message/FHWOVDSQ3AKCO1"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
-  <img src="/assets/img/whats-icon.svg" alt="">
-</a>
+  </a>
 
-<!-- JAVASCRIPT -->
+  <!-- ======================================
+       JAVASCRIPT
+       ====================================== -->
 
-<script>
-(() => {
-  "use strict";
+  <script>
 
-  document.getElementById("anoAtual").textContent =
-    new Date().getFullYear();
+    (() => {
 
-  const buttons = document.querySelectorAll(".filter-btn");
-  const cards = document.querySelectorAll(".work-card");
+      "use strict";
 
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
+      /* ANO AUTOMÁTICO */
 
-      const chosen = button.dataset.filter;
+      document.getElementById("ano").textContent =
+        new Date().getFullYear();
 
-      buttons.forEach(item => {
-        item.setAttribute(
-          "aria-pressed",
-          String(item === button)
-        );
+      /* FILTROS DO PORTFÓLIO */
+
+      const filters = [
+        ...document.querySelectorAll(".filter")
+      ];
+
+      const cards = [
+        ...document.querySelectorAll(".work-card")
+      ];
+
+      const counter =
+        document.getElementById("portfolioCount");
+
+      function filtrar(categoria) {
+
+        let total = 0;
+
+        cards.forEach(card => {
+
+          const categorias =
+            card.dataset.category.split(" ");
+
+          const pendente =
+            card.dataset.pending === "true";
+
+          const visible =
+            categoria === "todos"
+              ? !pendente
+              : categorias.includes(categoria);
+
+          card.hidden = !visible;
+
+          if (visible && !pendente) {
+            total++;
+          }
+
+        });
+
+        counter.textContent =
+          total === 0
+            ? "Novas amostras em preparação."
+            : total + (
+                total === 1
+                  ? " exemplo visual"
+                  : " exemplos visuais"
+              );
+
+        filters.forEach(button => {
+
+          button.setAttribute(
+            "aria-pressed",
+            String(button.dataset.filter === categoria)
+          );
+
+        });
+
+      }
+
+      filters.forEach(button => {
+
+        button.addEventListener("click",() => {
+
+          filtrar(button.dataset.filter);
+
+        });
+
       });
 
-      cards.forEach(card => {
-        card.hidden =
-          chosen !== "todos" &&
-          !card.dataset.category.split(" ").includes(chosen);
+      filtrar("todos");
+
+      /* MENU MOBILE */
+
+      const menu =
+        document.querySelector(".mobile-menu");
+
+      menu.querySelectorAll("nav a")
+        .forEach(link => {
+
+          link.addEventListener("click",() => {
+            menu.open = false;
+          });
+
+        });
+
+      document.addEventListener("keydown",event => {
+
+        if (event.key === "Escape") {
+          menu.open = false;
+        }
+
       });
 
-    });
-  });
+      document.addEventListener("click",event => {
 
-  document.querySelectorAll(".mobile-menu nav a")
-    .forEach(link => {
-      link.addEventListener("click", () => {
-        document.querySelector(".mobile-menu").open = false;
+        if (menu.open && !menu.contains(event.target)) {
+          menu.open = false;
+        }
+
       });
-    });
 
-})();
-</script>
+    })();
+
+  </script>
 
 </body>
 </html>
