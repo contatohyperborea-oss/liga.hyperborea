@@ -1,758 +1,4823 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#300817">
-<meta name="description" content="Sites e landing pages responsivos e profissionais. R$ 70 por página. Um preço justo que cabe no seu bolso.">
-<title>Sites & Landing Pages | HYPERBOREA</title>
-<link rel="icon" href="/assets/img/monograma-h.svg">
 
-<style>
-:root{
-  --vinho:#300817;
-  --escuro:#19040d;
-  --ouro:#c6a069;
-  --claro:#f0d9ae;
-  --texto:#fbf2e8;
-  --suave:#ddc6c1;
-  --linha:rgba(198,160,105,.35);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{
-  margin:0;
-  background:linear-gradient(145deg,#19040d,#390c20 55%,#19040d);
-  color:var(--texto);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.65;
-}
-a{color:inherit;text-decoration:none}
-button{font:inherit;cursor:pointer}
-button:disabled{opacity:.4;cursor:default}
-h1,h2,h3,p{margin:0}
-h1,h2,h3{font-family:Georgia,serif;font-weight:400;line-height:1.15}
-.container{width:min(1120px,calc(100% - 36px));margin:auto}
-.gold{color:var(--claro)}
-.tag{
-  color:var(--claro);
-  font-size:12px;
-  font-weight:bold;
-  letter-spacing:2.5px;
-  text-transform:uppercase;
-}
-h2{font-size:clamp(34px,5vw,58px);margin:14px 0 22px}
-.lead{color:var(--suave);max-width:660px}
-section{padding:85px 0}
-.btn{
-  display:inline-block;
-  padding:13px 23px;
-  border:1px solid var(--ouro);
-  font-weight:bold;
-  font-size:14px;
-  text-align:center;
-  transition:.2s;
-}
-.btn:hover{transform:translateY(-2px)}
-.primary{background:var(--ouro);color:var(--vinho)}
-.outline{color:var(--claro)}
-.outline:hover{background:#61243a}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-header{
-  position:sticky;top:0;z-index:10;
-  background:rgba(25,4,13,.96);
-  border-bottom:1px solid var(--linha);
-}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.logo{display:flex;align-items:center;gap:12px;color:var(--claro)}
-.logo img{width:42px;height:45px}
-.logo strong{font:22px Georgia,serif;letter-spacing:2px}
-.logo small{display:block;font-size:9px;letter-spacing:3px}
-.links{display:flex;gap:24px;font-size:14px}
-.links a:hover{color:var(--claro)}
-.menu-mobile{display:none;position:relative}
-.menu-mobile summary{cursor:pointer;color:var(--claro);border:1px solid var(--ouro);padding:8px 13px}
-.menu-mobile nav{
-  position:absolute;right:0;top:100%;
-  width:210px;padding:10px;background:var(--vinho);
-  border:1px solid var(--ouro);display:grid;
-}
-.menu-mobile nav a{padding:12px;border-bottom:1px solid var(--linha)}
-.hero{padding:105px 0;border-bottom:1px solid var(--linha)}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
-h1{font-size:clamp(43px,6vw,76px);margin:20px 0}
-.hero p.description{color:var(--suave);font-size:17px;max-width:560px}
-.hero-price{margin-top:25px}
-.hero-price strong{display:block;font:64px Georgia,serif;color:var(--claro)}
-.hero-price span{color:var(--suave)}
-.screen{
-  border:1px solid var(--ouro);
-  background:linear-gradient(140deg,#5d203a,#250916);
-  box-shadow:0 20px 50px #0007;
-  padding:15px;
-}
-.screen-top{display:flex;gap:6px;padding-bottom:14px;border-bottom:1px solid var(--linha)}
-.screen-top i{width:8px;height:8px;border:1px solid var(--ouro);border-radius:50%}
-.screen-body{display:grid;grid-template-columns:1fr 1fr;gap:15px;align-items:center;padding:35px 10px}
-.screen-body h3{font-size:clamp(23px,3vw,37px)}
-.screen-body p{font-size:12px;color:var(--suave);margin-top:15px}
-.screen-art{
-  min-height:190px;display:grid;place-items:center;
-  background:radial-gradient(circle,#a9657d,#481227);
-  border:1px solid var(--ouro);font:100px Georgia,serif;color:var(--claro)
-}
-.benefits{padding:25px 0;border-bottom:1px solid var(--linha)}
-.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.benefit{color:var(--claro);font-size:14px}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:38px}
-.card{min-width:0;background:#300b1b;border:1px solid var(--linha);overflow:hidden}
-.card-art{height:190px;padding:16px;background:linear-gradient(135deg,#703149,#260914);display:grid;place-items:center}
-.mini-browser{width:100%;max-width:310px;background:#f5eddf;color:#503b31;border:1px solid #bc9d72}
-.mini-bar{height:20px;background:#ddd0bc}
-.mini-content{padding:24px 12px;min-height:130px;display:grid;place-items:center;text-align:center}
-.mini-content h3{font-size:25px}
-.mini-content p{font-size:11px}
-.cafe{background:#fff0dd;color:#69472d}
-.studio{background:#e5efe7;color:#285045}
-.card-body{padding:22px}
-.card-body h3{font-size:25px;color:var(--claro);margin-bottom:12px}
-.card-body p{font-size:14px;color:var(--suave)}
-.card-body a{color:var(--claro);display:inline-block;margin-top:18px;border-bottom:1px solid var(--ouro)}
-.note{font-size:12px!important;color:var(--claro)!important;margin-top:14px}
-.pricing{border-block:1px solid var(--linha);background:#15040c66}
-.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:25px;margin-top:38px}
-.price-card{padding:32px;border:1px solid var(--ouro);background:linear-gradient(140deg,#4f162d,#230711)}
-.price-card h3{font-size:31px;margin:18px 0}
-.price{font:59px Georgia,serif;color:var(--claro);margin:20px 0}
-.price small{font:14px Arial,sans-serif;color:var(--suave)}
-.price-card p{color:var(--suave)}
-.price-card ul{list-style:none;padding:0;margin:23px 0}
-.price-card li{padding:10px 0;border-bottom:1px solid var(--linha);font-size:14px}
-.price-card li:before{content:"✓ ";color:var(--claro)}
-.gift{display:inline-block;background:var(--claro);color:var(--vinho);padding:7px 12px;font-size:12px;font-weight:bold}
-.domain-text{font-weight:bold;color:var(--claro)!important;margin:15px 0}
-.calculator{text-align:center}
-.calc{
-  width:min(760px,100%);margin:36px auto 0;padding:38px;
-  border:1px solid var(--ouro);background:linear-gradient(135deg,#4d142b,#210711)
-}
-.calc h3{font-size:30px;color:var(--claro)}
-.counter{display:flex;justify-content:center;align-items:center;gap:25px;margin:30px 0}
-.counter button{width:48px;height:48px;background:none;border:1px solid var(--ouro);color:var(--claro);font-size:25px}
-.counter output{min-width:80px;font:60px Georgia,serif;color:var(--claro)}
-.results{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding:25px 0;border-block:1px solid var(--linha)}
-.results span{display:block;font-size:13px;color:var(--suave)}
-.results strong{display:block;margin-top:8px;color:var(--claro);font:clamp(24px,4vw,37px) Georgia,serif}
-.bonus{margin:22px 0;padding:16px;border:1px solid var(--linha);color:var(--claro)}
-.calc-info{font-size:12px;color:var(--suave);margin-top:18px}
-.models{border-top:1px solid var(--linha)}
-.model-preview{height:135px;padding:25px;display:flex;align-items:center;font:29px Georgia,serif}
-.modern{background:linear-gradient(120deg,#18223e,#526d96)}
-.institutional{background:linear-gradient(120deg,#25131c,#80606b)}
-.commercial{background:linear-gradient(120deg,#eee0c7,#b2ba9d);color:#334d42}
-.updates{border-block:1px solid var(--linha)}
-.update-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.update-box{padding:32px;border:1px solid var(--ouro);background:#310b1c}
-.update-box strong{display:block;color:var(--claro);font:65px Georgia,serif;margin:20px 0}
-.update-box p{color:var(--suave)}
-.deadline{border-top:1px solid var(--linha);padding-top:15px;margin:20px 0;color:var(--claro)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:35px}
-.step{border-top:1px solid var(--ouro);padding-top:22px}
-.step b{font:43px Georgia,serif;color:var(--ouro)}
-.step h3{font-size:25px;margin:15px 0}
-.step p{color:var(--suave);font-size:14px}
-.faq{border-top:1px solid var(--linha)}
-.faq details{max-width:850px;padding:17px 0;border-bottom:1px solid var(--linha)}
-.faq summary{cursor:pointer;color:var(--claro);font-weight:bold}
-.faq details p{margin-top:12px;color:var(--suave);font-size:14px}
-.contact{border-top:1px solid var(--linha);background:#19040d99}
-footer{padding:25px 0;border-top:1px solid var(--linha);color:var(--suave);font-size:12px}
-.footer-row{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
-footer a{color:var(--claro)}
-.whatsapp{
-  position:fixed;right:18px;bottom:18px;z-index:20;
-  width:60px;height:60px;border:2px solid var(--ouro);
-  border-radius:50%;background:var(--vinho);
-  display:grid;place-items:center;padding:6px;
-}
-.whatsapp img{width:100%;height:100%;object-fit:contain}
-@media(max-width:900px){
-  .links{display:none}
-  .menu-mobile{display:block}
-  .hero-grid,.update-grid{grid-template-columns:1fr}
-  .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media(max-width:650px){
-  section{padding:65px 0}
-  .brand strong{font-size:17px}
-  .brand img{width:34px}
-  .hero{padding:65px 0}
-  h1{font-size:43px}
-  .hero-price strong{font-size:56px}
-  .benefit-grid,.grid3,.grid2,.steps{grid-template-columns:1fr}
-  .screen-body{padding:25px 5px}
-  .screen-body h3{font-size:24px}
-  .screen-art{min-height:130px;font-size:65px}
-  .price-card,.calc,.update-box{padding:24px}
-  .price{font-size:53px}
-  .actions .btn{width:100%}
-  .whatsapp{width:55px;height:55px;right:13px;bottom:13px}
-}
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta name="description"
+        content="Sites e Web Design HYPERBOREA. Páginas responsivas por R$ 20,00. Escolha seu modelo, personalize seu site e simule seu orçamento.">
+
+  <title>Sites & Web Design | HYPERBOREA</title>
+
+  <link rel="icon"
+        href="/assets/img/monograma-h.svg"
+        type="image/svg+xml">
+
+  <style>
+
+    /* =========================================
+       HYPERBOREA — SITES & WEB DESIGN
+       IDENTIDADE CROMÁTICA OFICIAL
+       ========================================= */
+
+    :root {
+
+      --azul-boreal: #002161;
+      --vinho: #810123;
+      --verde: #005B33;
+      --preto: #000000;
+
+      --branco-polar: #FEF9EF;
+      --marfim: #FEF7EE;
+
+      --dourado-solar: #F7AE08;
+      --dourado-radar: #C68301;
+
+      --texto: var(--branco-polar);
+      --suave: rgba(254,249,239,.80);
+      --linha: rgba(254,249,239,.20);
+      --linha-solar: rgba(247,174,8,.35);
+
+    }
+
+    /* CONFIGURAÇÕES GERAIS */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--preto);
+      color: var(--texto);
+      font-family: system-ui, -apple-system,
+                   "Segoe UI", sans-serif;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, summary, select {
+      cursor: pointer;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    h1, h2, h3, h4, p {
+      margin: 0;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      color: var(--marfim);
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible,
+    input:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--dourado-solar);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .gold {
+      color: var(--dourado-solar);
+    }
+
+    .eyebrow {
+      color: var(--dourado-solar);
+      font-size: .69rem;
+      font-weight: 750;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+    }
+
+    /* =========================================
+       CABEÇALHO
+       ========================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      background: rgba(0,0,0,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--linha-solar);
+    }
+
+    .nav-row {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--marfim);
+    }
+
+    .brand img {
+      width: 43px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .brand strong {
+      display: block;
+      font: 600 clamp(.99rem,2vw,1.45rem)
+            Georgia, serif;
+      letter-spacing: .16em;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 5px;
+      color: var(--dourado-solar);
+      font-size: .55rem;
+      font-weight: 600;
+      letter-spacing: .30em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: .86rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--dourado-solar);
+    }
+
+    .nav-cta {
+      padding: 10px 15px;
+      border: 1px solid var(--dourado-radar);
+    }
+
+    /* MENU MOBILE */
+
+    .mobile-menu {
+      display: none;
+      position: relative;
+    }
+
+    .mobile-menu summary {
+      list-style: none;
+      padding: 10px 13px;
+      border: 1px solid var(--marfim);
+      color: var(--marfim);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-menu nav {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 12px);
+      min-width: 205px;
+      display: grid;
+      gap: 8px;
+      padding: 12px;
+      background: var(--preto);
+      border: 1px solid var(--dourado-radar);
+      box-shadow: 0 18px 40px #000A;
+    }
+
+    .mobile-menu nav a {
+      padding: 12px;
+      border: 1px solid var(--linha);
+      text-align: center;
+      white-space: nowrap;
+      font-size: .85rem;
+    }
+
+    .mobile-menu nav a:hover {
+      background: var(--azul-boreal);
+      border-color: var(--dourado-solar);
+    }
+
+    /* =========================================
+       CONTAINERS COMERCIAIS
+       ========================================= */
+
+    .page-content {
+      display: grid;
+      gap: 26px;
+      padding-top: 30px;
+      padding-bottom: 60px;
+    }
+
+    .content-panel {
+      min-width: 0;
+      padding: clamp(20px,4vw,38px);
+      background: var(--preto);
+      border: 1px solid var(--dourado-radar);
+    }
+
+    .panel-heading {
+      margin-bottom: 25px;
+    }
+
+    .panel-heading h2 {
+      font-size: clamp(1.65rem,3.5vw,2.6rem);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .panel-heading p {
+      color: var(--suave);
+      font-size: .91rem;
+      line-height: 1.7;
+    }
+
+    .section-number {
+      color: var(--dourado-solar);
+      margin-right: 7px;
+    }
+
+    .subheading {
+      font-size: clamp(1.3rem,2.5vw,1.8rem);
+      margin: 32px 0 17px;
+    }
+
+    /* =========================================
+       ABERTURA COMERCIAL
+       ========================================= */
+
+    .hero {
+      padding: clamp(26px,5vw,48px);
+      background: linear-gradient(
+        135deg,
+        var(--azul-boreal),
+        #00216170
+      );
+      border: 1px solid var(--dourado-radar);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem,6vw,4.5rem);
+      line-height: 1.05;
+      margin: 14px 0 16px;
+    }
+
+    .hero .lead {
+      max-width: 790px;
+      font-size: clamp(.91rem,1.3vw,1.05rem);
+      line-height: 1.75;
+      color: var(--branco-polar);
+    }
+
+    .hero-info {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 23px;
+    }
+
+    .hero-info span {
+      padding: 9px 13px;
+      border: 1px solid var(--linha);
+      background: #00000025;
+      font-size: .75rem;
+    }
+
+    /* BOTÕES */
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 19px;
+      font-size: .86rem;
+      font-weight: 700;
+      text-align: center;
+      border: 1px solid var(--marfim);
+      transition:
+        background .2s,
+        border-color .2s,
+        transform .2s;
+    }
+
+    .btn-primary {
+      background: var(--branco-polar);
+      color: var(--azul-boreal);
+    }
+
+    .btn-primary:hover {
+      background: var(--dourado-solar);
+      color: var(--preto);
+      border-color: var(--dourado-solar);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--marfim);
+    }
+
+    .btn-outline:hover {
+      background: #FEF9EF12;
+      border-color: var(--dourado-solar);
+    }
+
+    /* =========================================
+       01 — VALORES E OFERTAS
+       ========================================= */
+
+    .prices-grid {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 15px;
+    }
+
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 25px 15px 18px;
+      background: linear-gradient(
+        145deg,
+        var(--azul-boreal),
+        #00216170
+      );
+      border: 1px solid var(--linha);
+      transition: transform .25s, border-color .25s;
+    }
+
+    .price-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--dourado-solar);
+    }
+
+    .price-card h3 {
+      font-size: clamp(1rem,2vw,1.35rem);
+      margin-bottom: 14px;
+    }
+
+    .price-value {
+      color: var(--branco-polar);
+      font-size: clamp(1.4rem,3vw,2.15rem);
+      font-weight: 750;
+      letter-spacing: -.05em;
+      white-space: nowrap;
+      margin-bottom: 12px;
+    }
+
+    .price-card p:last-child {
+      color: var(--suave);
+      font-size: .79rem;
+      line-height: 1.6;
+    }
+
+    .pricing-note {
+      margin-top: 20px;
+      padding: 18px;
+      border: 1px solid var(--linha);
+      background: #00216130;
+      color: var(--suave);
+      font-size: .85rem;
+      line-height: 1.75;
+    }
+
+    .pricing-note strong {
+      color: var(--marfim);
+    }
+
+    /* =========================================
+       PERSONALIZAÇÃO DO SITE
+       ========================================= */
+
+    .custom-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 15px;
+    }
+
+    .custom-card {
+      display: flex;
+      flex-direction: column;
+      gap: 17px;
+      padding: 20px;
+      min-width: 0;
+      background: var(--azul-boreal);
+      border: 1px solid var(--linha);
+    }
+
+    .custom-card h3 {
+      font-size: 1.3rem;
+      line-height: 1.2;
+    }
+
+    .custom-card .description {
+      font-size: .83rem;
+      line-height: 1.65;
+      color: var(--suave);
+    }
+
+    .custom-price {
+      color: var(--branco-polar);
+      font-size: 1.9rem;
+      font-weight: 750;
+    }
+
+    .custom-divider {
+      height: 1px;
+      background: var(--linha);
+    }
+
+    .custom-question {
+      font-size: .85rem;
+      line-height: 1.6;
+      margin-top: auto;
+    }
+
+    /* BOTÕES DOS DEPARTAMENTOS */
+
+    .department-link {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 17px;
+      min-height: 145px;
+      border: 1px solid var(--dourado-radar);
+      transition:
+        transform .25s,
+        border-color .25s,
+        box-shadow .25s;
+    }
+
+    .department-link:hover {
+      transform: translateY(-3px);
+      border-color: var(--dourado-solar);
+      box-shadow: 0 0 20px #F7AE0822;
+    }
+
+    .department-design {
+      background: var(--vinho);
+    }
+
+    .department-video {
+      background: var(--verde);
+    }
+
+    .department-link strong {
+      font-size: .95rem;
+      line-height: 1.4;
+    }
+
+    .department-link small {
+      color: var(--suave);
+      font-size: .73rem;
+      line-height: 1.5;
+    }
+
+    .department-price {
+      font-size: 1.55rem;
+      font-weight: 750;
+      color: var(--branco-polar);
+    }
+
+    .department-details {
+      color: var(--dourado-solar);
+      font-size: .80rem;
+      font-weight: 700;
+      margin-top: auto;
+    }
+
+    /* =========================================
+       SERVIÇOS ADICIONAIS
+       ========================================= */
+
+    .additional-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .additional-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 17px 20px;
+      background: #00216138;
+      border: 1px solid var(--linha);
+    }
+
+    .additional-item h3 {
+      font-size: 1.12rem;
+      margin-bottom: 5px;
+    }
+
+    .additional-item p {
+      color: var(--suave);
+      font-size: .79rem;
+      line-height: 1.55;
+    }
+
+    .additional-price {
+      color: var(--branco-polar);
+      font-size: 1.25rem;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    /* =========================================
+       02 — SIMULADOR DE ORÇAMENTO
+       ========================================= */
+
+    .calculator-layout {
+      display: grid;
+      grid-template-columns: minmax(0,1.5fr)
+                             minmax(0,1fr);
+      gap: 25px;
+      align-items: start;
+    }
+
+    .calculator-controls {
+      display: grid;
+      gap: 12px;
+    }
+
+    .calculator-field {
+      padding: 17px;
+      background: #00216126;
+      border: 1px solid var(--linha);
+    }
+
+    .calculator-field label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: .85rem;
+      font-weight: 650;
+    }
+
+    .calculator-field select {
+      width: 100%;
+      padding: 12px;
+      color: var(--branco-polar);
+      background: var(--preto);
+      border: 1px solid var(--linha-solar);
+    }
+
+    .quantity-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 12px;
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .quantity-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .quantity-info strong {
+      display: block;
+      font-size: .86rem;
+      font-weight: 650;
+      line-height: 1.5;
+    }
+
+    .quantity-info small {
+      display: block;
+      margin-top: 4px;
+      font-size: .75rem;
+      color: var(--dourado-solar);
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex: none;
+    }
+
+    .quantity-control button {
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      padding: 0;
+      background: var(--azul-boreal);
+      border: 1px solid var(--dourado-radar);
+      color: var(--marfim);
+      font-size: 1.3rem;
+    }
+
+    .quantity-control button:hover:not(:disabled) {
+      background: var(--branco-polar);
+      color: var(--azul-boreal);
+    }
+
+    .quantity-control button:disabled {
+      opacity: .35;
+      cursor: not-allowed;
+    }
+
+    .quantity-control output {
+      width: 28px;
+      text-align: center;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* DOMÍNIO */
+
+    .domain-options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .domain-option {
+      display: flex !important;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px;
+      border: 1px solid var(--linha);
+      cursor: pointer;
+      margin-bottom: 0 !important;
+      font-weight: 400 !important;
+    }
+
+    .domain-option:has(input:checked) {
+      border-color: var(--dourado-solar);
+      background: var(--azul-boreal);
+    }
+
+    .domain-option input {
+      flex: none;
+      accent-color: var(--dourado-solar);
+      margin-top: 3px;
+    }
+
+    .domain-option strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: .83rem;
+    }
+
+    .domain-option small {
+      color: var(--suave);
+      font-size: .74rem;
+      line-height: 1.5;
+    }
+
+    /* RESULTADO DO ORÇAMENTO */
+
+    .budget-result {
+      position: sticky;
+      top: 100px;
+      padding: 25px;
+      background: var(--azul-boreal);
+      border: 1px solid var(--dourado-radar);
+    }
+
+    .budget-result h3 {
+      font-size: 1.65rem;
+      margin: 10px 0 20px;
+    }
+
+    .budget-breakdown {
+      display: grid;
+      gap: 10px;
+    }
+
+    .budget-line {
+      display: flex;
+      justify-content: space-between;
+      gap: 13px;
+      font-size: .8rem;
+      line-height: 1.5;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .budget-line strong {
+      white-space: nowrap;
+      font-weight: 650;
+    }
+
+    .total-label {
+      margin-top: 24px;
+      color: var(--suave);
+      font-size: .85rem;
+    }
+
+    .budget-total {
+      margin: 8px 0 20px;
+      font-size: clamp(2.2rem,4vw,3.3rem);
+      font-weight: 750;
+      letter-spacing: -.05em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .budget-result .btn {
+      width: 100%;
+      margin-top: 9px;
+    }
+
+    .budget-note {
+      margin-top: 18px;
+      color: var(--suave);
+      font-size: .75rem;
+      line-height: 1.65;
+    }
+
+    .copy-message {
+      color: var(--branco-polar);
+      font-size: .8rem;
+      margin-top: 13px;
+      min-height: 1.2em;
+    }
+
+    .manual-copy {
+      width: 100%;
+      min-height: 140px;
+      margin-top: 10px;
+      padding: 12px;
+      background: var(--preto);
+      color: var(--marfim);
+      border: 1px solid var(--linha);
+      resize: vertical;
+    }
+
+    /* =========================================
+       03 — MODELOS DE SITES
+       ========================================= */
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 17px;
+    }
+
+    .model-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--linha);
+      background: #00216126;
+    }
+
+    .model-card:hover {
+      border-color: var(--dourado-radar);
+    }
+
+    .model-preview {
+      display: grid;
+      place-items: center;
+      padding: 15px;
+      background: var(--azul-boreal);
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .mini-browser {
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      background: var(--branco-polar);
+      color: var(--preto);
+      border: 1px solid var(--linha);
+      box-shadow: 0 8px 20px #0005;
+    }
+
+    .mini-bar {
+      height: 15px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 0 7px;
+      background: var(--preto);
+    }
+
+    .mini-bar i {
+      width: 4px;
+      height: 4px;
+      background: var(--dourado-solar);
+      border-radius: 50%;
+    }
+
+    .mini-content {
+      padding: 12px 9px;
+      text-align: center;
+    }
+
+    .mini-title {
+      font-family: Georgia, serif;
+      font-weight: 600;
+      font-size: clamp(.7rem,1.4vw,1rem);
+      color: var(--azul-boreal);
+      margin: 7px 0;
+    }
+
+    .mini-text {
+      height: 4px;
+      width: 75%;
+      background: #00216133;
+      margin: 7px auto;
+    }
+
+    .mini-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
+      background: var(--azul-boreal);
+      color: var(--marfim);
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 5px;
+      margin-top: 12px;
+    }
+
+    .mini-tile {
+      background: #00216114;
+      border: 1px solid #00216118;
+      padding: 5px;
+      min-width: 0;
+    }
+
+    .mini-tile i {
+      display: block;
+      width: 100%;
+      height: 22px;
+      background: #00216130;
+      margin-bottom: 6px;
+    }
+
+    .mini-tile b {
+      display: block;
+      height: 4px;
+      width: 90%;
+      background: var(--azul-boreal);
+    }
+
+    .mini-product {
+      display: grid;
+      place-items: center;
+      height: 42px;
+      background: #00216120;
+      font-size: .75rem;
+      color: var(--azul-boreal);
+      margin-bottom: 6px;
+    }
+
+    .mini-order {
+      background: var(--verde);
+      color: var(--branco-polar);
+      font-size: .43rem;
+      padding: 4px 1px;
+      margin-top: 5px;
+    }
+
+    .mini-service-hero {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 7px;
+      background: var(--azul-boreal);
+      color: var(--branco-polar);
+      padding: 12px 8px;
+      text-align: left;
+    }
+
+    .mini-service-hero strong {
+      font: 500 .9rem Georgia, serif;
+    }
+
+    .mini-service-hero p {
+      font-size: .50rem;
+      margin-top: 5px;
+    }
+
+    .mini-service-art {
+      background: #FEF9EF15;
+      display: grid;
+      place-items: center;
+      color: var(--dourado-solar);
+      font-size: 1.5rem;
+    }
+
+    .model-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 13px;
+      padding: 20px;
+    }
+
+    .model-body h3 {
+      font-size: 1.45rem;
+      line-height: 1.2;
+    }
+
+    .model-body p {
+      font-size: .83rem;
+      line-height: 1.65;
+      color: var(--suave);
+    }
+
+    .model-body .btn {
+      margin-top: auto;
+      width: 100%;
+      background: var(--azul-boreal);
+      border-color: var(--dourado-radar);
+    }
+
+    .model-body .btn:hover {
+      background: var(--branco-polar);
+      color: var(--azul-boreal);
+    }
+
+    .model-note {
+      margin-top: 19px;
+      color: var(--suave);
+      font-size: .78rem;
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       VISUALIZAÇÃO DOS MODELOS
+       ========================================= */
+
+    .model-dialog {
+      width: min(950px,calc(100% - 24px));
+      max-height: 94vh;
+      max-height: 94dvh;
+      overflow-y: auto;
+      padding: 17px;
+      color: var(--marfim);
+      background: var(--preto);
+      border: 1px solid var(--dourado-radar);
+      box-shadow: 0 20px 80px #000C;
+    }
+
+    .model-dialog::backdrop {
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(5px);
+    }
+
+    .dialog-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .dialog-top h3 {
+      font-size: 1.3rem;
+    }
+
+    .dialog-close {
+      padding: 9px 12px;
+      color: var(--marfim);
+      background: var(--azul-boreal);
+      border: 1px solid var(--linha);
+      white-space: nowrap;
+    }
+
+    .demo-site {
+      background: var(--branco-polar);
+      color: var(--azul-boreal);
+      min-height: 350px;
+    }
+
+    .demo-header {
+      padding: 18px;
+      background: var(--azul-boreal);
+      color: var(--branco-polar);
+      text-align: center;
+    }
+
+    .demo-header strong {
+      font: 500 1.35rem Georgia, serif;
+    }
+
+    .demo-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .demo-nav button {
+      padding: 7px 12px;
+      background: transparent;
+      color: var(--branco-polar);
+      border: 1px solid #FEF9EF44;
+      font-size: .75rem;
+    }
+
+    .demo-nav button[aria-pressed="true"] {
+      color: var(--azul-boreal);
+      background: var(--branco-polar);
+    }
+
+    .demo-content {
+      padding: clamp(22px,5vw,42px);
+    }
+
+    .demo-content h2,
+    .demo-content h3 {
+      color: var(--azul-boreal);
+    }
+
+    .demo-content h2 {
+      font-size: clamp(1.7rem,4vw,2.7rem);
+      margin-bottom: 12px;
+    }
+
+    .demo-content p {
+      font-size: .9rem;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      color: #374151;
+    }
+
+    .demo-profile {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .demo-avatar {
+      width: 85px;
+      height: 85px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 20px;
+      background: var(--azul-boreal);
+      color: var(--branco-polar);
+      font: 500 2.5rem Georgia, serif;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 13px;
+    }
+
+    .demo-card {
+      padding: 17px;
+      border: 1px solid #00216130;
+      background: #00216108;
+    }
+
+    .demo-card h3 {
+      font-size: 1.05rem;
+      margin: 9px 0;
+    }
+
+    .demo-card p {
+      font-size: .78rem;
+      margin-bottom: 0;
+    }
+
+    .demo-image {
+      min-height: 90px;
+      display: grid;
+      place-items: center;
+      background: #00216115;
+      color: var(--azul-boreal);
+      font-size: .8rem;
+      text-align: center;
+      padding: 12px;
+    }
+
+    .demo-button {
+      display: inline-block;
+      padding: 10px;
+      margin-top: 12px;
+      color: var(--branco-polar);
+      background: var(--verde);
+      font-size: .73rem;
+    }
+
+    .demo-footer {
+      padding: 15px;
+      background: var(--azul-boreal);
+      color: var(--branco-polar);
+      text-align: center;
+      font-size: .72rem;
+    }
+
+    .dialog-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .dialog-note {
+      margin-top: 15px;
+      font-size: .78rem;
+      line-height: 1.65;
+      color: var(--suave);
+      text-align: center;
+    }
+
+    /* =========================================
+       04 — O QUE ESTÁ INCLUSO?
+       ========================================= */
+
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 13px;
+    }
+
+    .included-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 18px;
+      border: 1px solid var(--linha);
+      background: #00216126;
+    }
+
+    .included-check {
+      color: var(--dourado-solar);
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .included-item h3 {
+      font-size: 1.12rem;
+      margin-bottom: 6px;
+    }
+
+    .included-item p {
+      color: var(--suave);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       05 — COMO CONTRATAR
+       ========================================= */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 13px;
+    }
+
+    .step {
+      padding: 21px 17px;
+      background: #00216126;
+      border: 1px solid var(--linha);
+    }
+
+    .step-number {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      background: var(--azul-boreal);
+      border: 1px solid var(--dourado-radar);
+      color: var(--dourado-solar);
+      font: 500 1.2rem Georgia, serif;
+      margin-bottom: 17px;
+    }
+
+    .step h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: var(--suave);
+      font-size: .82rem;
+      line-height: 1.65;
+    }
+
+    /* =========================================
+       06 — ESCLARECIMENTOS
+       ========================================= */
+
+    .faq-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .faq-list details {
+      background: #00216126;
+      border: 1px solid var(--linha);
+    }
+
+    .faq-list summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px;
+      list-style: none;
+      color: var(--marfim);
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list summary::after {
+      content: "+";
+      color: var(--dourado-solar);
+      font-size: 1.3rem;
+      font-weight: 400;
+      flex: none;
+    }
+
+    .faq-list details[open] {
+      border-color: var(--dourado-radar);
+    }
+
+    .faq-list details[open] summary::after {
+      content: "−";
+    }
+
+    .faq-list details p {
+      padding: 0 18px 20px;
+      color: var(--suave);
+      font-size: .85rem;
+      line-height: 1.8;
+    }
+
+    /* =========================================
+       CONTRATAÇÃO FINAL
+       ========================================= */
+
+    .contact-panel {
+      padding: clamp(28px,5vw,42px);
+      background: var(--azul-boreal);
+      border: 1px solid var(--dourado-radar);
+      text-align: center;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(1.65rem,4vw,2.8rem);
+      margin-bottom: 12px;
+    }
+
+    .contact-panel p {
+      color: var(--branco-polar);
+      font-size: .91rem;
+      line-height: 1.7;
+      max-width: 620px;
+      margin: 0 auto 22px;
+    }
+
+    .contact-panel .btn {
+      min-width: min(100%,320px);
+      padding: 16px 25px;
+    }
+
+    .contact-panel .btn img {
+      width: 27px;
+      height: 27px;
+      object-fit: contain;
+    }
+
+    /* =========================================
+       RODAPÉ
+       ========================================= */
+
+    footer {
+      border-top: 1px solid var(--linha-solar);
+      background: var(--preto);
+      padding: 27px 0 85px;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: .78rem;
+      color: var(--suave);
+    }
+
+    .footer-row a:hover {
+      color: var(--dourado-solar);
+    }
+
+    /* WHATSAPP FLUTUANTE */
+
+    .whatsapp {
+      position: fixed;
+      z-index: 40;
+      right: calc(20px + env(safe-area-inset-right,0px));
+      bottom: calc(20px + env(safe-area-inset-bottom,0px));
+      width: 66px;
+      height: 66px;
+      padding: 6px;
+      background: var(--preto);
+      border: 2px solid var(--dourado-radar);
+      border-radius: 50%;
+      box-shadow: 0 7px 24px #0008;
+      transition: transform .2s;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-3px);
+    }
+
+    .whatsapp img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* =========================================
+       RESPONSIVIDADE — TABLET
+       ========================================= */
+
+    @media (max-width:850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .prices-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      .custom-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .custom-card {
+        display: grid;
+        grid-template-columns: minmax(0,1fr)
+                               minmax(0,1fr);
+        align-items: start;
+      }
+
+      .custom-card .custom-divider {
+        display: none;
+      }
+
+      .custom-question {
+        grid-column: 1;
+        margin-top: 0;
+      }
+
+      .department-link {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+      }
+
+      .calculator-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .budget-result {
+        position: static;
+      }
+
+      .models-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      .steps {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+    }
+
+    /* =========================================
+       RESPONSIVIDADE — CELULAR
+       ========================================= */
+
+    @media (max-width:570px) {
+
+      html {
+        scroll-padding-top: 80px;
+      }
+
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      .nav-row {
+        min-height: 66px;
+      }
+
+      .brand img {
+        width: 35px;
+        height: 42px;
+      }
+
+      .brand strong {
+        font-size: 1.02rem;
+        letter-spacing: .13em;
+      }
+
+      .brand small {
+        font-size: .48rem;
+      }
+
+      .page-content {
+        gap: 18px;
+        padding-top: 18px;
+      }
+
+      .content-panel {
+        padding: 17px 13px;
+      }
+
+      .hero {
+        padding: 26px 19px;
+      }
+
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .hero-info {
+        gap: 6px;
+      }
+
+      .hero-info span {
+        font-size: .65rem;
+        padding: 7px 8px;
+      }
+
+      .prices-grid {
+        gap: 9px;
+      }
+
+      .price-card {
+        padding: 19px 9px 15px;
+      }
+
+      .price-value {
+        font-size: 1.58rem;
+      }
+
+      .price-card p:last-child {
+        font-size: .72rem;
+      }
+
+      .custom-card {
+        display: flex;
+        flex-direction: column;
+        padding: 17px;
+      }
+
+      .custom-card .custom-divider {
+        display: block;
+        width: 100%;
+      }
+
+      .department-link {
+        width: 100%;
+      }
+
+      .additional-item {
+        padding: 14px 11px;
+      }
+
+      .additional-item h3 {
+        font-size: 1rem;
+      }
+
+      .additional-price {
+        font-size: 1.05rem;
+      }
+
+      .calculator-field {
+        padding: 12px;
+      }
+
+      .quantity-row {
+        padding: 13px 3px;
+        gap: 8px;
+      }
+
+      .quantity-info strong {
+        font-size: .79rem;
+      }
+
+      .quantity-control {
+        gap: 5px;
+      }
+
+      .quantity-control button {
+        width: 34px;
+        height: 34px;
+      }
+
+      .quantity-control output {
+        width: 23px;
+      }
+
+      .budget-result {
+        padding: 20px;
+      }
+
+      .models-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .model-preview {
+        padding: 19px;
+      }
+
+      .mini-browser {
+        aspect-ratio: 16 / 10;
+      }
+
+      .mini-title {
+        font-size: 1.1rem;
+      }
+
+      .mini-avatar {
+        width: 48px;
+        height: 48px;
+      }
+
+      .demo-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 8px;
+      }
+
+      .demo-card {
+        padding: 10px;
+      }
+
+      .included-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        gap: 9px;
+      }
+
+      .step {
+        padding: 16px 12px;
+      }
+
+      .step h3 {
+        font-size: 1.05rem;
+      }
+
+      .step p {
+        font-size: .77rem;
+      }
+
+      .contact-panel {
+        padding: 27px 16px;
+      }
+
+      .contact-panel .btn {
+        width: 100%;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .whatsapp {
+        width: 60px;
+        height: 60px;
+        right: 14px;
+        bottom: 14px;
+      }
+
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+
+    }
+
+  </style>
+
 </head>
 
 <body>
 
-<header>
-  <div class="container nav">
-    <a class="logo" href="/index.html">
-      <img src="/assets/img/monograma-h.svg" alt="">
-      <span>
-        <strong>HYPERBOREA</strong>
-        <small>AGÊNCIA CRIATIVA</small>
-      </span>
-    </a>
+  <!-- =====================================
+       CABEÇALHO
+       ===================================== -->
 
-    <nav class="links" aria-label="Menu principal">
-      <a href="/index.html">Início</a>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#precos">Preços</a>
-      <a href="#simulador">Monte seu site</a>
-      <a href="#contato">Contato</a>
-    </nav>
+  <header class="site-header">
 
-    <details class="menu-mobile">
-      <summary>☰ Menu</summary>
-      <nav aria-label="Menu móvel">
+    <div class="container nav-row">
+
+      <a class="brand"
+         href="/index.html"
+         aria-label="HYPERBOREA — voltar ao início">
+
+        <img src="/assets/img/monograma-h.svg"
+             alt=""
+             width="43"
+             height="48">
+
+        <span>
+          <strong>HYPERBOREA</strong>
+          <small>AGÊNCIA CRIATIVA</small>
+        </span>
+
+      </a>
+
+      <nav class="nav-links" aria-label="Menu principal">
+
         <a href="/index.html">Início</a>
-        <a href="#portfolio">Portfólio</a>
         <a href="#precos">Preços</a>
         <a href="#simulador">Monte seu site</a>
-        <a href="#contato">Contato</a>
+        <a href="#modelos">Modelos</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a class="nav-cta" href="#contato">Contratar</a>
+
       </nav>
-    </details>
-  </div>
-</header>
 
-<main>
+      <details class="mobile-menu">
 
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="tag">HYPERBOREA · SITES & LANDING PAGES</p>
+        <summary>☰ Menu</summary>
 
-      <h1>
-        Seu site responsivo
-        <span class="gold">e profissional.</span>
+        <nav aria-label="Navegação móvel">
+
+          <a href="/index.html">Início</a>
+          <a href="#precos">Preços</a>
+          <a href="#simulador">Monte seu site</a>
+          <a href="#modelos">Modelos</a>
+          <a href="#incluso">O que está incluso</a>
+          <a href="#processo">Como contratar</a>
+          <a href="#duvidas">Dúvidas</a>
+          <a href="#contato">Contratar</a>
+
+        </nav>
+
+      </details>
+
+    </div>
+
+  </header>
+
+  <main class="container page-content">
+
+    <!-- =====================================
+         ABERTURA COMERCIAL
+         ===================================== -->
+
+    <section class="hero" aria-labelledby="heroTitle">
+
+      <p class="eyebrow">
+        HYPERBOREA · DESENVOLVIMENTO WEB
+      </p>
+
+      <h1 id="heroTitle">
+
+        Sites &amp; Web Design
+
       </h1>
 
-      <p class="description">
-        Por um preço justo que cabe no seu bolso.
-        Criamos sites e landing pages para apresentar
-        sua empresa, seus produtos e seus serviços
-        na internet.
-      </p>
-
-      <div class="hero-price">
-        <strong>R$ 70</strong>
-        <span>por página desenvolvida</span>
-      </div>
-
-      <div class="actions">
-        <a class="btn primary" href="#simulador">Monte seu site</a>
-        <a class="btn outline" href="#portfolio">Conheça nossos projetos</a>
-      </div>
-    </div>
-
-    <div class="screen" aria-label="Exemplo de layout de site">
-      <div class="screen-top"><i></i><i></i><i></i></div>
-      <div class="screen-body">
-        <div>
-          <p class="tag">SUA EMPRESA</p>
-          <h3>Sua empresa <span class="gold">na internet.</span></h3>
-          <p>Informações, produtos, serviços e contato.</p>
-        </div>
-        <div class="screen-art">✦</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="benefits">
-  <div class="container benefit-grid">
-    <div class="benefit">✦ Site responsivo e profissional</div>
-    <div class="benefit">◷ Entrega de 1 até 3 dias úteis por página</div>
-    <div class="benefit">✓ Sem mensalidade obrigatória</div>
-  </div>
-</div>
-
-<section id="portfolio">
-  <div class="container">
-    <p class="tag">PORTFÓLIO HYPERBOREA</p>
-    <h2>Conheça <span class="gold">nossos projetos.</span></h2>
-    <p class="lead">
-      Trabalhos realizados e modelos demonstrativos
-      para diferentes atividades comerciais e profissionais.
-    </p>
-
-    <div class="grid3">
-      <article class="card">
-        <div class="card-art">
-          <div class="mini-browser">
-            <div class="mini-bar"></div>
-            <div class="mini-content">
-              <h3>Edifício Marajoara</h3>
-              <p>Comunicação e informações do condomínio.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <h3>Edifício Marajoara</h3>
-          <p>Site institucional com notícias, informações e conteúdos do condomínio.</p>
-          <a href="https://www.marajoara3.com.br/"
-             target="_blank" rel="noopener noreferrer">
-            Visitar projeto ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-art">
-          <div class="mini-browser cafe">
-            <div class="mini-bar"></div>
-            <div class="mini-content">
-              <h3>Sabor & Arte</h3>
-              <p>Produtos e atendimento.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <h3>Comércios e lojas</h3>
-          <p>Modelo para produtos, horários, localização e atendimento.</p>
-          <p class="note">Modelo visual demonstrativo</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-art">
-          <div class="mini-browser studio">
-            <div class="mini-bar"></div>
-            <div class="mini-content">
-              <h3>Estúdio Aurora</h3>
-              <p>Apresentação de serviços.</p>
-            </div>
-          </div>
-        </div>
-        <div class="card-body">
-          <h3>Profissionais e serviços</h3>
-          <p>Modelo para profissionais autônomos e prestadores de serviços.</p>
-          <p class="note">Modelo visual demonstrativo</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="pricing" id="precos">
-  <div class="container">
-    <p class="tag">PREÇOS JUSTOS E TRANSPARENTES</p>
-    <h2>Escolha as páginas <span class="gold">do seu site.</span></h2>
-    <p class="lead">
-      Contrate as páginas de que precisa e adicione outras
-      quando desejar.
-    </p>
-
-    <div class="grid2">
-      <div class="price-card">
-        <p class="tag">SITES & LANDING PAGES</p>
-        <h3>Desenvolvimento por página</h3>
-        <div class="price">R$ 70 <small>/ página</small></div>
-        <p>Escolha a quantidade de páginas e o modelo visual.</p>
-
-        <ul class="features">
-          <li>Design responsivo</li>
-          <li>Modelos visuais disponíveis</li>
-          <li>Integração com WhatsApp</li>
-          <li>Entrega de 1 até 3 dias úteis por página</li>
-          <li>Possibilidade de adicionar páginas</li>
-          <li>Uma rodada de ajustes na entrega</li>
-        </ul>
-
-        <a class="btn outline" href="#simulador">
-          Calcular meu site
-        </a>
-      </div>
-
-      <div class="price-card">
-        <span class="gift">BENEFÍCIO HYPERBOREA</span>
-        <h3>Site com seis páginas</h3>
-        <div class="price">R$ 420</div>
-
-        <p class="domain-text">
-          A partir de seis páginas,
-          o primeiro ano do domínio é grátis!
-        </p>
-
-        <ul class="features">
-          <li>Seis páginas desenvolvidas</li>
-          <li>Site responsivo</li>
-          <li>Primeiro ano do domínio .com.br</li>
-          <li>Configuração e publicação</li>
-          <li>Sem mensalidade obrigatória</li>
-          <li>Possibilidade de ampliação</li>
-        </ul>
-
-        <a class="btn primary" href="#contato">
-          Solicitar meu site
-        </a>
-
-        <p class="domain-note">
-          Benefício válido para seis páginas ou mais
-          no mesmo projeto. Domínio .com.br sujeito
-          à disponibilidade. A renovação após o
-          primeiro ano é responsabilidade do cliente.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="calculator" id="simulador">
-  <div class="container">
-    <p class="tag">SIMULE SEU ORÇAMENTO</p>
-    <h2>Quanto custa <span class="gold">seu site?</span></h2>
-    <p class="lead center-lead">
-      Escolha a quantidade de páginas e confira
-      o investimento estimado.
-    </p>
-
-    <div class="calc">
-      <h3>Quantas páginas você deseja?</h3>
-      <p class="calc-description">R$ 70 por página desenvolvida.</p>
-
-      <div class="counter">
-        <button id="menos" type="button" aria-label="Diminuir páginas">−</button>
-        <output id="quantidade" aria-live="polite">6</output>
-        <button id="mais" type="button" aria-label="Aumentar páginas">+</button>
-      </div>
-
-      <div class="results">
-        <div>
-          <span>Valor estimado</span>
-          <strong id="valor">R$ 420</strong>
-        </div>
-        <div>
-          <span>Prazo de entrega estimado</span>
-          <strong id="prazo">De 1 até 18 dias úteis</strong>
-        </div>
-      </div>
-
-      <div class="bonus" id="bonus" aria-live="polite">
-        A partir de seis páginas,
-        o primeiro ano do domínio é grátis!
-      </div>
-
-      <div class="actions" style="justify-content:center">
-        <button class="btn outline" id="copiar" type="button">
-          Copiar orçamento
-        </button>
-        <a class="btn primary"
-           href="https://wa.me/message/FHWOVDSQ3AKCO1"
-           target="_blank" rel="noopener noreferrer">
-          Conversar no WhatsApp
-        </a>
-      </div>
-
-      <p class="calc-info" id="mensagem" aria-live="polite">
-        Cada página tem prazo de entrega de 1 até 3 dias úteis.
-        O prazo total pode ser menor que o máximo estimado.
-        A contagem começa após a confirmação do pedido
-        e o recebimento dos materiais necessários.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="models" id="modelos">
-  <div class="container">
-    <p class="tag">MODELOS DE SITES</p>
-    <h2>Escolha o modelo <span class="gold">do seu site.</span></h2>
-    <p class="lead">
-      Selecione a apresentação visual que melhor atende
-      ao seu negócio. Nós adaptamos as cores,
-      imagens e informações.
-    </p>
-
-    <div class="grid3">
-      <article class="card">
-        <div class="model-preview modern">Moderno</div>
-        <div class="card-body">
-          <h3>Moderno</h3>
-          <p>Apresentação contemporânea e navegação objetiva.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="model-preview institutional">Institucional</div>
-        <div class="card-body">
-          <h3>Institucional</h3>
-          <p>Para empresas, organizações e profissionais.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="model-preview commercial">Comercial</div>
-        <div class="card-body">
-          <h3>Comercial</h3>
-          <p>Para produtos, serviços e canais de atendimento.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="updates" id="atualizacoes">
-  <div class="container update-grid">
-    <div>
-      <p class="tag">ATUALIZAÇÕES DE CONTEÚDO</p>
-      <h2>Mantenha seu site <span class="gold">atualizado.</span></h2>
       <p class="lead">
-        Altere horários, telefones, endereços ou
-        informações dos seus produtos e serviços.
-        Sem mensalidade obrigatória.
-      </p>
-    </div>
 
-    <div class="update-box">
-      <p class="tag">ATUALIZAÇÃO DE TEXTO</p>
-      <strong>R$ 15</strong>
-      <p>
-        Por página atualizada, para substituição
-        de texto existente fornecido pelo cliente.
+        Seu site responsivo e profissional.
+        Escolha um de nossos modelos,
+        personalize suas páginas e contrate
+        somente os serviços de que precisa.
+
       </p>
-      <div class="deadline">Entrega de 1 até 2 dias úteis.</div>
-      <a class="btn outline"
+
+      <div class="hero-info">
+
+        <span>R$ 20 POR PÁGINA</span>
+        <span>DESIGN RESPONSIVO</span>
+        <span>CÓDIGO-FONTE INCLUSO</span>
+        <span>SEM MENSALIDADE OBRIGATÓRIA</span>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         01 — VALORES E OFERTAS
+         ===================================== -->
+
+    <section class="content-panel"
+             id="precos"
+             aria-labelledby="pricingTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="pricingTitle">
+
+          <span class="section-number">01</span>
+
+          Valores e ofertas
+
+        </h2>
+
+        <p>
+
+          Monte seu site de acordo com suas necessidades.
+          Preços definidos por serviço, com liberdade
+          para ampliar seu projeto quando desejar.
+
+        </p>
+
+      </div>
+
+      <div class="prices-grid">
+
+        <article class="price-card">
+
+          <h3>Desenvolvimento de página</h3>
+
+          <p class="price-value">R$ 20,00</p>
+
+          <p>
+            Por página desenvolvida
+            conforme nossos modelos disponíveis.
+          </p>
+
+        </article>
+
+        <article class="price-card">
+
+          <h3>Inserção de conteúdo</h3>
+
+          <p class="price-value">R$ 5,00</p>
+
+          <p>
+            Por inserção de logotipo,
+            banner, imagem, texto ou vídeo
+            de apresentação via streaming.
+          </p>
+
+        </article>
+
+        <article class="price-card">
+
+          <h3>Aquisição de domínio</h3>
+
+          <p class="price-value">R$ 50,00</p>
+
+          <p>
+            Aquisição do endereço do seu site,
+            sujeito à disponibilidade e às
+            condições de registro.
+          </p>
+
+        </article>
+
+        <article class="price-card">
+
+          <h3>Configuração de DNS</h3>
+
+          <p class="price-value">R$ 30,00</p>
+
+          <p>
+            Configuração para clientes
+            que já possuem domínio próprio.
+          </p>
+
+        </article>
+
+      </div>
+
+      <p class="pricing-note">
+
+        <strong>Desenvolvimento por página:</strong>
+
+        o valor de R$ 20,00 corresponde à estrutura
+        padronizada da página, à personalização
+        das cores e à adaptação responsiva.
+
+        A criação e a inserção de logotipos,
+        banners, imagens, textos, vídeos,
+        produtos e artigos são serviços adicionais.
+
+      </p>
+
+      <!-- =====================================
+           PERSONALIZE SEU SITE
+           ===================================== -->
+
+      <h3 class="subheading">
+
+        Personalize seu site
+
+      </h3>
+
+      <div class="custom-grid">
+
+        <!-- LOGOTIPO -->
+
+        <article class="custom-card">
+
+          <div>
+
+            <h3>Inserção de logotipo</h3>
+
+            <p class="custom-price">R$ 5,00</p>
+
+            <p class="description">
+
+              Já possui um logotipo?
+              Inserimos o arquivo fornecido
+              por você no seu site.
+
+            </p>
+
+          </div>
+
+          <div class="custom-divider"></div>
+
+          <p class="custom-question">
+
+            Ainda não possui um logotipo profissional?
+
+          </p>
+
+          <a class="department-link department-design"
+             href="/design.html">
+
+            <strong>Criamos seu logotipo profissional</strong>
+
+            <small>Logotipo 2D vetorizado</small>
+
+            <span class="department-price">
+              R$ 50,00
+            </span>
+
+            <span class="department-details">
+              Mais detalhes ↗
+            </span>
+
+          </a>
+
+        </article>
+
+        <!-- BANNER -->
+
+        <article class="custom-card">
+
+          <div>
+
+            <h3>Inserção de banner</h3>
+
+            <p class="custom-price">R$ 5,00</p>
+
+            <p class="description">
+
+              Já possui um banner?
+              Inserimos sua arte no site,
+              conforme o espaço contratado.
+
+            </p>
+
+          </div>
+
+          <div class="custom-divider"></div>
+
+          <p class="custom-question">
+
+            Ainda não possui um banner profissional?
+
+          </p>
+
+          <a class="department-link department-design"
+             href="/design.html">
+
+            <strong>Criamos seu banner profissional</strong>
+
+            <small>Inserção no site inclusa</small>
+
+            <span class="department-price">
+              R$ 30,00
+            </span>
+
+            <span class="department-details">
+              Mais detalhes ↗
+            </span>
+
+          </a>
+
+        </article>
+
+        <!-- VÍDEO DE APRESENTAÇÃO -->
+
+        <article class="custom-card">
+
+          <div>
+
+            <h3>Inserção de vídeo de apresentação</h3>
+
+            <p class="custom-price">R$ 5,00</p>
+
+            <p class="description">
+
+              Publicação autorizada do vídeo
+              fornecido pelo cliente no YouTube
+              e inserção no site via streaming.
+
+            </p>
+
+          </div>
+
+          <div class="custom-divider"></div>
+
+          <p class="custom-question">
+
+            Ainda não possui um vídeo de apresentação?
+
+          </p>
+
+          <a class="department-link department-video"
+             href="/videos.html">
+
+            <strong>Produzimos seu vídeo comercial</strong>
+
+            <small>De 15 segundos a 2 minutos</small>
+
+            <span class="department-price">
+
+              R$ 30 a R$ 180
+
+            </span>
+
+            <span class="department-details">
+              Mais detalhes ↗
+            </span>
+
+          </a>
+
+        </article>
+
+      </div>
+
+      <!-- =====================================
+           DEMAIS SERVIÇOS
+           ===================================== -->
+
+      <h3 class="subheading">
+
+        Serviços adicionais
+
+      </h3>
+
+      <div class="additional-list">
+
+        <article class="additional-item">
+
+          <div>
+
+            <h3>Inserção de imagem</h3>
+
+            <p>
+              Por imagem fornecida pelo cliente.
+            </p>
+
+          </div>
+
+          <span class="additional-price">
+            R$ 5,00
+          </span>
+
+        </article>
+
+        <article class="additional-item">
+
+          <div>
+
+            <h3>Inserção de texto</h3>
+
+            <p>
+              Por inserção de conteúdo textual
+              fornecido pelo cliente.
+            </p>
+
+          </div>
+
+          <span class="additional-price">
+            R$ 5,00
+          </span>
+
+        </article>
+
+        <article class="additional-item"
+                 id="atualizacoes">
+
+          <div>
+
+            <h3>Atualização de conteúdo</h3>
+
+            <p>
+              Alteração de conteúdo existente,
+              conforme solicitação contratada.
+            </p>
+
+          </div>
+
+          <span class="additional-price">
+            R$ 5,00
+          </span>
+
+        </article>
+
+        <article class="additional-item">
+
+          <div>
+
+            <h3>Cadastro de produto</h3>
+
+            <p>
+              Por produto cadastrado
+              no catálogo digital.
+            </p>
+
+          </div>
+
+          <span class="additional-price">
+            R$ 10,00
+          </span>
+
+        </article>
+
+        <article class="additional-item">
+
+          <div>
+
+            <h3>Publicação de artigo</h3>
+
+            <p>
+              Por artigo publicado,
+              com conteúdo fornecido pelo cliente.
+            </p>
+
+          </div>
+
+          <span class="additional-price">
+            R$ 10,00
+          </span>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         02 — MONTE SEU SITE
+         ===================================== -->
+
+    <section class="content-panel"
+             id="simulador"
+             aria-labelledby="calculatorTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="calculatorTitle">
+
+          <span class="section-number">02</span>
+
+          Monte seu site
+
+        </h2>
+
+        <p>
+
+          Escolha o modelo desejado,
+          a quantidade de páginas e os serviços
+          adicionais. Acompanhe o valor
+          do seu orçamento em tempo real.
+
+        </p>
+
+      </div>
+
+      <div class="calculator-layout">
+
+        <div class="calculator-controls">
+
+          <div class="calculator-field">
+
+            <label for="modeloSelecionado">
+
+              Qual modelo você deseja?
+
+            </label>
+
+            <select id="modeloSelecionado">
+
+              <option value="A definir">
+                Ainda estou escolhendo
+              </option>
+
+              <option value="Perfil pessoal">
+                Perfil pessoal
+              </option>
+
+              <option value="Catálogo digital">
+                Catálogo digital
+              </option>
+
+              <option value="Prestação de serviços">
+                Prestação de serviços
+              </option>
+
+            </select>
+
+          </div>
+
+          <!-- SERVIÇOS GERADOS PELO JAVASCRIPT -->
+
+          <div id="quantityList"></div>
+
+          <!-- DOMÍNIO -->
+
+          <div class="calculator-field">
+
+            <label>
+
+              Como deseja utilizar seu domínio?
+
+            </label>
+
+            <div class="domain-options">
+
+              <label class="domain-option">
+
+                <input type="radio"
+                       name="dominio"
+                       value="0"
+                       checked>
+
+                <span>
+
+                  <strong>
+                    Não incluir neste orçamento
+                  </strong>
+
+                  <small>
+                    Definir posteriormente.
+                  </small>
+
+                </span>
+
+              </label>
+
+              <label class="domain-option">
+
+                <input type="radio"
+                       name="dominio"
+                       value="50">
+
+                <span>
+
+                  <strong>
+                    Aquisição de domínio — R$ 50,00
+                  </strong>
+
+                  <small>
+                    Aquisição intermediada pela HYPERBOREA.
+                    Sujeita à disponibilidade.
+                  </small>
+
+                </span>
+
+              </label>
+
+              <label class="domain-option">
+
+                <input type="radio"
+                       name="dominio"
+                       value="30">
+
+                <span>
+
+                  <strong>
+                    Já possuo domínio — R$ 30,00
+                  </strong>
+
+                  <small>
+                    Configuração de DNS
+                    no domínio do cliente.
+                  </small>
+
+                </span>
+
+              </label>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RESULTADO DO ORÇAMENTO -->
+
+        <aside class="budget-result">
+
+          <p class="eyebrow">
+            SEU INVESTIMENTO
+          </p>
+
+          <h3>Orçamento estimado</h3>
+
+          <div id="budgetBreakdown"
+               class="budget-breakdown">
+
+          </div>
+
+          <p class="total-label">
+
+            Valor total estimado
+
+          </p>
+
+          <div class="budget-total"
+               id="budgetTotal"
+               aria-live="polite">
+
+            R$ 20,00
+
+          </div>
+
+          <button type="button"
+                  class="btn btn-primary"
+                  id="copyBudget">
+
+            Copiar orçamento
+
+          </button>
+
+          <a class="btn btn-outline"
+             href="https://wa.me/message/FHWOVDSQ3AKCO1"
+             target="_blank"
+             rel="noopener noreferrer">
+
+            Conversar pelo WhatsApp ↗
+
+          </a>
+
+          <button type="button"
+                  class="btn btn-outline"
+                  id="resetBudget">
+
+            Limpar orçamento
+
+          </button>
+
+          <p class="copy-message"
+             id="copyMessage"
+             aria-live="polite">
+
+          </p>
+
+          <textarea class="manual-copy"
+                    id="manualCopy"
+                    aria-label="Orçamento para copiar"
+                    readonly
+                    hidden></textarea>
+
+          <p class="budget-note">
+
+            O orçamento contempla somente
+            os serviços selecionados.
+
+            A criação de logotipos, banners
+            e vídeos é contratada separadamente
+            nos respectivos departamentos.
+
+            Condições de domínio, hospedagem
+            e eventuais custos externos serão
+            confirmadas antes da contratação.
+
+          </p>
+
+        </aside>
+
+      </div>
+
+      <noscript>
+
+        <p class="pricing-note">
+
+          Ative o JavaScript para utilizar
+          nosso simulador de orçamento.
+
+        </p>
+
+      </noscript>
+
+    </section>
+
+    <!-- =====================================
+         03 — ESCOLHA SEU MODELO
+         ===================================== -->
+
+    <section class="content-panel"
+             id="modelos"
+             aria-labelledby="modelsTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="modelsTitle">
+
+          <span class="section-number">03</span>
+
+          Escolha seu modelo
+
+        </h2>
+
+        <p>
+
+          Conheça nossos três padrões
+          de desenvolvimento.
+
+          Visualize a estrutura antes de contratar
+          e escolha aquele que melhor representa
+          seu projeto.
+
+        </p>
+
+      </div>
+
+      <div class="models-grid">
+
+        <!-- =================================
+             MODELO 01 — PERFIL PESSOAL
+             ================================= -->
+
+        <article class="model-card">
+
+          <div class="model-preview"
+               aria-hidden="true">
+
+            <div class="mini-browser">
+
+              <div class="mini-bar">
+                <i></i><i></i><i></i>
+              </div>
+
+              <div class="mini-content">
+
+                <div class="mini-avatar">P</div>
+
+                <div class="mini-title">
+
+                  Seu perfil pessoal
+
+                </div>
+
+                <div class="mini-text"></div>
+
+                <div class="mini-grid">
+
+                  <div class="mini-tile">
+                    <i></i><b></b>
+                  </div>
+
+                  <div class="mini-tile">
+                    <i></i><b></b>
+                  </div>
+
+                  <div class="mini-tile">
+                    <i></i><b></b>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="model-body">
+
+            <p class="eyebrow">MODELO 01</p>
+
+            <h3>Perfil pessoal</h3>
+
+            <p>
+
+              Seu próprio espaço na internet.
+
+              Ideal para apresentações pessoais,
+              biografias, blogs, artigos
+              e portfólios individuais.
+
+            </p>
+
+            <button class="btn btn-outline"
+                    type="button"
+                    data-model="perfil">
+
+              Visualizar modelo ↗
+
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- =================================
+             MODELO 02 — CATÁLOGO DIGITAL
+             ================================= -->
+
+        <article class="model-card">
+
+          <div class="model-preview"
+               aria-hidden="true">
+
+            <div class="mini-browser">
+
+              <div class="mini-bar">
+                <i></i><i></i><i></i>
+              </div>
+
+              <div class="mini-content">
+
+                <div class="mini-title">
+
+                  Seu catálogo digital
+
+                </div>
+
+                <div class="mini-text"></div>
+
+                <div class="mini-grid">
+
+                  <div class="mini-tile">
+
+                    <div class="mini-product">
+                      Produto
+                    </div>
+
+                    <b></b>
+
+                    <div class="mini-order">
+                      Encomendar
+                    </div>
+
+                  </div>
+
+                  <div class="mini-tile">
+
+                    <div class="mini-product">
+                      Produto
+                    </div>
+
+                    <b></b>
+
+                    <div class="mini-order">
+                      Encomendar
+                    </div>
+
+                  </div>
+
+                  <div class="mini-tile">
+
+                    <div class="mini-product">
+                      Produto
+                    </div>
+
+                    <b></b>
+
+                    <div class="mini-order">
+                      Encomendar
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="model-body">
+
+            <p class="eyebrow">MODELO 02</p>
+
+            <h3>Catálogo digital</h3>
+
+            <p>
+
+              Apresente seus produtos,
+              preços e informações.
+
+              Receba consultas e encomendas
+              diretamente pelo WhatsApp,
+              sem carrinho de compras
+              ou pagamento integrado.
+
+            </p>
+
+            <button class="btn btn-outline"
+                    type="button"
+                    data-model="catalogo">
+
+              Visualizar modelo ↗
+
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- =================================
+             MODELO 03 — PRESTAÇÃO DE SERVIÇOS
+             ================================= -->
+
+        <article class="model-card">
+
+          <div class="model-preview"
+               aria-hidden="true">
+
+            <div class="mini-browser">
+
+              <div class="mini-bar">
+                <i></i><i></i><i></i>
+              </div>
+
+              <div class="mini-content">
+
+                <div class="mini-service-hero">
+
+                  <div>
+
+                    <strong>Sua empresa na internet</strong>
+
+                    <p>
+                      Conheça nossos serviços.
+                    </p>
+
+                  </div>
+
+                  <div class="mini-service-art">
+                    ✦
+                  </div>
+
+                </div>
+
+                <div class="mini-grid">
+
+                  <div class="mini-tile">
+                    <i></i><b></b>
+                  </div>
+
+                  <div class="mini-tile">
+                    <i></i><b></b>
+                  </div>
+
+                  <div class="mini-tile">
+                    <i></i><b></b>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="model-body">
+
+            <p class="eyebrow">MODELO 03</p>
+
+            <h3>Prestação de serviços</h3>
+
+            <p>
+
+              Apresente sua empresa,
+              estabelecimento e serviços
+              de maneira profissional.
+
+              Ideal para padarias, lanchonetes,
+              condomínios, dentistas, clínicas
+              e demais prestadores de serviços.
+
+            </p>
+
+            <button class="btn btn-outline"
+                    type="button"
+                    data-model="servicos">
+
+              Visualizar modelo ↗
+
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <p class="model-note">
+
+        Os modelos são demonstrações
+        de estruturas disponíveis.
+
+        As cores são personalizadas conforme
+        a identidade visual do cliente.
+
+        Os conteúdos, imagens, banners,
+        produtos e artigos demonstrados
+        ilustram as possibilidades de
+        personalização e são contratados
+        conforme a tabela de serviços.
+
+      </p>
+
+    </section>
+
+    <!-- =====================================
+         04 — O QUE ESTÁ INCLUSO?
+         ===================================== -->
+
+    <section class="content-panel"
+             id="incluso"
+             aria-labelledby="includedTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="includedTitle">
+
+          <span class="section-number">04</span>
+
+          O que está incluso?
+
+        </h2>
+
+        <p>
+
+          Conheça o que faz parte
+          do desenvolvimento de cada página.
+
+        </p>
+
+      </div>
+
+      <div class="included-grid">
+
+        <article class="included-item">
+
+          <span class="included-check"
+                aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Estrutura profissional</h3>
+
+            <p>
+
+              Desenvolvimento conforme
+              um dos padrões disponibilizados
+              pela HYPERBOREA.
+
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check"
+                aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Personalização de cores</h3>
+
+            <p>
+
+              Adaptação das cores do modelo
+              à identidade visual escolhida
+              pelo cliente.
+
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check"
+                aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Design responsivo</h3>
+
+            <p>
+
+              Estrutura adaptada para
+              celulares, tablets e computadores.
+
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check"
+                aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Configuração e publicação</h3>
+
+            <p>
+
+              Preparação técnica dos arquivos
+              e publicação em ambiente de
+              hospedagem compatível.
+
+              Serviços de domínio e DNS
+              são contratados separadamente.
+
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check"
+                aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Código-fonte incluso</h3>
+
+            <p>
+
+              Entrega dos arquivos desenvolvidos
+              para o projeto contratado.
+
+            </p>
+
+          </div>
+
+        </article>
+
+        <article class="included-item">
+
+          <span class="included-check"
+                aria-hidden="true">✓</span>
+
+          <div>
+
+            <h3>Duas rodadas de revisão</h3>
+
+            <p>
+
+              Duas rodadas de ajustes
+              dentro da proposta contratada,
+              sem cobrança adicional.
+
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         05 — COMO CONTRATAR
+         ===================================== -->
+
+    <section class="content-panel"
+             id="processo"
+             aria-labelledby="processTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="processTitle">
+
+          <span class="section-number">05</span>
+
+          Como contratar
+
+        </h2>
+
+        <p>
+
+          Um processo direto,
+          organizado e transparente.
+
+        </p>
+
+      </div>
+
+      <div class="steps">
+
+        <article class="step">
+
+          <span class="step-number">1</span>
+
+          <h3>Escolha seu modelo</h3>
+
+          <p>
+
+            Conheça nossos padrões
+            e escolha a estrutura
+            mais adequada ao seu projeto.
+
+          </p>
+
+        </article>
+
+        <article class="step">
+
+          <span class="step-number">2</span>
+
+          <h3>Monte seu orçamento</h3>
+
+          <p>
+
+            Selecione a quantidade
+            de páginas e os serviços adicionais
+            que deseja contratar.
+
+          </p>
+
+        </article>
+
+        <article class="step">
+
+          <span class="step-number">3</span>
+
+          <h3>Confirme a contratação</h3>
+
+          <p>
+
+            Envie seu orçamento pelo WhatsApp.
+
+            Alinhamos as condições do projeto,
+            os materiais e o pagamento via Pix.
+
+          </p>
+
+        </article>
+
+        <article class="step">
+
+          <span class="step-number">4</span>
+
+          <h3>Desenvolvimento e publicação</h3>
+
+          <p>
+
+            Desenvolvemos as páginas,
+            apresentamos o projeto,
+            realizamos as revisões previstas
+            e publicamos seu site.
+
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         06 — ESCLARECIMENTOS
+         ===================================== -->
+
+    <section class="content-panel"
+             id="duvidas"
+             aria-labelledby="faqTitle">
+
+      <div class="panel-heading">
+
+        <h2 id="faqTitle">
+
+          <span class="section-number">06</span>
+
+          Esclarecimentos
+
+        </h2>
+
+        <p>
+
+          Informações importantes
+          antes da contratação.
+
+        </p>
+
+      </div>
+
+      <div class="faq-list">
+
+        <details>
+
+          <summary>
+            O que está incluso nos R$ 20,00 por página?
+          </summary>
+
+          <p>
+
+            O desenvolvimento da estrutura
+            de uma página conforme nossos modelos,
+            a personalização de cores
+            e a adaptação responsiva.
+
+            Inserções de conteúdo, criação de artes,
+            cadastro de produtos e publicação
+            de artigos são contratados separadamente.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Posso contratar apenas uma página?
+          </summary>
+
+          <p>
+
+            Sim. Você pode contratar uma página
+            de apresentação ou landing page,
+            utilizando um dos nossos padrões.
+
+            O site poderá receber novas páginas
+            posteriormente, conforme sua necessidade.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            O que é uma landing page?
+          </summary>
+
+          <p>
+
+            É uma página criada para apresentar
+            informações sobre uma pessoa,
+            produto, estabelecimento ou serviço,
+            normalmente direcionando o visitante
+            para uma ação específica,
+            como entrar em contato pelo WhatsApp.
+
+            Na modalidade padronizada,
+            o desenvolvimento custa R$ 20,00,
+            com os conteúdos adicionais
+            contratados separadamente.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Posso escolher as cores do meu site?
+          </summary>
+
+          <p>
+
+            Sim. Personalizamos as cores
+            do modelo escolhido de acordo
+            com a identidade visual do seu projeto.
+
+            Desenvolvimentos completamente diferentes
+            dos padrões apresentados deverão
+            ser avaliados separadamente.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Preciso contratar a criação de um logotipo?
+          </summary>
+
+          <p>
+
+            Não. Caso já possua seu logotipo,
+            você pode contratar apenas a inserção
+            por R$ 5,00.
+
+            Caso precise criar um logotipo,
+            conheça nosso departamento de
+            <a class="gold" href="/design.html">
+
+              Design e Identidade Visual.
+
+            </a>
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            A criação do banner inclui sua inserção?
+          </summary>
+
+          <p>
+
+            Sim. Ao contratar a criação
+            de um banner profissional da HYPERBOREA
+            por R$ 30,00 para seu site,
+            a respectiva inserção está inclusa.
+
+            Caso já possua o banner,
+            você pode contratar somente
+            a inserção por R$ 5,00.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Como funciona a inserção de vídeos?
+          </summary>
+
+          <p>
+
+            Os vídeos de apresentação são incorporados
+            ao site por meio do YouTube,
+            utilizando reprodução via streaming.
+
+            A publicação do vídeo fornecido pelo cliente
+            depende de autorização e das condições
+            da plataforma.
+
+            Não armazenamos os arquivos de vídeo
+            diretamente no repositório do site.
+
+            A inserção custa R$ 5,00 por vídeo.
+
+            Caso precise produzir um vídeo,
+            conheça nosso departamento de
+            <a class="gold" href="/videos.html">
+
+              Vídeos Comerciais.
+
+            </a>
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            O catálogo digital é um e-commerce?
+          </summary>
+
+          <p>
+
+            Não. Nosso catálogo digital
+            apresenta produtos, imagens,
+            descrições e preços.
+
+            As consultas, encomendas e pagamentos
+            são tratados diretamente entre
+            o estabelecimento e seus clientes.
+
+            Não inclui carrinho de compras,
+            pagamento integrado ou gestão
+            automatizada de estoque.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Como funciona a aquisição do domínio?
+          </summary>
+
+          <p>
+
+            A HYPERBOREA oferece a aquisição
+            de domínio por R$ 50,00,
+            sujeita à disponibilidade do endereço
+            e às condições de registro.
+
+            O período contratado, a titularidade,
+            a configuração e as condições
+            de renovação serão informados
+            antes da contratação.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Já possuo domínio. Posso utilizá-lo?
+          </summary>
+
+          <p>
+
+            Sim. Podemos configurar o DNS
+            de um domínio que você já possui
+            pelo valor de R$ 30,00,
+            mediante acesso autorizado
+            às configurações necessárias.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Preciso pagar mensalidade?
+          </summary>
+
+          <p>
+
+            Não há mensalidade obrigatória
+            de manutenção da HYPERBOREA.
+
+            Atualizações e novos serviços
+            são contratados quando necessários.
+
+            Eventuais despesas externas
+            de hospedagem, domínio e renovação
+            são informadas no orçamento.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Qual é o prazo de desenvolvimento?
+          </summary>
+
+          <p>
+
+            O prazo comercial padrão
+            para uma página padronizada
+            é de 1 a 3 dias úteis.
+
+            O prazo total de projetos
+            com várias páginas e serviços adicionais
+            será informado antes da contratação.
+
+            A contagem começa após a confirmação
+            do pagamento e o recebimento
+            dos materiais necessários.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Como funcionam as revisões?
+          </summary>
+
+          <p>
+
+            Cada compra inclui duas rodadas
+            de revisão dentro da proposta contratada.
+
+            Uma rodada corresponde a um conjunto
+            de solicitações de ajustes
+            apresentado pelo cliente.
+
+            Revisões adicionais são orçadas
+            separadamente.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            E se houver um erro da HYPERBOREA?
+          </summary>
+
+          <p>
+
+            Erros de responsabilidade da HYPERBOREA
+            são corrigidos gratuitamente
+            e não consomem as rodadas
+            de revisão contratadas.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Posso atualizar meu site posteriormente?
+          </summary>
+
+          <p>
+
+            Sim. Atualizações de conteúdo
+            custam R$ 5,00 por atualização contratada.
+
+            Novas páginas, inserções,
+            produtos e artigos seguem
+            os valores da tabela comercial.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Receberei o código-fonte do meu site?
+          </summary>
+
+          <p>
+
+            Sim. O código-fonte desenvolvido
+            para o projeto contratado está incluso.
+
+            O cliente recebe os arquivos
+            correspondentes ao seu site.
+
+            Não há mensalidade obrigatória
+            para acesso aos arquivos entregues.
+
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Qual é a forma de pagamento?
+          </summary>
+
+          <p>
+
+            O pagamento é realizado antecipadamente
+            via Pix, após o alinhamento
+            das condições comerciais.
+
+            A produção começa após
+            a confirmação do pagamento
+            e o recebimento dos materiais necessários.
+
+          </p>
+
+        </details>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================
+         CONTRATAÇÃO FINAL
+         ===================================== -->
+
+    <section class="contact-panel"
+             id="contato"
+             aria-labelledby="contactTitle">
+
+      <h2 id="contactTitle">
+
+        Contrate seu site
+
+      </h2>
+
+      <p>
+
+        Escolha seu modelo,
+        monte seu orçamento e entre em contato.
+
+        Vamos alinhar os detalhes
+        e desenvolver seu site.
+
+      </p>
+
+      <a class="btn btn-primary"
          href="https://wa.me/message/FHWOVDSQ3AKCO1"
-         target="_blank" rel="noopener noreferrer">
-        Solicitar atualização
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <img src="/assets/img/whats-icon.svg"
+             alt=""
+             width="27"
+             height="27">
+
+        Contatar pelo WhatsApp ↗
+
       </a>
+
+    </section>
+
+  </main>
+
+  <!-- =====================================
+       RODAPÉ
+       ===================================== -->
+
+  <footer>
+
+    <div class="container footer-row">
+
+      <p>
+
+        © <span id="ano">2026</span>
+        HYPERBOREA · Agência Criativa
+
+      </p>
+
+      <a href="/index.html">
+
+        Voltar ao início ↑
+
+      </a>
+
     </div>
-  </div>
-</section>
 
-<section class="process">
-  <div class="container">
-    <p class="tag">COMO FUNCIONA</p>
-    <h2>Da contratação <span class="gold">à publicação.</span></h2>
+  </footer>
 
-    <div class="steps">
-      <div class="step">
-        <b>01</b>
-        <h3>Escolha seu projeto</h3>
-        <p>Informe a quantidade de páginas e escolha o modelo visual.</p>
-      </div>
+  <!-- WHATSAPP FLUTUANTE -->
 
-      <div class="step">
-        <b>02</b>
-        <h3>Desenvolvimento</h3>
-        <p>Envie seus textos e imagens. Nós desenvolvemos o site.</p>
-      </div>
+  <a class="whatsapp"
+     href="https://wa.me/message/FHWOVDSQ3AKCO1"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
 
-      <div class="step">
-        <b>03</b>
-        <h3>Publicação</h3>
-        <p>Após a aprovação, configuramos e publicamos seu site.</p>
-      </div>
+    <img src="/assets/img/whats-icon.svg"
+         alt=""
+         width="48"
+         height="48">
+
+  </a>
+
+  <!-- =====================================
+       VISUALIZADOR DOS MODELOS
+       ===================================== -->
+
+  <dialog class="model-dialog"
+          id="modelDialog"
+          aria-labelledby="modelDialogTitle">
+
+    <div class="dialog-top">
+
+      <h3 id="modelDialogTitle">
+
+        Visualização do modelo
+
+      </h3>
+
+      <button type="button"
+              class="dialog-close"
+              id="closeModel">
+
+        Fechar ×
+
+      </button>
+
     </div>
-  </div>
-</section>
 
-<section class="faq">
-  <div class="container">
-    <p class="tag">PERGUNTAS FREQUENTES</p>
-    <h2>Tire suas <span class="gold">dúvidas.</span></h2>
+    <div class="demo-site">
 
-    <details>
-      <summary>Posso contratar apenas uma página?</summary>
-      <p>
-        Sim. Você pode contratar uma landing page
-        ou começar com uma página e ampliar depois.
-      </p>
-    </details>
+      <header class="demo-header">
 
-    <details>
-      <summary>Preciso configurar o site?</summary>
-      <p>
-        Não. A HYPERBOREA cuida das configurações
-        técnicas e da publicação.
-      </p>
-    </details>
+        <strong id="demoBrand">
 
-    <details>
-      <summary>Como funciona o domínio grátis?</summary>
-      <p>
-        A partir de seis páginas contratadas,
-        o primeiro ano do domínio .com.br é grátis,
-        sujeito à disponibilidade. A renovação
-        posterior fica por conta do cliente.
-      </p>
-    </details>
+          Seu projeto
 
-    <details>
-      <summary>Preciso pagar mensalidade?</summary>
-      <p>
-        Não há mensalidade obrigatória de manutenção.
-        Atualizações de texto custam R$ 15 por página.
-        Custos externos de domínio ou hospedagem,
-        quando aplicáveis, são informados no orçamento.
-      </p>
-    </details>
+        </strong>
 
-    <details>
-      <summary>Posso escolher a aparência do site?</summary>
-      <p>
-        Sim. Você escolhe entre os modelos disponíveis,
-        com adaptação de cores, textos e imagens.
-      </p>
-    </details>
+        <nav class="demo-nav"
+             id="demoNav"
+             aria-label="Navegação demonstrativa">
 
-    <details>
-      <summary>O que está incluído no preço?</summary>
-      <p>
-        Desenvolvimento da página conforme os modelos
-        disponíveis, adaptação responsiva e inclusão
-        do conteúdo fornecido. Artes gráficas,
-        sistemas e funcionalidades adicionais
-        são orçados separadamente.
-      </p>
-    </details>
-  </div>
-</section>
+        </nav>
 
-<section class="contact" id="contato">
-  <div class="container">
-    <p class="tag">ENTRE EM CONTATO</p>
-    <h2>Vamos desenvolver <span class="gold">seu site?</span></h2>
-    <p class="lead">
-      Conte o que você precisa. A HYPERBOREA apresenta
-      as opções de desenvolvimento e o orçamento.
+      </header>
+
+      <div class="demo-content"
+           id="demoContent">
+
+      </div>
+
+      <div class="demo-footer">
+
+        Modelo demonstrativo · HYPERBOREA
+
+      </div>
+
+    </div>
+
+    <p class="dialog-note">
+
+      Esta é uma demonstração navegável da estrutura.
+      As cores podem ser personalizadas.
+      Os conteúdos e elementos adicionais
+      são contratados conforme a tabela comercial.
+
     </p>
 
-    <div class="actions">
-      <a class="btn primary"
-         href="https://wa.me/message/FHWOVDSQ3AKCO1"
-         target="_blank" rel="noopener noreferrer">
-        Solicitar orçamento
-      </a>
-      <a class="btn outline" href="mailto:contato@hyperborea.com.br">
-        Enviar e-mail
-      </a>
+    <div class="dialog-actions">
+
+      <button class="btn btn-primary"
+              type="button"
+              id="chooseModel">
+
+        Escolher este modelo
+
+      </button>
+
+      <button class="btn btn-outline"
+              type="button"
+              id="backModels">
+
+        Voltar aos modelos
+
+      </button>
+
     </div>
-  </div>
-</section>
 
-</main>
+  </dialog>
 
-<footer>
-  <div class="container footer-row">
-    <p>© <span id="ano"></span> HYPERBOREA · Agência Criativa</p>
-    <a href="/index.html">Voltar ao início ↑</a>
-  </div>
-</footer>
+  <!-- =====================================
+       JAVASCRIPT
+       ===================================== -->
 
-<a class="whatsapp"
-   href="https://wa.me/message/FHWOVDSQ3AKCO1"
-   target="_blank" rel="noopener noreferrer"
-   aria-label="Conversar pelo WhatsApp">
-  <img src="/assets/img/whats-icon.svg" alt="WhatsApp">
-</a>
+  <script>
 
-<script>
-(function(){
-  "use strict";
+    (() => {
 
-  document.getElementById("ano").textContent =
-    new Date().getFullYear();
+      "use strict";
 
-  let paginas = 6;
-  const quantidade = document.getElementById("quantidade");
-  const valor = document.getElementById("valor");
-  const prazo = document.getElementById("prazo");
-  const bonus = document.getElementById("bonus");
-  const menos = document.getElementById("menos");
-  const mais = document.getElementById("mais");
-  const mensagem = document.getElementById("mensagem");
+      /* =====================================
+         ANO AUTOMÁTICO
+         ===================================== */
 
-  function reais(n){
-    return n.toLocaleString("pt-BR",{
-      style:"currency",
-      currency:"BRL",
-      maximumFractionDigits:0
-    });
-  }
+      document.getElementById("ano").textContent =
+        new Date().getFullYear();
 
-  function atualizar(){
-    quantidade.textContent = paginas;
-    valor.textContent = reais(paginas * 70);
+      /* =====================================
+         TABELA DE PREÇOS DO SIMULADOR
 
-    prazo.textContent =
-      "De 1 até " + (paginas * 3) + " dias úteis";
+         Para atualizar os valores futuramente,
+         altere a tabela abaixo e os respectivos
+         valores apresentados no HTML.
+         ===================================== */
 
-    bonus.textContent = paginas >= 6
-      ? "A partir de seis páginas, o primeiro ano do domínio é grátis!"
-      : "Com seis páginas, o primeiro ano do domínio é grátis!";
+      const servicos = [
 
-    menos.disabled = paginas === 1;
-    mais.disabled = paginas === 20;
-  }
+        {
+          id: "paginas",
+          nome: "Páginas",
+          preco: 20,
+          minimo: 1,
+          quantidade: 1
+        },
 
-  menos.addEventListener("click",function(){
-    if(paginas > 1){
-      paginas--;
-      atualizar();
-    }
-  });
+        {
+          id: "logotipos",
+          nome: "Inserções de logotipo",
+          preco: 5,
+          minimo: 0,
+          quantidade: 0
+        },
 
-  mais.addEventListener("click",function(){
-    if(paginas < 20){
-      paginas++;
-      atualizar();
-    }
-  });
+        {
+          id: "banners",
+          nome: "Inserções de banner",
+          preco: 5,
+          minimo: 0,
+          quantidade: 0
+        },
 
-  document.getElementById("copiar").addEventListener("click",async function(){
-    const texto =
-      "Orçamento HYPERBOREA\n" +
-      "Páginas: " + paginas + "\n" +
-      "Valor estimado: " + reais(paginas * 70) + "\n" +
-      "Prazo estimado: de 1 até " + (paginas * 3) + " dias úteis\n" +
-      (paginas >= 6
-        ? "O primeiro ano do domínio .com.br é grátis, sujeito à disponibilidade.\n"
-        : "") +
-      "Sujeito à confirmação do projeto.";
+        {
+          id: "videos",
+          nome: "Inserções de vídeo via streaming",
+          preco: 5,
+          minimo: 0,
+          quantidade: 0
+        },
 
-    try{
-      await navigator.clipboard.writeText(texto);
-      mensagem.textContent = "Orçamento copiado!";
-    }catch(e){
-      mensagem.textContent =
-        "Não foi possível copiar. Entre em contato pelo WhatsApp.";
-    }
-  });
+        {
+          id: "imagens",
+          nome: "Inserções de imagem",
+          preco: 5,
+          minimo: 0,
+          quantidade: 0
+        },
 
-  document.querySelectorAll(".menu-mobile nav a").forEach(function(link){
-    link.addEventListener("click",function(){
-      document.querySelector(".menu-mobile").open = false;
-    });
-  });
+        {
+          id: "textos",
+          nome: "Inserções de texto",
+          preco: 5,
+          minimo: 0,
+          quantidade: 0
+        },
 
-  atualizar();
-})();
-</script>
+        {
+          id: "produtos",
+          nome: "Cadastro de produtos",
+          preco: 10,
+          minimo: 0,
+          quantidade: 0
+        },
+
+        {
+          id: "artigos",
+          nome: "Publicação de artigos",
+          preco: 10,
+          minimo: 0,
+          quantidade: 0
+        },
+
+        {
+          id: "atualizacoes",
+          nome: "Atualizações de conteúdo",
+          preco: 5,
+          minimo: 0,
+          quantidade: 0
+        }
+
+      ];
+
+      const lista =
+        document.getElementById("quantityList");
+
+      const seletorModelo =
+        document.getElementById("modeloSelecionado");
+
+      const breakdown =
+        document.getElementById("budgetBreakdown");
+
+      const totalEl =
+        document.getElementById("budgetTotal");
+
+      const copyMessage =
+        document.getElementById("copyMessage");
+
+      const manualCopy =
+        document.getElementById("manualCopy");
+
+      const controles = new Map();
+
+      let totalAtual = 20;
+
+      /* FORMATAÇÃO MONETÁRIA */
+
+      function reais(valor) {
+
+        return valor.toLocaleString("pt-BR", {
+
+          style: "currency",
+          currency: "BRL"
+
+        });
+
+      }
+
+      /* =====================================
+         CRIAR CONTROLES DE QUANTIDADE
+         ===================================== */
+
+      servicos.forEach(servico => {
+
+        const row =
+          document.createElement("div");
+
+        row.className = "quantity-row";
+
+        const info =
+          document.createElement("div");
+
+        info.className = "quantity-info";
+
+        const nome =
+          document.createElement("strong");
+
+        nome.textContent = servico.nome;
+
+        const preco =
+          document.createElement("small");
+
+        preco.textContent =
+          reais(servico.preco) + " / unidade";
+
+        info.append(nome,preco);
+
+        const control =
+          document.createElement("div");
+
+        control.className = "quantity-control";
+
+        const menos =
+          document.createElement("button");
+
+        menos.type = "button";
+        menos.textContent = "−";
+
+        menos.setAttribute(
+          "aria-label",
+          "Diminuir " + servico.nome
+        );
+
+        const quantidade =
+          document.createElement("output");
+
+        quantidade.textContent =
+          servico.quantidade;
+
+        quantidade.setAttribute(
+          "aria-label",
+          "Quantidade de " + servico.nome
+        );
+
+        const mais =
+          document.createElement("button");
+
+        mais.type = "button";
+        mais.textContent = "+";
+
+        mais.setAttribute(
+          "aria-label",
+          "Aumentar " + servico.nome
+        );
+
+        menos.addEventListener("click",() => {
+
+          if (servico.quantidade > servico.minimo) {
+
+            servico.quantidade--;
+
+            atualizarOrcamento();
+
+          }
+
+        });
+
+        mais.addEventListener("click",() => {
+
+          if (servico.quantidade < 999) {
+
+            servico.quantidade++;
+
+            atualizarOrcamento();
+
+          }
+
+        });
+
+        control.append(menos,quantidade,mais);
+
+        row.append(info,control);
+
+        lista.appendChild(row);
+
+        controles.set(servico.id,{
+
+          menos,
+          quantidade,
+          mais
+
+        });
+
+      });
+
+      /* =====================================
+         OPÇÃO DE DOMÍNIO
+         ===================================== */
+
+      function dominioSelecionado() {
+
+        const campo = document.querySelector(
+          'input[name="dominio"]:checked'
+        );
+
+        return Number(campo?.value || 0);
+
+      }
+
+      function nomeDominio(valor) {
+
+        if (valor === 50) {
+
+          return "Aquisição de domínio";
+
+        }
+
+        if (valor === 30) {
+
+          return "Configuração de DNS";
+
+        }
+
+        return "Domínio não incluído";
+
+      }
+
+      /* LINHAS DO RESULTADO */
+
+      function adicionarLinha(nome,valor) {
+
+        const linha =
+          document.createElement("div");
+
+        linha.className = "budget-line";
+
+        const texto =
+          document.createElement("span");
+
+        texto.textContent = nome;
+
+        const preco =
+          document.createElement("strong");
+
+        preco.textContent = valor;
+
+        linha.append(texto,preco);
+
+        breakdown.appendChild(linha);
+
+      }
+
+      /* =====================================
+         ATUALIZAR ORÇAMENTO EM TEMPO REAL
+         ===================================== */
+
+      function atualizarOrcamento() {
+
+        breakdown.replaceChildren();
+
+        let total = 0;
+
+        adicionarLinha(
+
+          "Modelo",
+
+          seletorModelo.value
+
+        );
+
+        servicos.forEach(servico => {
+
+          const control =
+            controles.get(servico.id);
+
+          control.quantidade.textContent =
+            servico.quantidade;
+
+          control.menos.disabled =
+            servico.quantidade <= servico.minimo;
+
+          control.mais.disabled =
+            servico.quantidade >= 999;
+
+          if (servico.quantidade > 0) {
+
+            const subtotal =
+              servico.quantidade * servico.preco;
+
+            total += subtotal;
+
+            adicionarLinha(
+
+              servico.quantidade + " × " + servico.nome,
+
+              reais(subtotal)
+
+            );
+
+          }
+
+        });
+
+        const dominio =
+          dominioSelecionado();
+
+        if (dominio > 0) {
+
+          total += dominio;
+
+          adicionarLinha(
+
+            nomeDominio(dominio),
+
+            reais(dominio)
+
+          );
+
+        }
+
+        totalAtual = total;
+
+        totalEl.textContent = reais(total);
+
+        copyMessage.textContent = "";
+
+        manualCopy.hidden = true;
+
+      }
+
+      seletorModelo.addEventListener(
+        "change",
+        atualizarOrcamento
+      );
+
+      document.querySelectorAll(
+        'input[name="dominio"]'
+      ).forEach(input => {
+
+        input.addEventListener(
+
+          "change",
+
+          atualizarOrcamento
+
+        );
+
+      });
+
+      /* =====================================
+         GERAR TEXTO DO ORÇAMENTO
+         ===================================== */
+
+      function gerarOrcamento() {
+
+        const linhas = [
+
+          "HYPERBOREA",
+
+          "ORÇAMENTO — SITES & WEB DESIGN",
+
+          "",
+
+          "Modelo: " + seletorModelo.value,
+
+          ""
+
+        ];
+
+        servicos.forEach(servico => {
+
+          if (servico.quantidade > 0) {
+
+            linhas.push(
+
+              servico.nome + ": " +
+
+              servico.quantidade + " × " +
+
+              reais(servico.preco) + " = " +
+
+              reais(
+                servico.quantidade * servico.preco
+              )
+
+            );
+
+          }
+
+        });
+
+        const dominio =
+          dominioSelecionado();
+
+        linhas.push("");
+
+        linhas.push(
+
+          nomeDominio(dominio) +
+
+          (dominio > 0
+
+            ? ": " + reais(dominio)
+
+            : "")
+
+        );
+
+        linhas.push("");
+
+        linhas.push(
+
+          "TOTAL ESTIMADO: " + reais(totalAtual)
+
+        );
+
+        linhas.push("");
+
+        linhas.push(
+
+          "Orçamento sujeito à confirmação das condições do projeto."
+
+        );
+
+        linhas.push(
+
+          "Criação de logotipos, banners e vídeos não incluída nesta simulação."
+
+        );
+
+        return linhas.join("\n");
+
+      }
+
+      /* =====================================
+         COPIAR ORÇAMENTO
+         ===================================== */
+
+      document.getElementById("copyBudget")
+        .addEventListener("click",async () => {
+
+          const texto =
+            gerarOrcamento();
+
+          try {
+
+            await navigator.clipboard.writeText(texto);
+
+            manualCopy.hidden = true;
+
+            copyMessage.textContent =
+
+              "Orçamento copiado! Agora você pode enviá-lo pelo WhatsApp.";
+
+          } catch (erro) {
+
+            manualCopy.value = texto;
+
+            manualCopy.hidden = false;
+
+            manualCopy.focus();
+
+            manualCopy.select();
+
+            copyMessage.textContent =
+
+              "Selecione e copie o orçamento apresentado abaixo.";
+
+          }
+
+        });
+
+      /* =====================================
+         LIMPAR ORÇAMENTO
+         ===================================== */
+
+      document.getElementById("resetBudget")
+        .addEventListener("click",() => {
+
+          servicos.forEach(servico => {
+
+            servico.quantidade =
+              servico.minimo;
+
+          });
+
+          seletorModelo.value =
+            "A definir";
+
+          document.querySelector(
+
+            'input[name="dominio"][value="0"]'
+
+          ).checked = true;
+
+          atualizarOrcamento();
+
+          copyMessage.textContent =
+            "Orçamento reiniciado.";
+
+        });
+
+      atualizarOrcamento();
+
+      /* =====================================
+         MODELOS DEMONSTRATIVOS
+
+         Estes modelos funcionam diretamente
+         nesta página, sem depender de outros
+         arquivos HTML.
+
+         Futuramente poderão receber nossas
+         próprias imagens e banners em SVG.
+         ===================================== */
+
+      const modelos = {
+
+        perfil: {
+
+          nome: "Perfil pessoal",
+
+          marca: "Seu nome",
+
+          paginas: [
+
+            {
+              nome: "Início",
+
+              conteudo: `
+
+                <div class="demo-profile">
+
+                  <div class="demo-avatar">P</div>
+
+                  <h2>Olá, seja bem-vindo!</h2>
+
+                  <p>
+                    Este é meu espaço pessoal na internet.
+                    Conheça minha história,
+                    meus projetos e minhas publicações.
+                  </p>
+
+                </div>
+
+                <div class="demo-grid">
+
+                  <article class="demo-card">
+
+                    <h3>Sobre mim</h3>
+
+                    <p>
+                      Espaço reservado para
+                      sua apresentação pessoal.
+                    </p>
+
+                  </article>
+
+                  <article class="demo-card">
+
+                    <h3>Meus projetos</h3>
+
+                    <p>
+                      Apresente seus trabalhos
+                      e suas atividades.
+                    </p>
+
+                  </article>
+
+                  <article class="demo-card">
+
+                    <h3>Publicações</h3>
+
+                    <p>
+                      Compartilhe seus artigos
+                      e novidades.
+                    </p>
+
+                  </article>
+
+                </div>
+
+              `
+            },
+
+            {
+              nome: "Sobre mim",
+
+              conteudo: `
+
+                <h2>Minha história</h2>
+
+                <div class="demo-image">
+                  Espaço para fotografia pessoal
+                </div>
+
+                <p>
+                  Utilize esta página para apresentar
+                  sua trajetória, formação, interesses
+                  e experiências.
+                </p>
+
+              `
+            },
+
+            {
+              nome: "Artigos",
+
+              conteudo: `
+
+                <h2>Minhas publicações</h2>
+
+                <div class="demo-grid">
+
+                  <article class="demo-card">
+
+                    <div class="demo-image">
+                      Imagem do artigo
+                    </div>
+
+                    <h3>Primeiro artigo</h3>
+
+                    <p>
+                      Espaço para título e resumo.
+                    </p>
+
+                  </article>
+
+                  <article class="demo-card">
+
+                    <div class="demo-image">
+                      Imagem do artigo
+                    </div>
+
+                    <h3>Segundo artigo</h3>
+
+                    <p>
+                      Espaço para título e resumo.
+                    </p>
+
+                  </article>
+
+                </div>
+
+              `
+            }
+
+          ]
+
+        },
+
+        catalogo: {
+
+          nome: "Catálogo digital",
+
+          marca: "Sua marca",
+
+          paginas: [
+
+            {
+              nome: "Início",
+
+              conteudo: `
+
+                <h2>Conheça nossos produtos</h2>
+
+                <p>
+                  Apresente sua marca
+                  e receba encomendas
+                  diretamente pelo WhatsApp.
+                </p>
+
+                <div class="demo-image">
+                  Espaço para banner promocional
+                </div>
+
+                <h3 style="margin:25px 0 15px">
+                  Produtos em destaque
+                </h3>
+
+                <div class="demo-grid">
+
+                  <article class="demo-card">
+
+                    <div class="demo-image">
+                      Foto do produto
+                    </div>
+
+                    <h3>Produto 01</h3>
+
+                    <p>Preço e descrição.</p>
+
+                    <span class="demo-button">
+                      Consultar disponibilidade
+                    </span>
+
+                  </article>
+
+                  <article class="demo-card">
+
+                    <div class="demo-image">
+                      Foto do produto
+                    </div>
+
+                    <h3>Produto 02</h3>
+
+                    <p>Preço e descrição.</p>
+
+                    <span class="demo-button">
+                      Consultar disponibilidade
+                    </span>
+
+                  </article>
+
+                  <article class="demo-card">
+
+                    <div class="demo-image">
+                      Foto do produto
+                    </div>
+
+                    <h3>Produto 03</h3>
+
+                    <p>Preço e descrição.</p>
+
+                    <span class="demo-button">
+                      Consultar disponibilidade
+                    </span>
+
+                  </article>
+
+                </div>
+
+              `
+            },
+
+            {
+              nome: "Catálogo",
+
+              conteudo: `
+
+                <h2>Nosso catálogo</h2>
+
+                <p>
+                  Organize seus produtos
+                  com fotografias, preços
+                  e informações.
+                </p>
+
+                <div class="demo-grid">
+
+                  ${Array.from(
+                    {length:6},
+
+                    (_,i) => `
+
+                      <article class="demo-card">
+
+                        <div class="demo-image">
+                          Foto do produto
+                        </div>
+
+                        <h3>Produto ${i+1}</h3>
+
+                        <p>Descrição e preço.</p>
+
+                        <span class="demo-button">
+                          Encomendar pelo WhatsApp
+                        </span>
+
+                      </article>
+
+                    `
+
+                  ).join("")}
+
+                </div>
+
+              `
+            },
+
+            {
+              nome: "Contato",
+
+              conteudo: `
+
+                <h2>Faça sua encomenda</h2>
+
+                <p>
+
+                  Espaço destinado ao contato,
+                  horário de atendimento,
+                  informações de encomenda
+                  e retirada ou entrega.
+
+                </p>
+
+                <span class="demo-button">
+                  Contatar pelo WhatsApp
+                </span>
+
+              `
+            }
+
+          ]
+
+        },
+
+        servicos: {
+
+          nome: "Prestação de serviços",
+
+          marca: "Sua empresa",
+
+          paginas: [
+
+            {
+              nome: "Início",
+
+              conteudo: `
+
+                <h2>
+                  Sua empresa, seus serviços
+                </h2>
+
+                <p>
+
+                  Apresente seu estabelecimento
+                  e mostre aos clientes
+                  o que você oferece.
+
+                </p>
+
+                <div class="demo-image">
+
+                  Espaço para banner
+                  ou vídeo de apresentação
+
+                </div>
+
+                <h3 style="margin:25px 0 15px">
+
+                  Conheça nossos serviços
+
+                </h3>
+
+                <div class="demo-grid">
+
+                  <article class="demo-card">
+
+                    <div class="demo-image">
+                      Imagem do serviço
+                    </div>
+
+                    <h3>Serviço 01</h3>
+
+                    <p>
+                      Apresentação do serviço.
+                    </p>
+
+                  </article>
+
+                  <article class="demo-card">
+
+                    <div class="demo-image">
+                      Imagem do serviço
+                    </div>
+
+                    <h3>Serviço 02</h3>
+
+                    <p>
+                      Apresentação do serviço.
+                    </p>
+
+                  </article>
+
+                  <article class="demo-card">
+
+                    <div class="demo-image">
+                      Imagem do serviço
+                    </div>
+
+                    <h3>Serviço 03</h3>
+
+                    <p>
+                      Apresentação do serviço.
+                    </p>
+
+                  </article>
+
+                </div>
+
+              `
+            },
+
+            {
+              nome: "Serviços",
+
+              conteudo: `
+
+                <h2>Nossos serviços</h2>
+
+                <p>
+
+                  Apresente as atividades
+                  e soluções oferecidas
+                  pelo seu estabelecimento.
+
+                </p>
+
+                <div class="demo-grid">
+
+                  <article class="demo-card">
+
+                    <h3>Serviço principal</h3>
+
+                    <p>
+
+                      Descrição, características
+                      e condições de atendimento.
+
+                    </p>
+
+                  </article>
+
+                  <article class="demo-card">
+
+                    <h3>Serviço adicional</h3>
+
+                    <p>
+
+                      Informações sobre
+                      outros serviços oferecidos.
+
+                    </p>
+
+                  </article>
+
+                </div>
+
+              `
+            },
+
+            {
+              nome: "Sobre",
+
+              conteudo: `
+
+                <h2>Conheça nossa empresa</h2>
+
+                <div class="demo-image">
+
+                  Fotografia do estabelecimento
+
+                </div>
+
+                <p>
+
+                  Espaço para apresentar
+                  a história da empresa,
+                  seus profissionais,
+                  diferenciais e valores.
+
+                </p>
+
+              `
+            },
+
+            {
+              nome: "Contato",
+
+              conteudo: `
+
+                <h2>Entre em contato</h2>
+
+                <p>
+
+                  Espaço para endereço,
+                  horários de funcionamento,
+                  canais de atendimento
+                  e informações comerciais.
+
+                </p>
+
+                <span class="demo-button">
+                  Solicitar atendimento pelo WhatsApp
+                </span>
+
+              `
+            }
+
+          ]
+
+        }
+
+      };
+
+      /* =====================================
+         CONTROLES DO VISUALIZADOR
+         ===================================== */
+
+      const dialog =
+        document.getElementById("modelDialog");
+
+      const dialogTitle =
+        document.getElementById("modelDialogTitle");
+
+      const demoBrand =
+        document.getElementById("demoBrand");
+
+      const demoNav =
+        document.getElementById("demoNav");
+
+      const demoContent =
+        document.getElementById("demoContent");
+
+      let modeloAtual = null;
+
+      let ultimoBotao = null;
+
+      let selecionarAoFechar = false;
+
+      /* EXIBIR PÁGINA DEMONSTRATIVA */
+
+      function mostrarPagina(indice) {
+
+        if (!modeloAtual) return;
+
+        const pagina =
+          modeloAtual.paginas[indice];
+
+        if (!pagina) return;
+
+        demoContent.innerHTML =
+          pagina.conteudo;
+
+        demoNav.querySelectorAll("button")
+          .forEach((botao,i) => {
+
+            botao.setAttribute(
+
+              "aria-pressed",
+
+              String(i === indice)
+
+            );
+
+          });
+
+      }
+
+      /* ABRIR MODELO */
+
+      function abrirModelo(chave,botao) {
+
+        modeloAtual =
+          modelos[chave];
+
+        if (!modeloAtual) return;
+
+        ultimoBotao = botao;
+
+        selecionarAoFechar = false;
+
+        dialogTitle.textContent =
+          modeloAtual.nome;
+
+        demoBrand.textContent =
+          modeloAtual.marca;
+
+        demoNav.replaceChildren();
+
+        modeloAtual.paginas.forEach((pagina,i) => {
+
+          const navButton =
+            document.createElement("button");
+
+          navButton.type = "button";
+
+          navButton.textContent =
+            pagina.nome;
+
+          navButton.setAttribute(
+
+            "aria-pressed",
+
+            String(i === 0)
+
+          );
+
+          navButton.addEventListener(
+
+            "click",
+
+            () => mostrarPagina(i)
+
+          );
+
+          demoNav.appendChild(navButton);
+
+        });
+
+        mostrarPagina(0);
+
+        if (typeof dialog.showModal === "function") {
+
+          dialog.showModal();
+
+        } else {
+
+          dialog.setAttribute("open","");
+
+        }
+
+      }
+
+      function finalizarModelo() {
+
+        if (selecionarAoFechar) {
+
+          selecionarAoFechar = false;
+
+          seletorModelo.focus({
+            preventScroll: true
+          });
+
+          document.getElementById("simulador")
+            .scrollIntoView({
+
+              behavior: window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+              ).matches ? "auto" : "smooth"
+
+            });
+
+        } else if (ultimoBotao) {
+
+          ultimoBotao.focus();
+
+        }
+
+        ultimoBotao = null;
+
+      }
+
+      function fecharModelo() {
+
+        if (typeof dialog.close === "function") {
+
+          dialog.close();
+
+        } else {
+
+          dialog.removeAttribute("open");
+
+          finalizarModelo();
+
+        }
+
+      }
+
+      document.querySelectorAll("[data-model]")
+        .forEach(botao => {
+
+          botao.addEventListener("click",() => {
+
+            abrirModelo(
+
+              botao.dataset.model,
+
+              botao
+
+            );
+
+          });
+
+        });
+
+      /* FECHAR VISUALIZAÇÃO */
+
+      document.getElementById("closeModel")
+        .addEventListener("click",fecharModelo);
+
+      document.getElementById("backModels")
+        .addEventListener("click",fecharModelo);
+
+      dialog.addEventListener(
+
+        "close",
+
+        finalizarModelo
+
+      );
+
+      dialog.addEventListener("click",evento => {
+
+        if (evento.target === dialog) {
+
+          fecharModelo();
+
+        }
+
+      });
+
+      /* ESCOLHER MODELO PARA O ORÇAMENTO */
+
+      document.getElementById("chooseModel")
+        .addEventListener("click",() => {
+
+          if (!modeloAtual) return;
+
+          seletorModelo.value =
+            modeloAtual.nome;
+
+          atualizarOrcamento();
+
+          selecionarAoFechar = true;
+
+          fecharModelo();
+
+        });
+
+      /* =====================================
+         MENU MOBILE
+         ===================================== */
+
+      document.querySelectorAll(".mobile-menu a")
+        .forEach(link => {
+
+          link.addEventListener("click",() => {
+
+            link.closest("details").open = false;
+
+          });
+
+        });
+
+    })();
+
+  </script>
 
 </body>
-</html>
+  </html>
