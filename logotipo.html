@@ -1,0 +1,1040 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta name="description" content="Logotipos profissionais 2D vetorizados por R$ 50,00. SVG e PNG transparentes. Criação personalizada HYPERBOREA.">
+
+  <title>Logotipo Profissional | HYPERBOREA</title>
+
+  <link rel="icon"
+        href="/assets/img/monograma-h.svg"
+        type="image/svg+xml">
+
+  <style>
+
+    /* ========================================
+       HYPERBOREA — IDENTIDADE CROMÁTICA
+       ======================================== */
+
+    :root {
+      --vinho:#810123;
+      --azul-boreal:#002161;
+      --verde:#005B33;
+      --preto:#000000;
+      --branco-polar:#FEF9EF;
+      --marfim:#FEF7EE;
+      --dourado-solar:#F7AE08;
+      --dourado-radar:#C68301;
+      --suave:rgba(254,249,239,.82);
+      --linha:rgba(254,249,239,.20);
+    }
+
+    /* CONFIGURAÇÕES GERAIS */
+
+    *,*::before,*::after {
+      box-sizing:border-box;
+    }
+
+    body {
+      margin:0;
+      background:var(--preto);
+      color:var(--branco-polar);
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      line-height:1.5;
+    }
+
+    h1,h2,h3,p,figure {
+      margin:0;
+    }
+
+    h1,h2,h3 {
+      font-family:Georgia,"Times New Roman",serif;
+      font-weight:500;
+      line-height:1.2;
+    }
+
+    a {
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img {
+      display:block;
+      max-width:100%;
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline:2px solid var(--dourado-solar);
+      outline-offset:3px;
+    }
+
+    .container {
+      width:min(1000px,calc(100% - 28px));
+      margin-inline:auto;
+    }
+
+    .gold {
+      color:var(--dourado-solar);
+    }
+
+    /* ========================================
+       CABEÇALHO
+       ======================================== */
+
+    .site-header {
+      padding:14px 0;
+      border-bottom:1px solid var(--dourado-radar);
+    }
+
+    .brand {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand img {
+      width:40px;
+      height:46px;
+      object-fit:contain;
+    }
+
+    .brand strong {
+      display:block;
+      font:600 clamp(1rem,4vw,1.5rem) Georgia,serif;
+      letter-spacing:.14em;
+    }
+
+    .brand small {
+      display:block;
+      margin-top:3px;
+      font-size:.61rem;
+      letter-spacing:.13em;
+      color:var(--dourado-solar);
+    }
+
+    /* ========================================
+       ESTRUTURA DA PÁGINA
+       ======================================== */
+
+    main {
+      display:grid;
+      gap:14px;
+      padding-top:14px;
+      padding-bottom:20px;
+    }
+
+    .panel {
+      min-width:0;
+      padding:clamp(16px,3vw,25px);
+      border:1px solid var(--dourado-radar);
+    }
+
+    .panel h2 {
+      font-size:clamp(1.4rem,4vw,2rem);
+      margin-bottom:12px;
+      text-align:center;
+    }
+
+    /* ========================================
+       APRESENTAÇÃO COMERCIAL
+       ======================================== */
+
+    .hero {
+      text-align:center;
+      padding:24px 16px;
+      background:linear-gradient(
+        135deg,var(--vinho),#34000E
+      );
+    }
+
+    .eyebrow {
+      color:var(--dourado-solar);
+      font-size:.67rem;
+      font-weight:700;
+      letter-spacing:.15em;
+    }
+
+    .hero h1 {
+      font-size:clamp(2rem,6vw,3.5rem);
+      margin:8px 0;
+    }
+
+    .hero-description {
+      max-width:550px;
+      margin:0 auto;
+      font-size:.94rem;
+      color:var(--suave);
+    }
+
+    .price {
+      font-size:clamp(2.4rem,7vw,3.4rem);
+      font-weight:750;
+      letter-spacing:-.05em;
+      line-height:1.2;
+      margin-top:14px;
+    }
+
+    .payment {
+      font-size:.8rem;
+      color:var(--suave);
+    }
+
+    .delivery {
+      margin-top:9px;
+      font-size:.76rem;
+      color:var(--suave);
+    }
+
+    /* ========================================
+       BOTÕES DE CONTRATAÇÃO
+       ======================================== */
+
+    .btn {
+      display:inline-flex;
+      justify-content:center;
+      align-items:center;
+      gap:9px;
+      min-height:46px;
+      padding:11px 18px;
+      margin-top:13px;
+      background:var(--branco-polar);
+      color:var(--vinho);
+      border:1px solid var(--branco-polar);
+      font-size:.9rem;
+      font-weight:750;
+      text-align:center;
+      transition:background .2s,color .2s;
+    }
+
+    .btn:hover {
+      background:var(--dourado-solar);
+      border-color:var(--dourado-solar);
+      color:var(--preto);
+    }
+
+    .btn img {
+      width:23px;
+      height:23px;
+    }
+
+    /* ========================================
+       PORTFÓLIO DE LOGOTIPOS
+       ======================================== */
+
+    .portfolio {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+    }
+
+    .work {
+      min-width:0;
+      overflow:hidden;
+      border:1px solid var(--linha);
+      background:#81012326;
+    }
+
+    .work-image {
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      aspect-ratio:1;
+      padding:8px;
+      background:#FFFFFF;
+    }
+
+    .work-image img {
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+
+    .work figcaption {
+      padding:9px 4px;
+      font-size:clamp(.7rem,2vw,.9rem);
+      text-align:center;
+      overflow-wrap:anywhere;
+    }
+
+    /* ========================================
+       BENEFÍCIOS
+       ======================================== */
+
+    .included {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+      padding:0;
+      margin:0;
+      list-style:none;
+    }
+
+    .included li {
+      display:flex;
+      align-items:flex-start;
+      gap:7px;
+      padding:10px;
+      background:#81012326;
+      border:1px solid var(--linha);
+      font-size:.84rem;
+    }
+
+    .check {
+      flex:none;
+      color:var(--dourado-solar);
+      font-weight:750;
+    }
+
+    .note {
+      margin-top:10px;
+      font-size:.78rem;
+      color:var(--suave);
+      text-align:center;
+    }
+
+    /* ========================================
+       COMO CONTRATAR
+       ======================================== */
+
+    .steps {
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:8px;
+      padding:0;
+      margin:0;
+      list-style:none;
+    }
+
+    .step {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:11px;
+      background:#81012326;
+      border:1px solid var(--linha);
+      font-size:.84rem;
+    }
+
+    .step-number {
+      display:grid;
+      place-items:center;
+      flex:none;
+      width:32px;
+      height:32px;
+      background:var(--vinho);
+      border:1px solid var(--dourado-radar);
+      color:var(--dourado-solar);
+      font-family:Georgia,serif;
+    }
+
+    /* ========================================
+       PERGUNTAS FREQUENTES
+       ======================================== */
+
+    .faq {
+      display:grid;
+      gap:7px;
+    }
+
+    .faq details {
+      background:#81012326;
+      border:1px solid var(--linha);
+    }
+
+    .faq summary {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      min-height:44px;
+      padding:12px;
+      list-style:none;
+      cursor:pointer;
+      font-size:.85rem;
+      font-weight:650;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display:none;
+    }
+
+    .faq summary::after {
+      content:"+";
+      color:var(--dourado-solar);
+      font-size:1.2rem;
+      flex:none;
+    }
+
+    .faq details[open] {
+      border-color:var(--dourado-radar);
+    }
+
+    .faq details[open] summary::after {
+      content:"−";
+    }
+
+    .faq details p {
+      padding:0 12px 13px;
+      color:var(--suave);
+      font-size:.83rem;
+      line-height:1.65;
+    }
+
+    /* ========================================
+       CONTRATAÇÃO FINAL
+       ======================================== */
+
+    .contact {
+      background:linear-gradient(
+        135deg,var(--vinho),#34000E
+      );
+      text-align:center;
+    }
+
+    .contact h2 {
+      margin-bottom:6px;
+    }
+
+    .contact p {
+      font-size:.85rem;
+      color:var(--suave);
+    }
+
+    /* ========================================
+       RODAPÉ
+       ======================================== */
+
+    footer {
+      padding:20px 15px 28px;
+      border-top:1px solid var(--dourado-radar);
+      text-align:center;
+    }
+
+    .footer-brand {
+      font:600 1.1rem Georgia,serif;
+      letter-spacing:.14em;
+    }
+
+    .footer-slogan {
+      margin-top:5px;
+      color:var(--dourado-solar);
+      font-size:.75rem;
+    }
+
+    .copyright {
+      margin-top:10px;
+      color:var(--suave);
+      font-size:.7rem;
+    }
+
+    .back-link {
+      display:inline-block;
+      padding:10px 5px;
+      margin-top:5px;
+      font-size:.76rem;
+      text-decoration:underline;
+      text-underline-offset:4px;
+    }
+
+    /* ========================================
+       WHATSAPP FLUTUANTE
+       ======================================== */
+
+    .whatsapp {
+      position:fixed;
+      right:15px;
+      bottom:15px;
+      bottom:max(15px,env(safe-area-inset-bottom));
+      z-index:50;
+      display:grid;
+      place-items:center;
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      background:#25D366;
+      border:1px solid #FFFFFF55;
+      box-shadow:0 4px 15px #0008;
+    }
+
+    .whatsapp img {
+      width:34px;
+      height:34px;
+    }
+
+    /* ========================================
+       RESPONSIVIDADE MOBILE
+       ======================================== */
+
+    @media(max-width:600px) {
+
+      .container {
+        width:calc(100% - 22px);
+      }
+
+      main {
+        gap:10px;
+        padding-top:10px;
+      }
+
+      .panel {
+        padding:14px 12px;
+      }
+
+      .hero {
+        padding:22px 14px;
+      }
+
+      .hero h1 {
+        font-size:2rem;
+      }
+
+      .panel h2 {
+        font-size:1.45rem;
+        margin-bottom:10px;
+      }
+
+      .portfolio {
+        gap:6px;
+      }
+
+      .work-image {
+        padding:3px;
+      }
+
+      .work figcaption {
+        font-size:.69rem;
+      }
+
+      .included {
+        gap:6px;
+      }
+
+      .included li {
+        font-size:.79rem;
+        padding:9px 7px;
+      }
+
+      .steps {
+        grid-template-columns:1fr;
+        gap:6px;
+      }
+
+      .step {
+        padding:8px 10px;
+      }
+
+      .faq summary {
+        padding:10px;
+        font-size:.82rem;
+      }
+
+      .contact {
+        padding:18px 12px;
+      }
+
+      .whatsapp {
+        width:48px;
+        height:48px;
+        right:10px;
+      }
+
+      footer {
+        padding-bottom:65px;
+      }
+
+    }
+
+    @media(max-width:340px) {
+
+      .included {
+        grid-template-columns:1fr;
+      }
+
+      .hero h1 {
+        font-size:1.75rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======================================
+       CABEÇALHO
+       ====================================== -->
+
+  <header class="site-header">
+
+    <div class="container">
+
+      <div class="brand">
+
+        <img src="/assets/img/monograma-h.svg"
+             alt=""
+             width="40"
+             height="46">
+
+        <div>
+
+          <strong>HYPERBOREA</strong>
+
+          <small>
+            DESIGN &amp; IDENTIDADE VISUAL
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="container">
+
+    <!-- ====================================
+         APRESENTAÇÃO DO SERVIÇO
+         ==================================== -->
+
+    <section class="panel hero"
+             aria-labelledby="heroTitle">
+
+      <span class="eyebrow">
+        LOGOTIPO PROFISSIONAL
+      </span>
+
+      <h1 id="heroTitle">
+        Sua marca.
+        <span class="gold">
+          Sua identidade.
+        </span>
+      </h1>
+
+      <p class="hero-description">
+        Criamos logotipos profissionais,
+        personalizados e vetorizados,
+        desenvolvidos especialmente
+        para representar a identidade
+        do seu negócio.
+      </p>
+
+      <div class="price">
+        R$ 50,00
+      </div>
+
+      <p class="payment">
+        Pagamento único via Pix
+      </p>
+
+      <a class="btn"
+         href="https://wa.me/message/FHWOVDSQ3AKCO1"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <img src="/assets/img/whats-icon.svg"
+             alt=""
+             width="23"
+             height="23">
+
+        Contratar meu logotipo ↗
+
+      </a>
+
+      <p class="delivery">
+        1 a 3 dias úteis · Até duas rodadas de revisão
+      </p>
+
+    </section>
+
+    <!-- ====================================
+         PORTFÓLIO
+         ==================================== -->
+
+    <section class="panel"
+             aria-labelledby="portfolioTitle">
+
+      <h2 id="portfolioTitle">
+        Identidades que inspiram
+      </h2>
+
+      <div class="portfolio">
+
+        <!-- PERCIVAL VIKING -->
+
+        <figure class="work">
+
+          <div class="work-image">
+
+            <img
+              src="/assets/img/realizacoes/logo-percival.svg"
+              alt="Logotipo Percival Viking"
+              loading="lazy"
+              decoding="async">
+
+          </div>
+
+          <figcaption>
+            Percival Viking
+          </figcaption>
+
+        </figure>
+
+        <!-- XICORITA -->
+
+        <figure class="work">
+
+          <div class="work-image">
+
+            <img
+              src="/assets/img/realizacoes/xicorita-logo.svg"
+              alt="Logotipo Xicorita Arte e Decoração"
+              loading="lazy"
+              decoding="async">
+
+          </div>
+
+          <figcaption>
+            Xicorita
+          </figcaption>
+
+        </figure>
+
+        <!-- MARAJOARA III -->
+
+        <figure class="work">
+
+          <div class="work-image">
+
+            <img
+              src="/assets/img/realizacoes/logo-marajoara-oficial-otimizado1.svg"
+              alt="Logotipo Edifício Marajoara III"
+              loading="lazy"
+              decoding="async">
+
+          </div>
+
+          <figcaption>
+            Marajoara III
+          </figcaption>
+
+        </figure>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================
+         O QUE ESTÁ INCLUSO
+         ==================================== -->
+
+    <section class="panel"
+             aria-labelledby="includedTitle">
+
+      <h2 id="includedTitle">
+        O que está incluso?
+      </h2>
+
+      <ul class="included">
+
+        <li>
+          <span class="check" aria-hidden="true">✓</span>
+          Criação personalizada
+        </li>
+
+        <li>
+          <span class="check" aria-hidden="true">✓</span>
+          Vetorização 2D
+        </li>
+
+        <li>
+          <span class="check" aria-hidden="true">✓</span>
+          SVG transparente
+        </li>
+
+        <li>
+          <span class="check" aria-hidden="true">✓</span>
+          PNG transparente
+        </li>
+
+        <li>
+          <span class="check" aria-hidden="true">✓</span>
+          Até duas rodadas de revisão
+        </li>
+
+        <li>
+          <span class="check" aria-hidden="true">✓</span>
+          Entrega digital
+        </li>
+
+      </ul>
+
+      <p class="note">
+        Inserção do logotipo inclusa
+        em site contratado com a HYPERBOREA.
+      </p>
+
+    </section>
+
+    <!-- ====================================
+         COMO CONTRATAR
+         ==================================== -->
+
+    <section class="panel"
+             aria-labelledby="stepsTitle">
+
+      <h2 id="stepsTitle">
+        Como contratar?
+      </h2>
+
+      <ol class="steps">
+
+        <li class="step">
+
+          <span class="step-number">01</span>
+
+          <span>
+            Envie suas ideias pelo WhatsApp.
+          </span>
+
+        </li>
+
+        <li class="step">
+
+          <span class="step-number">02</span>
+
+          <span>
+            Confirme a contratação via Pix.
+          </span>
+
+        </li>
+
+        <li class="step">
+
+          <span class="step-number">03</span>
+
+          <span>
+            Receba e revise sua proposta.
+          </span>
+
+        </li>
+
+        <li class="step">
+
+          <span class="step-number">04</span>
+
+          <span>
+            Aprove e receba seus arquivos.
+          </span>
+
+        </li>
+
+      </ol>
+
+      <p class="note">
+        O prazo começa após a confirmação
+        do pagamento e o recebimento
+        dos materiais necessários.
+      </p>
+
+    </section>
+
+    <!-- ====================================
+         PERGUNTAS FREQUENTES
+         ==================================== -->
+
+    <section class="panel"
+             aria-labelledby="faqTitle">
+
+      <h2 id="faqTitle">
+        Perguntas frequentes
+      </h2>
+
+      <div class="faq">
+
+        <details>
+
+          <summary>
+            Posso ampliar meu logotipo
+            sem perder qualidade?
+          </summary>
+
+          <p>
+            Sim. Seu logotipo será entregue
+            em formato SVG vetorial,
+            permitindo ampliar ou reduzir
+            os elementos gráficos
+            sem perder a definição das formas.
+
+            Você também receberá
+            uma versão em PNG transparente.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Preciso pagar mensalidade?
+          </summary>
+
+          <p>
+            Não. O valor de R$ 50,00
+            corresponde à contratação
+            de um logotipo profissional 2D.
+            O pagamento é único,
+            sem mensalidade obrigatória.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            E se houver algum erro de criação?
+          </summary>
+
+          <p>
+            Erros de responsabilidade
+            da HYPERBOREA serão corrigidos
+            gratuitamente e não consumirão
+            as rodadas de revisão inclusas
+            na contratação.
+          </p>
+
+        </details>
+
+        <details>
+
+          <summary>
+            Como funcionam as revisões?
+          </summary>
+
+          <p>
+            Você poderá solicitar até
+            duas rodadas de ajustes
+            dentro da proposta contratada.
+
+            Revisões adicionais ou alterações
+            completas do conceito serão avaliadas
+            separadamente, respeitando
+            os direitos legais do cliente.
+          </p>
+
+        </details>
+
+      </div>
+
+    </section>
+
+    <!-- ====================================
+         CONTRATAÇÃO FINAL
+         ==================================== -->
+
+    <section class="panel contact"
+             aria-labelledby="contactTitle">
+
+      <h2 id="contactTitle">
+        Vamos criar sua identidade?
+      </h2>
+
+      <p>
+        Dê à sua marca uma identidade
+        profissional e personalizada.
+      </p>
+
+      <div class="price">
+        R$ 50,00
+      </div>
+
+      <p class="payment">
+        Pagamento único
+      </p>
+
+      <a class="btn"
+         href="https://wa.me/message/FHWOVDSQ3AKCO1"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <img src="/assets/img/whats-icon.svg"
+             alt=""
+             width="23"
+             height="23">
+
+        Contratar pelo WhatsApp ↗
+
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- ======================================
+       RODAPÉ
+       ====================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-brand">
+        HYPERBOREA
+      </div>
+
+      <p class="footer-slogan">
+        Um norte para a identidade visual da sua marca.
+      </p>
+
+      <p class="copyright">
+        © <span id="ano">2026</span>
+        HYPERBOREA · Agência Criativa
+      </p>
+
+      <a class="back-link"
+         href="/design.html">
+
+        Conheça nosso departamento de Design
+
+      </a>
+
+    </div>
+
+  </footer>
+
+  <!-- ======================================
+       WHATSAPP FLUTUANTE
+       ====================================== -->
+
+  <a class="whatsapp"
+     href="https://wa.me/message/FHWOVDSQ3AKCO1"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Conversar com a HYPERBOREA pelo WhatsApp">
+
+    <img src="/assets/img/whats-icon.svg"
+         alt=""
+         width="34"
+         height="34">
+
+  </a>
+
+  <!-- ANO AUTOMÁTICO -->
+
+  <script>
+
+    document.getElementById("ano").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
