@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Conheça a HYPERBOREA: nossa história, inspiração na mitologia grega, cultura, Apolo, cores, símbolos e filosofia criativa.">
+  <title>Sobre a HYPERBOREA — Agência Criativa</title>
+  <link rel="icon" href="/assets/img/monograma-h.svg" type="image/svg+xml">
+  <style>
+    :root {
+      --institucional:#000000;
+      --vinho:#810123;
+      --azul-boreal:#002161;
+      --verde:#005B33;
+      --branco-polar:#FEF9EF;
+      --marfim:#FEF7EE;
+      --dourado-solar:#F7AE08;
+      --dourado-radar:#C68301;
+      --texto:var(--branco-polar);
+      --suave:rgba(254,249,239,.78);
+      --linha:rgba(254,249,239,.22);
+      --linha-solar:rgba(247,174,8,.35);
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:95px}
+    body{margin:0;background:var(--institucional);color:var(--texto);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.75}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    a:focus-visible,summary:focus-visible{outline:2px solid var(--dourado-solar);outline-offset:5px}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;color:var(--marfim);line-height:1.08}
+    .container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+    .eyebrow{font-size:.69rem;font-weight:750;letter-spacing:.25em;text-transform:uppercase;color:var(--dourado-solar)}
+    .gold{color:var(--dourado-solar)}
+    .site-header{position:sticky;top:0;z-index:20;min-height:75px;border-bottom:1px solid var(--linha-solar);background:rgba(0,0,0,.94);backdrop-filter:blur(12px)}
+    .nav-row{min-height:75px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:inline-flex;align-items:center;gap:12px;min-width:0;color:var(--marfim)}
+    .brand-mark{position:relative;width:43px;height:48px;display:grid;place-items:center;flex:none}
+    .brand-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
+    .brand-mark b{font:500 2.7rem Georgia,serif;color:var(--marfim)}
+    .brand-text{font:600 clamp(.99rem,2vw,1.45rem)/1.1 Georgia,serif;letter-spacing:.16em;white-space:nowrap}
+    .brand-text small{display:block;font:600 .55rem/1.5 system-ui,sans-serif;letter-spacing:.35em;color:var(--dourado-solar);margin-top:5px}
+    .nav-links{display:flex;align-items:center;gap:22px;font-size:.86rem}
+    .nav-links a:hover,.nav-links a[aria-current],.mobile-menu a[aria-current]{color:var(--dourado-solar)}
+    .nav-cta{padding:10px 15px;border:1px solid var(--dourado-radar)}
+    .mobile-menu{display:none;position:relative}
+    .mobile-menu summary{cursor:pointer;list-style:none;border:1px solid var(--marfim);padding:9px 13px;font-size:.85rem;font-weight:700;white-space:nowrap}
+    .mobile-menu summary::-webkit-details-marker{display:none}
+    .mobile-menu nav{position:absolute;right:0;top:calc(100% + 12px);min-width:202px;padding:12px;background:#000;border:1px solid var(--dourado-radar);box-shadow:0 18px 40px #000a;display:grid;gap:8px}
+    .mobile-menu nav a{display:block;padding:10px 14px;border:1px solid var(--linha);text-align:center;font-size:.88rem}
+    .skip{position:absolute;left:15px;top:-100px;background:var(--marfim);color:#000;padding:10px;z-index:40}
+    .skip:focus{top:8px}
+    .hero{padding:clamp(75px,11vw,150px) 0 65px;text-align:center}
+    .hero h1{font-size:clamp(2.35rem,6.9vw,6rem);letter-spacing:-.035em;margin:20px 0 16px;overflow-wrap:anywhere}
+    .hero .lead{max-width:710px;margin:auto;color:var(--suave);font-size:clamp(1rem,1.6vw,1.18rem)}
+    .hero-mark{width:80px;height:90px;object-fit:contain;margin:0 auto 30px}
+    .rule{width:80px;height:1px;margin:25px auto;background:linear-gradient(90deg,transparent,var(--dourado-solar),transparent)}
+    .section-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:30px auto 0;max-width:900px}
+    .section-nav a{border:1px solid var(--linha);padding:9px 14px;font-size:.8rem}
+    .section-nav a:hover{border-color:var(--dourado-solar);color:var(--dourado-solar)}
+    .section{padding:clamp(50px,7vw,88px) 0;border-top:1px solid var(--linha)}
+    .section h2{font-size:clamp(2rem,4.4vw,4rem);letter-spacing:-.025em;margin:13px 0 22px}
+    .prose{max-width:760px;margin-inline:auto}
+    .prose p:not(.eyebrow),.copy p:not(.eyebrow){color:var(--suave);margin-top:16px}
+    .center{text-align:center}
+    .split{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(30px,6vw,80px);align-items:center}
+    .apolo-frame{border:1px solid var(--dourado-radar);padding:12px;max-width:380px;width:100%;margin-inline:auto;background:var(--marfim)}
+    .apolo-frame img{width:100%;height:auto}
+    figcaption{font-size:.78rem;color:var(--suave);text-align:center;margin-top:12px}
+    .etimologia{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:28px 0}
+    .etimologia div{border:1px solid var(--linha-solar);padding:24px 12px;text-align:center}
+    .etimologia strong{font:500 clamp(1.35rem,4vw,2.5rem) Georgia,serif;display:block;color:var(--dourado-solar)}
+    .etimologia small{color:var(--suave);font-size:.85rem}
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:34px}
+    .pillar{padding:clamp(22px,3vw,34px);border:1px solid var(--linha-solar);background:linear-gradient(145deg,var(--area),#000 150%)}
+    .pillar h3{font-size:clamp(1.5rem,3vw,2.35rem);margin:12px 0 15px}
+    .pillar p{color:var(--branco-polar);font-size:.95rem}
+    .pillar .principle{display:block;margin-top:20px;color:var(--dourado-solar);font-size:.77rem;letter-spacing:.09em;text-transform:uppercase;font-weight:750}
+    .pillar a{display:inline-block;border-bottom:1px solid var(--dourado-radar);font-size:.86rem;margin-top:15px}
+    .swatches{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:28px}
+    .swatch{border:1px solid var(--linha);padding:14px;min-width:0}
+    .sample{height:55px;background:var(--cor);border:1px solid var(--linha);margin-bottom:12px}
+    .swatch strong{display:block;font-size:.87rem}
+    .swatch code{display:block;color:var(--dourado-solar);font-size:.76rem;margin:4px 0 8px}
+    .swatch p{color:var(--suave);font-size:.83rem}
+    .symbol-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+    .symbol{border:1px solid var(--linha);padding:22px}
+    .symbol h3{font-size:1.35rem;margin-bottom:10px;color:var(--marfim)}
+    .symbol p{color:var(--suave);font-size:.9rem}
+    .manifesto{border:1px solid var(--linha-solar);padding:clamp(25px,5vw,64px);text-align:center}
+    .manifesto .prose p{margin-top:19px}
+    .manifesto .closing{font:500 clamp(1.35rem,3.6vw,2.5rem)/1.4 Georgia,serif;color:var(--dourado-solar);margin-top:35px}
+    .references{font-size:.84rem;color:var(--suave);margin-top:24px}
+    .references p{margin-top:8px}
+    .actions{display:flex;justify-content:center;flex-wrap:wrap;gap:15px;margin-top:26px}
+    .main-button,.text-button{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border:1px solid var(--dourado-radar);font-size:.89rem;font-weight:700}
+    .main-button{background:var(--marfim);border-color:var(--marfim);color:#000}
+    .main-button:hover{background:var(--dourado-solar);border-color:var(--dourado-solar)}
+    .text-button:hover{color:var(--dourado-solar)}
+    .footer{border-top:1px solid var(--linha);padding:26px 0 85px;text-align:center;color:var(--suave);font-size:.78rem;letter-spacing:.06em}
+    .whatsapp-float{position:fixed;z-index:30;bottom:calc(20px + env(safe-area-inset-bottom,0px));right:calc(20px + env(safe-area-inset-right,0px));width:70px;height:70px;padding:6px;border:2px solid var(--dourado-radar);border-radius:50%;background:#000;box-shadow:0 7px 24px #0008,0 0 0 3px #F7AE0817;display:grid;place-items:center}
+    .whatsapp-float img{width:100%;height:100%;object-fit:contain}
+    .whatsapp-float .wa-fallback{font-weight:700;color:var(--marfim)}
+    .whatsapp-float:has(img:not([hidden])) .wa-fallback{display:none}
+    img[hidden],figure[hidden]{display:none!important}
+    @media(max-width:850px){.nav-links{display:none}.mobile-menu{display:block}.split{grid-template-columns:1fr}.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}.symbol-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:570px){.container{width:calc(100% - 32px)}.nav-row{gap:10px}.brand{gap:8px}.brand-mark{width:34px;height:40px}.brand-text{font-size:.88rem;letter-spacing:.10em}.brand-text small{font-size:.47rem;letter-spacing:.24em}.cards{grid-template-columns:1fr}.symbol{padding:16px}.symbol h3{font-size:1.15rem}.whatsapp-float{width:64px;height:64px;right:14px}.hero-mark{width:65px;height:75px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body id="inicio">
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="brand" href="/" aria-label="HYPERBOREA — início">
+        <span class="brand-mark"><b aria-hidden="true">H</b><img src="/assets/img/monograma-h.svg" alt="" width="43" height="48"></span>
+        <span class="brand-text">HYPERBOREA<small>AGÊNCIA CRIATIVA</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="/">Início</a><a href="/#servicos">Serviços</a><a href="/#realizacoes">Realizações</a><a href="/sobre.html" aria-current="page">Sobre</a><a class="nav-cta" href="/#contato">Contato</a>
+      </nav>
+      <details class="mobile-menu">
+        <summary>☰ Menu</summary>
+        <nav aria-label="Navegação móvel"><a href="/">Início</a><a href="/#servicos">Serviços</a><a href="/#realizacoes">Realizações</a><a href="/sobre.html" aria-current="page">Sobre</a><a href="/#contato">Contato</a></nav>
+      </details>
+    </div>
+  </header>
+  <main id="conteudo">
+    <section class="hero" aria-labelledby="titulo">
+      <div class="container">
+        <img class="hero-mark" src="/assets/img/monograma-h.svg" alt="" width="80" height="90">
+        <p class="eyebrow">História · Cultura · Identidade</p>
+        <h1 id="titulo">Sobre a <span class="gold">HYPERBOREA</span></h1>
+        <div class="rule" aria-hidden="true"></div>
+        <p class="lead">Raízes na antiguidade. Olhos no futuro.</p>
+        <p class="lead">Conheça a inspiração, os símbolos e os princípios que dão direção à nossa agência criativa.</p>
+        <nav class="section-nav" aria-label="Nesta página">
+          <a href="#quem-somos">Quem somos</a><a href="#historia">História</a><a href="#apolo">Apolo</a><a href="#pilares">Pilares</a><a href="#cores">Cores</a><a href="#simbolos">Símbolos</a><a href="#filosofia">Filosofia</a><a href="#manifesto">Manifesto</a>
+        </nav>
+      </div>
+    </section>
+    <section class="section" id="quem-somos" aria-labelledby="h-quem">
+      <div class="container prose center">
+        <p class="eyebrow">01 / Identidade institucional</p>
+        <h2 id="h-quem">Quem <span class="gold">somos</span></h2>
+        <p>A HYPERBOREA é uma agência criativa dedicada ao design e à identidade visual, à criação de sites e à produção de vídeos comerciais. Nossa proposta é transformar ideias em experiências visuais que comuniquem com clareza, personalidade e propósito.</p>
+        <p>Unimos a inspiração clássica à tecnologia contemporânea. Trabalhamos com responsabilidade, cuidado em cada etapa e respeito à identidade de cada cliente, buscando soluções profissionais e acessíveis.</p>
+        <p>Nosso nome expressa a essência dessa jornada: encontrar direção e ir além.</p>
+      </div>
+    </section>
+    <section class="section" id="historia" aria-labelledby="h-historia">
+      <div class="container prose">
+        <p class="eyebrow">02 / Herança cultural</p>
+        <h2 id="h-historia">Além dos ventos <span class="gold">do Norte</span></h2>
+        <p>Na mitologia da Grécia Antiga, a Hiperbórea era uma terra lendária situada além dos domínios de Bóreas, a personificação do vento do Norte.</p>
+        <div class="etimologia"><div><strong>HYPER</strong><small>Além, para além de</small></div><div><strong>BOREA</strong><small>Referência a Bóreas, vento do Norte</small></div></div>
+        <p>O poeta Píndaro, no século V a.C., associava os hiperbóreos a Apolo e descrevia um povo distante das enfermidades e das guerras, cercado de música e celebrações. No século I a.C., Diodoro da Sicília relatou tradições sobre uma terra fértil e um templo consagrado a Apolo.</p>
+        <p>A Hiperbórea pertence à geografia mitológica, não a uma civilização comprovada pela arqueologia. Em nossa identidade, essa antiga imagem inspira a busca pela harmonia, pela criatividade e pelo conhecimento.</p>
+        <aside class="references" aria-label="Referências clássicas"><strong>Referências clássicas</strong><p>Píndaro, <cite>Odes Píticas</cite>, X, versos 29–46; Heródoto, <cite>Histórias</cite>, IV, 32–36; Diodoro da Sicília, <cite>Biblioteca Histórica</cite>, II, 47.</p></aside>
+      </div>
+    </section>
+    <section class="section" id="apolo" aria-labelledby="h-apolo">
+      <div class="container split">
+        <div class="copy">
+          <p class="eyebrow">03 / Tradição e tecnologia</p>
+          <h2 id="h-apolo">Apolo, <span class="gold">a luz do conhecimento</span></h2>
+          <p>Na tradição grega, Apolo é filho de Zeus e Leto e irmão gêmeo de Ártemis. Associado à música, à poesia, à profecia e à cura, ganhou também uma importante dimensão solar ao longo da tradição antiga.</p>
+          <p>O Apolo da HYPERBOREA é uma interpretação artística contemporânea. Seu corpo humanoide tecnológico une a estética clássica à imaginação de um futuro em que arte, inteligência e inovação caminham juntas.</p>
+          <p>Seus cabelos brancos evocam a sabedoria; os olhos dourados, a busca pela verdade; a armadura branca, a integridade. A coroa de louros recorda a excelência conquistada pelo mérito, enquanto o radar expressa visão estratégica e orientação.</p>
+          <p>A estrela solar no peito representa o conhecimento. A capa reúne nossas cores e o broche com a letra H afirma a unidade de nossa identidade.</p>
+        </div>
+        <figure id="apolo-figure">
+          <div class="apolo-frame"><img id="apolo-img" src="/assets/img/apolo-hyperborea.webp" alt="Apolo da HYPERBOREA: humanoide de armadura branca, cabelos brancos, louros dourados, radar e capa vinho, azul e verde" width="380" height="732" loading="lazy" decoding="async"></div>
+          <figcaption>Apolo da HYPERBOREA — releitura artística institucional.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="section" id="pilares" aria-labelledby="h-pilares">
+      <div class="container">
+        <div class="prose center"><p class="eyebrow">04 / Cultura organizacional</p><h2 id="h-pilares">Nossos quatro <span class="gold">pilares</span></h2><p>Quatro cores, quatro expressões de uma mesma identidade. A ordem sustenta a arte; a arte dá expressão à inteligência; a inteligência promove a evolução; a evolução transforma a vida.</p></div>
+        <div class="cards">
+          <article class="pillar" style="--area:var(--institucional)"><p class="eyebrow">Preto · #000000</p><h3>A ordem</h3><p>Institucional. Representa a origem, a disciplina, a estabilidade e a responsabilidade que sustentam nossa organização.</p><span class="principle">Princípio: integridade</span></article>
+          <article class="pillar" style="--area:var(--vinho)"><p class="eyebrow">Vinho · #810123</p><h3>A arte</h3><p>Design e identidade visual. Evoca a tradição, a vitalidade e a capacidade de transformar sentimentos em formas.</p><span class="principle">Princípio: criatividade</span><a href="/design.html">Conhecer design ↗</a></article>
+          <article class="pillar" style="--area:var(--azul-boreal)"><p class="eyebrow">Azul Boreal · #002161</p><h3>A inteligência</h3><p>Sites e tecnologia. Representa o céu noturno, a profundidade do pensamento, a ciência e a exploração do desconhecido.</p><span class="principle">Princípio: evolução</span><a href="/sites.html">Conhecer sites ↗</a></article>
+          <article class="pillar" style="--area:var(--verde)"><p class="eyebrow">Verde · #005B33</p><h3>A vida</h3><p>Produção audiovisual. Representa a natureza, a renovação e o movimento que dá vida às ideias.</p><span class="principle">Princípio: transformação</span><a href="/videos.html">Conhecer vídeos ↗</a></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="cores" aria-labelledby="h-cores">
+      <div class="container"><div class="prose center"><p class="eyebrow">05 / Identidade cromática</p><h2 id="h-cores">As cores que <span class="gold">nos unem</span></h2><p>Além das quatro cores centrais, nossa paleta reúne tons que conectam a memória clássica, a paisagem boreal e a luz de Apolo.</p></div>
+        <div class="swatches">
+          <article class="swatch"><div class="sample" style="--cor:var(--branco-polar)"></div><strong>Branco Polar</strong><code>#FEF9EF</code><p>Clareza, integridade e serenidade.</p></article>
+          <article class="swatch"><div class="sample" style="--cor:var(--dourado-solar)"></div><strong>Dourado Solar</strong><code>#F7AE08</code><p>Conhecimento, inspiração e excelência.</p></article>
+          <article class="swatch"><div class="sample" style="--cor:var(--dourado-radar)"></div><strong>Dourado do Radar</strong><code>#C68301</code><p>Precisão, estratégia e orientação.</p></article>
+          <article class="swatch"><div class="sample" style="--cor:var(--marfim)"></div><strong>Marfim</strong><code>#FEF7EE</code><p>Memória, cultura e tradição clássica.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="simbolos" aria-labelledby="h-simbolos">
+      <div class="container"><div class="prose center"><p class="eyebrow">06 / Linguagem visual</p><h2 id="h-simbolos">Símbolos com <span class="gold">propósito</span></h2><p>Cada elemento do nosso universo visual traduz uma ideia que desejamos preservar.</p></div>
+        <div class="symbol-grid">
+          <article class="symbol"><h3>Monograma H</h3><p>Identidade, unidade e pertencimento.</p></article>
+          <article class="symbol"><h3>Colunas gregas</h3><p>Fundamentos, conhecimento e sustentação.</p></article>
+          <article class="symbol"><h3>Templo grego</h3><p>Preservação da cultura e da sabedoria.</p></article>
+          <article class="symbol"><h3>Bússola</h3><p>Direção, propósito e orientação.</p></article>
+          <article class="symbol"><h3>Montanha</h3><p>Superação e novos horizontes.</p></article>
+          <article class="symbol"><h3>Portal</h3><p>A passagem entre tradição e futuro.</p></article>
+          <article class="symbol"><h3>Aurora boreal</h3><p>Beleza, diversidade e harmonia.</p></article>
+          <article class="symbol"><h3>Sol</h3><p>Conhecimento e iluminação.</p></article>
+          <article class="symbol"><h3>Louros</h3><p>Reconhecimento pelo mérito.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="filosofia" aria-labelledby="h-filosofia"><div class="container prose center"><p class="eyebrow">07 / Nosso propósito</p><h2 id="h-filosofia">Nossa <span class="gold">filosofia</span></h2><p>Acreditamos que o conhecimento deve ampliar possibilidades, que a tecnologia deve servir à humanidade e que a criatividade deve transformar ideias em realidade.</p><p>Valorizamos a responsabilidade, o respeito, o aprendizado contínuo e o cuidado com cada projeto. Nossa busca pela excelência não é uma competição com os outros, mas um compromisso de sermos melhores do que fomos ontem.</p><p>Encontrar um norte é reconhecer que toda criação começa com um propósito.</p></div></section>
+    <section class="section" id="manifesto" aria-labelledby="h-manifesto"><div class="container"><div class="manifesto"><div class="prose"><p class="eyebrow">08 / Manifesto institucional</p><h2 id="h-manifesto">Além dos ventos <span class="gold">do Norte</span></h2><div class="rule" aria-hidden="true"></div>
+      <p>Há milênios, os antigos gregos imaginavam uma terra situada além dos ventos do Norte. Uma terra onde a arte florescia, a música ecoava e Apolo encontrava um povo dedicado à celebração da harmonia.</p>
+      <p>Chamavam-na Hiperbórea.</p>
+      <p>O tempo passou. Civilizações se transformaram, templos deram lugar a cidades e o conhecimento humano atravessou fronteiras que outrora pareciam intransponíveis. Mas a capacidade de imaginar permaneceu.</p>
+      <p>Inspirada nessa antiga narrativa, nasce a HYPERBOREA, uma agência criativa que encontra na tradição a sua raiz e na tecnologia o seu horizonte.</p>
+      <p>Seu símbolo ergue duas colunas que sustentam uma identidade. Sua bússola aponta para o Norte, lembrando que toda jornada necessita de direção. Suas montanhas representam os desafios que nos convidam a ir além.</p>
+      <p>Em Apolo, encontramos a inspiração para unir o conhecimento, a arte e a inovação. Reinterpretado para uma nova era, ele carrega em seu corpo a tecnologia, em sua coroa a excelência e em seu peito a luz do conhecimento.</p>
+      <p>O preto representa nossa ordem.<br>O vinho representa nossa arte.<br>O azul representa nossa inteligência.<br>O verde representa nossa vida.</p>
+      <p>O branco recorda nossa integridade, enquanto o dourado ilumina o caminho que percorremos.</p>
+      <p>Acreditamos que a tecnologia deve servir à humanidade, que o conhecimento deve ampliar possibilidades e que a criatividade deve transformar ideias em realidade.</p>
+      <p>Não buscamos a excelência para nos colocarmos acima de outros, mas para sermos melhores do que fomos ontem.</p>
+      <p>Somos a união entre a memória do passado, a responsabilidade do presente e a esperança do futuro.</p>
+      <p class="closing">Somos HYPERBOREA.</p><p>Um norte para a identidade visual da sua marca.</p>
+    </div></div></div></section>
+    <section class="section" aria-labelledby="h-contato"><div class="container prose center"><p class="eyebrow">Vamos conversar?</p><h2 id="h-contato">Sua próxima ideia <span class="gold">começa aqui.</span></h2><p>Conheça nossos serviços e encontre um norte para o seu projeto.</p><div class="actions"><a class="main-button" href="/#servicos">Conhecer nossos serviços</a><a class="text-button" href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a></div></div></section>
+  </main>
+  <footer class="footer"><div class="container">© <span id="anoAtual">2026</span> HYPERBOREA · Identidade, criatividade e futuro.</div></footer>
+  <a class="whatsapp-float" href="https://wa.me/message/FHWOVDSQ3AKCO1" target="_blank" rel="noopener noreferrer" aria-label="Conversar com a HYPERBOREA pelo WhatsApp"><span class="wa-fallback" aria-hidden="true">WA</span><img src="/assets/img/whats-icon.svg" alt="" aria-hidden="true"></a>
+  <script>
+    (()=>{
+      'use strict';
+      document.getElementById('anoAtual').textContent=new Date().getFullYear();
+      document.querySelectorAll('img').forEach(img=>{
+        const fallback=()=>{
+          if(img.id==='apolo-img'){
+            document.getElementById('apolo-figure').hidden=true;
+            document.getElementById('apolo').querySelector('.split').style.gridTemplateColumns='1fr';
+          }else{img.hidden=true;}
+        };
+        img.addEventListener('error',fallback,{once:true});
+        if(img.complete&&!img.naturalWidth)fallback();
+      });
+      document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{a.closest('details').open=false;}));
+    })();
+  </script>
+</body>
+</html>
